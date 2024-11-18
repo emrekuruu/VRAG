@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "ekuru_vrag"
+
+version = "0.1.0"
+description = "A RAG system utilizing the compari architecture for document analysis."
+authors = ["Emre Kuru <emre.kuru@ozu.edu.tr>"]
+license = "Apache 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11.0,<3.13"
+pandas = "^2.2.3"
+matplotlib = "^3.9.2"
+langchain = "^0.3.4"
+chromadb = "^0.5.15"
+langchain-community = "^0.3.3"
+datasets = "~3.0.0"
+pydantic = "~2.9.2"
+pytrec_eval = "~0.5"
+openai = "^1.54.0"
+langchain-experimental = "^0.3.2"
+langchain-openai = "^0.2.6"
+byaldi = "^0.0.7"
+
+[tool.poetry.group.dev.dependencies]
+poetry = "^1.7.0"
+pytest = "^8.1.0"
+coverage = "^7.4.0"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.mypy]
+ignore_missing_imports = true
