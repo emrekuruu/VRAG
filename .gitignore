@@ -1,6 +1,6 @@
 .venv/
-hf_key.txt
-openai_api_key.txt
 docs/
 .DS_Store
 .byaldi/
+**/__pycache__/
+**_key.txt
