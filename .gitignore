@@ -4,3 +4,4 @@ docs/
 .byaldi/
 **/__pycache__/
 **_key.txt
+.chroma/
