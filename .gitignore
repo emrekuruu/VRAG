@@ -5,3 +5,6 @@ docs/
 **/__pycache__/
 **_key.txt
 .chroma/
+**.csv
+**.pkl
+**.txt
