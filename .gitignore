@@ -3,8 +3,8 @@ docs/
 .DS_Store
 .byaldi/
 **/__pycache__/
-**_key.txt
 .chroma/
 **.csv
 **.pkl
 **.txt
+keys/
