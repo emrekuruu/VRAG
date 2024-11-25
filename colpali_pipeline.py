@@ -5,12 +5,20 @@ import gzip
 import json
 import boto3
 from datasets import load_dataset
-
 from byaldi import RAGMultiModalModel
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
+import logging
 
-device = "mps"
+# Configure logging
+logging.basicConfig(
+    filename="retrieval.log",  # Log file
+    filemode="a",  # Append mode
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
+    level=logging.INFO  # Log level
+)
+
+semaphore = asyncio.Semaphore(16)
 
 with open('keys/hf_key.txt', 'r') as file:
     hf_key = file.read().strip()
@@ -30,7 +38,7 @@ s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
     aws_access_key_id="",
-    aws_secret_access_key=""
+    aws_secret_access_key="VA5B18qmhY1P8dRb8BZ50tE2Rin4j/+3JY8iYyn7"
 )
 
 def prepare_dataset():
@@ -63,18 +71,21 @@ async def process_item(data, idx, RAG):
     retrieved = await asyncio.to_thread(RAG.search, query, k=1, filter_metadata={"Company": company, "Year": year})
 
     # Populate the results
-    retrieved_context = f"{company}/{year}/{retrieved[0].metadata['Page']}"
+    retrieved_context = f"{company}/{year}/{retrieved[0].metadata['Filename']}"
+
+    # Log the successful retrieval
+    logging.info(f"Retrieved context for index {idx}")
 
     return idx, retrieved_context
 
 
-async def generate(data, RAG, model, image_prompt):
+async def generate(data, RAG):
 
     # Initialize the results DataFrame
     results = pd.DataFrame(columns=["Retrieved Context"], index=data.index)
 
     # Create tasks for processing each item
-    tasks = [process_item(data, idx, RAG, model, image_prompt) for idx in data.index]
+    tasks = [process_item(data, idx, RAG) for idx in data.index]
 
     # Gather results asynchronously
     results_list = await asyncio.gather(*tasks)
@@ -117,52 +128,20 @@ async def main():
 
     data = prepare_dataset()
 
-    unique_companies = set(data.Company.unique())
+    data.id = data.id.map(lambda x : x.split("-")[0])
 
-    needed_years = {}
-
-    for company in unique_companies:
-        needed_years[company] = list(data[data.Company == company].Year.unique())
-
-    unique_companies = set(data.Company.unique())
-
-    needed_years = {}
-
-    files = []
-
-    for company in unique_companies:
-        needed_years[company] = list(data[data.Company == company].Year.unique())
-
-    for company in needed_years.keys():
-        for year in needed_years[company]:
-            try:
-                for page in os.listdir(f"docs/{company}/{year}/"):
-                    files.append(f"docs/{company}/{year}/{page}")
-            except:
-                print(f"docs/{company}/{year}/")
-                
-    files = [file[5:] for file in files]
-
-    RAG = RAGMultiModalModel.from_index(index_path="finqa", device="mps")
+    RAG = RAGMultiModalModel.from_index(index_path="finqa", device="cuda")
 
     missing_files = []
 
-    with gzip.open('finqa/metadata.json.gz', 'rt') as file:
+    with gzip.open('.byaldi/finqa/metadata.json.gz', 'rt') as file:
         files_ = file.read()
         files_ = json.loads(files_)
 
-    company_names = set({f'{value["Company"]}/{value["Year"]}/{value["Filename"]}' for value in files_.values()})
+    index_files = set({f'{value["Company"]}/{value["Year"]}/{value["Filename"]}' for value in files_.values()})
 
-    for file in files:
-        if file not in company_names:
-            missing_files.append(file)
+    data = data[data.id.isin(index_files)]
 
-    if len(missing_files) > 0:
-        print(f"Missing {len(missing_files)} files, now adding to index")
-        for file in missing_files:
-            company, year, page = file.split("/")
-            RAG.add_to_index(f"docs/{company}/{year}/{page}",store_collection_with_index=True, metadata={"Company": company, "Year": year, "Filename": page})
-    
     results = await generate(data, RAG)
     results.to_csv("results/colpali.csv", index=False)
     
