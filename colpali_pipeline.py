@@ -38,7 +38,7 @@ s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
     aws_access_key_id="",
-    aws_secret_access_key="VA5B18qmhY1P8dRb8BZ50tE2Rin4j/+3JY8iYyn7"
+    aws_secret_access_key=""
 )
 
 def prepare_dataset():
@@ -114,7 +114,7 @@ def download_s3_folder(prefix, local_dir):
             
             # Create subdirectories as needed
             os.makedirs(os.path.dirname(local_file_path), exist_ok=True)
-
+            
             s3.download_file(BUCKET_NAME, file_key, local_file_path)
 
 async def main():
@@ -143,7 +143,7 @@ async def main():
     data = data[data.id.isin(index_files)]
 
     results = await generate(data, RAG)
-    results.to_csv("results/colpali.csv", index=False)
+    results.to_csv("results/colpali.csv", index=True)
     
 if __name__ == "__main__":
     asyncio.run(main())
