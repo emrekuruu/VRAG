@@ -6,6 +6,15 @@ import time
 import json
 from pdf2image import convert_from_path
 import pytesseract
+import logging
+
+# Configure logging
+logging.basicConfig(
+    filename="retrieval.log",  # Log file
+    filemode="a",  # Append mode
+    format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
+    level=logging.INFO  # Log level
+)
 
 # AWS S3 Configuration
 BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
@@ -76,13 +85,13 @@ async def process_file(file_key):
                 text = pytesseract.image_to_string(page_image)
                 key = f"{company}/{year}/page_{page_num}"
                 document_texts[key] = text
+                logging.info(f"Done with {key}")
         except Exception as e:
             print(f"Failed to extract text from {file_key}: {e}")
         finally:
             # Clean up the local file after processing
             if os.path.exists(local_file_path):
                 os.remove(local_file_path)
-                print(f"Deleted temporary file: {local_file_path}")
 
 # Function to list all files under a prefix in the S3 bucket
 def list_s3_files(prefix=""):
@@ -119,6 +128,7 @@ async def process_all():
 
 # Main async function
 async def main():
+
     print("Processing all files in the bucket...")
     start_time = time.time()
     await process_all()
