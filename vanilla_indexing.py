@@ -10,7 +10,7 @@ import logging
 
 # Configure logging
 logging.basicConfig(
-    filename="retrieval.log",  # Log file
+    filename="text_documents.log",  # Log file
     filemode="a",  # Append mode
     format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
     level=logging.INFO  # Log level
@@ -31,8 +31,8 @@ document_texts = {}  # Dictionary to store extracted text
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
-    aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
-    aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
+    aws_access_key_id="",
+    aws_secret_access_key=""
 )
 
 def upload_file_to_s3(local_file, bucket, s3_key):
@@ -50,6 +50,14 @@ def upload_file_to_s3(local_file, bucket, s3_key):
         print(f"File uploaded successfully to s3://{bucket}/{s3_key}")
     except Exception as e:
         print(f"Failed to upload {local_file} to S3: {e}")
+
+def extract_text_from_file(local_file_path):
+    try:
+        image = convert_from_path(local_file_path)[0]
+        return pytesseract.image_to_string(image)
+    except Exception as e:
+        logging.error(f"Failed to extract text from {local_file_path}: {e}")
+        return None
 
 # Define an async function to process a single file
 async def process_file(file_key):
@@ -80,12 +88,13 @@ async def process_file(file_key):
 
         # Extract text from the document
         try:
-            pages = convert_from_path(local_file_path)
-            for page_num, page_image in enumerate(pages, start=1):
-                text = pytesseract.image_to_string(page_image)
-                key = f"{company}/{year}/page_{page_num}"
-                document_texts[key] = text
-                logging.info(f"Done with {key}")
+        # Extract text in a thread
+            text = await asyncio.to_thread(extract_text_from_file, local_file_path)
+            if text is not None:
+                document_texts[file_key] = text
+                logging.info(f"Successfully processed {file_key}")
+            else:
+                logging.error(f"Failed to extract text for {file_key}")
         except Exception as e:
             print(f"Failed to extract text from {file_key}: {e}")
         finally:
