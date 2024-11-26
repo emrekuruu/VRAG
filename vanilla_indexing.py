@@ -1,149 +1,101 @@
-import boto3
-import asyncio
-import psutil
 import os
-import time
+import asyncio
 import json
-from pdf2image import convert_from_path
-import pytesseract
 import logging
+import pickle
+from langchain_core.documents import Document
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain_openai.embeddings import OpenAIEmbeddings
 
 # Configure logging
 logging.basicConfig(
-    filename="text_documents.log",  # Log file
+    filename="chunking.log",  # Log file
     filemode="a",  # Append mode
     format="%(asctime)s - %(levelname)s - %(message)s",  # Log format
     level=logging.INFO  # Log level
 )
 
-# AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
-REGION_NAME = "eu-central-1"  # Replace with your bucket's region
-TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
-OUTPUT_FILE = "/tmp/docs/document_texts.json"  # Output JSON file
+semaphore = asyncio.Semaphore(16)
 
-# Global variables
-concurrency_limit = 16
-semaphore = asyncio.Semaphore(concurrency_limit)
-document_texts = {}  # Dictionary to store extracted text
+with open("keys/openai_api_key.txt", "r") as file:
+    openai_key = file.read().strip()
 
-# Initialize boto3 client with credentials
-s3 = boto3.client(
-    's3',
-    region_name=REGION_NAME,
-    aws_access_key_id="",
-    aws_secret_access_key=""
-)
+os.environ["OPENAI_API_KEY"] = openai_key
 
-def upload_file_to_s3(local_file, bucket, s3_key):
-    """
-    Upload a file to S3.
+with open("document_texts.json", "r") as file:
+    document_texts = json.load(file)
 
-    Args:
-        local_file (str): Path to the local file.
-        bucket (str): Name of the S3 bucket.
-        s3_key (str): S3 key where the file will be saved.
-    """
+
+async def process_item(file_key, splitter):
+    """Process a single file key, splitting its content and returning documents."""
+    global document_texts
+    parts = file_key.split('/')
+    company, year, filename = parts[0], parts[1], parts[2]
+
     try:
-        print(f"Uploading {local_file} to s3://{bucket}/{s3_key}...")
-        s3.upload_file(local_file, bucket, s3_key)
-        print(f"File uploaded successfully to s3://{bucket}/{s3_key}")
-    except Exception as e:
-        print(f"Failed to upload {local_file} to S3: {e}")
-
-def extract_text_from_file(local_file_path):
-    try:
-        image = convert_from_path(local_file_path)[0]
-        return pytesseract.image_to_string(image)
-    except Exception as e:
-        logging.error(f"Failed to extract text from {local_file_path}: {e}")
-        return None
-
-# Define an async function to process a single file
-async def process_file(file_key):
-    async with semaphore:
-        # Extract metadata from the S3 key
-        parts = file_key.split('/')
-        company, year, filename = parts[0], parts[1], parts[2]
-
-        # Temporary local file path
-        local_file_path = f"/tmp/{filename}"
-        
-        # Download file from S3
+        text = document_texts[file_key]
+    except KeyError:
         try:
-            s3.download_file(BUCKET_NAME, file_key, local_file_path)
-        except Exception as e:
-            print(f"Failed to download {file_key} from S3: {e}")
-            return
+            text = document_texts["docs/" + file_key]
+        except KeyError:
+            logging.error(f"Text not found for {file_key}")
+            return None
 
-        # Wait for the file to exist in /tmp
-        max_wait_time = 10  # Maximum wait time in seconds
-        elapsed_time = 0
-        while not os.path.exists(local_file_path):
-            if elapsed_time >= max_wait_time:
-                print(f"File did not appear in /tmp within {max_wait_time} seconds: {local_file_path}")
-                return
-            time.sleep(0.5)
-            elapsed_time += 0.5
+    chunks = await asyncio.to_thread(splitter.split_text, text)
 
-        # Extract text from the document
-        try:
-        # Extract text in a thread
-            text = await asyncio.to_thread(extract_text_from_file, local_file_path)
-            if text is not None:
-                document_texts[file_key] = text
-                logging.info(f"Successfully processed {file_key}")
-            else:
-                logging.error(f"Failed to extract text for {file_key}")
-        except Exception as e:
-            print(f"Failed to extract text from {file_key}: {e}")
-        finally:
-            # Clean up the local file after processing
-            if os.path.exists(local_file_path):
-                os.remove(local_file_path)
+    docs = [
+        Document(page_content=chunk, metadata={"Company": company, "Year": year, "Filename": filename})
+        for chunk in chunks
+    ]
 
-# Function to list all files under a prefix in the S3 bucket
-def list_s3_files(prefix=""):
-    paginator = s3.get_paginator('list_objects_v2')
-    files = []
-    for page in paginator.paginate(Bucket=BUCKET_NAME, Prefix=prefix):
-        files.extend([obj['Key'] for obj in page.get('Contents', [])])
-    return files
+    logging.info(f"Processed {file_key}")
+    return file_key, docs
 
-# Async function to process all files in the bucket
+
 async def process_all():
+    """Process all file keys and save results asynchronously."""
+    # Initialize OpenAI embeddings
+    embeddings = OpenAIEmbeddings()
+
+    # Configure the SemanticChunker
+    splitter = SemanticChunker(
+        embeddings=embeddings,
+        buffer_size=3,  # Number of sentences to group together
+        add_start_index=True,  # Include start index in metadata
+        breakpoint_threshold_type="percentile",  # Method to determine breakpoints
+        breakpoint_threshold_amount=0.8,  # Threshold for splitting
+        number_of_chunks=None,  # Let the chunker decide the number of chunks
+        sentence_split_regex=r'(?<=\.)\s+'  # Split sentences based on periods
+    )
+
     tasks = []
 
-    companies = list_s3_files()
-    companies = set([key.split('/')[0] for key in companies if '/' in key])
+    async with semaphore:
+        for file_key in document_texts.keys():
+            # Wrap each task creation in the semaphore
+            task = asyncio.create_task(process_item(file_key, splitter))
+            tasks.append(task)
 
-    for company in companies:
-        years = list_s3_files(f"{company}/")
-        years = set([key.split('/')[1] for key in years if '/' in key])
+    # Use asyncio.gather to wait for all tasks to finish
+    results = await asyncio.gather(*tasks)
+    return [result for result in results if result is not None]
 
-        for year in years:
-            files = list_s3_files(f"{company}/{year}/")
-
-            for file_key in files:
-                tasks.append(asyncio.create_task(process_file(file_key)))
-
-    await asyncio.gather(*tasks)
-
-    # Save the document texts dictionary to a JSON file
-    with open(OUTPUT_FILE, 'w') as f:
-        json.dump(document_texts, f, indent=4)
-
-    upload_file_to_s3(OUTPUT_FILE, BUCKET_NAME, "document_texts.json")
-
-# Main async function
+    
 async def main():
+    """Main function to process documents and save them as a pickle file."""
+    # Process all documents
+    logging.info("Starting document processing...")
+    processed_data = await process_all()
 
-    print("Processing all files in the bucket...")
-    start_time = time.time()
-    await process_all()
-    end_time = time.time()
+    # Save the results
+    output_dict = {file_key: docs for file_key, docs in processed_data}
+    output_file = "processed_documents.pkl"
 
-    print(f"Execution time: {end_time - start_time} seconds")
+    with open(output_file, "wb") as file:
+        pickle.dump(output_dict, file)
+
+    logging.info(f"Processed data saved to {output_file}")
+    print(f"Processed data saved to {output_file}")
 
 if __name__ == "__main__":
     asyncio.run(main())
