@@ -20,44 +20,50 @@ logging.basicConfig(
 
 semaphore = asyncio.Semaphore(16)
 
-with open('keys/hf_key.txt', 'r') as file:
+with open('../keys/hf_key.txt', 'r') as file:
     hf_key = file.read().strip()
 
-with open("keys/openai_api_key.txt", "r") as file:
+with open("../keys/openai_api_key.txt", "r") as file:
     openai_key = file.read().strip()
 
 os.environ["HF_TOKEN"] = hf_key
 os.environ["OPENAI_API_KEY"] = openai_key
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
+BUCKET_NAME = "table-vqa"  # Replace with your bucket name
 REGION_NAME = "eu-central-1"  # Replace with your bucket's region
 TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
 
+# Define the folder path containing the keys
+key_folder = "../keys"  # Replace with the correct path if needed
+
+# Read the AWS Access Key
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+# Read the AWS Secret Key
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
+# Initialize boto3 client with credentials
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
-    aws_access_key_id="",
-    aws_secret_access_key=""
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
 
 def prepare_dataset():
 
-    # Load the dataset
-    dataset = load_dataset("ibm/finqa", trust_remote_code=True)
+    def process_qa_id(qa_id):
+        splitted = qa_id.split(".")[0]
+        return splitted.split("_")[0] + "/" + splitted.split("_")[1] + "/" + splitted.split("_")[2] + "_" + splitted.split("_")[3] + ".pdf"
 
-    # Access the splits
-    data = dataset['train'].to_pandas()
-    validation_data = dataset['validation'].to_pandas()
-    test_data = dataset['test'].to_pandas()
-
-    data = pd.concat([data, validation_data, test_data])
-    data.reset_index(drop=True, inplace=True)
-    data = data[["id", "question", "answer", "gold_inds"]]
-
-    data["Company"] = [row[0] for row in data.id.str.split("/")]
-    data["Year"] = [row[1] for row in data.id.str.split("/")]
-
+    data = load_dataset("terryoo/TableVQA-Bench")["fintabnetqa"].to_pandas()[["qa_id", "question", "gt"]]
+    data.qa_id = data.qa_id.apply(process_qa_id)
+    data["Company"] = [row[0] for row in data.qa_id.str.split("/")]
+    data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
+    data = data.rename(columns={"qa_id": "id"})
     return data
 
 
@@ -119,7 +125,7 @@ def download_s3_folder(prefix, local_dir):
 
 async def main():
 
-    if not os.path.exists(".byaldi/finqa"):
+    if not os.path.exists(".byaldi/table_vqa"):
         print("Downloading index")
         os.mkdir(".byaldi/")
         download_s3_folder("byaldi", ".byaldi")
@@ -130,11 +136,11 @@ async def main():
 
     data.id = data.id.map(lambda x : x.split("-")[0])
 
-    RAG = RAGMultiModalModel.from_index(index_path="finqa", device="cuda")
+    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="cuda")
 
     missing_files = []
 
-    with gzip.open('.byaldi/finqa/metadata.json.gz', 'rt') as file:
+    with gzip.open('.byaldi/table_vqa/metadata.json.gz', 'rt') as file:
         files_ = file.read()
         files_ = json.loads(files_)
 

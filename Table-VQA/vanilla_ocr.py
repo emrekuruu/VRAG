@@ -17,22 +17,33 @@ logging.basicConfig(
 )
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
+BUCKET_NAME = "table-vqa"  # Replace with your bucket name
 REGION_NAME = "eu-central-1"  # Replace with your bucket's region
 TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
-OUTPUT_FILE = "/tmp/docs/document_texts.json"  # Output JSON file
+OUTPUT_FILE = "document_texts.json"  # Output JSON file
 
 # Global variables
 concurrency_limit = 16
 semaphore = asyncio.Semaphore(concurrency_limit)
 document_texts = {}  # Dictionary to store extracted text
 
+# Define the folder path containing the keys
+key_folder = "../keys"  # Replace with the correct path if needed
+
+# Read the AWS Access Key
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+# Read the AWS Secret Key
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
 # Initialize boto3 client with credentials
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
-    aws_access_key_id="",
-    aws_secret_access_key=""
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
 
 def upload_file_to_s3(local_file, bucket, s3_key):
@@ -60,7 +71,7 @@ def extract_text_from_file(local_file_path):
         return None
 
 # Define an async function to process a single file
-async def process_file(file_key):
+async def process_file(file_key, document_texts):
     async with semaphore:
         # Extract metadata from the S3 key
         parts = file_key.split('/')
@@ -112,12 +123,20 @@ def list_s3_files(prefix=""):
 
 # Async function to process all files in the bucket
 async def process_all():
+
+    global document_texts
+
     tasks = []
+    batch_counter = 0
 
     companies = list_s3_files()
     companies = set([key.split('/')[0] for key in companies if '/' in key])
 
     for company in companies:
+
+        if company == "byaldi":
+            continue
+
         years = list_s3_files(f"{company}/")
         years = set([key.split('/')[1] for key in years if '/' in key])
 
@@ -125,11 +144,26 @@ async def process_all():
             files = list_s3_files(f"{company}/{year}/")
 
             for file_key in files:
-                tasks.append(asyncio.create_task(process_file(file_key)))
+                tasks.append(asyncio.create_task(process_file(file_key, document_texts)))
+                batch_counter += 1
 
-    await asyncio.gather(*tasks)
+                # Save and reset the batch every BATCH_SIZE files
+                if batch_counter >= 500:
+                    await asyncio.gather(*tasks)
+                    tasks = []
+                    batch_counter = 0
 
-    # Save the document texts dictionary to a JSON file
+                    # Save the current document_texts to a JSON file
+                    with open(OUTPUT_FILE, 'w') as f:
+                        json.dump(document_texts, f, indent=4)
+
+                    upload_file_to_s3(OUTPUT_FILE, BUCKET_NAME, "document_texts.json")
+
+    # Process any remaining tasks in the last batch
+    if tasks:
+        await asyncio.gather(*tasks)
+
+    # Final save of the document_texts dictionary
     with open(OUTPUT_FILE, 'w') as f:
         json.dump(document_texts, f, indent=4)
 

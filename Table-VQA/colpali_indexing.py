@@ -6,9 +6,21 @@ import time
 from byaldi import RAGMultiModalModel
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
+BUCKET_NAME = "table-vqa"  # Replace with your bucket name
 REGION_NAME = "eu-central-1"  # Replace with your bucket's region
 TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
+
+# Define the folder path containing the keys
+key_folder = "../keys"  # Replace with the correct path if needed
+
+# Read the AWS Access Key
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+# Read the AWS Secret Key
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
 
 # Global variables
 concurrency_limit = 8
@@ -90,12 +102,10 @@ async def process_all():
 
     companies = list_s3_files()
     companies = set([key.split('/')[0] for key in companies if '/' in key])
-    companies = ["AAL"]
 
     for company in companies:
         years = list_s3_files(f"{company}/")
         years = set([key.split('/')[1] for key in years if '/' in key])
-        years = ["2014"]
 
         for year in years:
             files = list_s3_files(f"{company}/{year}/")
@@ -136,7 +146,7 @@ async def main():
     download_s3_folder(prefix="temp/", local_dir=TEMP_DIR)
     RAG.index(
         input_path=TEMP_DIR,
-        index_name="finqa",
+        index_name="table_vqa",
         overwrite=True,
     )
     print("Index initialized successfully.")

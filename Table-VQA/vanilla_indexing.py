@@ -18,7 +18,7 @@ logging.basicConfig(
 semaphore = asyncio.Semaphore(16)
 
 # Load API key
-with open("keys/openai_api_key.txt", "r") as file:
+with open("../keys/openai_api_key.txt", "r") as file:
     openai_key = file.read().strip()
 
 os.environ["OPENAI_API_KEY"] = openai_key
