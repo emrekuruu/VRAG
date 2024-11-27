@@ -1,12 +1,10 @@
 import boto3
 import asyncio
-import psutil
 import os
 import time
 import json
-from pdf2image import convert_from_path
-import pytesseract
 import logging
+from langchain.document_loaders import PyMuPDFLoader
 
 # Configure logging
 logging.basicConfig(
@@ -17,22 +15,33 @@ logging.basicConfig(
 )
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
+BUCKET_NAME = "finance-bench"  # Replace with your bucket name
 REGION_NAME = "eu-central-1"  # Replace with your bucket's region
 TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
-OUTPUT_FILE = "/tmp/docs/document_texts.json"  # Output JSON file
+OUTPUT_FILE = "document_texts.json"  # Output JSON file
 
 # Global variables
 concurrency_limit = 16
 semaphore = asyncio.Semaphore(concurrency_limit)
 document_texts = {}  # Dictionary to store extracted text
 
+# Define the folder path containing the keys
+key_folder = "../keys"  # Replace with the correct path if needed
+
+# Read the AWS Access Key
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+# Read the AWS Secret Key
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
 # Initialize boto3 client with credentials
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
-    aws_access_key_id="",
-    aws_secret_access_key=""
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
 
 def upload_file_to_s3(local_file, bucket, s3_key):
@@ -52,19 +61,41 @@ def upload_file_to_s3(local_file, bucket, s3_key):
         print(f"Failed to upload {local_file} to S3: {e}")
 
 def extract_text_from_file(local_file_path):
+    """
+    Extract text from a PDF using PyMuPDFLoader and format it as JSON serializable.
+
+    Args:
+        local_file_path (str): Path to the local PDF file.
+
+    Returns:
+        list: A list of dictionaries with 'page_content' and 'metadata' for each page.
+    """
     try:
-        image = convert_from_path(local_file_path)[0]
-        return pytesseract.image_to_string(image)
+        pdf_reader = PyMuPDFLoader(local_file_path)
+        pdf_documents = pdf_reader.load()
+        
+        # Format the output into a JSON serializable structure
+        json_serializable_output = [
+            {
+                "page_content": doc.page_content,
+                "metadata": doc.metadata
+            }
+            for doc in pdf_documents
+        ]
+        
+        return json_serializable_output
     except Exception as e:
         logging.error(f"Failed to extract text from {local_file_path}: {e}")
         return None
 
 # Define an async function to process a single file
-async def process_file(file_key):
+async def process_file(file_key, document_texts):
     async with semaphore:
         # Extract metadata from the S3 key
-        parts = file_key.split('/')
-        company, year, filename = parts[0], parts[1], parts[2]
+        parts = file_key.split('_')
+        company, year, type_ = parts[0], parts[1], parts[2]
+
+        filename = company + "_" + year + "_" + type_
 
         # Temporary local file path
         local_file_path = f"/tmp/{filename}"
@@ -88,7 +119,7 @@ async def process_file(file_key):
 
         # Extract text from the document
         try:
-        # Extract text in a thread
+            # Extract text in a thread
             text = await asyncio.to_thread(extract_text_from_file, local_file_path)
             if text is not None:
                 document_texts[file_key] = text
@@ -112,24 +143,34 @@ def list_s3_files(prefix=""):
 
 # Async function to process all files in the bucket
 async def process_all():
+
+    global document_texts
+
     tasks = []
+    batch_counter = 0
+    files = list_s3_files()
 
-    companies = list_s3_files()
-    companies = set([key.split('/')[0] for key in companies if '/' in key])
+    for file_key in files:
+        tasks.append(asyncio.create_task(process_file(file_key, document_texts)))
+        batch_counter += 1
 
-    for company in companies:
-        years = list_s3_files(f"{company}/")
-        years = set([key.split('/')[1] for key in years if '/' in key])
+        # Save and reset the batch every 500 files
+        if batch_counter >= 50:
+            await asyncio.gather(*tasks)
+            tasks = []
+            batch_counter = 0
 
-        for year in years:
-            files = list_s3_files(f"{company}/{year}/")
+            # Save the current document_texts to a JSON file
+            with open(OUTPUT_FILE, 'w') as f:
+                json.dump(document_texts, f, indent=4)
 
-            for file_key in files:
-                tasks.append(asyncio.create_task(process_file(file_key)))
+            upload_file_to_s3(OUTPUT_FILE, BUCKET_NAME, "document_texts.json")
 
-    await asyncio.gather(*tasks)
+    # Process any remaining tasks in the last batch
+    if tasks:
+        await asyncio.gather(*tasks)
 
-    # Save the document texts dictionary to a JSON file
+    # Final save of the document_texts dictionary
     with open(OUTPUT_FILE, 'w') as f:
         json.dump(document_texts, f, indent=4)
 

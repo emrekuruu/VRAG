@@ -6,9 +6,21 @@ import time
 from byaldi import RAGMultiModalModel
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
+BUCKET_NAME = "finance-bench"  # Replace with your bucket name
 REGION_NAME = "eu-central-1"  # Replace with your bucket's region
 TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
+
+# Define the folder path containing the keys
+key_folder = "../keys"  # Replace with the correct path if needed
+
+# Read the AWS Access Key
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+# Read the AWS Secret Key
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
 
 # Global variables
 concurrency_limit = 8
@@ -55,8 +67,10 @@ async def process_file(file_key):
         global RAG
 
         # Extract metadata from the S3 key
-        parts = file_key.split('/')
-        company, year, filename = parts[0], parts[1], parts[2]
+        parts = file_key.split('_')
+        company, year, type_ = parts[0], parts[1], parts[2]
+
+        filename = company + "_" + year + "_" + type_
 
         # Temporary local file path
         local_file_path = f"/tmp/{filename}"
@@ -69,7 +83,7 @@ async def process_file(file_key):
             RAG.add_to_index,
             input_item=local_file_path,  # Use the local file path here
             store_collection_with_index=True,
-            metadata={"Company": company, "Year": year, "Filename": filename},
+            metadata={"Company": company, "Year": year, "Type": type_},
         )
 
         # Clean up the local file after processing
@@ -88,20 +102,9 @@ def list_s3_files(prefix=""):
 async def process_all():
     tasks = []
 
-    companies = list_s3_files()
-    companies = set([key.split('/')[0] for key in companies if '/' in key])
-    companies = ["AAL"]
-
-    for company in companies:
-        years = list_s3_files(f"{company}/")
-        years = set([key.split('/')[1] for key in years if '/' in key])
-        years = ["2014"]
-
-        for year in years:
-            files = list_s3_files(f"{company}/{year}/")
-
-            for file_key in files:
-                tasks.append(asyncio.create_task(process_file(file_key)))
+    files = list_s3_files()
+    for file_key in files:
+        tasks.append(asyncio.create_task(process_file(file_key)))
 
     await asyncio.gather(*tasks)
 
@@ -126,29 +129,6 @@ def upload_directory_to_s3(local_dir, bucket, s3_prefix):
 
 # Main async function
 async def main():
-    global RAG
-
-    # Step 1: Initialize the RAG model
-    RAG = RAGMultiModalModel.from_pretrained("vidore/colqwen2-v1.0", device="cuda")
-
-    # Step 2: Initialize the index using the temp folder
-    print("Initializing the index with the temp folder...")
-    download_s3_folder(prefix="temp/", local_dir=TEMP_DIR)
-    RAG.index(
-        input_path=TEMP_DIR,
-        index_name="finqa",
-        overwrite=True,
-    )
-    print("Index initialized successfully.")
-
-    # Step 3: Process all files in the bucket
-    print("Processing all files in the bucket...")
-    start_time = time.time()
-    await process_all()
-    end_time = time.time()
-
-    print(f"Execution time: {end_time - start_time} seconds")
-
     print("Uploading the .byaldi index directory to S3...")
     index_dir_path = os.path.join(os.getcwd(), ".byaldi")  # Current working directory
 
