@@ -20,10 +20,10 @@ logging.basicConfig(
 
 semaphore = asyncio.Semaphore(16)
 
-with open('keys/hf_key.txt', 'r') as file:
+with open('../keys/hf_key.txt', 'r') as file:
     hf_key = file.read().strip()
 
-with open("keys/openai_api_key.txt", "r") as file:
+with open("../keys/openai_api_key.txt", "r") as file:
     openai_key = file.read().strip()
 
 os.environ["HF_TOKEN"] = hf_key
@@ -42,22 +42,8 @@ s3 = boto3.client(
 )
 
 def prepare_dataset():
-
-    # Load the dataset
-    dataset = load_dataset("ibm/finqa", trust_remote_code=True)
-
-    # Access the splits
-    data = dataset['train'].to_pandas()
-    validation_data = dataset['validation'].to_pandas()
-    test_data = dataset['test'].to_pandas()
-
-    data = pd.concat([data, validation_data, test_data])
-    data.reset_index(drop=True, inplace=True)
-    data = data[["id", "question", "answer", "gold_inds"]]
-
-    data["Company"] = [row[0] for row in data.id.str.split("/")]
-    data["Year"] = [row[1] for row in data.id.str.split("/")]
-
+    data = load_dataset("PatronusAI/financebench")["train"].to_pandas()
+    data[['Company', 'Year', 'Type']] = data['doc_name'].str.split('_', expand=True).iloc[:, :3]
     return data
 
 
@@ -66,12 +52,13 @@ async def process_item(data, idx, RAG):
     query = data.loc[idx, "question"]
     company = data.loc[idx, "Company"]
     year = data.loc[idx, "Year"]
+    type_ = data.loc[idx, "Type"]
 
     # Perform retrieval asynchronously
-    retrieved = await asyncio.to_thread(RAG.search, query, k=1, filter_metadata={"Company": company, "Year": year})
+    retrieved = await asyncio.to_thread(RAG.search, query, k=1, filter_metadata={"Company": company, "Year": year, "Type": type_})
 
     # Populate the results
-    retrieved_context = f"{company}/{year}/{retrieved[0].metadata['Filename']}"
+    retrieved_context = f"{company}/{year}/{type_}/{retrieved[0].page_num}"
 
     # Log the successful retrieval
     logging.info(f"Retrieved context for index {idx}")
@@ -119,7 +106,7 @@ def download_s3_folder(prefix, local_dir):
 
 async def main():
 
-    if not os.path.exists(".byaldi/finqa"):
+    if not os.path.exists(".byaldi/finance_bench"):
         print("Downloading index")
         os.mkdir(".byaldi/")
         download_s3_folder("byaldi", ".byaldi")
@@ -127,20 +114,8 @@ async def main():
         print("Index already exists")
 
     data = prepare_dataset()
-
-    data.id = data.id.map(lambda x : x.split("-")[0])
-
-    RAG = RAGMultiModalModel.from_index(index_path="finqa", device="cuda")
-
-    missing_files = []
-
-    with gzip.open('.byaldi/finqa/metadata.json.gz', 'rt') as file:
-        files_ = file.read()
-        files_ = json.loads(files_)
-
-    index_files = set({f'{value["Company"]}/{value["Year"]}/{value["Filename"]}' for value in files_.values()})
-
-    data = data[data.id.isin(index_files)]
+    
+    RAG = RAGMultiModalModel.from_index(index_path="finance_bench", device="cuda")
 
     results = await generate(data, RAG)
     results.to_csv("results/colpali.csv", index=True)

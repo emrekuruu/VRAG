@@ -79,14 +79,16 @@ async def process_file(file_key):
         s3.download_file(BUCKET_NAME, file_key, local_file_path)
 
         # Process the downloaded file with RAG
-        await asyncio.to_thread(
-            RAG.add_to_index,
-            input_item=local_file_path,  # Use the local file path here
-            store_collection_with_index=True,
-            metadata={"Company": company, "Year": year, "Type": type_},
-        )
+        try:
+            await asyncio.to_thread(
+                RAG.add_to_index,
+                input_item=local_file_path,  # Use the local file path here
+                store_collection_with_index=True,
+                metadata={"Company": company, "Year": year, "Type": type_},
+            )
+        except:
+            print(file_key)
 
-        # Clean up the local file after processing
         if os.path.exists(local_file_path):
             os.remove(local_file_path)
 
@@ -128,7 +130,31 @@ def upload_directory_to_s3(local_dir, bucket, s3_prefix):
             s3.upload_file(local_file_path, bucket, s3_key)
 
 # Main async function
+# Main async function
 async def main():
+    global RAG
+
+    # Step 1: Initialize the RAG model
+    RAG = RAGMultiModalModel.from_pretrained("vidore/colqwen2-v1.0", device="cuda")
+
+    # Step 2: Initialize the index using the temp folder
+    print("Initializing the index with the temp folder...")
+    download_s3_folder(prefix="temp/", local_dir=TEMP_DIR)
+    RAG.index(
+        input_path=TEMP_DIR,
+        index_name="finance_bench",
+        overwrite=True,
+    )
+    print("Index initialized successfully.")
+
+    # Step 3: Process all files in the bucket
+    print("Processing all files in the bucket...")
+    start_time = time.time()
+    await process_all()
+    end_time = time.time()
+
+    print(f"Execution time: {end_time - start_time} seconds")
+
     print("Uploading the .byaldi index directory to S3...")
     index_dir_path = os.path.join(os.getcwd(), ".byaldi")  # Current working directory
 
