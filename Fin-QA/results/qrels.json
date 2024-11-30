@@ -1,0 +1,71 @@
+{
+    "ADI/2009/page_49.pdf": {
+        "ADI/2009/page_59.pdf": 19.25,
+        "ADI/2009/page_70.pdf": 19.25,
+        "ADI/2009/page_132.pdf": 19.0,
+        "ADI/2009/page_34.pdf": 19.0,
+        "ADI/2009/page_104.pdf": 18.625
+    },
+    "ABMD/2012/page_75.pdf": {
+        "ABMD/2012/page_75.pdf": 28.25,
+        "ABMD/2012/page_110.pdf": 26.75,
+        "ABMD/2012/page_254.pdf": 26.375,
+        "ABMD/2012/page_60.pdf": 25.75,
+        "ABMD/2012/page_103.pdf": 25.625
+    },
+    "AAL/2018/page_13.pdf": {
+        "AAL/2018/page_70.pdf": 19.5,
+        "AAL/2018/page_33.pdf": 18.5,
+        "AAL/2018/page_57.pdf": 18.25,
+        "AAL/2018/page_46.pdf": 18.125,
+        "AAL/2018/page_105.pdf": 18.0
+    },
+    "INTC/2013/page_71.pdf": {
+        "INTC/2013/page_71.pdf": 27.125,
+        "INTC/2013/page_93.pdf": 24.625,
+        "INTC/2013/page_72.pdf": 23.25,
+        "INTC/2013/page_48.pdf": 21.75,
+        "INTC/2013/page_86.pdf": 21.5
+    },
+    "ETR/2008/page_313.pdf": {
+        "ETR/2008/page_28.pdf": 20.0,
+        "ETR/2008/page_355.pdf": 19.75,
+        "ETR/2008/page_16.pdf": 19.75,
+        "ETR/2008/page_27.pdf": 19.75,
+        "ETR/2008/page_266.pdf": 19.625
+    },
+    "C/2010/page_272.pdf": {
+        "C/2010/page_207.pdf": 25.0,
+        "C/2010/page_272.pdf": 24.5,
+        "C/2010/page_243.pdf": 24.125,
+        "C/2010/page_183.pdf": 23.125,
+        "C/2010/page_120.pdf": 22.875
+    },
+    "AMT/2012/page_121.pdf": {
+        "AMT/2012/page_121.pdf": 22.625,
+        "AMT/2012/page_104.pdf": 22.25,
+        "AMT/2012/page_122.pdf": 22.125,
+        "AMT/2012/page_126.pdf": 22.125,
+        "AMT/2012/page_127.pdf": 21.875
+    },
+    "GIS/2019/page_45.pdf": {
+        "GIS/2019/page_33.pdf": 21.25,
+        "GIS/2019/page_39.pdf": 21.0,
+        "GIS/2019/page_58.pdf": 20.75,
+        "GIS/2019/page_28.pdf": 20.5,
+        "GIS/2019/page_45.pdf": 20.375
+    },
+    "IPG/2009/page_89.pdf": {
+        "IPG/2009/page_89.pdf": 18.875,
+        "IPG/2009/page_93.pdf": 19.5,
+        "IPG/2009/page_99.pdf": 19.125,
+        "IPG/2009/page_92.pdf": 18.375
+    },
+    "CDNS/2018/page_32.pdf": {
+        "CDNS/2018/page_43.pdf": 22.875,
+        "CDNS/2018/page_77.pdf": 22.5,
+        "CDNS/2018/page_51.pdf": 22.125,
+        "CDNS/2018/page_153.pdf": 21.875,
+        "CDNS/2018/page_86.pdf": 21.75
+    }
+}

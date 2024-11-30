@@ -19,8 +19,10 @@ logging.basicConfig(
 
 semaphore = asyncio.Semaphore(16)
 
+os.environ["OCR_AGENT"] = "unstructured.partition.utils.ocr_models.paddle_ocr.OCRAgentPaddle"
+
 # AWS S3 Configuration
-BUCKET_NAME = "colpali_docs"  
+BUCKET_NAME = "colpali-docs"  
 REGION_NAME = "eu-central-1" 
 TEMP_DIR = "/tmp/docs/temp"  
 key_folder = "../keys" 
@@ -123,6 +125,7 @@ async def process_file(file_key):
                     chunks.remove(chunk)
 
                 if chunk.category == "Table":
+                    
                     try:
                         previous_chunk = chunks[i-1]
                         caption = previous_chunk.text.split("\n")[-1]
@@ -148,7 +151,7 @@ async def process_file(file_key):
 
         return documents
 
-async def process_all(batch_size=1000):
+async def process_all(batch_size=10):
     tasks = []
     docs = {}
 
@@ -176,7 +179,10 @@ async def process_all(batch_size=1000):
         batch_results = await asyncio.gather(*batch_tasks)
         batch_results = [result for result in batch_results if result is not None]
 
-        docs.update(batch_results)
+        for result in batch_results:
+            if result:
+                docs.update(result)
+
         with open("processed_documents.pkl", "wb") as f:
             pickle.dump(docs, f)
 
@@ -186,16 +192,14 @@ async def process_all(batch_size=1000):
 
 
 async def main():
+
     output_file = "processed_documents.pkl"
 
     with open(output_file, "wb") as file:
         pass 
 
     logging.info("Starting document processing...")
-    documents = await process_all()
-    
-    with open(output_file, "wb") as f:
-        pickle.dump(documents, f)
+    await process_all()
 
     logging.info(f"Document processing completed. Results saved to {output_file}")
 

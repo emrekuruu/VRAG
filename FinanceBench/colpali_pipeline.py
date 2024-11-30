@@ -20,6 +20,8 @@ logging.basicConfig(
 
 semaphore = asyncio.Semaphore(16)
 
+key_folder = "../keys"
+
 with open('../keys/hf_key.txt', 'r') as file:
     hf_key = file.read().strip()
 
@@ -30,16 +32,26 @@ os.environ["HF_TOKEN"] = hf_key
 os.environ["OPENAI_API_KEY"] = openai_key
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
+BUCKET_NAME = "finance-bench"  # Replace with your bucket name
 REGION_NAME = "eu-central-1"  # Replace with your bucket's region
 TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
 
+# Read the AWS Access Key
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+# Read the AWS Secret Key
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
+# Initialize boto3 client with credentials
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
-    aws_access_key_id="",
-    aws_secret_access_key=""
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
+
 
 def prepare_dataset():
     data = load_dataset("PatronusAI/financebench")["train"].to_pandas()
@@ -53,10 +65,20 @@ async def process_item(data, idx, RAG):
     company = data.loc[idx, "Company"]
     year = data.loc[idx, "Year"]
     type_ = data.loc[idx, "Type"]
+    
+    if company == "JOHNSON":
+        company = "JOHNSON & JOHNSON"
+        year = data.loc[idx, 'doc_name'].str.split('_', expand=True)[3]
+        type_ = data.loc[idx, 'doc_name'].str.split('_', expand=True)[4]
 
     # Perform retrieval asynchronously
-    retrieved = await asyncio.to_thread(RAG.search, query, k=1, filter_metadata={"Company": company, "Year": year, "Type": type_})
-
+    try:
+        retrieved = await asyncio.to_thread(RAG.search, query, k=1, filter_metadata={"Company": company, "Year": year, "Type": type_ + ".pdf"})
+    except Exception as e:
+        print(data.loc[idx, "question"])
+        print(company, year, type_)
+        return idx, []
+    
     # Populate the results
     retrieved_context = f"{company}/{year}/{type_}/{retrieved[0].page_num}"
 
@@ -115,7 +137,7 @@ async def main():
 
     data = prepare_dataset()
     
-    RAG = RAGMultiModalModel.from_index(index_path="finance_bench", device="cuda")
+    RAG = RAGMultiModalModel.from_index(index_path="finance_bench", device="mps")
 
     results = await generate(data, RAG)
     results.to_csv("results/colpali.csv", index=True)
