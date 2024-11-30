@@ -19,8 +19,6 @@ logging.basicConfig(
 
 semaphore = asyncio.Semaphore(16)
 
-os.environ["OCR_AGENT"] = "unstructured.partition.utils.ocr_models.paddle_ocr.OCRAgentPaddle"
-
 # AWS S3 Configuration
 BUCKET_NAME = "colpali-docs"  
 REGION_NAME = "eu-central-1" 
