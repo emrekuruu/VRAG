@@ -10,7 +10,7 @@ import logging
 
 # Configure logging
 logging.basicConfig(
-    filename="retrieval.log",
+    filename="colpali_retrieval.log",
     filemode="a",
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO
@@ -43,6 +43,7 @@ def prepare_dataset():
     data = data[["id", "question", "answer", "gold_inds"]]
     data["Company"] = [row[0] for row in data.id.str.split("/")]
     data["Year"] = [row[1] for row in data.id.str.split("/")]
+    data.id = data.id.map(lambda x: x.split("-")[0])
     return data
 
 async def process_item_qrels(data, idx, RAG):
@@ -59,7 +60,7 @@ async def process_item_qrels(data, idx, RAG):
     # Log the successful retrieval
     logging.info(f"Retrieved qrels for index {idx}")
 
-    return data.loc[idx, "id"], qrels
+    return idx, qrels
 
 async def generate_qrels(data, RAG):
     qrels = {}
@@ -98,17 +99,13 @@ async def main():
         print("Index already exists")
 
     data = prepare_dataset()
-    data.id = data.id.map(lambda x: x.split("-")[0])
 
-    RAG = RAGMultiModalModel.from_index(index_path="finqa", device="cpu")
-
-    data = data.iloc[0:10]
-
+    RAG = RAGMultiModalModel.from_index(index_path="finqa", device="cuda")
     # Generate qrels
     qrels = await generate_qrels(data, RAG)
 
     # Save qrels to a JSON file for later use
-    with open("results/qrels.json", "w") as f:
+    with open("results/colpali_qrels.json", "w") as f:
         json.dump(qrels, f, indent=4)
 
     print("Qrels saved to results/qrels.json")

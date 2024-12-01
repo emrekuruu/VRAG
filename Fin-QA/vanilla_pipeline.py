@@ -14,8 +14,7 @@ from pydantic import BaseModel, Field
 import pickle
 from math import ceil 
 import logging
-import gzip
-
+import json
 
 # Configure logging
 logging.basicConfig(
@@ -25,19 +24,19 @@ logging.basicConfig(
     level=logging.INFO  # Log level
 )
 
-semaphore = asyncio.Semaphore(16)
+semaphore = asyncio.Semaphore(8)
 
 # Load API key
-with open("keys/openai_api_key.txt", "r") as file:
+with open("../keys/openai_api_key.txt", "r") as file:
     openai_key = file.read().strip()
 
 
-with open("keys/voyage_api_key.txt",  "r") as file:
+with open("../keys/voyage_api_key.txt",  "r") as file:
     voyage_api_key = file.read().strip()
 
 
 class Embedder:
-    def __init__(self, batch_size=128):
+    def __init__(self, batch_size=64):
         self.batch_size = batch_size  
 
     def embed_document(self, text):
@@ -82,21 +81,14 @@ def prepare_dataset():
     return data
 
 def read_pickle_file(filename):
-    """Read all objects from a pickle file that contains multiple appended objects."""
-    data = []
-    try:
-        with open(filename, "rb") as file:
-            while True:
-                try:
-                    # Load each pickled object
-                    batch = pickle.load(file)
-                    data.extend(batch)  # Add batch data to the result list
-                except EOFError:
-                    # End of file reached
-                    break
-    except Exception as e:
-        print(f"Error reading the pickle file: {e}")
-    return data
+
+    with open(filename, "rb") as f:
+        documents = pickle.load(f)
+
+    documents = { k: v for k, v in documents.items() if len(v) > 0 }
+    chunks = [doc for key, docs in documents.items() for doc in docs if doc.page_content is not None]
+
+    return chunks
     
 def create_db(chunks):
     
@@ -135,7 +127,7 @@ def create_db(chunks):
 def sigmoid(x):
     return 1 / (1 + torch.exp(-torch.tensor(x)))
 
-def rerank(query, documents, ids, top_k=1):
+def rerank(query, documents, ids, top_k=5):
     scores = {}
     reranking = vo.rerank(query=query, documents=documents, model="rerank-2-lite", top_k=len(documents))
 
@@ -157,18 +149,25 @@ async def process_item(data, idx, chroma_db):
     
     # Retrieve and rerank
     retrieved_docs = await asyncio.to_thread( retriever.invoke, query)
-    retrieved = rerank(query, [doc.page_content for doc in retrieved_docs], [doc.metadata["Company"] + "/" + doc.metadata["Year"] + "/" + doc.metadata["Filename"] for doc in retrieved_docs])
+    try:
+        retrieved = await asyncio.to_thread(
+                        rerank,
+                        query,
+                        [doc.page_content for doc in retrieved_docs],
+                        [doc.metadata["Company"] + "/" + doc.metadata["Year"] + "/" + doc.metadata["Filename"] for doc in retrieved_docs]
+                    )
+    except Exception as e:
+        logging.error(f"Error processing index {idx}: {e}")
+        retrieved = {}
 
-    retrieved_context = list(retrieved.keys())[0]
     logging.info(f"Retrieved context for index {idx}")
 
-    return idx, retrieved_context
+    return idx, retrieved
 
 
 async def process_all(data, chroma_db):
 
-    # Initialize the results DataFrame
-    results = pd.DataFrame(columns=["Retrieved Context"], index=data.index)
+    qrels = {}
 
     # Create tasks for processing each item
     tasks = [process_item(data, idx, chroma_db) for idx in data.index]
@@ -176,20 +175,25 @@ async def process_all(data, chroma_db):
     # Gather results asynchronously
     results_list = await asyncio.gather(*tasks)
 
-    # Populate the results DataFrame
-    for idx, retrieved_context in results_list:
-        results.loc[idx, "Retrieved Context"] = retrieved_context
+    # Populate the qrels dictionary
+    for query_id, retrieved_qrels in results_list:
+        qrels[query_id] = retrieved_qrels
 
-    return results
+    return qrels
     
-
 async def main():
     data = prepare_dataset()
-    docs = (read_pickle_file("processed_documents.pkl"))
-    chunks = [chunk for file, chunks in docs for chunk in chunks if chunk.page_content.strip() != ""]
+    chunks = read_pickle_file("processed_documents.pkl")
     chroma_db = create_db(chunks)
-    results = await process_all(data, chroma_db)
-    results.to_csv("results/vanilla.csv", index=True)
+
+    # Generate qrels
+    qrels = await process_all(data, chroma_db)
+
+    # Save qrels to a JSON file for later use
+    with open("results/vanilla_qrels.json", "w") as f:
+        json.dump(qrels, f, indent=4)
+
+    print("Qrels saved to results/qrels.json")
     
 if __name__ == "__main__":
     asyncio.run(main())

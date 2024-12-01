@@ -149,7 +149,7 @@ async def process_file(file_key):
 
         return documents
 
-async def process_all(batch_size=10):
+async def process_all(batch_size=1000):
     tasks = []
     docs = {}
 

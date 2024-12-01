@@ -25,9 +25,10 @@ pypdf2 = "^3.0.1"
 pytesseract = "^0.3.13"
 boto3 = "^1.35.68"
 langchain-experimental = "^0.3.3"
-pymupdf = "^1.24.14"
 unstructured = "^0.16.8"
 unstructured-inference = "^0.8.1"
+unstructured-pytesseract = "^0.3.13"
+pymupdf = "^1.24.14"
 pi-heif = "^0.21.0"
 
 [tool.poetry.group.dev.dependencies]
@@ -42,7 +43,6 @@ priority = "primary"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
 
 [tool.mypy]
 ignore_missing_imports = true
