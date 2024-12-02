@@ -145,7 +145,15 @@ async def process_item(data, idx, chroma_db):
 
     # Initialize retriever
     retriever = chroma_db.as_retriever(
-        search_kwargs={"k": 20, "filter": {"$and": [{"Company": company}, {"Year": year}]}}
+        search_kwargs={
+            "k": 20,
+            "filter": {
+                "$and": [
+                    {"Company": company},
+                    {"Year": year},
+                ]
+            }
+        }
     )
 
     max_retries = 5  # Maximum number of retries
@@ -156,6 +164,8 @@ async def process_item(data, idx, chroma_db):
             # Retrieve documents
             retrieved_docs = await asyncio.to_thread(retriever.invoke, query)
             
+            logging.info(f"Retrieved documents {retrieved_docs} for index {idx} on attempt {attempt + 1}")
+
             # Rerank the retrieved documents
             retrieved = await asyncio.to_thread(
                 rerank,
@@ -186,12 +196,10 @@ async def process_item(data, idx, chroma_db):
     return idx, {}
 
 
-async def process_all(data, chroma_db):
-
-    qrels = {}
+async def process_all(data, chroma_db, qrels):
 
     # Create tasks for processing each item
-    tasks = [process_item(data, idx, chroma_db) for idx in data.index]
+    tasks = [process_item(data, idx, chroma_db) for idx in data.index if str(idx) not in qrels.keys()]
 
     # Gather results asynchronously
     results_list = await asyncio.gather(*tasks)
@@ -203,12 +211,18 @@ async def process_all(data, chroma_db):
     return qrels
     
 async def main():
+    
     data = prepare_dataset()
     chunks = read_pickle_file("processed_documents.pkl")
     chroma_db = create_db(chunks)
 
+    with open("results/vanilla_qrels.json", "r") as f:
+        qrels = json.load(f)
+
+    qrels = {k: v for k, v in qrels.items() if len(v) > 0}
+
     # Generate qrels
-    qrels = await process_all(data, chroma_db)
+    qrels = await process_all(data, chroma_db, qrels)
 
     # Save qrels to a JSON file for later use
     with open("results/vanilla_qrels.json", "w") as f:

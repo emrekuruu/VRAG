@@ -147,10 +147,21 @@ async def process_item(data, idx, chroma_db):
     year = data.loc[idx, "Year"]
 
     # Initialize retriever
-    retriever = chroma_db.as_retriever(search_kwargs={"k": 20, "filter": {"$and": [{"Company": company}, {"Year": year}]}})
-    
+    retriever = chroma_db.as_retriever(
+        search_kwargs={
+            "k": 20,
+            "filter": {
+                "$and": [
+                    {"Company": company},
+                    {"Year": year},
+                    {"page_content": {"$ne": ""}}  # Ensure 'page_content' is not empty
+                ]
+            }
+        }
+    )
+
     # Retrieve and rerank
-    retrieved_docs = await asyncio.to_thread( retriever.invoke, query)
+    retrieved_docs = await asyncio.to_thread(retriever.invoke, query)
     retrieved = rerank(query, [doc.page_content for doc in retrieved_docs], [doc.metadata["Company"] + "/" + doc.metadata["Year"] + "/" + doc.metadata["Filename"] for doc in retrieved_docs])
 
     retrieved_context = list(retrieved.keys())[0]

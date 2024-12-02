@@ -141,8 +141,21 @@ async def process_file(file_key):
                 documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Company": company, "Year": year, "Filename": filename}))
 
         except Exception as e:
-            print(f"Failed to extract text from {file_key}: {e}")
+            logging.error(f"Failed to extract text from {file_key}: {e} with table detection, retrying without table detection")
+            try:
+                
+                elements = await asyncio.to_thread(partition_pdf, filename=local_file_path, strategy="hi_res")
 
+                chunks = chunk_by_title(
+                    elements,
+                    combine_text_under_n_chars=1500, 
+                    max_characters=int(1e6),          
+                )
+                
+                for chunk in chunks:
+                    documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Company": company, "Year": year, "Filename": filename}))        
+            except:
+                logging.error(f"Failed to extract text from {file_key}: {e} even without table detection")
         finally:
             if os.path.exists(local_file_path):
                 os.remove(local_file_path)
@@ -188,16 +201,57 @@ async def process_all(batch_size=1000):
 
     return docs
 
+async def process_missing(docs, missing_files, batch_size = 100):
+    tasks = []
+
+    for file_key in missing_files:
+        tasks.append(asyncio.create_task(process_file(file_key)))
+
+    total_tasks = len(tasks)
+    for i in range(0, total_tasks, batch_size):
+        batch_tasks = tasks[i:i + batch_size]
+
+        batch_results = await asyncio.gather(*batch_tasks)
+        batch_results = [result for result in batch_results if result is not None]
+
+        for result in batch_results:
+            if result:
+                docs.update(result)
+
+        with open("processed_documents.pkl", "wb") as f:
+            pickle.dump(docs, f)
+
+        logging.info(f"Processed {i + len(batch_results)} out of {total_tasks} documents")
+
+    return docs
 
 async def main():
 
     output_file = "processed_documents.pkl"
 
-    with open(output_file, "wb") as file:
-        pass 
+    with open(output_file, "rb") as file:
+        docs = pickle.load(file)
+
+    with open("vanilla_missing_files.txt", "r") as file:
+        missing_files = [line.strip() for line in file.readlines()]
 
     logging.info("Starting document processing...")
-    await process_all()
+    await process_missing(docs, missing_files)
+
+    logging.info(f"Document processing completed. Results saved to {output_file}")
+
+async def fill_missing():
+
+    output_file = "processed_documents.pkl"
+
+    with open(output_file, "rb") as file:
+        docs = pickle.load(file)
+
+    with open("vanilla_missing_files.txt", "r") as file:
+        missing_files = [line.strip() for line in file.readlines()]
+
+    logging.info("Starting document processing...")
+    await process_missing(docs, missing_files)
 
     logging.info(f"Document processing completed. Results saved to {output_file}")
 

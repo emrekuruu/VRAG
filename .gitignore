@@ -4,7 +4,6 @@ docs/
 .byaldi/
 **/__pycache__/
 .chroma/
-**.txt
 keys/
 finqa/
 **.log
