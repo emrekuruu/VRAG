@@ -139,30 +139,51 @@ def rerank(query, documents, ids, top_k=5):
     return {id: score for id, score in top_scorers}
 
 async def process_item(data, idx, chroma_db):
-
     query = data.loc[idx, "question"]
     company = data.loc[idx, "Company"]
     year = data.loc[idx, "Year"]
 
     # Initialize retriever
-    retriever = chroma_db.as_retriever(search_kwargs={"k": 20, "filter": {"$and": [{"Company": company}, {"Year": year}]}})
+    retriever = chroma_db.as_retriever(
+        search_kwargs={"k": 20, "filter": {"$and": [{"Company": company}, {"Year": year}]}}
+    )
+
+    max_retries = 5  # Maximum number of retries
+    retry_delay = 5  # Initial delay between retries (in seconds)
     
-    # Retrieve and rerank
-    retrieved_docs = await asyncio.to_thread( retriever.invoke, query)
-    try:
-        retrieved = await asyncio.to_thread(
-                        rerank,
-                        query,
-                        [doc.page_content for doc in retrieved_docs],
-                        [doc.metadata["Company"] + "/" + doc.metadata["Year"] + "/" + doc.metadata["Filename"] for doc in retrieved_docs]
-                    )
-    except Exception as e:
-        logging.error(f"Error processing index {idx}: {e}")
-        retrieved = {}
+    for attempt in range(max_retries):
+        try:
+            # Retrieve documents
+            retrieved_docs = await asyncio.to_thread(retriever.invoke, query)
+            
+            # Rerank the retrieved documents
+            retrieved = await asyncio.to_thread(
+                rerank,
+                query,
+                [doc.page_content for doc in retrieved_docs],
+                [doc.metadata["Company"] + "/" + doc.metadata["Year"] + "/" + doc.metadata["Filename"] for doc in retrieved_docs]
+            )
+            
+            # Log and return the result if successful
+            logging.info(f"Retrieved context for index {idx} on attempt {attempt + 1}")
+            return idx, retrieved
 
-    logging.info(f"Retrieved context for index {idx}")
+        except Exception as e:
+            logging.error(f"Error processing index {idx} on attempt {attempt + 1}: {e}")
 
-    return idx, retrieved
+            # Check if it's a rate limit error and retry
+            if "limit" in str(e).lower():
+                wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
+                logging.warning(f"Rate limit hit. Retrying in {wait_time} seconds...")
+                await asyncio.sleep(wait_time)
+            else:
+                # For non-rate-limit errors, fail immediately
+                logging.error(f"Non-recoverable error at index {idx}: {e}")
+                return idx, {}
+
+    # If all retries fail, log and return an empty result
+    logging.error(f"Failed to process index {idx} after {max_retries} attempts.")
+    return idx, {}
 
 
 async def process_all(data, chroma_db):
