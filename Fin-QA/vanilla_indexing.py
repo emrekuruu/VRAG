@@ -9,6 +9,8 @@ from langchain_core.documents import Document
 from unstructured.partition.pdf import partition_pdf
 from unstructured.chunking.title import chunk_by_title
 import logging 
+from pdf2image import convert_from_path
+from pytesseract import image_to_string
 
 logging.basicConfig(
     filename="chunking.log",  # Log file
@@ -109,7 +111,7 @@ async def process_file(file_key):
             elapsed_time += 0.5
 
         try:
-            elements = await asyncio.to_thread(partition_pdf, filename=local_file_path, strategy="hi_res", infer_table_structure=True)
+            elements = await asyncio.to_thread(partition_pdf, filename=local_file_path, strategy="ocr_only", infer_table_structure=True)
 
             chunks = chunk_by_title(
                 elements,
@@ -143,17 +145,9 @@ async def process_file(file_key):
         except Exception as e:
             logging.error(f"Failed to extract text from {file_key}: {e} with table detection, retrying without table detection")
             try:
-                
-                elements = await asyncio.to_thread(partition_pdf, filename=local_file_path, strategy="hi_res")
-
-                chunks = chunk_by_title(
-                    elements,
-                    combine_text_under_n_chars=1500, 
-                    max_characters=int(1e6),          
-                )
-                
-                for chunk in chunks:
-                    documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Company": company, "Year": year, "Filename": filename}))        
+                pages = convert_from_path(local_file_path, dpi=300)
+                chunk = image_to_string(pages[0])
+                documents[file_key].append(Document(page_content=chunk, metadata={"category": "Page", "Company": company, "Year": year, "Filename": filename}))  
             except:
                 logging.error(f"Failed to extract text from {file_key}: {e} even without table detection")
         finally:
