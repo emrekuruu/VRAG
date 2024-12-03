@@ -10,7 +10,7 @@ import logging
 
 # Configure logging
 logging.basicConfig(
-    filename="retrieval.log",
+    filename="colpali_retrieval.log",
     filemode="a",
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO
@@ -37,7 +37,6 @@ s3 = boto3.client(
 )
 
 def prepare_dataset():
-
     def process_qa_id(qa_id):
         splitted = qa_id.split(".")[0]
         return splitted.split("_")[0] + "/" + splitted.split("_")[1] + "/" + splitted.split("_")[2] + "_" + splitted.split("_")[3] + ".pdf"
@@ -47,7 +46,7 @@ def prepare_dataset():
     data["Company"] = [row[0] for row in data.qa_id.str.split("/")]
     data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
     data = data.rename(columns={"qa_id": "id"})
-    return data
+    return data 
 
 async def process_item_qrels(data, idx, RAG):
     query = data.loc[idx, "question"]
@@ -63,7 +62,7 @@ async def process_item_qrels(data, idx, RAG):
     # Log the successful retrieval
     logging.info(f"Retrieved qrels for index {idx}")
 
-    return data.loc[idx, "id"], qrels
+    return idx, qrels
 
 async def generate_qrels(data, RAG):
     qrels = {}
@@ -102,15 +101,13 @@ async def main():
         print("Index already exists")
 
     data = prepare_dataset()
-    data.id = data.id.map(lambda x: x.split("-")[0])
 
-    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="cpu")
-
+    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="cuda")
     # Generate qrels
     qrels = await generate_qrels(data, RAG)
 
     # Save qrels to a JSON file for later use
-    with open("results/qrels.json", "w") as f:
+    with open("results/colpali_qrels.json", "w") as f:
         json.dump(qrels, f, indent=4)
 
     print("Qrels saved to results/qrels.json")
