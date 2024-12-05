@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import asyncio
-import gzip
 import json
 import boto3
 from datasets import load_dataset
