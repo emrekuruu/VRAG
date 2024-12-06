@@ -19,7 +19,7 @@ logging.basicConfig(
 semaphore = asyncio.Semaphore(16)
 
 # AWS S3 Configuration
-BUCKET_NAME = "table-vqa"
+BUCKET_NAME = "colpali-docs"
 REGION_NAME = "eu-central-1"
 TEMP_DIR = "/tmp/docs/temp"
 key_folder = "../keys"

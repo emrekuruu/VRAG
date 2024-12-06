@@ -2,12 +2,12 @@ import os
 import asyncio
 import logging
 import voyageai
-import fitz
 from PIL import Image
 import json
 import numpy as np
 import faiss
 from datasets import load_dataset
+import pandas as pd 
 
 logging.basicConfig(
     filename="retrieval.log",
@@ -121,15 +121,13 @@ async def process_queries(data, faiss_db):
     return qrels
 
 def prepare_dataset():
-    def process_qa_id(qa_id):
-        splitted = qa_id.split(".")[0]
-        return splitted.split("_")[0] + "/" + splitted.split("_")[1] + "/" + splitted.split("_")[2] + "_" + splitted.split("_")[3] + ".pdf"
-
-    data = load_dataset("terryoo/TableVQA-Bench")["fintabnetqa"].to_pandas()[["qa_id", "question", "gt"]]
-    data.qa_id = data.qa_id.apply(process_qa_id)
-    data["Company"] = [row[0] for row in data.qa_id.str.split("/")]
-    data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
-    data = data.rename(columns={"qa_id": "id"})
+    dataset = load_dataset("ibm/finqa", trust_remote_code=True)
+    data = pd.concat([dataset['train'].to_pandas(), dataset['validation'].to_pandas(), dataset['test'].to_pandas()])
+    data.reset_index(drop=True, inplace=True)
+    data = data[["id", "question", "answer", "gold_inds"]]
+    data["Company"] = [row[0] for row in data.id.str.split("/")]
+    data["Year"] = [row[1] for row in data.id.str.split("/")]
+    data.id = data.id.map(lambda x: x.split("-")[0])
     return data
 
 async def main():
