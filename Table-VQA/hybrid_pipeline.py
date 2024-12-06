@@ -56,8 +56,8 @@ def main(vanilla_file, colpali_file, output_file):
 
 
 if __name__ == "__main__":
-    vanilla_file = "results/colpali_qrels.json"
-    colpali_file = "results/voyage_qrels.json"
+    vanilla_file = "results/voyage_qrels.json"
+    colpali_file = "results/colpali_qrels.json"
     output_file = "results/hybrid_qrels.json"
     
     # Combine Qrels
