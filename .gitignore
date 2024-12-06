@@ -9,3 +9,5 @@ finqa/
 **.log
 **.ipynb
 **.pkl
+**/faiss_index.bin
+**/metadata.json

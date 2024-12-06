@@ -216,10 +216,7 @@ async def main():
     chunks = read_pickle_file("processed_documents.pkl")
     chroma_db = create_db(chunks)
 
-    with open("results/vanilla_qrels.json", "r") as f:
-        qrels = json.load(f)
-
-    qrels = {k: v for k, v in qrels.items() if len(v) > 0}
+    qrels = {}
 
     # Generate qrels
     qrels = await process_all(data, chroma_db, qrels)

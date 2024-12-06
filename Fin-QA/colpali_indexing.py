@@ -14,7 +14,19 @@ TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
 concurrency_limit = 8
 semaphore = asyncio.Semaphore(concurrency_limit)
 
-# Initialize boto3 client with credentials
+# AWS S3 Configuration
+BUCKET_NAME = "colpali-docs"
+REGION_NAME = "eu-central-1"
+TEMP_DIR = "/tmp/docs/temp"
+
+key_folder = "../keys" 
+
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+    
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
