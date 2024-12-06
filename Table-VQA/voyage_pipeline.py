@@ -19,11 +19,9 @@ logging.basicConfig(
 semaphore = asyncio.Semaphore(16)
 
 # AWS Configuration
-BUCKET_NAME = "table-vqa"
-REGION_NAME = "eu-central-1"
 key_folder = "../keys"
 
-with open("../keys/voyage_api_key.txt", "r") as file:
+with open(f"{key_folder}/voyage_api_key.txt", "r") as file:
     voyage_api_key = file.read().strip()
 
 vo = voyageai.AsyncClient(api_key=voyage_api_key)
@@ -35,47 +33,60 @@ class FaissWithMetadata:
             self.metadata = json.load(f)
 
     def search(self, query_embedding, k=5, metadata_filter=None):
-        # Perform FAISS similarity search
+        # Filter metadata first
+        filtered_ids = [
+            doc_id for doc_id, meta in self.metadata.items()
+            if not metadata_filter or all(meta.get(key) == value for key, value in metadata_filter.items())
+        ]
+
+        if not filtered_ids:
+            return []  # Return empty if no documents match the filter
+
+        # Get embeddings for filtered IDs
+        filtered_embeddings = np.array([
+            self.index.reconstruct(self._get_index_for_id(doc_id))
+            for doc_id in filtered_ids
+        ]).astype("float32")
+
+        # Create a temporary FAISS index for the filtered embeddings
+        temp_index = faiss.IndexFlatL2(filtered_embeddings.shape[1])
+        temp_index.add(filtered_embeddings)
+
+        # Search on the temporary index
         query_np = np.array([query_embedding]).astype("float32")
-        distances, indices = self.index.search(query_np, k)
+        distances, indices = temp_index.search(query_np, k)
 
-        # Retrieve metadata for the top-k results
-        results = []
-        for dist, idx in zip(distances[0], indices[0]):
-            if idx == -1:  # Ignore empty results
-                continue
-
-            # Get the document ID
-            doc_id = list(self.metadata.keys())[idx]
-            metadata = self.metadata[doc_id]
-
-            # Apply metadata filtering
-            if metadata_filter:
-                if all(metadata.get(key) == value for key, value in metadata_filter.items()):
-                    results.append({"id": doc_id, "distance": dist, "metadata": metadata})
-            else:
-                results.append({"id": doc_id, "distance": dist, "metadata": metadata})
+        # Retrieve metadata for results
+        results = [
+            {
+                "id": filtered_ids[idx],
+                "distance": dist,
+                "metadata": self.metadata[filtered_ids[idx]],
+            }
+            for dist, idx in zip(distances[0], indices[0]) if idx != -1
+        ]
 
         return results
+
+    def _get_index_for_id(self, doc_id):
+        """Helper to find the index of a document ID."""
+        return list(self.metadata.keys()).index(doc_id)
 
 class Embedder:
     def __init__(self):
         pass
 
     async def embed_query(self, query):
-
         embedding_obj = await vo.multimodal_embed(
-                        inputs=[[query]],
-                        model="voyage-multimodal-3",
-                        input_type="query"
-                    )
-        
+            inputs=[[query]],
+            model="voyage-multimodal-3",
+            input_type="query"
+        )
         return embedding_obj.embeddings[0]
-    
+
 embedder = Embedder()
 
 async def process_query(data, idx, faiss_db):
-    
     try:
         query = data.loc[idx, "question"]
         company = data.loc[idx, "Company"]
@@ -84,13 +95,17 @@ async def process_query(data, idx, faiss_db):
         # Embed the query
         query_embedding = await embedder.embed_query(query)
 
+        # Perform search with metadata filtering
         results = faiss_db.search(query_embedding, k=5, metadata_filter={"Company": company, "Year": year})
 
+        # Construct QRELs
         qrels = {
             idx: {
-                ( result["metadata"]["Company"] + "/" + result["metadata"]["Year"] + "/" + result["metadata"]["Filename"] ) : float(result["distance"]) for result in results
+                (result["metadata"]["Company"] + "/" + result["metadata"]["Year"] + "/" + result["metadata"]["Filename"]): 1 / (1 + float(result["distance"]))
+                for result in results
             }
         }
+
     except Exception as e:
         logging.error(f"Error processing query {idx}: {e}")
         qrels = {idx: {}}
@@ -100,11 +115,9 @@ async def process_query(data, idx, faiss_db):
 async def process_queries(data, faiss_db):
     qrels = {}
     tasks = [process_query(data, idx, faiss_db) for idx in data.index]
-
     results_list = await asyncio.gather(*tasks)
     for result in results_list:
         qrels.update(result)
-
     return qrels
 
 def prepare_dataset():
@@ -120,11 +133,10 @@ def prepare_dataset():
     return data
 
 async def main():
-    index_file = "faiss_index.bin"  
-    metadata_file = "metadata.json"  
+    index_file = "faiss_index.bin"
+    metadata_file = "metadata.json"
 
     faiss_db = FaissWithMetadata(index_file=index_file, metadata_file=metadata_file)
-
     data = prepare_dataset()
     qrels = await process_queries(data, faiss_db)
 

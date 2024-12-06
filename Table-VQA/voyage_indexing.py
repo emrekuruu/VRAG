@@ -160,17 +160,10 @@ async def process_all(vector_store, embedder, batch_size=1000):
         if company == "byaldi":
             continue
 
-        if company != "ADS":
-            continue
-
         years = list_s3_files(f"{company}/")
         years = set([key.split('/')[1] for key in years if '/' in key])
 
         for year in years:
-
-            if year != "2007":
-                continue
-
             files = list_s3_files(f"{company}/{year}/")
             for file_key in files:
                 tasks.append(asyncio.create_task(process_file(file_key, vector_store, embedder)))
