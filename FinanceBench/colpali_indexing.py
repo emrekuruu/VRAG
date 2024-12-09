@@ -6,27 +6,27 @@ import time
 from byaldi import RAGMultiModalModel
 
 # AWS S3 Configuration
-BUCKET_NAME = "finance-bench"  # Replace with your bucket name
+BUCKET_NAME = "colpali-docs"  # Replace with your bucket name
 REGION_NAME = "eu-central-1"  # Replace with your bucket's region
 TEMP_DIR = "/tmp/docs/temp"  # Temporary local directory for indexing
-
-# Define the folder path containing the keys
-key_folder = "../keys"  # Replace with the correct path if needed
-
-# Read the AWS Access Key
-with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
-    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
-
-# Read the AWS Secret Key
-with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
-    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
-
 
 # Global variables
 concurrency_limit = 8
 semaphore = asyncio.Semaphore(concurrency_limit)
 
-# Initialize boto3 client with credentials
+# AWS S3 Configuration
+BUCKET_NAME = "colpali-docs"
+REGION_NAME = "eu-central-1"
+TEMP_DIR = "/tmp/docs/temp"
+
+key_folder = "../keys" 
+
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
+
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+    
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
@@ -67,10 +67,8 @@ async def process_file(file_key):
         global RAG
 
         # Extract metadata from the S3 key
-        parts = file_key.split('_')
-        company, year, type_ = parts[0], parts[1], parts[2]
-
-        filename = company + "_" + year + "_" + type_
+        parts = file_key.split('/')
+        company, year, filename = parts[0], parts[1], parts[2]
 
         # Temporary local file path
         local_file_path = f"/tmp/{filename}"
@@ -79,16 +77,14 @@ async def process_file(file_key):
         s3.download_file(BUCKET_NAME, file_key, local_file_path)
 
         # Process the downloaded file with RAG
-        try:
-            await asyncio.to_thread(
-                RAG.add_to_index,
-                input_item=local_file_path,  # Use the local file path here
-                store_collection_with_index=True,
-                metadata={"Company": company, "Year": year, "Type": type_},
-            )
-        except:
-            print(file_key)
+        await asyncio.to_thread(
+            RAG.add_to_index,
+            input_item=local_file_path,  # Use the local file path here
+            store_collection_with_index=True,
+            metadata={"Company": company, "Year": year, "Filename": filename},
+        )
 
+        # Clean up the local file after processing
         if os.path.exists(local_file_path):
             os.remove(local_file_path)
 
@@ -104,9 +100,20 @@ def list_s3_files(prefix=""):
 async def process_all():
     tasks = []
 
-    files = list_s3_files()
-    for file_key in files:
-        tasks.append(asyncio.create_task(process_file(file_key)))
+    companies = list_s3_files()
+    companies = set([key.split('/')[0] for key in companies if '/' in key])
+    companies = ["AAL"]
+
+    for company in companies:
+        years = list_s3_files(f"{company}/")
+        years = set([key.split('/')[1] for key in years if '/' in key])
+        years = ["2014"]
+
+        for year in years:
+            files = list_s3_files(f"{company}/{year}/")
+
+            for file_key in files:
+                tasks.append(asyncio.create_task(process_file(file_key)))
 
     await asyncio.gather(*tasks)
 
@@ -130,7 +137,6 @@ def upload_directory_to_s3(local_dir, bucket, s3_prefix):
             s3.upload_file(local_file_path, bucket, s3_key)
 
 # Main async function
-# Main async function
 async def main():
     global RAG
 
@@ -142,7 +148,7 @@ async def main():
     download_s3_folder(prefix="temp/", local_dir=TEMP_DIR)
     RAG.index(
         input_path=TEMP_DIR,
-        index_name="finance_bench",
+        index_name="finqa",
         overwrite=True,
     )
     print("Index initialized successfully.")

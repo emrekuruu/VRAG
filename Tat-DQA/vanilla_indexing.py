@@ -1,13 +1,17 @@
 import os
+import time
+import boto3
 import asyncio
-import json
-import logging
+import pandas as pd
 import pickle
+from io import StringIO
 from langchain_core.documents import Document
-from langchain_experimental.text_splitter import SemanticChunker
-from langchain_openai.embeddings import OpenAIEmbeddings
+from unstructured.partition.pdf import partition_pdf
+from unstructured.chunking.title import chunk_by_title
+import logging 
+from pdf2image import convert_from_path
+from pytesseract import image_to_string
 
-# Configure logging
 logging.basicConfig(
     filename="chunking.log",  # Log file
     filemode="a",  # Append mode
@@ -17,101 +21,233 @@ logging.basicConfig(
 
 semaphore = asyncio.Semaphore(16)
 
-# Load API key
-with open("keys/openai_api_key.txt", "r") as file:
-    openai_key = file.read().strip()
+# AWS S3 Configuration
+BUCKET_NAME = "colpali-docs"  
+REGION_NAME = "eu-central-1" 
+TEMP_DIR = "/tmp/docs/temp"  
+key_folder = "../keys" 
 
-os.environ["OPENAI_API_KEY"] = openai_key
+with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
+    AWS_ACCESS_KEY_ID = access_key_file.read().strip()
 
-# Load input data
-with open("document_texts.json", "r") as file:
-    document_texts = json.load(file)
+with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
+    AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
+s3 = boto3.client(
+    's3',
+    region_name=REGION_NAME,
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY
+)
+
+def download_s3_folder(prefix, local_dir):
+    os.makedirs(local_dir, exist_ok=True)
+    paginator = s3.get_paginator('list_objects_v2')
+
+    for page in paginator.paginate(Bucket=BUCKET_NAME, Prefix=prefix):
+        for obj in page.get('Contents', []):
+            file_key = obj['Key']
+            
+            # Skip keys that are treated as directories
+            if file_key.endswith('/'):
+                continue
+
+            # Preserve directory structure
+            relative_path = os.path.relpath(file_key, prefix)
+            local_file_path = os.path.join(local_dir, relative_path)
+            
+            # Create subdirectories as needed
+            os.makedirs(os.path.dirname(local_file_path), exist_ok=True)
+
+            s3.download_file(BUCKET_NAME, file_key, local_file_path)
+
+def list_s3_files(prefix=""):
+    paginator = s3.get_paginator('list_objects_v2')
+    files = []
+    for page in paginator.paginate(Bucket=BUCKET_NAME, Prefix=prefix):
+        files.extend([obj['Key'] for obj in page.get('Contents', [])])
+    return files
+
+def process_table(chunk):
+    table = pd.read_html(StringIO(chunk.metadata.text_as_html))[0]
+    table.set_index(0, inplace=True)
+    table.columns = table.columns.astype(str) 
+    table = table.astype(str)
+
+    if table.index.name == 0:
+        table.index.name = None
+
+    while pd.isna(table.index.values[0]):
+        table.columns = table.iloc[0]
+        table = table.iloc[1:]
+
+    return table.to_string()
 
 
-async def process_item(file_key, splitter):
-    """Process a single file key, splitting its content and returning documents."""
-    global document_texts
-    parts = file_key.split('/')
-    company, year, filename = parts[0], parts[1], parts[2]
+async def process_file(file_key):
 
-    try:
-        text = document_texts[file_key]
-    except KeyError:
+    documents = {file_key: []}
+
+    async with semaphore:
+        parts = file_key.split('/')
+        company, year, filename = parts[0], parts[1], parts[2]
+
+        local_file_path = f"/tmp/{filename}"
+        
         try:
-            text = document_texts["docs/" + file_key]
-        except KeyError:
-            logging.error(f"Text not found for {file_key}")
-            return None
+            s3.download_file(BUCKET_NAME, file_key, local_file_path)
+        except Exception as e:
+            print(f"Failed to download {file_key} from S3: {e}")
+            return
 
-    chunks = await asyncio.to_thread(splitter.split_text, text)
+        # Wait for the file to exist in /tmp
+        max_wait_time = 20  # Maximum wait time in seconds
+        elapsed_time = 0
+        while not os.path.exists(local_file_path):
+            if elapsed_time >= max_wait_time:
+                print(f"File did not appear in /tmp within {max_wait_time} seconds: {local_file_path}")
+                return
+            time.sleep(0.5)
+            elapsed_time += 0.5
 
-    docs = [
-        Document(page_content=chunk, metadata={"Company": company, "Year": year, "Filename": filename})
-        for chunk in chunks
-    ]
+        try:
+            elements = await asyncio.to_thread(partition_pdf, filename=local_file_path, strategy="ocr_only", infer_table_structure=True)
 
-    logging.info(f"Processed {file_key}")
-    return file_key, docs
+            chunks = chunk_by_title(
+                elements,
+                combine_text_under_n_chars=1500, 
+                max_characters=int(1e6),          
+            )        
 
+            for i, chunk in enumerate(chunks):
 
-async def process_all():
-    """Process all file keys and save results in batches to the same file asynchronously."""
-    # Initialize OpenAI embeddings
-    embeddings = OpenAIEmbeddings()
+                if len(chunk.text) < 10:
+                    chunks.remove(chunk)
 
-    # Configure the SemanticChunker
-    splitter = SemanticChunker(
-        embeddings=embeddings,
-        buffer_size=3,  # Number of sentences to group together
-        add_start_index=True,  # Include start index in metadata
-        breakpoint_threshold_type="percentile",  # Method to determine breakpoints
-        breakpoint_threshold_amount=0.8,  # Threshold for splitting
-        number_of_chunks=None,  # Let the chunker decide the number of chunks
-        sentence_split_regex=r'(?<=\.)\s+'  # Split sentences based on periods
-    )
+                if chunk.category == "Table":
+                    
+                    try:
+                        previous_chunk = chunks[i-1]
+                        caption = previous_chunk.text.split("\n")[-1]
+                        previous_chunk.text = previous_chunk.text.replace(caption, "")
+                        
+                        if len(previous_chunk.text) < 50:
+                            chunks.remove(previous_chunk)
+                        
+                        chunk.text = f"Table Caption: ** {caption}**\n\n " + process_table(chunk)
+                    except:
+                        chunk.text = process_table(chunk)
 
-    # Prepare tasks for processing
+            
+            for chunk in chunks:
+                documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Company": company, "Year": year, "Filename": filename}))
+
+        except Exception as e:
+            logging.error(f"Failed to extract text from {file_key}: {e} with table detection, retrying without table detection")
+            try:
+                pages = convert_from_path(local_file_path, dpi=300)
+                chunk = image_to_string(pages[0])
+                documents[file_key].append(Document(page_content=chunk, metadata={"category": "Page", "Company": company, "Year": year, "Filename": filename}))  
+            except:
+                logging.error(f"Failed to extract text from {file_key}: {e} even without table detection")
+        finally:
+            if os.path.exists(local_file_path):
+                os.remove(local_file_path)
+
+        return documents
+
+async def process_all(batch_size=1000):
     tasks = []
-    for file_key in document_texts.keys():
-        task = asyncio.create_task(process_item(file_key, splitter))
-        tasks.append(task)
+    docs = {}
 
-    # Process results in batches of 1000
-    batch_size = 1000
+    companies = list_s3_files()
+    companies = set([key.split('/')[0] for key in companies if '/' in key])
+
+    for company in companies:
+
+        if company == "byaldi":
+            continue    
+        
+        years = list_s3_files(f"{company}/")
+        years = set([key.split('/')[1] for key in years if '/' in key])
+
+        for year in years:
+            files = list_s3_files(f"{company}/{year}/")
+
+            for file_key in files:
+                tasks.append(asyncio.create_task(process_file(file_key)))
+
     total_tasks = len(tasks)
-    output_file = "processed_documents.pkl"
-
     for i in range(0, total_tasks, batch_size):
-        # Get a batch of tasks
         batch_tasks = tasks[i:i + batch_size]
 
-        # Gather results for the current batch
         batch_results = await asyncio.gather(*batch_tasks)
         batch_results = [result for result in batch_results if result is not None]
 
-        # Append the current batch to the pickle file
-        try:
-            with open(output_file, "ab") as file:
-                pickle.dump(batch_results, file)
-            print(f"Added batch {i // batch_size + 1} to {output_file}")
-        except Exception as e:
-            logging.error(f"Error saving batch {i // batch_size + 1}: {e}")
-            raise
+        for result in batch_results:
+            if result:
+                docs.update(result)
 
+        with open("processed_documents.pkl", "wb") as f:
+            pickle.dump(docs, f)
+
+        logging.info(f"Processed {i + len(batch_results)} out of {total_tasks} documents")
+
+    return docs
+
+async def process_missing(docs, missing_files, batch_size = 100):
+    tasks = []
+
+    for file_key in missing_files:
+        tasks.append(asyncio.create_task(process_file(file_key)))
+
+    total_tasks = len(tasks)
+    for i in range(0, total_tasks, batch_size):
+        batch_tasks = tasks[i:i + batch_size]
+
+        batch_results = await asyncio.gather(*batch_tasks)
+        batch_results = [result for result in batch_results if result is not None]
+
+        for result in batch_results:
+            if result:
+                docs.update(result)
+
+        with open("processed_documents.pkl", "wb") as f:
+            pickle.dump(docs, f)
+
+        logging.info(f"Processed {i + len(batch_results)} out of {total_tasks} documents")
+
+    return docs
 
 async def main():
-    """Main function to process documents and initialize the pickle file."""
+
     output_file = "processed_documents.pkl"
 
-    # Initialize pickle file
-    with open(output_file, "wb") as file:
-        pass  # Create or clear the file to ensure it's ready for writing
+    with open(output_file, "rb") as file:
+        docs = pickle.load(file)
 
-    # Start processing
+    with open("vanilla_missing_files.txt", "r") as file:
+        missing_files = [line.strip() for line in file.readlines()]
+
     logging.info("Starting document processing...")
-    await process_all()
+    await process_missing(docs, missing_files)
+
     logging.info(f"Document processing completed. Results saved to {output_file}")
 
+async def fill_missing():
+
+    output_file = "processed_documents.pkl"
+
+    with open(output_file, "rb") as file:
+        docs = pickle.load(file)
+
+    with open("vanilla_missing_files.txt", "r") as file:
+        missing_files = [line.strip() for line in file.readlines()]
+
+    logging.info("Starting document processing...")
+    await process_missing(docs, missing_files)
+
+    logging.info(f"Document processing completed. Results saved to {output_file}")
 
 if __name__ == "__main__":
     asyncio.run(main())
