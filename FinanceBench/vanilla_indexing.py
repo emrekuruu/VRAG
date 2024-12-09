@@ -9,8 +9,6 @@ from langchain_core.documents import Document
 from unstructured.partition.pdf import partition_pdf
 from unstructured.chunking.title import chunk_by_title
 import logging 
-from pdf2image import convert_from_path
-from pytesseract import image_to_string
 
 logging.basicConfig(
     filename="chunking.log",  # Log file
@@ -22,10 +20,10 @@ logging.basicConfig(
 semaphore = asyncio.Semaphore(16)
 
 # AWS S3 Configuration
-BUCKET_NAME = "table-vqa"  
+BUCKET_NAME = "finance-bench"  
 REGION_NAME = "eu-central-1" 
 TEMP_DIR = "/tmp/docs/temp"  
-key_folder = "../keys" 
+key_folder = "../.keys" 
 
 with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
     AWS_ACCESS_KEY_ID = access_key_file.read().strip()
@@ -97,8 +95,7 @@ async def process_file(file_key):
             print(f"Failed to download {file_key} from S3: {e}")
             return
 
-        # Wait for the file to exist in /tmp
-        max_wait_time = 20  # Maximum wait time in seconds
+        max_wait_time = 20  
         elapsed_time = 0
         while not os.path.exists(local_file_path):
             if elapsed_time >= max_wait_time:

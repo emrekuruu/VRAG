@@ -73,25 +73,29 @@ class Embedder:
     def __init__(self, batch_size=64):
         self.batch_size = batch_size
 
-    def pdf_to_image(self, pdf_path, zoom=1.0):
-        """Convert the first page of a PDF into an image."""
+    def pdf_to_images(self, pdf_path, zoom=1.0):
         pdf_document = fitz.open(pdf_path)
         mat = fitz.Matrix(zoom, zoom)
-        page = pdf_document.load_page(0)
-        pix = page.get_pixmap(matrix=mat)
-        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        images = []
+        for page_number in range(len(pdf_document)):
+            page = pdf_document.load_page(page_number)
+            pix = page.get_pixmap(matrix=mat)
+            img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+            images.append(img)
         pdf_document.close()
-        return img
+        return images
 
     async def embed_document(self, file_path):
-        """Asynchronously embed a document represented by its file path."""
-        image = self.pdf_to_image(file_path)
-        embedding_obj = await vo.multimodal_embed(
-            inputs=[[image]],
-            model="voyage-multimodal-3",
-            input_type="document"
-        )
-        return embedding_obj.embeddings[0]
+        images = self.pdf_to_images(file_path)
+        embeddings = []
+        for image in images:
+            embedding_obj = await vo.multimodal_embed(
+                inputs=[[image]],
+                model="voyage-multimodal-3",
+                input_type="document"
+            )
+            embeddings.append(embedding_obj.embeddings[0])
+        return embeddings
 
 class FAISSVectorStore:
     def __init__(self, dimension):
@@ -121,28 +125,25 @@ class FAISSVectorStore:
 
 async def process_file(file_key, vector_store, embedder):
     async with semaphore:
-        parts = file_key.split('/')
-        company, year, filename = parts[0], parts[1], parts[2]
-        local_file_path = f"/tmp/{filename}"
+        local_file_path = f"/tmp/{file_key}"
         
         s3.download_file(BUCKET_NAME, file_key, local_file_path)
         
         try:
-            embedding = await embedder.embed_document(local_file_path)
+            embeddings = await embedder.embed_document(local_file_path)
             
-            metadata = {
-                "Company": company,
-                "Year": year,
-                "Filename": filename,
-            }
+            for page_number, embedding in enumerate(embeddings):
+                metadata = {
+                    "Filename": file_key,
+                }
 
-            vector_store.add(
-                ids=[file_key],
-                embeddings=[embedding],
-                metadatas=[metadata],
-            )
+                vector_store.add(
+                    ids=[f"{file_key}_page_{page_number}"],
+                    embeddings=[embedding],
+                    metadatas=[metadata],
+                )
 
-            logging.info(f"Successfully added PDF {company}/{year}/{filename} to FAISS")
+            logging.info(f"Successfully added PDF {file_key} to FAISS with {len(embeddings)} pages.")
 
         except Exception as e:
             logging.error(f"Failed to process file {file_key}: {e}")
@@ -153,20 +154,10 @@ async def process_file(file_key, vector_store, embedder):
 
 async def process_all(vector_store, embedder, batch_size=1000):
     tasks = []
-    companies = list_s3_files()
-    companies = set([key.split('/')[0] for key in companies if '/' in key])
+    files = list_s3_files()
 
-    for company in companies:
-        if company == "byaldi":
-            continue
-
-        years = list_s3_files(f"{company}/")
-        years = set([key.split('/')[1] for key in years if '/' in key])
-
-        for year in years:
-            files = list_s3_files(f"{company}/{year}/")
-            for file_key in files:
-                tasks.append(asyncio.create_task(process_file(file_key, vector_store, embedder)))
+    for file_key in files:
+        tasks.append(asyncio.create_task(process_file(file_key, vector_store, embedder)))
 
     total_tasks = len(tasks)
     for i in range(0, total_tasks, batch_size):
