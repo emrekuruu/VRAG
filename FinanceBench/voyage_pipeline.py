@@ -19,7 +19,7 @@ logging.basicConfig(
 semaphore = asyncio.Semaphore(16)
 
 # AWS Configuration
-key_folder = "../keys"
+key_folder = "../.keys"
 
 with open(f"{key_folder}/voyage_api_key.txt", "r") as file:
     voyage_api_key = file.read().strip()
@@ -88,20 +88,19 @@ embedder = Embedder()
 
 async def process_query(data, idx, faiss_db):
     try:
-        query = data.loc[idx, "question"]
-        company = data.loc[idx, "Company"]
-        year = data.loc[idx, "Year"]
-
+        query = data.loc[idx]["question"]
         # Embed the query
         query_embedding = await embedder.embed_query(query)
 
+        filename = data.loc[idx]["doc_name"] + ".pdf"
+
         # Perform search with metadata filtering
-        results = faiss_db.search(query_embedding, k=5, metadata_filter={"Company": company, "Year": year})
+        results = faiss_db.search(query_embedding, k=5, metadata_filter={"Filename" : filename})
 
         # Construct QRELs
         qrels = {
             idx: {
-                (result["metadata"]["Company"] + "/" + result["metadata"]["Year"] + "/" + result["metadata"]["Filename"]): 1 / (1 + float(result["distance"]))
+                result["id"]: 1 / (1 + float(result["distance"]))
                 for result in results
             }
         }

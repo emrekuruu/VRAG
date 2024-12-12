@@ -19,10 +19,10 @@ logging.basicConfig(
 semaphore = asyncio.Semaphore(16)
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"
+BUCKET_NAME = "finance-bench"
 REGION_NAME = "eu-central-1"
 TEMP_DIR = "/tmp/docs/temp"
-key_folder = "../keys"
+key_folder = "../.keys"
 
 with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
     AWS_ACCESS_KEY_ID = access_key_file.read().strip()
@@ -64,7 +64,7 @@ def list_s3_files(prefix=""):
         files.extend([obj['Key'] for obj in page.get('Contents', [])])
     return files
 
-with open("../keys/voyage_api_key.txt", "r") as file:
+with open("../.keys/voyage_api_key.txt", "r") as file:
     voyage_api_key = file.read().strip()
 
 vo = voyageai.AsyncClient(api_key=voyage_api_key)
@@ -152,11 +152,10 @@ async def process_file(file_key, vector_store, embedder):
             if os.path.exists(local_file_path):
                 os.remove(local_file_path)
 
-async def process_all(vector_store, embedder, batch_size=1000):
+async def process_all(vector_store, embedder, doc_names, batch_size=1000):
     tasks = []
-    files = list_s3_files()
 
-    for file_key in files:
+    for file_key in doc_names:
         tasks.append(asyncio.create_task(process_file(file_key, vector_store, embedder)))
 
     total_tasks = len(tasks)
@@ -169,7 +168,11 @@ async def main():
 
     embedder = Embedder()
     vector_store = FAISSVectorStore(dimension=1024) 
-    await process_all(vector_store, embedder)
+
+    with open('doc_names.txt', 'r') as f:
+        doc_names = [line.strip() + ".pdf" for line in f.readlines()] 
+
+    await process_all(vector_store, embedder, doc_names)
     faiss.write_index(vector_store.index, "faiss_index.bin")
 
     with open("metadata.json", "w") as f:
