@@ -27,11 +27,11 @@ logging.basicConfig(
 semaphore = asyncio.Semaphore(8)
 
 # Load API key
-with open("../keys/openai_api_key.txt", "r") as file:
+with open("../.keys/openai_api_key.txt", "r") as file:
     openai_key = file.read().strip()
 
 
-with open("../keys/voyage_api_key.txt",  "r") as file:
+with open("../.keys/voyage_api_key.txt",  "r") as file:
     voyage_api_key = file.read().strip()
 
 
@@ -62,23 +62,9 @@ persist_directory = ".chroma"
 
 
 def prepare_dataset():
-    # Load the dataset
-    dataset = load_dataset("ibm/finqa", trust_remote_code=True)
-
-    # Access the splits
-    data = dataset['train'].to_pandas()
-    validation_data = dataset['validation'].to_pandas()
-    test_data = dataset['test'].to_pandas()
-
-    data = pd.concat([data, validation_data, test_data])
-    data.reset_index(drop=True, inplace=True)
-    data.id = data.id.map(lambda x : x.split("-")[0])
-
-    data = data[["id", "question", "answer", "gold_inds"]]
-    data["Company"] = [row[0] for row in data.id.str.split("/")]
-    data["Year"] = [row[1] for row in data.id.str.split("/")]
-
-    return data
+    data = load_dataset("PatronusAI/financebench")["train"].to_pandas()
+    data["page_num"] = data["evidence"].apply(lambda x: x[0]["evidence_page_num"])
+    return data 
 
 def read_pickle_file(filename):
 
@@ -124,77 +110,26 @@ def create_db(chunks):
         
     return chroma_db
 
-def sigmoid(x):
-    return 1 / (1 + torch.exp(-torch.tensor(x)))
-
-def rerank(query, documents, ids, top_k=5):
-    scores = {}
-    reranking = vo.rerank(query=query, documents=documents, model="rerank-2-lite", top_k=len(documents))
-
-    for i, r in enumerate(reranking.results):
-        normalized_score = sigmoid(r.relevance_score).item()
-        scores[ids[i]] = normalized_score
-
-    top_scorers = sorted(scores.items(), key=lambda item: item[1], reverse=True)[:top_k]
-    return {id: score for id, score in top_scorers}
-
 async def process_item(data, idx, chroma_db):
-    query = data.loc[idx, "question"]
-    company = data.loc[idx, "Company"]
-    year = data.loc[idx, "Year"]
 
-    # Initialize retriever
-    retriever = chroma_db.as_retriever(
-        search_kwargs={
-            "k": 20,
-            "filter": {
-                "$and": [
-                    {"Company": company},
-                    {"Year": year},
-                ]
-            }
+    query = data.loc[idx, "question"]
+    filename = data.loc[idx]["doc_name"] + ".pdf"
+
+    results = await asyncio.to_thread(
+        chroma_db.similarity_search_with_score,
+        query=query,
+        k=5, 
+        filter={
+            "Filename": filename,
         }
     )
 
-    max_retries = 5  # Maximum number of retries
-    retry_delay = 5  # Initial delay between retries (in seconds)
-    
-    for attempt in range(max_retries):
-        try:
-            # Retrieve documents
-            retrieved_docs = await asyncio.to_thread(retriever.invoke, query)
-            
-            logging.info(f"Retrieved documents {retrieved_docs} for index {idx} on attempt {attempt + 1}")
+    qrels = {
+            doc.metadata["Filename"] + "_page_" + str(doc.metadata["page_num"] -1) : score
+            for doc, score in results
+    }
 
-            # Rerank the retrieved documents
-            retrieved = await asyncio.to_thread(
-                rerank,
-                query,
-                [doc.page_content for doc in retrieved_docs],
-                [doc.metadata["Company"] + "/" + doc.metadata["Year"] + "/" + doc.metadata["Filename"] for doc in retrieved_docs]
-            )
-            
-            # Log and return the result if successful
-            logging.info(f"Retrieved context for index {idx} on attempt {attempt + 1}")
-            return idx, retrieved
-
-        except Exception as e:
-            logging.error(f"Error processing index {idx} on attempt {attempt + 1}: {e}")
-
-            # Check if it's a rate limit error and retry
-            if "limit" in str(e).lower():
-                wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
-                logging.warning(f"Rate limit hit. Retrying in {wait_time} seconds...")
-                await asyncio.sleep(wait_time)
-            else:
-                # For non-rate-limit errors, fail immediately
-                logging.error(f"Non-recoverable error at index {idx}: {e}")
-                return idx, {}
-
-    # If all retries fail, log and return an empty result
-    logging.error(f"Failed to process index {idx} after {max_retries} attempts.")
-    return idx, {}
-
+    return idx, qrels
 
 async def process_all(data, chroma_db, qrels):
 

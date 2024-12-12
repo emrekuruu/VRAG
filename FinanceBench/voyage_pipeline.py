@@ -121,14 +121,9 @@ async def process_queries(data, faiss_db):
     return qrels
 
 def prepare_dataset():
-    dataset = load_dataset("ibm/finqa", trust_remote_code=True)
-    data = pd.concat([dataset['train'].to_pandas(), dataset['validation'].to_pandas(), dataset['test'].to_pandas()])
-    data.reset_index(drop=True, inplace=True)
-    data = data[["id", "question", "answer", "gold_inds"]]
-    data["Company"] = [row[0] for row in data.id.str.split("/")]
-    data["Year"] = [row[1] for row in data.id.str.split("/")]
-    data.id = data.id.map(lambda x: x.split("-")[0])
-    return data
+    data = load_dataset("PatronusAI/financebench")["train"].to_pandas()
+    data["page_num"] = data["evidence"].apply(lambda x: x[0]["evidence_page_num"])
+    return data 
 
 async def main():
     index_file = "faiss_index.bin"

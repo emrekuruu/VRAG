@@ -134,7 +134,7 @@ async def process_file(file_key):
 
             
             for chunk in chunks:
-                documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Filename": file_key}))
+                documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Filename": file_key, "page_num": chunk.metadata.page_number}))
 
         except Exception as e:
 
@@ -150,7 +150,7 @@ async def process_file(file_key):
                 )       
 
                 for chunk in chunks:
-                    documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Filename": file_key}))
+                    documents[file_key].append(Document(page_content=chunk.text, metadata={"category": chunk.category, "Filename": file_key, "page_num": chunk.metadata.page_number}))
                     
             except:
                 logging.error(f"Failed to extract text from {file_key}: {e} even without table detection")
@@ -161,13 +161,11 @@ async def process_file(file_key):
 
         return documents
 
-async def process_all(batch_size=1000):
+async def process_all(doc_names, batch_size=10):
     tasks = []
     docs = {}
 
-    files = list_s3_files()
-
-    for file_key in files:
+    for file_key in doc_names:
         tasks.append(asyncio.create_task(process_file(file_key)))
 
     total_tasks = len(tasks)
@@ -193,10 +191,13 @@ async def main():
     output_file = "processed_documents.pkl"
 
     with open(output_file, "wb") as file:
-        pass 
+        pass
+
+    with open('doc_names.txt', 'r') as f:
+        doc_names = [line.strip() + ".pdf" for line in f.readlines()] 
 
     logging.info("Starting document processing...")
-    await process_all()
+    await process_all(doc_names)
 
     logging.info(f"Document processing completed. Results saved to {output_file}")
 
