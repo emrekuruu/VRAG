@@ -11,3 +11,4 @@ finqa/
 **.pkl
 **/faiss_index.bin
 **/metadata.json
+**/results

@@ -278,21 +278,26 @@ async def main():
     chunks = read_pickle_file("chunks.pkl")
     chroma_db = create_db(chunks)
     
-    rerankers = ["cohere", "reranker2"]
+    rerankers = ["cohere"]
     top_ks = [5, 10, 20]
     
-    for reranker in rerankers:
-        for top_k in top_ks:
-            qrels = {}
-            latency = {}
+    for top_k in top_ks:
+        for reranker in rerankers:
 
-            # Generate qrels
-            qrels = await process_all(data, chroma_db, qrels, latency, top_k, reranker)
-
-            # Save qrels to a JSON file for later use
             filename = f"results/text/vanilla_qrels_{reranker}_{top_k}.json"
-
             latency_filename = f"results/latency/vanilla_query_latency_{reranker}_{top_k}.json"
+
+            if os.path.exists(filename):
+                qrels = json.load(open(filename))
+                latency = json.load(open(latency_filename))
+                
+                qrels = {key: value for key, value in qrels.items() if value != {}}
+                
+            else:
+                qrels = {}
+                latency = {}
+
+            qrels = await process_all(data, chroma_db, qrels, latency, top_k, reranker)
 
             with open(filename, "w") as f:
                 json.dump(qrels, f, indent=4)

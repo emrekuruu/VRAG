@@ -1,64 +1,163 @@
 import json
 import os
+import numpy as np
 
+# Utility functions
 def load_qrels(file_path):
     with open(file_path, "r") as f:
         return json.load(f)
 
 def save_qrels(qrels, file_path):
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    directory = os.path.dirname(file_path)
+    if directory: 
+        os.makedirs(directory, exist_ok=True)
     with open(file_path, "w") as f:
         json.dump(qrels, f, indent=4)
 
-def combine_qrels(vanilla_qrels, colpali_qrels, top_k = 5):
+def normalize_scores(scores, type_="min-max"):
+    if not scores:
+        return {}
+    values = list(scores.values())
+
+    if type_ == "z-score":
+        mean = np.mean(values)
+        std = np.std(values) or 1  # Avoid division by zero
+        return {doc_id: (score - mean) / std for doc_id, score in scores.items()}
+    elif type_ == "min-max":
+        min_score = min(values)
+        max_score = max(values)
+        range_score = max_score - min_score or 1  # Avoid division by zero
+        return {doc_id: (score - min_score) / range_score for doc_id, score in scores.items()}
+
+# Pipeline 1: Z-Score Normalization Hybridization
+def pipeline_zscore(first_qrels, second_qrels, alpha, beta, top_k=5):
     combined_qrels = {}
 
-    # Iterate over all query IDs
-    for query_id in set(vanilla_qrels.keys()).union(colpali_qrels.keys()):
-        # Retrieve results from each pipeline
-        vanilla_results = vanilla_qrels.get(query_id, {})
-        colpali_results = colpali_qrels.get(query_id, {})
+    for query_id in set(first_qrels.keys()).union(second_qrels.keys()):
+        first_results = first_qrels.get(query_id, {})
+        second_results = second_qrels.get(query_id, {})
 
-        # Normalize ranks for both pipelines
-        vanilla_rankings = {doc_id: rank + 1 for rank, doc_id in enumerate(vanilla_results)}
-        colpali_rankings = {doc_id: rank + 1 for rank, doc_id in enumerate(colpali_results)}
+        # Normalize scores using z-score
+        first_scores = normalize_scores(first_results, type_="z-score")
+        second_scores = normalize_scores(second_results, type_="z-score")
 
-        # Max rank normalization (lower rank = higher importance)
-        max_vanilla_rank = max(vanilla_rankings.values(), default=1)
-        max_colpali_rank = max(colpali_rankings.values(), default=1)
-
-        # Combine scores based on normalized rank
+        # Combine scores with weights
         combined_scores = {}
-        for doc_id in set(vanilla_rankings.keys()).union(colpali_rankings.keys()):
-            vanilla_score = 1 - (vanilla_rankings.get(doc_id, max_vanilla_rank) / max_vanilla_rank)
-            colpali_score = 1 - (colpali_rankings.get(doc_id, max_colpali_rank) / max_colpali_rank)
-            combined_scores[doc_id] = vanilla_score + colpali_score
+        for doc_id in set(first_scores.keys()).union(second_scores.keys()):
+            first_score = first_scores.get(doc_id, 0)
+            second_score = second_scores.get(doc_id, 0)
+            combined_scores[doc_id] = alpha * first_score + beta * second_score
 
         # Sort combined scores and keep only the top_k results
-        top_combined_scores = dict(
+        combined_qrels[query_id] = dict(
             sorted(combined_scores.items(), key=lambda item: item[1], reverse=True)[:top_k]
         )
-        combined_qrels[query_id] = top_combined_scores
 
     return combined_qrels
 
-def main(vanilla_file, colpali_file, output_file):
+# Pipeline 2: Min-Max Normalization Hybridization
+def pipeline_minmax(first_qrels, second_qrels, alpha, beta, top_k=5):
+    combined_qrels = {}
+
+    for query_id in set(first_qrels.keys()).union(second_qrels.keys()):
+        first_results = first_qrels.get(query_id, {})
+        second_results = second_qrels.get(query_id, {})
+
+        # Normalize scores using min-max
+        first_scores = normalize_scores(first_results, type_="min-max")
+        second_scores = normalize_scores(second_results, type_="min-max")
+
+        # Combine scores with weights
+        combined_scores = {}
+        for doc_id in set(first_scores.keys()).union(second_scores.keys()):
+            first_score = first_scores.get(doc_id, 0)
+            second_score = second_scores.get(doc_id, 0)
+            combined_scores[doc_id] = alpha * first_score + beta * second_score
+
+        # Sort combined scores and keep only the top_k results
+        combined_qrels[query_id] = dict(
+            sorted(combined_scores.items(), key=lambda item: item[1], reverse=True)[:top_k]
+        )
+
+    return combined_qrels
+
+# Pipeline 3: Rank-Based Weighted Hybridization
+def pipeline_rankbased(first_qrels, second_qrels, alpha, beta, top_k=5):
+    combined_qrels = {}
+
+    for query_id in set(first_qrels.keys()).union(second_qrels.keys()):
+        first_results = first_qrels.get(query_id, {})
+        second_results = second_qrels.get(query_id, {})
+
+        # Sort Qrels values by relevance
+        first_sorted = dict(sorted(first_results.items(), key=lambda item: item[1], reverse=True))
+        second_sorted = dict(sorted(second_results.items(), key=lambda item: item[1], reverse=True))
+
+        # Create rank mappings for both pipelines
+        first_rankings = {doc_id: rank + 1 for rank, doc_id in enumerate(first_sorted)}
+        second_rankings = {doc_id: rank + 1 for rank, doc_id in enumerate(second_sorted)}
+
+        # Max rank normalization (lower rank = higher importance)
+        max_first_rank = max(first_rankings.values(), default=1)
+        max_second_rank = max(second_rankings.values(), default=1)
+
+        combined_scores = {}
+        for doc_id in set(first_rankings.keys()).union(second_rankings.keys()):
+            first_rank_score = 1 - (first_rankings.get(doc_id, max_first_rank) / max_first_rank)
+            second_rank_score = 1 - (second_rankings.get(doc_id, max_second_rank) / max_second_rank)
+
+            # Apply weights and combine
+            combined_scores[doc_id] = alpha * first_rank_score + beta * second_rank_score
+
+        # Sort combined scores and keep only the top_k results
+        combined_qrels[query_id] = dict(
+            sorted(combined_scores.items(), key=lambda item: item[1], reverse=True)[:top_k]
+        )
+
+    return combined_qrels
+
+# Main function to execute all pipelines for multiple alphas
+def main(first_method, second_method, first_file, second_file, output_dir):
     # Load Qrels
-    vanilla_qrels = load_qrels(vanilla_file)
-    colpali_qrels = load_qrels(colpali_file)
+    first_qrels = load_qrels(first_file)
+    second_qrels = load_qrels(second_file)
 
-    # Combine Qrels
-    hybrid_qrels = combine_qrels(vanilla_qrels, colpali_qrels)
+    # Alpha values
+    alphas = np.arange(0.5, 0.85, 0.05)
 
-    # Save the combined Qrels
-    save_qrels(hybrid_qrels, output_file)
-    print(f"Hybrid Qrels saved to {output_file}")
+    for alpha in alphas:
+        beta = 1 - alpha
 
+        # Run all pipelines
+        hybrid_qrels_zscore = pipeline_zscore(first_qrels, second_qrels, alpha, beta)
+        hybrid_qrels_minmax = pipeline_minmax(first_qrels, second_qrels, alpha, beta)
+        hybrid_qrels_rankbased = pipeline_rankbased(first_qrels, second_qrels, alpha, beta)
+
+        # Save results for each alpha
+        save_qrels(
+            hybrid_qrels_zscore,
+            f"results/hybrid/{first_method}_{second_method}_zscore_qrels_{alpha:.2f}.json",
+        )
+
+        save_qrels(
+            hybrid_qrels_minmax,
+            f"results/hybrid/{first_method}_{second_method}_minmax_qrels_{alpha:.2f}.json",
+        )
+        save_qrels(
+            hybrid_qrels_rankbased,
+            f"results/hybrid/{first_method}_{second_method}_rank_qrels_{alpha:.2f}.json",
+        )
+
+        print(f"Saved hybrid Qrels for alpha={alpha:.2f}")
 
 if __name__ == "__main__":
-    vanilla_file = "results/text_qrels.json"
-    colpali_file = "results/voyage_qrels.json"
-    output_file = "results/hybrid_qrels.json"
-    
-    # Combine Qrels
-    main(vanilla_file, colpali_file, output_file)
+
+    second_method = "colpali"
+    first_method = "voyage"
+
+    second_file = "results/colpali_qrels.json"
+    first_file = "results/voyage_qrels.json"
+
+    output_dir = "result/hybrid/"
+
+    main(first_method, second_method, first_file, second_file, output_dir)

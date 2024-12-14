@@ -31,6 +31,11 @@ unstructured-pytesseract = "^0.3.13"
 pymupdf = "^1.24.14"
 pi-heif = "^0.21.0"
 faiss-cpu = "^1.9.0.post1"
+cohere = "^5.13.3"
+llama-index = "^0.12.5"
+llama-index-postprocessor-colbert-rerank = "^0.3.0"
+openpyxl = "^3.1.5"
+rerankers = "^0.6.1"
 
 [tool.poetry.group.dev.dependencies]
 poetry = "^1.7.0"

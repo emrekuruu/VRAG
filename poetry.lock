@@ -811,6 +811,33 @@ files = [
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
+name = "cohere"
+version = "5.13.3"
+description = ""
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "cohere-5.13.3-py3-none-any.whl", hash = "sha256:076c88fdd3d670b6577eb8e813a9072bf18b59648d4092c6f0263af3c27bf81f"},
+    {file = "cohere-5.13.3.tar.gz", hash = "sha256:70d87e0d5ce48aaee5ba70ead5efbade226cb2a4b11bfcfb676f6a2db3642819"},
+]
+
+[package.dependencies]
+fastavro = ">=1.9.4,<2.0.0"
+httpx = ">=0.21.2"
+httpx-sse = "0.4.0"
+numpy = ">=1.26,<2.0"
+parameterized = ">=0.9.0,<0.10.0"
+pydantic = ">=1.9.2"
+pydantic-core = ">=2.18.2,<3.0.0"
+requests = ">=2.0.0,<3.0.0"
+tokenizers = ">=0.15,<1"
+types-requests = ">=2.0.0,<3.0.0"
+typing_extensions = ">=4.0.0"
+
+[package.extras]
+aws = ["boto3 (>=1.34.0,<2.0.0)", "sagemaker (>=2.232.1,<3.0.0)"]
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -1245,6 +1272,17 @@ graph = ["objgraph (>=1.7.2)"]
 profile = ["gprof2dot (>=2022.7.29)"]
 
 [[package]]
+name = "dirtyjson"
+version = "1.0.8"
+description = "JSON decoder for Python that can extract data from the muck"
+optional = false
+python-versions = "*"
+files = [
+    {file = "dirtyjson-1.0.8-py3-none-any.whl", hash = "sha256:125e27248435a58acace26d5c2c4c11a1c0de0a9c5124c5a94ba78e517d74f53"},
+    {file = "dirtyjson-1.0.8.tar.gz", hash = "sha256:90ca4a18f3ff30ce849d100dcf4a003953c79d3a2348ef056f1d9c22231a25fd"},
+]
+
+[[package]]
 name = "distlib"
 version = "0.3.9"
 description = "Distribution utilities"
@@ -1389,6 +1427,17 @@ files = [
 dev = ["coverage", "pytest (>=7.4.4)"]
 
 [[package]]
+name = "et-xmlfile"
+version = "2.0.0"
+description = "An implementation of lxml.xmlfile for the standard library"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "et_xmlfile-2.0.0-py3-none-any.whl", hash = "sha256:7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa"},
+    {file = "et_xmlfile-2.0.0.tar.gz", hash = "sha256:dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54"},
+]
+
+[[package]]
 name = "eval-type-backport"
 version = "0.2.0"
 description = "Like `typing._eval_type`, but lets older Python versions use newer typing features."
@@ -1502,6 +1551,52 @@ typing-extensions = ">=4.8.0"
 [package.extras]
 all = ["email-validator (>=2.0.0)", "fastapi-cli[standard] (>=0.0.5)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)", "jinja2 (>=2.11.2)", "orjson (>=3.2.1)", "pydantic-extra-types (>=2.0.0)", "pydantic-settings (>=2.0.0)", "python-multipart (>=0.0.7)", "pyyaml (>=5.3.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0)", "uvicorn[standard] (>=0.12.0)"]
 standard = ["email-validator (>=2.0.0)", "fastapi-cli[standard] (>=0.0.5)", "httpx (>=0.23.0)", "jinja2 (>=2.11.2)", "python-multipart (>=0.0.7)", "uvicorn[standard] (>=0.12.0)"]
+
+[[package]]
+name = "fastavro"
+version = "1.9.7"
+description = "Fast read/write of AVRO files"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "fastavro-1.9.7-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:cc811fb4f7b5ae95f969cda910241ceacf82e53014c7c7224df6f6e0ca97f52f"},
+    {file = "fastavro-1.9.7-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fb8749e419a85f251bf1ac87d463311874972554d25d4a0b19f6bdc56036d7cf"},
+    {file = "fastavro-1.9.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0b2f9bafa167cb4d1c3dd17565cb5bf3d8c0759e42620280d1760f1e778e07fc"},
+    {file = "fastavro-1.9.7-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:e87d04b235b29f7774d226b120da2ca4e60b9e6fdf6747daef7f13f218b3517a"},
+    {file = "fastavro-1.9.7-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:b525c363e267ed11810aaad8fbdbd1c3bd8837d05f7360977d72a65ab8c6e1fa"},
+    {file = "fastavro-1.9.7-cp310-cp310-win_amd64.whl", hash = "sha256:6312fa99deecc319820216b5e1b1bd2d7ebb7d6f221373c74acfddaee64e8e60"},
+    {file = "fastavro-1.9.7-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:ec8499dc276c2d2ef0a68c0f1ad11782b2b956a921790a36bf4c18df2b8d4020"},
+    {file = "fastavro-1.9.7-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:76d9d96f98052615ab465c63ba8b76ed59baf2e3341b7b169058db104cbe2aa0"},
+    {file = "fastavro-1.9.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:919f3549e07a8a8645a2146f23905955c35264ac809f6c2ac18142bc5b9b6022"},
+    {file = "fastavro-1.9.7-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:9de1fa832a4d9016724cd6facab8034dc90d820b71a5d57c7e9830ffe90f31e4"},
+    {file = "fastavro-1.9.7-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:1d09227d1f48f13281bd5ceac958650805aef9a4ef4f95810128c1f9be1df736"},
+    {file = "fastavro-1.9.7-cp311-cp311-win_amd64.whl", hash = "sha256:2db993ae6cdc63e25eadf9f93c9e8036f9b097a3e61d19dca42536dcc5c4d8b3"},
+    {file = "fastavro-1.9.7-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:4e1289b731214a7315884c74b2ec058b6e84380ce9b18b8af5d387e64b18fc44"},
+    {file = "fastavro-1.9.7-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:eac69666270a76a3a1d0444f39752061195e79e146271a568777048ffbd91a27"},
+    {file = "fastavro-1.9.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9be089be8c00f68e343bbc64ca6d9a13e5e5b0ba8aa52bcb231a762484fb270e"},
+    {file = "fastavro-1.9.7-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:d576eccfd60a18ffa028259500df67d338b93562c6700e10ef68bbd88e499731"},
+    {file = "fastavro-1.9.7-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:ee9bf23c157bd7dcc91ea2c700fa3bd924d9ec198bb428ff0b47fa37fe160659"},
+    {file = "fastavro-1.9.7-cp312-cp312-win_amd64.whl", hash = "sha256:b6b2ccdc78f6afc18c52e403ee68c00478da12142815c1bd8a00973138a166d0"},
+    {file = "fastavro-1.9.7-cp38-cp38-macosx_11_0_universal2.whl", hash = "sha256:7313def3aea3dacface0a8b83f6d66e49a311149aa925c89184a06c1ef99785d"},
+    {file = "fastavro-1.9.7-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:536f5644737ad21d18af97d909dba099b9e7118c237be7e4bd087c7abde7e4f0"},
+    {file = "fastavro-1.9.7-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2af559f30383b79cf7d020a6b644c42ffaed3595f775fe8f3d7f80b1c43dfdc5"},
+    {file = "fastavro-1.9.7-cp38-cp38-musllinux_1_2_aarch64.whl", hash = "sha256:edc28ab305e3c424de5ac5eb87b48d1e07eddb6aa08ef5948fcda33cc4d995ce"},
+    {file = "fastavro-1.9.7-cp38-cp38-musllinux_1_2_x86_64.whl", hash = "sha256:ec2e96bdabd58427fe683329b3d79f42c7b4f4ff6b3644664a345a655ac2c0a1"},
+    {file = "fastavro-1.9.7-cp38-cp38-win_amd64.whl", hash = "sha256:3b683693c8a85ede496ebebe115be5d7870c150986e34a0442a20d88d7771224"},
+    {file = "fastavro-1.9.7-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:58f76a5c9a312fbd37b84e49d08eb23094d36e10d43bc5df5187bc04af463feb"},
+    {file = "fastavro-1.9.7-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:56304401d2f4f69f5b498bdd1552c13ef9a644d522d5de0dc1d789cf82f47f73"},
+    {file = "fastavro-1.9.7-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2fcce036c6aa06269fc6a0428050fcb6255189997f5e1a728fc461e8b9d3e26b"},
+    {file = "fastavro-1.9.7-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:17de68aae8c2525f5631d80f2b447a53395cdc49134f51b0329a5497277fc2d2"},
+    {file = "fastavro-1.9.7-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:7c911366c625d0a997eafe0aa83ffbc6fd00d8fd4543cb39a97c6f3b8120ea87"},
+    {file = "fastavro-1.9.7-cp39-cp39-win_amd64.whl", hash = "sha256:912283ed48578a103f523817fdf0c19b1755cea9b4a6387b73c79ecb8f8f84fc"},
+    {file = "fastavro-1.9.7.tar.gz", hash = "sha256:13e11c6cb28626da85290933027cd419ce3f9ab8e45410ef24ce6b89d20a1f6c"},
+]
+
+[package.extras]
+codecs = ["cramjam", "lz4", "zstandard"]
+lz4 = ["lz4"]
+snappy = ["cramjam"]
+zstandard = ["zstandard"]
 
 [[package]]
 name = "fastjsonschema"
@@ -2908,6 +3003,313 @@ paddledetection = ["paddlepaddle (==2.1.0)"]
 tesseract = ["pytesseract"]
 
 [[package]]
+name = "llama-cloud"
+version = "0.1.6"
+description = ""
+optional = false
+python-versions = "<4,>=3.8"
+files = [
+    {file = "llama_cloud-0.1.6-py3-none-any.whl", hash = "sha256:43595081e03ff552fd18d9553fcaada897ff267456c0f89f4cb098b927dc4dc7"},
+    {file = "llama_cloud-0.1.6.tar.gz", hash = "sha256:21200f6fdd46e08455d34b136f645ce6b8c3800e0ae13d8077913171a921da5a"},
+]
+
+[package.dependencies]
+httpx = ">=0.20.0"
+pydantic = ">=1.10"
+
+[[package]]
+name = "llama-index"
+version = "0.12.5"
+description = "Interface between LLMs and your data"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index-0.12.5-py3-none-any.whl", hash = "sha256:2bb6d234cf6d7fdb6a308e9aff1a607e83a24210cc7325be62c65bc43493680f"},
+    {file = "llama_index-0.12.5.tar.gz", hash = "sha256:a816f18079c88e17b53fab6efc27f7c3dfb0a7af559afaaeaeef0577654235a4"},
+]
+
+[package.dependencies]
+llama-index-agent-openai = ">=0.4.0,<0.5.0"
+llama-index-cli = ">=0.4.0,<0.5.0"
+llama-index-core = ">=0.12.5,<0.13.0"
+llama-index-embeddings-openai = ">=0.3.0,<0.4.0"
+llama-index-indices-managed-llama-cloud = ">=0.4.0"
+llama-index-legacy = ">=0.9.48,<0.10.0"
+llama-index-llms-openai = ">=0.3.0,<0.4.0"
+llama-index-multi-modal-llms-openai = ">=0.4.0,<0.5.0"
+llama-index-program-openai = ">=0.3.0,<0.4.0"
+llama-index-question-gen-openai = ">=0.3.0,<0.4.0"
+llama-index-readers-file = ">=0.4.0,<0.5.0"
+llama-index-readers-llama-parse = ">=0.4.0"
+nltk = ">3.8.1"
+
+[[package]]
+name = "llama-index-agent-openai"
+version = "0.4.0"
+description = "llama-index agent openai integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_agent_openai-0.4.0-py3-none-any.whl", hash = "sha256:71b2f46bb24813129ab6bc2d5bcebb9aebf323403ebf1e6cc9840687a34a6169"},
+    {file = "llama_index_agent_openai-0.4.0.tar.gz", hash = "sha256:31d2675dbd84489756dd062a7ffed330b2abdca3b7715d511674f5b5075e4dd6"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.0,<0.13.0"
+llama-index-llms-openai = ">=0.3.0,<0.4.0"
+openai = ">=1.14.0"
+
+[[package]]
+name = "llama-index-cli"
+version = "0.4.0"
+description = "llama-index cli"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_cli-0.4.0-py3-none-any.whl", hash = "sha256:60d12f89e6b85e80a0cc3a8b531f05a911b5eebaebc37314411476d1ba685904"},
+    {file = "llama_index_cli-0.4.0.tar.gz", hash = "sha256:d6ab201359962a8a34368aeda3a49bbbe67e9e009c59bd925c4fb2be4ace3906"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.0,<0.13.0"
+llama-index-embeddings-openai = ">=0.3.0,<0.4.0"
+llama-index-llms-openai = ">=0.3.0,<0.4.0"
+
+[[package]]
+name = "llama-index-core"
+version = "0.12.5"
+description = "Interface between LLMs and your data"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_core-0.12.5-py3-none-any.whl", hash = "sha256:1fe6dd39b2dc5a945b4702d780a2f5962a553e187524a255429461dc92a664db"},
+    {file = "llama_index_core-0.12.5.tar.gz", hash = "sha256:1d967323891920579fad3d6497587c137894df3f76718a3ec134f9201f2f4fc0"},
+]
+
+[package.dependencies]
+aiohttp = ">=3.8.6,<4.0.0"
+dataclasses-json = "*"
+deprecated = ">=1.2.9.3"
+dirtyjson = ">=1.0.8,<2.0.0"
+filetype = ">=1.2.0,<2.0.0"
+fsspec = ">=2023.5.0"
+httpx = "*"
+nest-asyncio = ">=1.5.8,<2.0.0"
+networkx = ">=3.0"
+nltk = ">3.8.1"
+numpy = "*"
+pillow = ">=9.0.0"
+pydantic = ">=2.8.0"
+PyYAML = ">=6.0.1"
+requests = ">=2.31.0"
+SQLAlchemy = {version = ">=1.4.49", extras = ["asyncio"]}
+tenacity = ">=8.2.0,<8.4.0 || >8.4.0,<10.0.0"
+tiktoken = ">=0.3.3"
+tqdm = ">=4.66.1,<5.0.0"
+typing-extensions = ">=4.5.0"
+typing-inspect = ">=0.8.0"
+wrapt = "*"
+
+[[package]]
+name = "llama-index-embeddings-openai"
+version = "0.3.1"
+description = "llama-index embeddings openai integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_embeddings_openai-0.3.1-py3-none-any.whl", hash = "sha256:f15a3d13da9b6b21b8bd51d337197879a453d1605e625a1c6d45e741756c0290"},
+    {file = "llama_index_embeddings_openai-0.3.1.tar.gz", hash = "sha256:1368aad3ce24cbaed23d5ad251343cef1eb7b4a06d6563d6606d59cb347fef20"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.0,<0.13.0"
+openai = ">=1.1.0"
+
+[[package]]
+name = "llama-index-indices-managed-llama-cloud"
+version = "0.6.3"
+description = "llama-index indices llama-cloud integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_indices_managed_llama_cloud-0.6.3-py3-none-any.whl", hash = "sha256:7f125602f624a2d321b6a4130cd98df35eb8c15818a159390755b2c13068f4ce"},
+    {file = "llama_index_indices_managed_llama_cloud-0.6.3.tar.gz", hash = "sha256:f09e4182cbc2a2bd75ae85cebb1681075247f0d91b931b094cac4315386ce87a"},
+]
+
+[package.dependencies]
+llama-cloud = ">=0.1.5"
+llama-index-core = ">=0.12.0,<0.13.0"
+
+[[package]]
+name = "llama-index-legacy"
+version = "0.9.48.post4"
+description = "Interface between LLMs and your data"
+optional = false
+python-versions = "<4.0,>=3.8.1"
+files = [
+    {file = "llama_index_legacy-0.9.48.post4-py3-none-any.whl", hash = "sha256:4b817d7c343fb5f7f00c4410eff519f320013b8d5f24c4fedcf270c471f92038"},
+    {file = "llama_index_legacy-0.9.48.post4.tar.gz", hash = "sha256:f8a9764e7e134a52bfef5e53d2d62561bfc01fc09874c51cc001df6f5302ae30"},
+]
+
+[package.dependencies]
+aiohttp = ">=3.8.6,<4.0.0"
+dataclasses-json = "*"
+deprecated = ">=1.2.9.3"
+dirtyjson = ">=1.0.8,<2.0.0"
+fsspec = ">=2023.5.0"
+httpx = "*"
+nest-asyncio = ">=1.5.8,<2.0.0"
+networkx = ">=3.0"
+nltk = ">=3.8.1"
+numpy = "*"
+openai = ">=1.1.0"
+pandas = "*"
+requests = ">=2.31.0"
+SQLAlchemy = {version = ">=1.4.49", extras = ["asyncio"]}
+tenacity = ">=8.2.0,<9.0.0"
+tiktoken = ">=0.3.3"
+typing-extensions = ">=4.5.0"
+typing-inspect = ">=0.8.0"
+
+[package.extras]
+gradientai = ["gradientai (>=1.4.0)"]
+html = ["beautifulsoup4 (>=4.12.2,<5.0.0)"]
+langchain = ["langchain (>=0.0.303)"]
+local-models = ["optimum[onnxruntime] (>=1.13.2,<2.0.0)", "sentencepiece (>=0.1.99,<0.2.0)", "transformers[torch] (>=4.33.1,<5.0.0)"]
+postgres = ["asyncpg (>=0.28.0,<0.29.0)", "pgvector (>=0.1.0,<0.2.0)", "psycopg2-binary (>=2.9.9,<3.0.0)"]
+query-tools = ["guidance (>=0.0.64,<0.0.65)", "jsonpath-ng (>=1.6.0,<2.0.0)", "lm-format-enforcer (>=0.4.3,<0.5.0)", "rank-bm25 (>=0.2.2,<0.3.0)", "scikit-learn", "spacy (>=3.7.1,<4.0.0)"]
+
+[[package]]
+name = "llama-index-llms-openai"
+version = "0.3.3"
+description = "llama-index llms openai integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_llms_openai-0.3.3-py3-none-any.whl", hash = "sha256:f0a3c7a0a4b18ce0ddf4a49695b0f1e38ef04c81362fb26ff9c1855e47e91193"},
+    {file = "llama_index_llms_openai-0.3.3.tar.gz", hash = "sha256:26b9f95e4896bdc68b445ceb6c914260aecd5ca39d07a20170760a7c48b48b34"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.4,<0.13.0"
+openai = ">=1.40.0,<2.0.0"
+
+[[package]]
+name = "llama-index-multi-modal-llms-openai"
+version = "0.4.0"
+description = "llama-index multi-modal-llms openai integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_multi_modal_llms_openai-0.4.0-py3-none-any.whl", hash = "sha256:c5bda1b3c6d14eee87a819ba72b122d82877829695dce8f90a8c600ac16ce243"},
+    {file = "llama_index_multi_modal_llms_openai-0.4.0.tar.gz", hash = "sha256:11c3ac7e2d7ace9dbcdd9a662f27bca5fefce98c5682abaffb7dd01d59776658"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.3,<0.13.0"
+llama-index-llms-openai = ">=0.3.0,<0.4.0"
+
+[[package]]
+name = "llama-index-postprocessor-colbert-rerank"
+version = "0.3.0"
+description = "llama-index postprocessor colbert-rerank integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_postprocessor_colbert_rerank-0.3.0-py3-none-any.whl", hash = "sha256:968254a908729b32f7f6db0d323310808679472a9a18eb991b844019bb3deebb"},
+    {file = "llama_index_postprocessor_colbert_rerank-0.3.0.tar.gz", hash = "sha256:5b1fc2402bc1e8cdcf542eab748ec96a4d3415b1bc6a5c495863675f232e07b4"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.0,<0.13.0"
+torch = ">=2.2.0,<3.0.0"
+transformers = ">=4.37.2,<5.0.0"
+
+[[package]]
+name = "llama-index-program-openai"
+version = "0.3.1"
+description = "llama-index program openai integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_program_openai-0.3.1-py3-none-any.whl", hash = "sha256:93646937395dc5318fd095153d2f91bd632b25215d013d14a87c088887d205f9"},
+    {file = "llama_index_program_openai-0.3.1.tar.gz", hash = "sha256:6039a6cdbff62c6388c07e82a157fe2edd3bbef0c5adf292ad8546bf4ec75b82"},
+]
+
+[package.dependencies]
+llama-index-agent-openai = ">=0.4.0,<0.5.0"
+llama-index-core = ">=0.12.0,<0.13.0"
+llama-index-llms-openai = ">=0.3.0,<0.4.0"
+
+[[package]]
+name = "llama-index-question-gen-openai"
+version = "0.3.0"
+description = "llama-index question_gen openai integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_question_gen_openai-0.3.0-py3-none-any.whl", hash = "sha256:9b60ec114273a63b50349948666e5744a8f58acb645824e07c979041e8fec598"},
+    {file = "llama_index_question_gen_openai-0.3.0.tar.gz", hash = "sha256:efd3b468232808e9d3474670aaeab00e41b90f75f52d0c9bfbf11207e0963d62"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.0,<0.13.0"
+llama-index-llms-openai = ">=0.3.0,<0.4.0"
+llama-index-program-openai = ">=0.3.0,<0.4.0"
+
+[[package]]
+name = "llama-index-readers-file"
+version = "0.4.1"
+description = "llama-index readers file integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_readers_file-0.4.1-py3-none-any.whl", hash = "sha256:51df6c4c6f6f244a704907aac4edc5c7a1c61a67672b1ca7fb182e6409226708"},
+    {file = "llama_index_readers_file-0.4.1.tar.gz", hash = "sha256:1150300bcebab7cddd9e29b7271e097b278fbe3518de26e435595855b12c3b9a"},
+]
+
+[package.dependencies]
+beautifulsoup4 = ">=4.12.3,<5.0.0"
+llama-index-core = ">=0.12.0,<0.13.0"
+pandas = "*"
+pypdf = ">=5.1.0,<6.0.0"
+striprtf = ">=0.0.26,<0.0.27"
+
+[package.extras]
+pymupdf = ["pymupdf (>=1.23.21,<2.0.0)"]
+
+[[package]]
+name = "llama-index-readers-llama-parse"
+version = "0.4.0"
+description = "llama-index readers llama-parse integration"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_index_readers_llama_parse-0.4.0-py3-none-any.whl", hash = "sha256:574e48386f28d2c86c3f961ca4a4906910312f3400dd0c53014465bfbc6b32bf"},
+    {file = "llama_index_readers_llama_parse-0.4.0.tar.gz", hash = "sha256:e99ec56f4f8546d7fda1a7c1ae26162fb9acb7ebcac343b5abdb4234b4644e0f"},
+]
+
+[package.dependencies]
+llama-index-core = ">=0.12.0,<0.13.0"
+llama-parse = ">=0.5.0"
+
+[[package]]
+name = "llama-parse"
+version = "0.5.17"
+description = "Parse files into RAG-Optimized formats."
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "llama_parse-0.5.17-py3-none-any.whl", hash = "sha256:0981c7e4ac21bc3b314830c6e9eaed4b20db874ec8f8868540707cf2cca07051"},
+    {file = "llama_parse-0.5.17.tar.gz", hash = "sha256:2ba2700ca3b15e84ef072fedcbbfeae2fc13ce7b63fee20fcd5249e6fcdbd381"},
+]
+
+[package.dependencies]
+click = ">=8.1.7,<9.0.0"
+llama-index-core = ">=0.11.0"
+pydantic = "!=2.10"
+
+[[package]]
 name = "lxml"
 version = "5.3.0"
 description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
@@ -4135,6 +4537,20 @@ numpy = [
 ]
 
 [[package]]
+name = "openpyxl"
+version = "3.1.5"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "openpyxl-3.1.5-py2.py3-none-any.whl", hash = "sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"},
+    {file = "openpyxl-3.1.5.tar.gz", hash = "sha256:cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050"},
+]
+
+[package.dependencies]
+et-xmlfile = "*"
+
+[[package]]
 name = "opentelemetry-api"
 version = "1.24.0"
 description = "OpenTelemetry Python API"
@@ -4487,6 +4903,20 @@ spss = ["pyreadstat (>=1.2.0)"]
 sql-other = ["SQLAlchemy (>=2.0.0)", "adbc-driver-postgresql (>=0.8.0)", "adbc-driver-sqlite (>=0.8.0)"]
 test = ["hypothesis (>=6.46.1)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)"]
 xml = ["lxml (>=4.9.2)"]
+
+[[package]]
+name = "parameterized"
+version = "0.9.0"
+description = "Parameterized testing with any Python test framework"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "parameterized-0.9.0-py2.py3-none-any.whl", hash = "sha256:4e0758e3d41bea3bbd05ec14fc2c24736723f243b28d702081aef438c9372b1b"},
+    {file = "parameterized-0.9.0.tar.gz", hash = "sha256:7fc905272cefa4f364c1a3429cbbe9c0f98b793988efb5bf90aac80f08db09b1"},
+]
+
+[package.extras]
+dev = ["jinja2"]
 
 [[package]]
 name = "parso"
@@ -6099,6 +6529,32 @@ files = [
 requests = ">=2.0.1,<3.0.0"
 
 [[package]]
+name = "rerankers"
+version = "0.6.1"
+description = "A unified API for various document re-ranking models."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "rerankers-0.6.1-py3-none-any.whl", hash = "sha256:d13ce36ef18d68b7ee06a5c6e74822b4e0be45660d0963c15a5f2be312030732"},
+    {file = "rerankers-0.6.1.tar.gz", hash = "sha256:36569dbb4499eaf1ba52b3fb6bf0781f2259e28acc2b58d8a68986e0dd2a88e0"},
+]
+
+[package.dependencies]
+pydantic = "*"
+tqdm = "*"
+
+[package.extras]
+all = ["accelerate (>=0.26.0)", "flash-attn", "flashrank", "litellm", "nmslib-metabrainz", "peft (>=0.13.0)", "pillow", "protobuf", "rank-llm", "requests", "sentencepiece", "torch", "transformers (>=4.45.0)"]
+api = ["requests"]
+dev = ["ipyprogress", "ipython", "ir_datasets", "isort", "pytest", "ranx", "ruff", "srsly"]
+flashrank = ["flashrank"]
+gpt = ["litellm"]
+llmlayerwise = ["flash-attn", "protobuf", "sentencepiece", "torch", "transformers (>=4.45.0)"]
+monovlm = ["accelerate (>=0.26.0)", "flash-attn", "peft (>=0.13.0)", "pillow", "protobuf", "sentencepiece", "torch", "transformers (>=4.45.0)"]
+rankllm = ["nmslib-metabrainz", "rank-llm"]
+transformers = ["protobuf", "sentencepiece", "torch", "transformers (>=4.45.0)"]
+
+[[package]]
 name = "rich"
 version = "13.9.4"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
@@ -6594,7 +7050,7 @@ files = [
 ]
 
 [package.dependencies]
-greenlet = {version = "!=0.4.17", markers = "python_version < \"3.13\" and (platform_machine == \"aarch64\" or platform_machine == \"ppc64le\" or platform_machine == \"x86_64\" or platform_machine == \"amd64\" or platform_machine == \"AMD64\" or platform_machine == \"win32\" or platform_machine == \"WIN32\")"}
+greenlet = {version = "!=0.4.17", optional = true, markers = "python_version < \"3.13\" and (platform_machine == \"aarch64\" or platform_machine == \"ppc64le\" or platform_machine == \"x86_64\" or platform_machine == \"amd64\" or platform_machine == \"AMD64\" or platform_machine == \"win32\" or platform_machine == \"WIN32\") or extra == \"asyncio\""}
 typing-extensions = ">=4.6.0"
 
 [package.extras]
@@ -6703,6 +7159,17 @@ anyio = ">=3.4.0,<5"
 
 [package.extras]
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart (>=0.0.7)", "pyyaml"]
+
+[[package]]
+name = "striprtf"
+version = "0.0.26"
+description = "A simple library to convert rtf to text"
+optional = false
+python-versions = "*"
+files = [
+    {file = "striprtf-0.0.26-py3-none-any.whl", hash = "sha256:8c8f9d32083cdc2e8bfb149455aa1cc5a4e0a035893bedc75db8b73becb3a1bb"},
+    {file = "striprtf-0.0.26.tar.gz", hash = "sha256:fdb2bba7ac440072d1c41eab50d8d74ae88f60a8b6575c6e2c7805dc462093aa"},
+]
 
 [[package]]
 name = "sympy"
@@ -7247,6 +7714,20 @@ click = ">=8.0.0"
 rich = ">=10.11.0"
 shellingham = ">=1.3.0"
 typing-extensions = ">=3.7.4.3"
+
+[[package]]
+name = "types-requests"
+version = "2.32.0.20241016"
+description = "Typing stubs for requests"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "types-requests-2.32.0.20241016.tar.gz", hash = "sha256:0d9cad2f27515d0e3e3da7134a1b6f28fb97129d86b867f24d9c726452634d95"},
+    {file = "types_requests-2.32.0.20241016-py3-none-any.whl", hash = "sha256:4195d62d6d3e043a4eaaf08ff8a62184584d2e8684e9d2aa178c7915a7da3747"},
+]
+
+[package.dependencies]
+urllib3 = ">=2"
 
 [[package]]
 name = "typing-extensions"
@@ -8146,4 +8627,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.13"
-content-hash = "57d830d141b1f2209991802654c35243bef8c9b2e25091b237877d6d062e6db7"
+content-hash = "c2bc0005593a61f92e60edbb17bc2e5e2104fbfe4375832c453ef5f45342e292"

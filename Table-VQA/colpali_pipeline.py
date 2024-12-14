@@ -18,17 +18,20 @@ logging.basicConfig(
 )
 
 # AWS S3 Configuration
-BUCKET_NAME = "colpali-docs"
+BUCKET_NAME = "table-vqa"
 REGION_NAME = "eu-central-1"
 TEMP_DIR = "/tmp/docs/temp"
 
-key_folder = "../keys" 
+key_folder = "../.keys" 
 
 with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
     AWS_ACCESS_KEY_ID = access_key_file.read().strip()
 
 with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
     AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
+with open(f"{key_folder}/hf_key.txt", "r") as hf_key_file:
+    os.environ["HUGGINGFACE_API_KEY"] = hf_key_file.read().strip()
     
 s3 = boto3.client(
     's3',
@@ -38,13 +41,16 @@ s3 = boto3.client(
 )
 
 def prepare_dataset():
-    dataset = load_dataset("ibm/finqa", trust_remote_code=True)
-    data = pd.concat([dataset['train'].to_pandas(), dataset['validation'].to_pandas(), dataset['test'].to_pandas()])
-    data.reset_index(drop=True, inplace=True)
-    data = data[["id", "question", "answer", "gold_inds"]]
-    data["Company"] = [row[0] for row in data.id.str.split("/")]
-    data["Year"] = [row[1] for row in data.id.str.split("/")]
-    data.id = data.id.map(lambda x: x.split("-")[0])
+
+    def process_qa_id(qa_id):
+        splitted = qa_id.split(".")[0]
+        return splitted.split("_")[0] + "/" + splitted.split("_")[1] + "/" + splitted.split("_")[2] + "_" + splitted.split("_")[3] + ".pdf"
+
+    data = load_dataset("terryoo/TableVQA-Bench")["fintabnetqa"].to_pandas()[["qa_id", "question", "gt"]]
+    data.qa_id = data.qa_id.apply(process_qa_id)
+    data["Company"] = [row[0] for row in data.qa_id.str.split("/")]
+    data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
+    data = data.rename(columns={"qa_id": "id"})
     return data
 
 async def process_item_qrels(data, idx, RAG, reranker, top_n=10, top_k=5):
@@ -113,16 +119,16 @@ async def main():
 
     top_n = 10
 
-    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="cuda")
+    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="mps")
 
     # Initialize the reranker with MonoQwen
-    reranker = Reranker("monoqwen2-vl-v0.1")
+    reranker = Reranker("monovlm",device="mps")
 
     # Generate qrels with reranking
     qrels = await generate_qrels(data, RAG, reranker, top_n)
 
     # Save qrels to a JSON file for later use
-    with open("results/colpali_qrels.json", "w") as f:
+    with open("results/colpali/colpali_qrels.json", "w") as f:
         json.dump(qrels, f, indent=4)
 
     print("Qrels saved to results/qrels.json")
