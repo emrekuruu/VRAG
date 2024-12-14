@@ -1,10 +1,12 @@
 import os
 import pandas as pd
 import asyncio
+import gzip
 import json
 import boto3
 from datasets import load_dataset
 from byaldi import RAGMultiModalModel
+from rerankers import Reranker
 import logging
 
 # Configure logging
@@ -16,7 +18,7 @@ logging.basicConfig(
 )
 
 # AWS S3 Configuration
-BUCKET_NAME = "table-vqa"
+BUCKET_NAME = "colpali-docs"
 REGION_NAME = "eu-central-1"
 TEMP_DIR = "/tmp/docs/temp"
 
@@ -36,38 +38,46 @@ s3 = boto3.client(
 )
 
 def prepare_dataset():
-    def process_qa_id(qa_id):
-        splitted = qa_id.split(".")[0]
-        return splitted.split("_")[0] + "/" + splitted.split("_")[1] + "/" + splitted.split("_")[2] + "_" + splitted.split("_")[3] + ".pdf"
+    dataset = load_dataset("ibm/finqa", trust_remote_code=True)
+    data = pd.concat([dataset['train'].to_pandas(), dataset['validation'].to_pandas(), dataset['test'].to_pandas()])
+    data.reset_index(drop=True, inplace=True)
+    data = data[["id", "question", "answer", "gold_inds"]]
+    data["Company"] = [row[0] for row in data.id.str.split("/")]
+    data["Year"] = [row[1] for row in data.id.str.split("/")]
+    data.id = data.id.map(lambda x: x.split("-")[0])
+    return data
 
-    data = load_dataset("terryoo/TableVQA-Bench")["fintabnetqa"].to_pandas()[["qa_id", "question", "gt"]]
-    data.qa_id = data.qa_id.apply(process_qa_id)
-    data["Company"] = [row[0] for row in data.qa_id.str.split("/")]
-    data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
-    data = data.rename(columns={"qa_id": "id"})
-    return data 
-
-async def process_item_qrels(data, idx, RAG):
+async def process_item_qrels(data, idx, RAG, reranker, top_n=10, top_k=5):
     query = data.loc[idx, "question"]
     company = data.loc[idx, "Company"]
     year = data.loc[idx, "Year"]
 
     # Perform retrieval asynchronously
-    retrieved = await asyncio.to_thread(RAG.search, query, k=5, filter_metadata={"Company": company, "Year": year})
+    retrieved = await asyncio.to_thread(RAG.search, query, k=top_n, filter_metadata={"Company": company, "Year": year})
 
-    # Construct the query's qrels
-    qrels = { company + "/" + year + "/" + doc.metadata['Filename'] : doc.score for doc in retrieved}
+    # Prepare inputs for reranking
+    passages = [doc.content for doc in retrieved]
+    scores = [doc.score for doc in retrieved]
 
-    # Log the successful retrieval
-    logging.info(f"Retrieved qrels for index {idx}")
+    # Perform reranking using MonoQwen
+    reranked_scores = await asyncio.to_thread(reranker, query=query, passages=passages)
 
-    return idx, qrels
+    # Select top_k results after reranking
+    top_k_indices = sorted(range(len(reranked_scores)), key=lambda i: reranked_scores[i], reverse=True)[:top_k]
+    reranked_results = {
+        company + "/" + year + "/" + retrieved[i].metadata['Filename']: reranked_scores[i] for i in top_k_indices
+    }
 
-async def generate_qrels(data, RAG):
+    # Log the successful retrieval and reranking
+    logging.info(f"Retrieved and reranked qrels for index {idx}")
+
+    return idx, reranked_results
+
+async def generate_qrels(data, RAG, reranker, top_n):
     qrels = {}
 
     # Create tasks for processing each item
-    tasks = [process_item_qrels(data, idx, RAG) for idx in data.index]
+    tasks = [process_item_qrels(data, idx, RAG, reranker, top_n) for idx in data.index]
 
     # Gather results asynchronously
     results_list = await asyncio.gather(*tasks)
@@ -101,9 +111,15 @@ async def main():
 
     data = prepare_dataset()
 
+    top_n = 10
+
     RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="cuda")
-    # Generate qrels
-    qrels = await generate_qrels(data, RAG)
+
+    # Initialize the reranker with MonoQwen
+    reranker = Reranker("monoqwen2-vl-v0.1")
+
+    # Generate qrels with reranking
+    qrels = await generate_qrels(data, RAG, reranker, top_n)
 
     # Save qrels to a JSON file for later use
     with open("results/colpali_qrels.json", "w") as f:
