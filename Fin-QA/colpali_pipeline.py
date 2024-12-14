@@ -6,6 +6,7 @@ import json
 import boto3
 from datasets import load_dataset
 from byaldi import RAGMultiModalModel
+from rerankers import Reranker
 import logging
 
 # Configure logging
@@ -46,27 +47,36 @@ def prepare_dataset():
     data.id = data.id.map(lambda x: x.split("-")[0])
     return data
 
-async def process_item_qrels(data, idx, RAG):
+async def process_item_qrels(data, idx, RAG, reranker):
     query = data.loc[idx, "question"]
     company = data.loc[idx, "Company"]
     year = data.loc[idx, "Year"]
 
     # Perform retrieval asynchronously
-    retrieved = await asyncio.to_thread(RAG.search, query, k=5, filter_metadata={"Company": company, "Year": year})
+    retrieved = await asyncio.to_thread(RAG.search, query, k=10, filter_metadata={"Company": company, "Year": year})
 
-    # Construct the query's qrels
-    qrels = { company + "/" + year + "/" + doc.metadata['Filename'] : doc.score for doc in retrieved}
+    # Prepare inputs for reranking
+    passages = [doc.content for doc in retrieved]
+    scores = [doc.score for doc in retrieved]
 
-    # Log the successful retrieval
-    logging.info(f"Retrieved qrels for index {idx}")
+    # Perform reranking using MonoQwen
+    reranked_scores = reranker(query=query, passages=passages)
 
-    return idx, qrels
+    # Combine reranked scores with metadata
+    reranked_results = {
+        company + "/" + year + "/" + retrieved[i].metadata['Filename']: reranked_scores[i] for i in range(len(retrieved))
+    }
 
-async def generate_qrels(data, RAG):
+    # Log the successful retrieval and reranking
+    logging.info(f"Retrieved and reranked qrels for index {idx}")
+
+    return idx, reranked_results
+
+async def generate_qrels(data, RAG, reranker):
     qrels = {}
 
     # Create tasks for processing each item
-    tasks = [process_item_qrels(data, idx, RAG) for idx in data.index]
+    tasks = [process_item_qrels(data, idx, RAG, reranker) for idx in data.index]
 
     # Gather results asynchronously
     results_list = await asyncio.gather(*tasks)
@@ -101,8 +111,12 @@ async def main():
     data = prepare_dataset()
 
     RAG = RAGMultiModalModel.from_index(index_path="finqa", device="cuda")
-    # Generate qrels
-    qrels = await generate_qrels(data, RAG)
+
+    # Initialize the reranker with MonoQwen
+    reranker = Reranker("monoqwen2-vl-v0.1")
+
+    # Generate qrels with reranking
+    qrels = await generate_qrels(data, RAG, reranker)
 
     # Save qrels to a JSON file for later use
     with open("results/colpali_qrels.json", "w") as f:
