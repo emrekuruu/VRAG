@@ -114,29 +114,35 @@ async def process_item_qrels(data, idx, RAG, reranker, top_n=10, top_k=5):
         # Perform retrieval asynchronously
         retrieved = await asyncio.to_thread(RAG.search, query, k=top_n, filter_metadata={"Filename" : doc_name})
 
-        # Fetch Base64-encoded images
-        passages = []
-        file_keys = []
+        if reranker is None:
+                qrels = { company + "/" + year + "/" + doc.metadata['Filename'] : doc.score for doc in retrieved}
+                
 
-        for doc in retrieved:
-            filename = doc.metadata["Filename"] 
-            page = int(doc.page_num)
-            file_keys.append(f"{filename}")
-            base64_images = await fetch_file_as_base64_images(filename, page)
-            if base64_images:
-                passages.extend(base64_images)  
+        else:
 
-        if not passages:
-            logging.warning(f"No image documents prepared for query index {idx}: {query}")
-            return idx, {}
+            # Fetch Base64-encoded images
+            passages = []
+            file_keys = []
 
-        # Perform reranking
-        results = await asyncio.to_thread(reranker.rank, query, passages)
+            for doc in retrieved:
+                filename = doc.metadata["Filename"] 
+                page = int(doc.page_num)
+                file_keys.append(f"{filename}")
+                base64_images = await fetch_file_as_base64_images(filename, page)
+                if base64_images:
+                    passages.extend(base64_images)  
 
-        qrels = { doc_name + "_page_" +  str(retrieved[doc.doc_id].page_num - 1 ) : doc.score for doc in results.top_k(top_k)}
+            if not passages:
+                logging.warning(f"No image documents prepared for query index {idx}: {query}")
+                return idx, {}
 
-        logging.info(f"Successfully retrieved and reranked qrels for query index {idx}")
-        
+            # Perform reranking
+            results = await asyncio.to_thread(reranker.rank, query, passages)
+
+            qrels = { doc_name + "_page_" +  str(retrieved[doc.doc_id].page_num - 1 ) : doc.score for doc in results.top_k(top_k)}
+
+        logging.info(f"Successfully retrieved qrels for query index {idx}")
+            
         return idx, qrels
 
 

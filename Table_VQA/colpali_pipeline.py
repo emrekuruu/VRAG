@@ -10,10 +10,16 @@ from rerankers import Reranker
 import logging
 import time
 import torch 
+from pdf2image import convert_from_bytes
+from langchain_core.documents import Document
+from io import BytesIO
+from Generation.generation import image_based
 
 # Configure logging
+task = "Table_VQA"
+
 logging.basicConfig(
-    filename="colpali_retrieval.log",
+    filename=f"{task}/colpali_retrieval.log",
     filemode="a",
     format="%(asctime)s - %(levelname)s - %(message)s",
     level=logging.INFO
@@ -24,13 +30,17 @@ BUCKET_NAME = "table-vqa"
 REGION_NAME = "eu-central-1"
 TEMP_DIR = "/tmp/colpali_temp"  # Temporary directory for storing files
 
-key_folder = "../.keys"
+key_folder = ".keys"
 
 with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
     AWS_ACCESS_KEY_ID = access_key_file.read().strip()
 
 with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
     AWS_SECRET_ACCESS_KEY = secret_key_file.read().strip()
+
+with open(f"{key_folder}/openai_api_key.txt", "r") as file:
+    openai_key = file.read().strip()
+    os.environ["OPENAI_API_KEY"] = openai_key
 
 with open(f"{key_folder}/hf_key.txt", "r") as hf_key_file:
     os.environ["HUGGINGFACE_API_KEY"] = hf_key_file.read().strip()
@@ -56,10 +66,6 @@ def prepare_dataset():
     data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
     data = data.rename(columns={"qa_id": "id"})
     return data
-
-from pdf2image import convert_from_bytes
-from langchain_core.documents import Document
-from io import BytesIO
 
 async def fetch_file_as_base64_images(company, year, filename):
 
@@ -109,20 +115,17 @@ async def fetch_file_as_base64_images(company, year, filename):
                 os.remove(local_file_path)
 
 async def process_item_qrels(data, idx, RAG, reranker, top_n=10, top_k=5):
-    """
-    Processes a single query to retrieve and rerank qrels, using Base64-encoded image inputs.
-    """
+
     async with qrel_semaphore: 
 
         query = data.iloc[idx]["question"]
         company = data.iloc[idx]["Company"]
         year = data.iloc[idx]["Year"]
 
-        # Perform retrieval asynchronously
         retrieved = await asyncio.to_thread(RAG.search, query, k=top_n, filter_metadata={"Company_Year": f"{company}_{year}"})
 
         # Fetch Base64-encoded images
-        passages = []
+        pages = []
         file_keys = []
 
         for doc in retrieved:
@@ -130,23 +133,21 @@ async def process_item_qrels(data, idx, RAG, reranker, top_n=10, top_k=5):
             file_keys.append(f"{company}/{year}/{filename}")
             base64_images = await fetch_file_as_base64_images(company, year, filename)
             if base64_images:
-                passages.extend(base64_images)  # Add all Base64-encoded images
+                pages.extend(base64_images) 
 
-        if not passages:
+        if not pages:
             logging.warning(f"No image documents prepared for query index {idx}: {query}")
-            return idx, {}
 
-        # Perform reranking
-        results = await asyncio.to_thread(reranker.rank, query, passages)
+        if reranker is None:
+            qrels = { company + "/" + year + "/" + doc.metadata['Filename'] : doc.score for doc in retrieved}
 
-        qrels = { company + "/" + year + "/" + retrieved[doc.doc_id]["metadata"]["Filename"] : doc.score for doc in results.top_k(top_k)}
+        else:
+            results = await asyncio.to_thread(reranker.rank, query, pages)
+            qrels = { company + "/" + year + "/" + retrieved[doc.doc_id]["metadata"]["Filename"] : doc.score for doc in results.top_k(top_k)}
 
-        logging.info(f"Successfully retrieved and reranked qrels for query index {idx}")
-
-        del passages, results
-        torch.cuda.empty_cache()
-        
-        return idx, qrels
+        answer = await image_based(query, pages)
+            
+        return idx, qrels, answer
 
 
 async def generate_qrels(data, RAG, reranker, top_n):
@@ -154,6 +155,7 @@ async def generate_qrels(data, RAG, reranker, top_n):
     Generates qrels for the entire dataset, including reranking.
     """
     qrels = {}
+    answers = {}
 
     # Create tasks for processing each item
     tasks = [process_item_qrels(data, idx, RAG, reranker, top_n) for idx in data.index]
@@ -162,13 +164,15 @@ async def generate_qrels(data, RAG, reranker, top_n):
     results_list = await asyncio.gather(*tasks)
 
     # Populate the qrels dictionary
-    for query_id, retrieved_qrels in results_list:
+    for query_id, retrieved_qrels, answer in results_list:
         qrels[query_id] = retrieved_qrels
+        answers[query_id] = answer
 
-    return qrels
+    return qrels, answers
 
 async def main():
-    if not os.path.exists(".byaldi/table_vqa"):
+
+    if not os.path.exists(f"{task}/.byaldi/table_vqa"):
         print("Downloading index")
         os.makedirs(".byaldi/", exist_ok=True)
     else:
@@ -176,22 +180,24 @@ async def main():
 
     data = prepare_dataset()
 
-    top_n = 20
+    data = data.iloc[0:2]
 
-    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="cuda")
+    top_n = 5
 
-    # Initialize the reranker with MonoQwen
-    reranker = Reranker("monovlm", device="cuda")
+    RAG = RAGMultiModalModel.from_index(index_path=f"/workspace/VRAG/{task}/.byaldi/table_vqa", device="cuda")
 
-    # Generate qrels with reranking
-    qrels = await generate_qrels(data, RAG, reranker, top_n)
+    # reranker = Reranker("monovlm", device="cuda")
+    reranker = None
 
-    # Save qrels to a JSON file for later use
-    os.makedirs("results/colpali", exist_ok=True)
-    with open(f"results/colpali/colpali_{top_n}_qrels.json", "w") as f:
+    qrels, answers = await generate_qrels(data, RAG, reranker, top_n)
+
+    with open(f"{task}/results/colpali/colpali_{top_n}_qrels.json", "w") as f:
         json.dump(qrels, f, indent=4)
 
-    print("Qrels saved to results/colpali")
+    with open(f"{task}/results/generation/image_answers.json", "w") as f:
+        json.dump(answers, f, indent=4)
+
+    print("Finished")
 
 if __name__ == "__main__":
     asyncio.run(main())
