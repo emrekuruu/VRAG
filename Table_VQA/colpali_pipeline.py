@@ -146,6 +146,8 @@ async def process_item_qrels(data, idx, RAG, reranker, top_n=10, top_k=5):
             qrels = { company + "/" + year + "/" + retrieved[doc.doc_id]["metadata"]["Filename"] : doc.score for doc in results.top_k(top_k)}
 
         answer = await image_based(query, pages)
+
+        logging.info(f"Done with query {idx}")
             
         return idx, qrels, answer
 
@@ -179,8 +181,6 @@ async def main():
         print("Index already exists")
 
     data = prepare_dataset()
-
-    data = data.iloc[0:2]
 
     top_n = 5
 

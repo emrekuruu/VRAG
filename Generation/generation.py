@@ -56,13 +56,13 @@ async def image_based(query, pages):
         })
 
     print(len(content))
-    
+
     message = HumanMessage(content=content)     
     response = await llm.ainvoke([message])
     return response.content
 
 async def text_based(query, chunks):
-    llm = ChatOpenAI()
+    llm = ChatOpenAI(model="gpt-4o")
 
     prompt = TEXT_PROMPT.format(query=query, context=chunks)
 
