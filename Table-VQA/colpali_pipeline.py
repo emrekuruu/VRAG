@@ -1,13 +1,15 @@
 import os
 import pandas as pd
 import asyncio
-import gzip
 import json
+import base64
 import boto3
 from datasets import load_dataset
 from byaldi import RAGMultiModalModel
 from rerankers import Reranker
 import logging
+import time
+import torch 
 
 # Configure logging
 logging.basicConfig(
@@ -20,9 +22,9 @@ logging.basicConfig(
 # AWS S3 Configuration
 BUCKET_NAME = "table-vqa"
 REGION_NAME = "eu-central-1"
-TEMP_DIR = "/tmp/docs/temp"
+TEMP_DIR = "/tmp/colpali_temp"  # Temporary directory for storing files
 
-key_folder = "../.keys" 
+key_folder = "../.keys"
 
 with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
     AWS_ACCESS_KEY_ID = access_key_file.read().strip()
@@ -32,7 +34,7 @@ with open(f"{key_folder}/aws_secret_key.txt", "r") as secret_key_file:
 
 with open(f"{key_folder}/hf_key.txt", "r") as hf_key_file:
     os.environ["HUGGINGFACE_API_KEY"] = hf_key_file.read().strip()
-    
+
 s3 = boto3.client(
     's3',
     region_name=REGION_NAME,
@@ -40,8 +42,10 @@ s3 = boto3.client(
     aws_secret_access_key=AWS_SECRET_ACCESS_KEY
 )
 
-def prepare_dataset():
+aws_semaphore = asyncio.Semaphore(10)  
+qrel_semaphore = asyncio.Semaphore(16)
 
+def prepare_dataset():
     def process_qa_id(qa_id):
         splitted = qa_id.split(".")[0]
         return splitted.split("_")[0] + "/" + splitted.split("_")[1] + "/" + splitted.split("_")[2] + "_" + splitted.split("_")[3] + ".pdf"
@@ -53,33 +57,102 @@ def prepare_dataset():
     data = data.rename(columns={"qa_id": "id"})
     return data
 
+from pdf2image import convert_from_bytes
+from langchain_core.documents import Document
+from io import BytesIO
+
+async def fetch_file_as_base64_images(company, year, filename):
+
+    file_key = f"{company}/{year}/{filename}"
+    local_file_path = os.path.join(TEMP_DIR, filename)
+
+    # Create the temporary directory if it doesn't exist
+    os.makedirs(TEMP_DIR, exist_ok=True)
+
+    async with aws_semaphore:
+        try:
+            # Download the file from S3
+            s3.download_file(BUCKET_NAME, file_key, local_file_path)
+
+            # Wait until the file is fully downloaded
+            max_wait_time = 20  # seconds
+            elapsed_time = 0
+            while not os.path.exists(local_file_path):
+                if elapsed_time >= max_wait_time:
+                    logging.error(f"File did not appear within {max_wait_time} seconds: {local_file_path}")
+                    return None
+                time.sleep(0.5)
+                elapsed_time += 0.5
+
+            # Convert PDF to images
+            with open(local_file_path, "rb") as file:
+                pdf_bytes = file.read()
+                images = convert_from_bytes(pdf_bytes, fmt="jpeg", dpi=200)
+
+            # Convert images to Base64
+            base64_images = []
+            for img in images:
+                buffer = BytesIO()
+                img.save(buffer, format="JPEG")
+                buffer.seek(0)
+                img_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
+                base64_images.append(img_base64)
+
+            return base64_images
+        except Exception as e:
+            logging.error(f"Failed to fetch and convert file {file_key} to Base64 images: {e}")
+            return None
+            
+        finally:
+            # Remove the temporary file to free up space
+            if os.path.exists(local_file_path):
+                os.remove(local_file_path)
+
 async def process_item_qrels(data, idx, RAG, reranker, top_n=10, top_k=5):
-    query = data.loc[idx, "question"]
-    company = data.loc[idx, "Company"]
-    year = data.loc[idx, "Year"]
+    """
+    Processes a single query to retrieve and rerank qrels, using Base64-encoded image inputs.
+    """
+    async with qrel_semaphore: 
 
-    # Perform retrieval asynchronously
-    retrieved = await asyncio.to_thread(RAG.search, query, k=top_n, filter_metadata={"Company": company, "Year": year})
+        query = data.iloc[idx]["question"]
+        company = data.iloc[idx]["Company"]
+        year = data.iloc[idx]["Year"]
 
-    # Prepare inputs for reranking
-    passages = [doc.content for doc in retrieved]
-    scores = [doc.score for doc in retrieved]
+        # Perform retrieval asynchronously
+        retrieved = await asyncio.to_thread(RAG.search, query, k=top_n, filter_metadata={"Company_Year": f"{company}_{year}"})
 
-    # Perform reranking using MonoQwen
-    reranked_scores = await asyncio.to_thread(reranker, query=query, passages=passages)
+        # Fetch Base64-encoded images
+        passages = []
+        file_keys = []
 
-    # Select top_k results after reranking
-    top_k_indices = sorted(range(len(reranked_scores)), key=lambda i: reranked_scores[i], reverse=True)[:top_k]
-    reranked_results = {
-        company + "/" + year + "/" + retrieved[i].metadata['Filename']: reranked_scores[i] for i in top_k_indices
-    }
+        for doc in retrieved:
+            filename = doc.metadata["Filename"]
+            file_keys.append(f"{company}/{year}/{filename}")
+            base64_images = await fetch_file_as_base64_images(company, year, filename)
+            if base64_images:
+                passages.extend(base64_images)  # Add all Base64-encoded images
 
-    # Log the successful retrieval and reranking
-    logging.info(f"Retrieved and reranked qrels for index {idx}")
+        if not passages:
+            logging.warning(f"No image documents prepared for query index {idx}: {query}")
+            return idx, {}
 
-    return idx, reranked_results
+        # Perform reranking
+        results = await asyncio.to_thread(reranker.rank, query, passages)
+
+        qrels = { company + "/" + year + "/" + retrieved[doc.doc_id]["metadata"]["Filename"] : doc.score for doc in results.top_k(top_k)}
+
+        logging.info(f"Successfully retrieved and reranked qrels for query index {idx}")
+
+        del passages, results
+        torch.cuda.empty_cache()
+        
+        return idx, qrels
+
 
 async def generate_qrels(data, RAG, reranker, top_n):
+    """
+    Generates qrels for the entire dataset, including reranking.
+    """
     qrels = {}
 
     # Create tasks for processing each item
@@ -94,44 +167,31 @@ async def generate_qrels(data, RAG, reranker, top_n):
 
     return qrels
 
-def download_s3_folder(prefix, local_dir):
-    os.makedirs(local_dir, exist_ok=True)
-    paginator = s3.get_paginator('list_objects_v2')
-    for page in paginator.paginate(Bucket=BUCKET_NAME, Prefix=prefix):
-        for obj in page.get('Contents', []):
-            file_key = obj['Key']
-            if file_key.endswith('/'):
-                continue
-            relative_path = os.path.relpath(file_key, prefix)
-            local_file_path = os.path.join(local_dir, relative_path)
-            os.makedirs(os.path.dirname(local_file_path), exist_ok=True)
-            s3.download_file(BUCKET_NAME, file_key, local_file_path)
-
 async def main():
     if not os.path.exists(".byaldi/table_vqa"):
         print("Downloading index")
-        os.mkdir(".byaldi/")
-        download_s3_folder("byaldi", ".byaldi")
+        os.makedirs(".byaldi/", exist_ok=True)
     else:
         print("Index already exists")
 
     data = prepare_dataset()
 
-    top_n = 10
+    top_n = 20
 
-    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="mps")
+    RAG = RAGMultiModalModel.from_index(index_path="table_vqa", device="cuda")
 
     # Initialize the reranker with MonoQwen
-    reranker = Reranker("monovlm",device="mps")
+    reranker = Reranker("monovlm", device="cuda")
 
     # Generate qrels with reranking
     qrels = await generate_qrels(data, RAG, reranker, top_n)
 
     # Save qrels to a JSON file for later use
-    with open("results/colpali/colpali_qrels.json", "w") as f:
+    os.makedirs("results/colpali", exist_ok=True)
+    with open(f"results/colpali/colpali_{top_n}_qrels.json", "w") as f:
         json.dump(qrels, f, indent=4)
 
-    print("Qrels saved to results/qrels.json")
+    print("Qrels saved to results/colpali")
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -1,13 +1,12 @@
 import os
 import pandas as pd
 import asyncio
-import gzip
 import json
 import boto3
 from datasets import load_dataset
 from byaldi import RAGMultiModalModel
-from rerankers import Reranker
 import logging
+import gzip 
 
 # Configure logging
 logging.basicConfig(
@@ -22,7 +21,7 @@ BUCKET_NAME = "colpali-docs"
 REGION_NAME = "eu-central-1"
 TEMP_DIR = "/tmp/docs/temp"
 
-key_folder = "../keys" 
+key_folder = "../.keys" 
 
 with open(f"{key_folder}/aws_access_key.txt", "r") as access_key_file:
     AWS_ACCESS_KEY_ID = access_key_file.read().strip()
@@ -45,38 +44,29 @@ def prepare_dataset():
     data["Company"] = [row[0] for row in data.id.str.split("/")]
     data["Year"] = [row[1] for row in data.id.str.split("/")]
     data.id = data.id.map(lambda x: x.split("-")[0])
-    return data
+    return data 
 
-async def process_item_qrels(data, idx, RAG, reranker):
+async def process_item_qrels(data, idx, RAG):
     query = data.loc[idx, "question"]
     company = data.loc[idx, "Company"]
     year = data.loc[idx, "Year"]
 
     # Perform retrieval asynchronously
-    retrieved = await asyncio.to_thread(RAG.search, query, k=10, filter_metadata={"Company": company, "Year": year})
+    retrieved = await asyncio.to_thread(RAG.search, query, k=5, filter_metadata={"Company_Year" : f"{company}_{year}"})
 
-    # Prepare inputs for reranking
-    passages = [doc.content for doc in retrieved]
-    scores = [doc.score for doc in retrieved]
+    # Construct the query's qrels
+    qrels = { company + "/" + year + "/" + doc.metadata['Filename'] : doc.score for doc in retrieved}
 
-    # Perform reranking using MonoQwen
-    reranked_scores = reranker(query=query, passages=passages)
+    # Log the successful retrieval
+    logging.info(f"Retrieved qrels for index {idx}")
 
-    # Combine reranked scores with metadata
-    reranked_results = {
-        company + "/" + year + "/" + retrieved[i].metadata['Filename']: reranked_scores[i] for i in range(len(retrieved))
-    }
+    return idx, qrels
 
-    # Log the successful retrieval and reranking
-    logging.info(f"Retrieved and reranked qrels for index {idx}")
-
-    return idx, reranked_results
-
-async def generate_qrels(data, RAG, reranker):
+async def generate_qrels(data, RAG):
     qrels = {}
 
     # Create tasks for processing each item
-    tasks = [process_item_qrels(data, idx, RAG, reranker) for idx in data.index]
+    tasks = [process_item_qrels(data, idx, RAG) for idx in data.index]
 
     # Gather results asynchronously
     results_list = await asyncio.gather(*tasks)
@@ -108,17 +98,20 @@ async def main():
     else:
         print("Index already exists")
 
+    with gzip.open(".byaldi/finqa/metadata.json.gz", "rt") as f:
+        metadata = json.load(f)
+
+    metadata = {key: {"Company_Year": value["Company"] + "_" + value["Year"], "Filename" : value["Filename"]} for key, value in metadata.items()}  
+
+    with gzip.open(".byaldi/finqa/metadata.json.gz", "wt") as f:
+        json.dump(metadata, f)
+
     data = prepare_dataset()
 
     RAG = RAGMultiModalModel.from_index(index_path="finqa", device="cuda")
 
-    # Initialize the reranker with MonoQwen
-    reranker = Reranker("monoqwen2-vl-v0.1")
+    qrels = await generate_qrels(data, RAG)
 
-    # Generate qrels with reranking
-    qrels = await generate_qrels(data, RAG, reranker)
-
-    # Save qrels to a JSON file for later use
     with open("results/colpali_qrels.json", "w") as f:
         json.dump(qrels, f, indent=4)
 
