@@ -1,0 +1,984 @@
+{
+    "0": {
+        "3M_2018_10K.pdf_page_59": 0.7982658,
+        "3M_2018_10K.pdf_page_6": 0.74385756,
+        "3M_2018_10K.pdf_page_38": 0.7300017,
+        "3M_2018_10K.pdf_page_48": 0.7120925,
+        "3M_2018_10K.pdf_page_82": 0.57952
+    },
+    "1": {
+        "3M_2018_10K.pdf_page_48": 0.7610953,
+        "3M_2018_10K.pdf_page_13": 0.7306941,
+        "3M_2018_10K.pdf_page_59": 0.6989468,
+        "3M_2018_10K.pdf_page_66": 0.6479992,
+        "3M_2018_10K.pdf_page_57": 0.6150191
+    },
+    "2": {
+        "3M_2022_10K.pdf_page_37": 0.5968332,
+        "3M_2022_10K.pdf_page_6": 0.55767727,
+        "3M_2022_10K.pdf_page_18": 0.5450684,
+        "3M_2022_10K.pdf_page_38": 0.5428881,
+        "3M_2022_10K.pdf_page_35": 0.53342235
+    },
+    "3": {
+        "3M_2022_10K.pdf_page_18": 0.73459625,
+        "3M_2022_10K.pdf_page_19": 0.6227582,
+        "3M_2022_10K.pdf_page_26": 0.5928793,
+        "3M_2022_10K.pdf_page_51": 0.51325434,
+        "3M_2022_10K.pdf_page_47": 0.47124818
+    },
+    "4": {
+        "3M_2022_10K.pdf_page_27": 0.8364614,
+        "3M_2022_10K.pdf_page_18": 0.8266142,
+        "3M_2022_10K.pdf_page_26": 0.78631157,
+        "3M_2022_10K.pdf_page_30": 0.77792513,
+        "3M_2022_10K.pdf_page_28": 0.7732339
+    },
+    "5": {
+        "3M_2023Q2_10Q.pdf_page_70": 0.6864757,
+        "3M_2023Q2_10Q.pdf_page_0": 0.6347929,
+        "3M_2023Q2_10Q.pdf_page_1": 0.6161283,
+        "3M_2023Q2_10Q.pdf_page_4": 0.60805947,
+        "3M_2023Q2_10Q.pdf_page_3": 0.4611872
+    },
+    "6": {
+        "3M_2023Q2_10Q.pdf_page_47": 0.78650844,
+        "3M_2023Q2_10Q.pdf_page_18": 0.575517,
+        "3M_2023Q2_10Q.pdf_page_13": 0.5515985,
+        "3M_2023Q2_10Q.pdf_page_0": 0.54274267,
+        "3M_2023Q2_10Q.pdf_page_69": 0.5054935
+    },
+    "7": {
+        "3M_2023Q2_10Q.pdf_page_72": 0.6122407,
+        "3M_2023Q2_10Q.pdf_page_61": 0.49509352,
+        "3M_2023Q2_10Q.pdf_page_73": 0.4420348,
+        "3M_2023Q2_10Q.pdf_page_69": 0.4352539,
+        "3M_2023Q2_10Q.pdf_page_74": 0.3924305
+    },
+    "8": {
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_112": 0.69024646,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_33": 0.6437107,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_8": 0.42419788,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_64": 0.402745,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_91": 0.39992937
+    },
+    "9": {
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_33": 0.46978843,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_69": 0.46687052,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_112": 0.43741554,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_91": 0.40330887,
+        "ACTIVISIONBLIZZARD_2019_10K.pdf_page_73": 0.39019752
+    },
+    "10": {
+        "ADOBE_2015_10K.pdf_page_61": 0.6246834,
+        "ADOBE_2015_10K.pdf_page_102": 0.48528314,
+        "ADOBE_2015_10K.pdf_page_84": 0.43611822,
+        "ADOBE_2015_10K.pdf_page_38": 0.42148095,
+        "ADOBE_2015_10K.pdf_page_99": 0.4179133
+    },
+    "11": {
+        "ADOBE_2016_10K.pdf_page_43": 0.434102,
+        "ADOBE_2016_10K.pdf_page_100": 0.50959414,
+        "ADOBE_2016_10K.pdf_page_39": 0.49275014,
+        "ADOBE_2016_10K.pdf_page_21": 0.43698296
+    },
+    "12": {
+        "ADOBE_2017_10K.pdf_page_36": 0.5221784,
+        "ADOBE_2017_10K.pdf_page_95": 0.47957736,
+        "ADOBE_2017_10K.pdf_page_14": 0.3244071,
+        "ADOBE_2017_10K.pdf_page_82": 0.3017019,
+        "ADOBE_2017_10K.pdf_page_75": 0.27940357
+    },
+    "13": {
+        "ADOBE_2022_10K.pdf_page_56": 0.6108487,
+        "ADOBE_2022_10K.pdf_page_37": 0.5345888,
+        "ADOBE_2022_10K.pdf_page_64": 0.4513029,
+        "ADOBE_2022_10K.pdf_page_36": 0.4338141
+    },
+    "14": {
+        "ADOBE_2022_10K.pdf_page_64": 0.38964,
+        "ADOBE_2022_10K.pdf_page_85": 0.35374123,
+        "ADOBE_2022_10K.pdf_page_44": 0.34395897,
+        "ADOBE_2022_10K.pdf_page_37": 0.29128367,
+        "ADOBE_2022_10K.pdf_page_66": 0.2867386
+    },
+    "15": {
+        "AES_2022_10K.pdf_page_179": 0.59033114,
+        "AES_2022_10K.pdf_page_131": 0.588062,
+        "AES_2022_10K.pdf_page_85": 0.5345888,
+        "AES_2022_10K.pdf_page_134": 0.47416916,
+        "AES_2022_10K.pdf_page_198": 0.47066417
+    },
+    "16": {
+        "AES_2022_10K.pdf_page_14": 0.47373086,
+        "AES_2022_10K.pdf_page_131": 0.40344992,
+        "AES_2022_10K.pdf_page_83": 0.40105483,
+        "AES_2022_10K.pdf_page_129": 0.3307635,
+        "AES_2022_10K.pdf_page_179": 0.32572478
+    },
+    "17": {
+        "AES_2022_10K.pdf_page_129": 0.5559422,
+        "AES_2022_10K.pdf_page_131": 0.59344494,
+        "AES_2022_10K.pdf_page_132": 0.572078,
+        "AES_2022_10K.pdf_page_126": 0.5246632
+    },
+    "18": {
+        "AMAZON_2017_10K.pdf_page_36": 0.47475353,
+        "AMAZON_2017_10K.pdf_page_39": 0.47329262,
+        "AMAZON_2017_10K.pdf_page_38": 0.33102292,
+        "AMAZON_2017_10K.pdf_page_18": 0.28313473,
+        "AMAZON_2017_10K.pdf_page_34": 0.20924373
+    },
+    "19": {
+        "AMAZON_2017_10K.pdf_page_24": 0.6304352,
+        "AMAZON_2017_10K.pdf_page_37": 0.5510187,
+        "AMAZON_2017_10K.pdf_page_68": 0.4362623,
+        "AMAZON_2017_10K.pdf_page_39": 0.4296453
+    },
+    "20": {
+        "AMAZON_2019_10K.pdf_page_39": 0.7211353,
+        "AMAZON_2019_10K.pdf_page_37": 0.6407488,
+        "AMAZON_2019_10K.pdf_page_0": 0.5053471,
+        "AMAZON_2019_10K.pdf_page_24": 0.38477397,
+        "AMAZON_2019_10K.pdf_page_58": 0.3825571
+    },
+    "21": {
+        "AMCOR_2020_10K.pdf_page_22": 0.7253574,
+        "AMCOR_2020_10K.pdf_page_50": 0.6469293,
+        "AMCOR_2020_10K.pdf_page_27": 0.6342494,
+        "AMCOR_2020_10K.pdf_page_100": 0.6255073,
+        "AMCOR_2020_10K.pdf_page_49": 0.59033114
+    },
+    "22": {
+        "AMCOR_2022_8K_dated-2022-07-01.pdf_page_0": 0.48235655,
+        "AMCOR_2022_8K_dated-2022-07-01.pdf_page_2": 0.5236402,
+        "AMCOR_2022_8K_dated-2022-07-01.pdf_page_1": 0.24247949,
+        "AMCOR_2022_8K_dated-2022-07-01.pdf_page_8": 0.1376602
+    },
+    "23": {
+        "AMCOR_2023_10K.pdf_page_31": 0.7055624,
+        "AMCOR_2023_10K.pdf_page_32": 0.5660431,
+        "AMCOR_2023_10K.pdf_page_34": 0.53079647
+    },
+    "24": {
+        "AMCOR_2023_10K.pdf_page_78": 0.55623144,
+        "AMCOR_2023_10K.pdf_page_34": 0.5310884,
+        "AMCOR_2023_10K.pdf_page_107": 0.51105833,
+        "AMCOR_2023_10K.pdf_page_150": 0.48865002,
+        "AMCOR_2023_10K.pdf_page_31": 0.37463108
+    },
+    "25": {
+        "AMCOR_2023_10K.pdf_page_53": 0.7837407,
+        "AMCOR_2023_10K.pdf_page_4": 0.61779,
+        "AMCOR_2023_10K.pdf_page_2": 0.52173984,
+        "AMCOR_2023_10K.pdf_page_150": 0.3795169
+    },
+    "26": {
+        "AMCOR_2023_10K.pdf_page_31": 0.7555112,
+        "AMCOR_2023_10K.pdf_page_28": 0.59033114,
+        "AMCOR_2023_10K.pdf_page_49": 0.650934,
+        "AMCOR_2023_10K.pdf_page_47": 0.5957048
+    },
+    "27": {
+        "AMCOR_2023Q2_10Q.pdf_page_6": 0.38172707,
+        "AMCOR_2023Q2_10Q.pdf_page_8": 0.21730468,
+        "AMCOR_2023Q2_10Q.pdf_page_32": 0.18719247,
+        "AMCOR_2023Q2_10Q.pdf_page_1": 0.18233846,
+        "AMCOR_2023Q2_10Q.pdf_page_2": 0.18111867
+    },
+    "28": {
+        "AMCOR_2023Q4_EARNINGS.pdf_page_0": 0.72325134,
+        "AMCOR_2023Q4_EARNINGS.pdf_page_1": 0.7463059,
+        "AMCOR_2023Q4_EARNINGS.pdf_page_3": 0.7031221
+    },
+    "29": {
+        "AMCOR_2023Q4_EARNINGS.pdf_page_1": 0.69199765,
+        "AMCOR_2023Q4_EARNINGS.pdf_page_7": 0.80625874,
+        "AMCOR_2023Q4_EARNINGS.pdf_page_9": 0.77364457,
+        "AMCOR_2023Q4_EARNINGS.pdf_page_2": 0.7295395
+    },
+    "30": {
+        "AMD_2015_10K.pdf_page_33": 0.62687886,
+        "AMD_2015_10K.pdf_page_92": 0.52685463,
+        "AMD_2015_10K.pdf_page_42": 0.42835352,
+        "AMD_2015_10K.pdf_page_101": 0.3594546
+    },
+    "31": {
+        "AMD_2022_10K.pdf_page_42": 0.7293082,
+        "AMD_2022_10K.pdf_page_54": 0.62248284,
+        "AMD_2022_10K.pdf_page_55": 0.5377946,
+        "AMD_2022_10K.pdf_page_56": 0.53517187,
+        "AMD_2022_10K.pdf_page_57": 0.53400564
+    },
+    "32": {
+        "AMD_2022_10K.pdf_page_58": 0.8066246,
+        "AMD_2022_10K.pdf_page_42": 0.7487387,
+        "AMD_2022_10K.pdf_page_3": 0.7161595,
+        "AMD_2022_10K.pdf_page_9": 0.68344116,
+        "AMD_2022_10K.pdf_page_4": 0.5803764
+    },
+    "33": {
+        "AMD_2022_10K.pdf_page_42": 0.7769112,
+        "AMD_2022_10K.pdf_page_47": 0.49919498,
+        "AMD_2022_10K.pdf_page_13": 0.51793724,
+        "AMD_2022_10K.pdf_page_0": 0.4920179
+    },
+    "34": {
+        "AMD_2022_10K.pdf_page_42": 0.7311551,
+        "AMD_2022_10K.pdf_page_100": 0.7135319,
+        "AMD_2022_10K.pdf_page_47": 0.5465209,
+        "AMD_2022_10K.pdf_page_54": 0.43208793,
+        "AMD_2022_10K.pdf_page_58": 0.41406992
+    },
+    "35": {
+        "AMD_2022_10K.pdf_page_51": 0.82994765,
+        "AMD_2022_10K.pdf_page_58": 0.80014634,
+        "AMD_2022_10K.pdf_page_50": 0.77261686,
+        "AMD_2022_10K.pdf_page_42": 0.76951396,
+        "AMD_2022_10K.pdf_page_57": 0.71040785
+    },
+    "36": {
+        "AMD_2022_10K.pdf_page_47": 0.7253574,
+        "AMD_2022_10K.pdf_page_42": 0.8302782,
+        "AMD_2022_10K.pdf_page_74": 0.71113056
+    },
+    "37": {
+        "AMD_2022_10K.pdf_page_10": 0.6612456,
+        "AMD_2022_10K.pdf_page_42": 0.568632,
+        "AMD_2022_10K.pdf_page_3": 0.3430341,
+        "AMD_2022_10K.pdf_page_13": 0.29061884,
+        "AMD_2022_10K.pdf_page_58": 0.26487666
+    },
+    "38": {
+        "AMERICANEXPRESS_2022_10K.pdf_page_68": 0.71829855,
+        "AMERICANEXPRESS_2022_10K.pdf_page_0": 0.4526091,
+        "AMERICANEXPRESS_2022_10K.pdf_page_38": 0.4833807,
+        "AMERICANEXPRESS_2022_10K.pdf_page_124": 0.44840267
+    },
+    "39": {
+        "AMERICANEXPRESS_2022_10K.pdf_page_152": 0.7940821,
+        "AMERICANEXPRESS_2022_10K.pdf_page_4": 0.6238588,
+        "AMERICANEXPRESS_2022_10K.pdf_page_8": 0.58862966,
+        "AMERICANEXPRESS_2022_10K.pdf_page_252": 0.5611433,
+        "AMERICANEXPRESS_2022_10K.pdf_page_253": 0.539833
+    },
+    "40": {
+        "AMERICANEXPRESS_2022_10K.pdf_page_90": 0.65966886,
+        "AMERICANEXPRESS_2022_10K.pdf_page_43": 0.64128816,
+        "AMERICANEXPRESS_2022_10K.pdf_page_48": 0.52334785,
+        "AMERICANEXPRESS_2022_10K.pdf_page_64": 0.5201313,
+        "AMERICANEXPRESS_2022_10K.pdf_page_39": 0.3578373
+    },
+    "41": {
+        "AMERICANEXPRESS_2022_10K.pdf_page_43": 0.49758363,
+        "AMERICANEXPRESS_2022_10K.pdf_page_64": 0.40112522,
+        "AMERICANEXPRESS_2022_10K.pdf_page_68": 0.40006998,
+        "AMERICANEXPRESS_2022_10K.pdf_page_90": 0.3985943,
+        "AMERICANEXPRESS_2022_10K.pdf_page_83": 0.35260347
+    },
+    "42": {
+        "AMERICANEXPRESS_2022_10K.pdf_page_48": 0.9119436,
+        "AMERICANEXPRESS_2022_10K.pdf_page_43": 0.7180613,
+        "AMERICANEXPRESS_2022_10K.pdf_page_85": 0.3904764,
+        "AMERICANEXPRESS_2022_10K.pdf_page_145": 0.35300484,
+        "AMERICANEXPRESS_2022_10K.pdf_page_149": 0.34727195
+    },
+    "43": {
+        "AMERICANEXPRESS_2022_10K.pdf_page_126": 0.79542017,
+        "AMERICANEXPRESS_2022_10K.pdf_page_98": 0.734139,
+        "AMERICANEXPRESS_2022_10K.pdf_page_83": 0.6633424,
+        "AMERICANEXPRESS_2022_10K.pdf_page_97": 0.6625569,
+        "AMERICANEXPRESS_2022_10K.pdf_page_125": 0.6152965
+    },
+    "44": {
+        "AMERICANEXPRESS_2022_10K.pdf_page_4": 0.756376,
+        "AMERICANEXPRESS_2022_10K.pdf_page_44": 0.80844593,
+        "AMERICANEXPRESS_2022_10K.pdf_page_83": 0.7467494,
+        "AMERICANEXPRESS_2022_10K.pdf_page_28": 0.5786631
+    },
+    "45": {
+        "AMERICANWATERWORKS_2020_10K.pdf_page_136": 0.49113917,
+        "AMERICANWATERWORKS_2020_10K.pdf_page_105": 0.43136916,
+        "AMERICANWATERWORKS_2020_10K.pdf_page_67": 0.41620392,
+        "AMERICANWATERWORKS_2020_10K.pdf_page_81": 0.40867847,
+        "AMERICANWATERWORKS_2020_10K.pdf_page_134": 0.4071218
+    },
+    "46": {
+        "AMERICANWATERWORKS_2021_10K.pdf_page_80": 0.5749443,
+        "AMERICANWATERWORKS_2021_10K.pdf_page_84": 0.56460327,
+        "AMERICANWATERWORKS_2021_10K.pdf_page_89": 0.55912215,
+        "AMERICANWATERWORKS_2021_10K.pdf_page_83": 0.468621,
+        "AMERICANWATERWORKS_2021_10K.pdf_page_142": 0.4302197
+    },
+    "47": {
+        "AMERICANWATERWORKS_2022_10K.pdf_page_304": 0.6952351,
+        "AMERICANWATERWORKS_2022_10K.pdf_page_77": 0.61057013,
+        "AMERICANWATERWORKS_2022_10K.pdf_page_141": 0.55912215,
+        "AMERICANWATERWORKS_2022_10K.pdf_page_64": 0.55796635,
+        "AMERICANWATERWORKS_2022_10K.pdf_page_303": 0.50388235
+    },
+    "48": {
+        "BESTBUY_2017_10K.pdf_page_52": 0.71496695,
+        "BESTBUY_2017_10K.pdf_page_25": 0.62358373,
+        "BESTBUY_2017_10K.pdf_page_30": 0.60805947,
+        "BESTBUY_2017_10K.pdf_page_96": 0.58862966,
+        "BESTBUY_2017_10K.pdf_page_54": 0.48425868
+    },
+    "49": {
+        "BESTBUY_2019_10K.pdf_page_51": 0.58664185,
+        "BESTBUY_2019_10K.pdf_page_31": 0.52203226,
+        "BESTBUY_2019_10K.pdf_page_25": 0.5164741,
+        "BESTBUY_2019_10K.pdf_page_95": 0.507251,
+        "BESTBUY_2019_10K.pdf_page_34": 0.3895703
+    },
+    "50": {
+        "BESTBUY_2023_10K.pdf_page_34": 0.4517382,
+        "BESTBUY_2023_10K.pdf_page_42": 0.35561875,
+        "BESTBUY_2023_10K.pdf_page_21": 0.28363302,
+        "BESTBUY_2023_10K.pdf_page_22": 0.24779212
+    },
+    "51": {
+        "BESTBUY_2023_10K.pdf_page_43": 0.63234437,
+        "BESTBUY_2023_10K.pdf_page_50": 0.5221784,
+        "BESTBUY_2023_10K.pdf_page_65": 0.5063723,
+        "BESTBUY_2023_10K.pdf_page_42": 0.47767657,
+        "BESTBUY_2023_10K.pdf_page_21": 0.46016815
+    },
+    "52": {
+        "BESTBUY_2023_10K.pdf_page_28": 0.6638657,
+        "BESTBUY_2023_10K.pdf_page_41": 0.67063034,
+        "BESTBUY_2023_10K.pdf_page_4": 0.5010992
+    },
+    "53": {
+        "BESTBUY_2024Q2_10Q.pdf_page_19": 0.8719229,
+        "BESTBUY_2024Q2_10Q.pdf_page_20": 0.650934,
+        "BESTBUY_2024Q2_10Q.pdf_page_17": 0.42362547,
+        "BESTBUY_2024Q2_10Q.pdf_page_18": 0.41463867,
+        "BESTBUY_2024Q2_10Q.pdf_page_23": 0.35333946
+    },
+    "54": {
+        "BESTBUY_2024Q2_10Q.pdf_page_16": 0.6139086,
+        "BESTBUY_2024Q2_10Q.pdf_page_18": 0.8745175,
+        "BESTBUY_2024Q2_10Q.pdf_page_17": 0.7216064
+    },
+    "55": {
+        "BESTBUY_2024Q2_10Q.pdf_page_18": 0.71687365,
+        "BESTBUY_2024Q2_10Q.pdf_page_16": 0.29512373
+    },
+    "56": {
+        "BLOCK_2016_10K.pdf_page_40": 0.4362623,
+        "BLOCK_2016_10K.pdf_page_38": 0.43611822,
+        "BLOCK_2016_10K.pdf_page_66": 0.27952895,
+        "BLOCK_2016_10K.pdf_page_67": 0.23527569
+    },
+    "57": {
+        "BLOCK_2020_10K.pdf_page_61": 0.2546044,
+        "BLOCK_2020_10K.pdf_page_77": 0.40938663,
+        "BLOCK_2020_10K.pdf_page_131": 0.36745238,
+        "BLOCK_2020_10K.pdf_page_55": 0.33987194
+    },
+    "58": {
+        "BLOCK_2020_10K.pdf_page_89": 0.6202772,
+        "BLOCK_2020_10K.pdf_page_88": 0.53968745,
+        "BLOCK_2020_10K.pdf_page_137": 0.5172057,
+        "BLOCK_2020_10K.pdf_page_55": 0.51091194,
+        "BLOCK_2020_10K.pdf_page_73": 0.49758363
+    },
+    "59": {
+        "BOEING_2018_10K.pdf_page_113": 0.7703443,
+        "BOEING_2018_10K.pdf_page_20": 0.76701033,
+        "BOEING_2018_10K.pdf_page_55": 0.71948266,
+        "BOEING_2018_10K.pdf_page_49": 0.6765563,
+        "BOEING_2018_10K.pdf_page_21": 0.6601948
+    },
+    "60": {
+        "BOEING_2022_10K.pdf_page_117": 0.6897452,
+        "BOEING_2022_10K.pdf_page_61": 0.6854659,
+        "BOEING_2022_10K.pdf_page_27": 0.67243975,
+        "BOEING_2022_10K.pdf_page_54": 0.6664756,
+        "BOEING_2022_10K.pdf_page_23": 0.6636041
+    },
+    "61": {
+        "BOEING_2022_10K.pdf_page_19": 0.767638,
+        "BOEING_2022_10K.pdf_page_46": 0.52597815,
+        "BOEING_2022_10K.pdf_page_111": 0.2964663,
+        "BOEING_2022_10K.pdf_page_41": 0.25910604,
+        "BOEING_2022_10K.pdf_page_26": 0.2382403
+    },
+    "62": {
+        "BOEING_2022_10K.pdf_page_55": 0.61779,
+        "BOEING_2022_10K.pdf_page_54": 0.57666177,
+        "BOEING_2022_10K.pdf_page_61": 0.51603514,
+        "BOEING_2022_10K.pdf_page_117": 0.5037359
+    },
+    "63": {
+        "BOEING_2022_10K.pdf_page_4": 0.61112726,
+        "BOEING_2022_10K.pdf_page_28": 0.5125224,
+        "BOEING_2022_10K.pdf_page_20": 0.512376,
+        "BOEING_2022_10K.pdf_page_1": 0.48294178,
+        "BOEING_2022_10K.pdf_page_24": 0.41748574
+    },
+    "64": {
+        "BOEING_2022_10K.pdf_page_6": 0.7018975,
+        "BOEING_2022_10K.pdf_page_61": 0.53750324,
+        "BOEING_2022_10K.pdf_page_7": 0.52802294,
+        "BOEING_2022_10K.pdf_page_1": 0.3478034,
+        "BOEING_2022_10K.pdf_page_117": 0.32085374
+    },
+    "65": {
+        "BOEING_2022_10K.pdf_page_8": 0.8156003,
+        "BOEING_2022_10K.pdf_page_7": 0.3863703,
+        "BOEING_2022_10K.pdf_page_32": 0.266622,
+        "BOEING_2022_10K.pdf_page_36": 0.23472267,
+        "BOEING_2022_10K.pdf_page_10": 0.22179744
+    },
+    "66": {
+        "BOEING_2022_10K.pdf_page_23": 0.88178825,
+        "BOEING_2022_10K.pdf_page_55": 0.6580885,
+        "BOEING_2022_10K.pdf_page_82": 0.6426349,
+        "BOEING_2022_10K.pdf_page_26": 0.63452125,
+        "BOEING_2022_10K.pdf_page_117": 0.6296157
+    },
+    "67": {
+        "COCACOLA_2017_10K.pdf_page_75": 0.6783488,
+        "COCACOLA_2017_10K.pdf_page_48": 0.5749443,
+        "COCACOLA_2017_10K.pdf_page_173": 0.48689327,
+        "COCACOLA_2017_10K.pdf_page_74": 0.4808937,
+        "COCACOLA_2017_10K.pdf_page_142": 0.47329262
+    },
+    "68": {
+        "COCACOLA_2021_10K.pdf_page_61": 0.3373132,
+        "COCACOLA_2021_10K.pdf_page_60": 0.27982405,
+        "COCACOLA_2021_10K.pdf_page_162": 0.26202002,
+        "COCACOLA_2021_10K.pdf_page_62": 0.2326765
+    },
+    "69": {
+        "COCACOLA_2022_10K.pdf_page_66": 0.769098,
+        "COCACOLA_2022_10K.pdf_page_62": 0.55275756,
+        "COCACOLA_2022_10K.pdf_page_64": 0.36012948,
+        "COCACOLA_2022_10K.pdf_page_162": 0.35857818
+    },
+    "70": {
+        "CORNING_2020_10K.pdf_page_71": 0.5274388,
+        "CORNING_2020_10K.pdf_page_42": 0.41009519,
+        "CORNING_2020_10K.pdf_page_64": 0.3731908,
+        "CORNING_2020_10K.pdf_page_33": 0.34640914,
+        "CORNING_2020_10K.pdf_page_65": 0.2689673
+    },
+    "71": {
+        "CORNING_2021_10K.pdf_page_64": 0.79293,
+        "CORNING_2021_10K.pdf_page_25": 0.71185225,
+        "CORNING_2021_10K.pdf_page_77": 0.60750073,
+        "CORNING_2021_10K.pdf_page_29": 0.60274047,
+        "CORNING_2021_10K.pdf_page_109": 0.58862966
+    },
+    "72": {
+        "CORNING_2022_10K.pdf_page_25": 0.90869105,
+        "CORNING_2022_10K.pdf_page_23": 0.89849097,
+        "CORNING_2022_10K.pdf_page_31": 0.82895297,
+        "CORNING_2022_10K.pdf_page_76": 0.5463757
+    },
+    "73": {
+        "CORNING_2022_10K.pdf_page_59": 0.7672197,
+        "CORNING_2022_10K.pdf_page_31": 0.6882385,
+        "CORNING_2022_10K.pdf_page_53": 0.609455,
+        "CORNING_2022_10K.pdf_page_54": 0.5677694,
+        "CORNING_2022_10K.pdf_page_57": 0.55565286
+    },
+    "74": {
+        "COSTCO_2021_10K.pdf_page_37": 0.67166495,
+        "COSTCO_2021_10K.pdf_page_39": 0.5709301,
+        "COSTCO_2021_10K.pdf_page_59": 0.5185224,
+        "COSTCO_2021_10K.pdf_page_47": 0.43136916,
+        "COSTCO_2021_10K.pdf_page_18": 0.3714107
+    },
+    "75": {
+        "CVSHEALTH_2018_10K.pdf_page_266": 0.60498303,
+        "CVSHEALTH_2018_10K.pdf_page_301": 0.54724693,
+        "CVSHEALTH_2018_10K.pdf_page_325": 0.53692055,
+        "CVSHEALTH_2018_10K.pdf_page_331": 0.528169,
+        "CVSHEALTH_2018_10K.pdf_page_303": 0.48850358
+    },
+    "76": {
+        "CVSHEALTH_2022_10K.pdf_page_112": 0.7163977,
+        "CVSHEALTH_2022_10K.pdf_page_74": 0.60694176,
+        "CVSHEALTH_2022_10K.pdf_page_107": 0.5928793,
+        "CVSHEALTH_2022_10K.pdf_page_110": 0.5585443,
+        "CVSHEALTH_2022_10K.pdf_page_3": 0.5476824
+    },
+    "77": {
+        "CVSHEALTH_2022_10K.pdf_page_162": 0.6601948,
+        "CVSHEALTH_2022_10K.pdf_page_78": 0.64719695,
+        "CVSHEALTH_2022_10K.pdf_page_74": 0.5889134,
+        "CVSHEALTH_2022_10K.pdf_page_107": 0.5602773,
+        "CVSHEALTH_2022_10K.pdf_page_172": 0.5457947
+    },
+    "78": {
+        "CVSHEALTH_2022_10K.pdf_page_107": 0.8576849,
+        "CVSHEALTH_2022_10K.pdf_page_67": 0.8215175,
+        "CVSHEALTH_2022_10K.pdf_page_91": 0.818055,
+        "CVSHEALTH_2022_10K.pdf_page_166": 0.75421005,
+        "CVSHEALTH_2022_10K.pdf_page_0": 0.6897452
+    },
+    "79": {
+        "FOOTLOCKER_2022_8K_dated_2022-08-19.pdf_page_27": 0.84767824,
+        "FOOTLOCKER_2022_8K_dated_2022-08-19.pdf_page_0": 0.8358192,
+        "FOOTLOCKER_2022_8K_dated_2022-08-19.pdf_page_29": 0.7166357,
+        "FOOTLOCKER_2022_8K_dated_2022-08-19.pdf_page_24": 0.67527276,
+        "FOOTLOCKER_2022_8K_dated_2022-08-19.pdf_page_2": 0.48147875
+    },
+    "80": {
+        "FOOTLOCKER_2022_8K_dated-2022-05-20.pdf_page_1": 0.10720379,
+        "FOOTLOCKER_2022_8K_dated-2022-05-20.pdf_page_0": 0.12024263
+    },
+    "81": {
+        "GENERALMILLS_2019_10K.pdf_page_54": 0.6504012,
+        "GENERALMILLS_2019_10K.pdf_page_17": 0.5694942,
+        "GENERALMILLS_2019_10K.pdf_page_55": 0.47227025,
+        "GENERALMILLS_2019_10K.pdf_page_20": 0.40126598,
+        "GENERALMILLS_2019_10K.pdf_page_134": 0.35810664
+    },
+    "82": {
+        "GENERALMILLS_2020_10K.pdf_page_16": 0.528461,
+        "GENERALMILLS_2020_10K.pdf_page_47": 0.5215936,
+        "GENERALMILLS_2020_10K.pdf_page_48": 0.35086665,
+        "GENERALMILLS_2020_10K.pdf_page_44": 0.3928497
+    },
+    "83": {
+        "GENERALMILLS_2020_10K.pdf_page_50": 0.8010817,
+        "GENERALMILLS_2020_10K.pdf_page_16": 0.7686816,
+        "GENERALMILLS_2020_10K.pdf_page_47": 0.5674818,
+        "GENERALMILLS_2020_10K.pdf_page_48": 0.55912215
+    },
+    "84": {
+        "GENERALMILLS_2022_10K.pdf_page_47": 0.5760895,
+        "GENERALMILLS_2022_10K.pdf_page_44": 0.51369345,
+        "GENERALMILLS_2022_10K.pdf_page_18": 0.48952848,
+        "GENERALMILLS_2022_10K.pdf_page_69": 0.444059,
+        "GENERALMILLS_2022_10K.pdf_page_87": 0.42907107
+    },
+    "85": {
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_49": 0.72325134,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_25": 0.68064564,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_107": 0.6519982,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_35": 0.5565207,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_44": 0.4864541
+    },
+    "86": {
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_58": 0.7817479,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_35": 0.47563025,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_86": 0.38193452,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_25": 0.35676086,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_34": 0.33672404
+    },
+    "87": {
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_25": 0.27570266,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_86": 0.25565526,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_44": 0.20505768,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_52": 0.17515711,
+        "JOHNSON_JOHNSON_2022_10K.pdf_page_35": 0.15878677
+    },
+    "88": {
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_0": 0.72884524,
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_4": 0.47358477,
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_5": 0.4906999,
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_3": 0.4767995
+    },
+    "89": {
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_0": 0.7304634,
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_5": 0.6304352,
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_7": 0.542161,
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_1": 0.46147847,
+        "JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf_page_8": 0.4572585
+    },
+    "90": {
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_0": 0.50065976,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_11": 0.30944142,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_12": 0.2983794,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_6": 0.23949203
+    },
+    "91": {
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_0": 0.59824234,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_5": 0.7128128,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_24": 0.63152665
+    },
+    "92": {
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_0": 0.5758033,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_5": 0.8585411,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_24": 0.52027756,
+        "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf_page_15": 0.49011418
+    },
+    "93": {
+        "JOHNSON_JOHNSON_2023Q2_EARNINGS.pdf_page_0": 0.767638,
+        "JOHNSON_JOHNSON_2023Q2_EARNINGS.pdf_page_12": 0.829285,
+        "JOHNSON_JOHNSON_2023Q2_EARNINGS.pdf_page_9": 0.74318707
+    },
+    "94": {
+        "JPMORGAN_2021Q1_10Q.pdf_page_2": 0.843393,
+        "JPMORGAN_2021Q1_10Q.pdf_page_22": 0.6279746,
+        "JPMORGAN_2021Q1_10Q.pdf_page_18": 0.6175132,
+        "JPMORGAN_2021Q1_10Q.pdf_page_29": 0.568057,
+        "JPMORGAN_2021Q1_10Q.pdf_page_159": 0.51296157
+    },
+    "95": {
+        "JPMORGAN_2021Q1_10Q.pdf_page_2": 0.44622982,
+        "JPMORGAN_2021Q1_10Q.pdf_page_40": 0.2909058,
+        "JPMORGAN_2021Q1_10Q.pdf_page_80": 0.26743463,
+        "JPMORGAN_2021Q1_10Q.pdf_page_4": 0.22864738
+    },
+    "96": {
+        "JPMORGAN_2022_10K.pdf_page_290": 0.38859537,
+        "JPMORGAN_2022_10K.pdf_page_63": 0.29747555,
+        "JPMORGAN_2022_10K.pdf_page_180": 0.28173944,
+        "JPMORGAN_2022_10K.pdf_page_154": 0.20639811,
+        "JPMORGAN_2022_10K.pdf_page_78": 0.18382828
+    },
+    "97": {
+        "JPMORGAN_2022Q2_10Q.pdf_page_2": 0.67706895,
+        "JPMORGAN_2022Q2_10Q.pdf_page_32": 0.6659544,
+        "JPMORGAN_2022Q2_10Q.pdf_page_177": 0.6445166,
+        "JPMORGAN_2022Q2_10Q.pdf_page_87": 0.59089786
+    },
+    "98": {
+        "JPMORGAN_2023Q2_10Q.pdf_page_84": 0.32833612,
+        "JPMORGAN_2023Q2_10Q.pdf_page_85": 0.76490957,
+        "JPMORGAN_2023Q2_10Q.pdf_page_2": 0.72489023,
+        "JPMORGAN_2023Q2_10Q.pdf_page_4": 0.42090955
+    },
+    "99": {
+        "KRAFTHEINZ_2019_10K.pdf_page_51": 0.68191797,
+        "KRAFTHEINZ_2019_10K.pdf_page_112": 0.6429039,
+        "KRAFTHEINZ_2019_10K.pdf_page_66": 0.42362547,
+        "KRAFTHEINZ_2019_10K.pdf_page_147": 0.4081122,
+        "KRAFTHEINZ_2019_10K.pdf_page_113": 0.36881536
+    },
+    "100": {
+        "LOCKHEEDMARTIN_2020_10K.pdf_page_70": 0.66621506,
+        "LOCKHEEDMARTIN_2020_10K.pdf_page_0": 0.34184664,
+        "LOCKHEEDMARTIN_2020_10K.pdf_page_63": 0.31060076,
+        "LOCKHEEDMARTIN_2020_10K.pdf_page_110": 0.29749084,
+        "LOCKHEEDMARTIN_2020_10K.pdf_page_128": 0.25620618
+    },
+    "101": {
+        "LOCKHEEDMARTIN_2021_10K.pdf_page_29": 0.67758125,
+        "LOCKHEEDMARTIN_2021_10K.pdf_page_69": 0.56690645,
+        "LOCKHEEDMARTIN_2021_10K.pdf_page_67": 0.5637388,
+        "LOCKHEEDMARTIN_2021_10K.pdf_page_66": 0.55623144,
+        "LOCKHEEDMARTIN_2021_10K.pdf_page_1": 0.4598771
+    },
+    "102": {
+        "LOCKHEEDMARTIN_2022_10K.pdf_page_66": 0.70483154,
+        "LOCKHEEDMARTIN_2022_10K.pdf_page_62": 0.45551404,
+        "LOCKHEEDMARTIN_2022_10K.pdf_page_106": 0.4501424
+    },
+    "103": {
+        "MGMRESORTS_2018_10K.pdf_page_94": 0.83742094,
+        "MGMRESORTS_2018_10K.pdf_page_95": 0.83549726,
+        "MGMRESORTS_2018_10K.pdf_page_173": 0.72489023,
+        "MGMRESORTS_2018_10K.pdf_page_177": 0.7011614,
+        "MGMRESORTS_2018_10K.pdf_page_91": 0.6643884
+    },
+    "104": {
+        "MGMRESORTS_2020_10K.pdf_page_64": 0.61168414,
+        "MGMRESORTS_2020_10K.pdf_page_101": 0.55478466,
+        "MGMRESORTS_2020_10K.pdf_page_51": 0.4543517,
+        "MGMRESORTS_2020_10K.pdf_page_63": 0.38595363,
+        "MGMRESORTS_2020_10K.pdf_page_67": 0.3420444
+    },
+    "105": {
+        "MGMRESORTS_2022_10K.pdf_page_45": 0.79580134,
+        "MGMRESORTS_2022_10K.pdf_page_59": 0.7663815,
+        "MGMRESORTS_2022_10K.pdf_page_46": 0.76002824,
+        "MGMRESORTS_2022_10K.pdf_page_17": 0.7445268,
+        "MGMRESORTS_2022_10K.pdf_page_73": 0.64773196
+    },
+    "106": {
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_0": 0.6415577,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_12": 0.5084226,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_14": 0.52773094,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_13": 0.5065188
+    },
+    "107": {
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_13": 0.7576693,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_10": 0.4497074,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_12": 0.39585853,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_11": 0.38380352,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_5": 0.37106878
+    },
+    "108": {
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_2": 0.31346232,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_12": 0.33522078,
+        "MGMRESORTS_2022Q4_EARNINGS.pdf_page_13": 0.36290202
+    },
+    "109": {
+        "MGMRESORTS_2023Q2_10Q.pdf_page_5": 0.69820654,
+        "MGMRESORTS_2023Q2_10Q.pdf_page_8": 0.6862234,
+        "MGMRESORTS_2023Q2_10Q.pdf_page_2": 0.65676886,
+        "MGMRESORTS_2023Q2_10Q.pdf_page_10": 0.6391287,
+        "MGMRESORTS_2023Q2_10Q.pdf_page_35": 0.63234437
+    },
+    "110": {
+        "MICROSOFT_2016_10K.pdf_page_94": 0.71377134,
+        "MICROSOFT_2016_10K.pdf_page_73": 0.6342494,
+        "MICROSOFT_2016_10K.pdf_page_84": 0.63234437,
+        "MICROSOFT_2016_10K.pdf_page_93": 0.6147415,
+        "MICROSOFT_2016_10K.pdf_page_28": 0.6083387
+    },
+    "111": {
+        "MICROSOFT_2023_10K.pdf_page_37": 0.62248284,
+        "MICROSOFT_2023_10K.pdf_page_94": 0.6083387,
+        "MICROSOFT_2023_10K.pdf_page_50": 0.57780564,
+        "MICROSOFT_2023_10K.pdf_page_61": 0.49611887,
+        "MICROSOFT_2023_10K.pdf_page_49": 0.4866005
+    },
+    "112": {
+        "NETFLIX_2015_10K.pdf_page_3": 0.37689888,
+        "NETFLIX_2015_10K.pdf_page_0": 0.36500442,
+        "NETFLIX_2015_10K.pdf_page_43": 0.32743222,
+        "NETFLIX_2015_10K.pdf_page_32": 0.31875068,
+        "NETFLIX_2015_10K.pdf_page_37": 0.3119197
+    },
+    "113": {
+        "NETFLIX_2017_10K.pdf_page_43": 0.7756902,
+        "NETFLIX_2017_10K.pdf_page_53": 0.65279555,
+        "NETFLIX_2017_10K.pdf_page_44": 0.5737984,
+        "NETFLIX_2017_10K.pdf_page_18": 0.572078,
+        "NETFLIX_2017_10K.pdf_page_39": 0.55449516
+    },
+    "114": {
+        "NIKE_2018_10K.pdf_page_73": 0.7552947,
+        "NIKE_2018_10K.pdf_page_31": 0.7089592,
+        "NIKE_2018_10K.pdf_page_30": 0.68420124,
+        "NIKE_2018_10K.pdf_page_28": 0.68140936,
+        "NIKE_2018_10K.pdf_page_29": 0.6693348
+    },
+    "115": {
+        "NIKE_2019_10K.pdf_page_81": 0.7348247,
+        "NIKE_2019_10K.pdf_page_55": 0.7274535,
+        "NIKE_2019_10K.pdf_page_83": 0.6877354,
+        "NIKE_2019_10K.pdf_page_32": 0.6180666,
+        "NIKE_2019_10K.pdf_page_31": 0.6150191
+    },
+    "116": {
+        "NIKE_2021_10K.pdf_page_37": 0.51691306,
+        "NIKE_2021_10K.pdf_page_40": 0.42319635,
+        "NIKE_2021_10K.pdf_page_33": 0.40768766,
+        "NIKE_2021_10K.pdf_page_15": 0.40627348,
+        "NIKE_2021_10K.pdf_page_38": 0.39159262
+    },
+    "117": {
+        "NIKE_2023_10K.pdf_page_47": 0.8703443,
+        "NIKE_2023_10K.pdf_page_61": 0.779339,
+        "NIKE_2023_10K.pdf_page_22": 0.7009158,
+        "NIKE_2023_10K.pdf_page_37": 0.6353361,
+        "NIKE_2023_10K.pdf_page_16": 0.60498303
+    },
+    "118": {
+        "PAYPAL_2022_10K.pdf_page_71": 0.5855047,
+        "PAYPAL_2022_10K.pdf_page_37": 0.47782278,
+        "PAYPAL_2022_10K.pdf_page_57": 0.44869256,
+        "PAYPAL_2022_10K.pdf_page_4": 0.43266314,
+        "PAYPAL_2022_10K.pdf_page_94": 0.40882006
+    },
+    "119": {
+        "PEPSICO_2021_10K.pdf_page_60": 0.559411,
+        "PEPSICO_2021_10K.pdf_page_64": 0.5510187,
+        "PEPSICO_2021_10K.pdf_page_62": 0.5473921,
+        "PEPSICO_2021_10K.pdf_page_47": 0.5382315,
+        "PEPSICO_2021_10K.pdf_page_61": 0.5148644
+    },
+    "120": {
+        "PEPSICO_2022_10K.pdf_page_481": 0.7783298,
+        "PEPSICO_2022_10K.pdf_page_67": 0.72418857,
+        "PEPSICO_2022_10K.pdf_page_3": 0.7038554,
+        "PEPSICO_2022_10K.pdf_page_482": 0.69498676,
+        "PEPSICO_2022_10K.pdf_page_26": 0.6894943
+    },
+    "121": {
+        "PEPSICO_2022_10K.pdf_page_24": 0.48762518,
+        "PEPSICO_2022_10K.pdf_page_47": 0.47606868,
+        "PEPSICO_2022_10K.pdf_page_124": 0.47139415,
+        "PEPSICO_2022_10K.pdf_page_65": 0.37236878,
+        "PEPSICO_2022_10K.pdf_page_61": 0.3554845
+    },
+    "122": {
+        "PEPSICO_2022_10K.pdf_page_47": 0.7625837,
+        "PEPSICO_2022_10K.pdf_page_77": 0.7476348,
+        "PEPSICO_2022_10K.pdf_page_61": 0.6783488,
+        "PEPSICO_2022_10K.pdf_page_124": 0.61112726,
+        "PEPSICO_2022_10K.pdf_page_30": 0.5479727
+    },
+    "123": {
+        "PEPSICO_2022_10K.pdf_page_61": 0.72325134,
+        "PEPSICO_2022_10K.pdf_page_63": 0.75312227,
+        "PEPSICO_2022_10K.pdf_page_62": 0.63723457
+    },
+    "124": {
+        "PEPSICO_2022_10K.pdf_page_124": 0.72325134,
+        "PEPSICO_2022_10K.pdf_page_61": 0.7147281,
+        "PEPSICO_2022_10K.pdf_page_47": 0.6033015,
+        "PEPSICO_2022_10K.pdf_page_63": 0.5559422,
+        "PEPSICO_2022_10K.pdf_page_62": 0.5380859
+    },
+    "125": {
+        "PEPSICO_2023_8K_dated-2023-05-05.pdf_page_3": 0.36418998,
+        "PEPSICO_2023_8K_dated-2023-05-05.pdf_page_1": 0.7646988,
+        "PEPSICO_2023_8K_dated-2023-05-05.pdf_page_0": 0.40457857,
+        "PEPSICO_2023_8K_dated-2023-05-05.pdf_page_2": 0.33541664
+    },
+    "126": {
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_0": 0.93206495,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_80": 0.8719229,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_83": 0.8588255,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_2": 0.8351749,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_7": 0.7783298
+    },
+    "127": {
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_0": 0.9446333,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_2": 0.8997663,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_80": 0.8832463,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_83": 0.878825,
+        "PEPSICO_2023_8K_dated-2023-05-30.pdf_page_7": 0.8755427
+    },
+    "128": {
+        "PEPSICO_2023Q1_EARNINGS.pdf_page_0": 0.8051581,
+        "PEPSICO_2023Q1_EARNINGS.pdf_page_1": 0.7703443,
+        "PEPSICO_2023Q1_EARNINGS.pdf_page_8": 0.6383174,
+        "PEPSICO_2023Q1_EARNINGS.pdf_page_12": 0.57236487
+    },
+    "129": {
+        "PEPSICO_2023Q1_EARNINGS.pdf_page_0": 0.7185356,
+        "PEPSICO_2023Q1_EARNINGS.pdf_page_1": 0.7128128,
+        "PEPSICO_2023Q1_EARNINGS.pdf_page_11": 0.75377536
+    },
+    "130": {
+        "PFIZER_2021_10K.pdf_page_60": 0.7009158,
+        "PFIZER_2021_10K.pdf_page_32": 0.6892434,
+        "PFIZER_2021_10K.pdf_page_38": 0.63777614,
+        "PFIZER_2021_10K.pdf_page_8": 0.60245985,
+        "PFIZER_2021_10K.pdf_page_57": 0.5617203
+    },
+    "131": {
+        "PFIZER_2021_10K.pdf_page_59": 0.61112726,
+        "PFIZER_2021_10K.pdf_page_106": 0.59457535,
+        "PFIZER_2021_10K.pdf_page_56": 0.52583206,
+        "PFIZER_2021_10K.pdf_page_49": 0.52378637,
+        "PFIZER_2021_10K.pdf_page_76": 0.49084634
+    },
+    "132": {
+        "PFIZER_2021_10K.pdf_page_116": 0.8036831,
+        "PFIZER_2021_10K.pdf_page_2": 0.73138535,
+        "PFIZER_2021_10K.pdf_page_136": 0.70531887,
+        "PFIZER_2021_10K.pdf_page_8": 0.67063034,
+        "PFIZER_2021_10K.pdf_page_133": 0.6420965
+    },
+    "133": {
+        "Pfizer_2023Q2_10Q.pdf_page_40": 0.83549726,
+        "Pfizer_2023Q2_10Q.pdf_page_9": 0.43597415,
+        "Pfizer_2023Q2_10Q.pdf_page_57": 0.3070675,
+        "Pfizer_2023Q2_10Q.pdf_page_35": 0.30433154,
+        "Pfizer_2023Q2_10Q.pdf_page_60": 0.2951999
+    },
+    "134": {
+        "Pfizer_2023Q2_10Q.pdf_page_44": 0.59655124,
+        "Pfizer_2023Q2_10Q.pdf_page_48": 0.50007385,
+        "Pfizer_2023Q2_10Q.pdf_page_40": 0.4718322,
+        "Pfizer_2023Q2_10Q.pdf_page_37": 0.4604593
+    },
+    "135": {
+        "Pfizer_2023Q2_10Q.pdf_page_40": 0.38034514,
+        "Pfizer_2023Q2_10Q.pdf_page_5": 0.57780564,
+        "Pfizer_2023Q2_10Q.pdf_page_11": 0.40204045,
+        "Pfizer_2023Q2_10Q.pdf_page_16": 0.4017588
+    },
+    "136": {
+        "ULTABEAUTY_2023_10K.pdf_page_0": 0.521886,
+        "ULTABEAUTY_2023_10K.pdf_page_99": 0.4808937,
+        "ULTABEAUTY_2023_10K.pdf_page_32": 0.47943115,
+        "ULTABEAUTY_2023_10K.pdf_page_30": 0.4556594
+    },
+    "137": {
+        "ULTABEAUTY_2023_10K.pdf_page_57": 0.3572989,
+        "ULTABEAUTY_2023_10K.pdf_page_3": 0.32245183,
+        "ULTABEAUTY_2023_10K.pdf_page_48": 0.31684518,
+        "ULTABEAUTY_2023_10K.pdf_page_41": 0.30966055,
+        "ULTABEAUTY_2023_10K.pdf_page_8": 0.30872193
+    },
+    "138": {
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_0": 0.39040667,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_1": 0.49699774,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_5": 0.35287103,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_2": 0.25006524
+    },
+    "139": {
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_6": 0.28259248,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_2": 0.27878466,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_0": 0.18670261,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_5": 0.19241826
+    },
+    "140": {
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_2": 0.5971152,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_0": 0.235856,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_6": 0.18737082,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_5": 0.16926883
+    },
+    "141": {
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_0": 0.42276734,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_5": 0.6479992,
+        "ULTABEAUTY_2023Q4_EARNINGS.pdf_page_1": 0.42907107
+    },
+    "142": {
+        "VERIZON_2021_10K.pdf_page_85": 0.8018276,
+        "VERIZON_2021_10K.pdf_page_45": 0.7750779,
+        "VERIZON_2021_10K.pdf_page_46": 0.7636429,
+        "VERIZON_2021_10K.pdf_page_84": 0.6633424,
+        "VERIZON_2021_10K.pdf_page_86": 0.65252984
+    },
+    "143": {
+        "VERIZON_2021_10K.pdf_page_93": 0.43395805,
+        "VERIZON_2021_10K.pdf_page_48": 0.3643935,
+        "VERIZON_2021_10K.pdf_page_76": 0.35367426,
+        "VERIZON_2021_10K.pdf_page_87": 0.34773698,
+        "VERIZON_2021_10K.pdf_page_15": 0.30800337
+    },
+    "144": {
+        "VERIZON_2022_10K.pdf_page_50": 0.798077,
+        "VERIZON_2022_10K.pdf_page_54": 0.7216064,
+        "VERIZON_2022_10K.pdf_page_53": 0.7140107,
+        "VERIZON_2022_10K.pdf_page_55": 0.71185225,
+        "VERIZON_2022_10K.pdf_page_36": 0.7062922
+    },
+    "145": {
+        "VERIZON_2022_10K.pdf_page_57": 0.74563974,
+        "VERIZON_2022_10K.pdf_page_19": 0.74273956,
+        "VERIZON_2022_10K.pdf_page_71": 0.72325134,
+        "VERIZON_2022_10K.pdf_page_20": 0.7062922,
+        "VERIZON_2022_10K.pdf_page_37": 0.680136
+    },
+    "146": {
+        "VERIZON_2022_10K.pdf_page_24": 0.8740022,
+        "VERIZON_2022_10K.pdf_page_32": 0.8708723,
+        "VERIZON_2022_10K.pdf_page_67": 0.85995835,
+        "VERIZON_2022_10K.pdf_page_41": 0.8473754,
+        "VERIZON_2022_10K.pdf_page_76": 0.8412138
+    },
+    "147": {
+        "WALMART_2018_10K.pdf_page_51": 0.65861565,
+        "WALMART_2018_10K.pdf_page_34": 0.5180835,
+        "WALMART_2018_10K.pdf_page_54": 0.38484335,
+        "WALMART_2018_10K.pdf_page_92": 0.28627446,
+        "WALMART_2018_10K.pdf_page_61": 0.26350626
+    },
+    "148": {
+        "WALMART_2019_10K.pdf_page_28": 0.7216064,
+        "WALMART_2019_10K.pdf_page_34": 0.63125396,
+        "WALMART_2019_10K.pdf_page_44": 0.6044228
+    },
+    "149": {
+        "WALMART_2020_10K.pdf_page_46": 0.6353361,
+        "WALMART_2020_10K.pdf_page_36": 0.5677694,
+        "WALMART_2020_10K.pdf_page_29": 0.50490767,
+        "WALMART_2020_10K.pdf_page_51": 0.47387698,
+        "WALMART_2020_10K.pdf_page_37": 0.38727367
+    }
+}

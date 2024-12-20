@@ -11,4 +11,3 @@ docs/
 **/faiss_index.bin
 **/metadata.json
 **/results
-.results/
