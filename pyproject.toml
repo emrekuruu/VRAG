@@ -39,6 +39,10 @@ rerankers = "^0.6.1"
 torch = "^2.5.1"
 qwen-vl-utils = "0.0.8"
 pdf2image = "^1.17.0"
+transformers = ">=4.46.1,<4.47.0"
+evaluate = "^0.4.3"
+bert-score = "^0.3.13"
+rouge-score = "^0.1.2"
 
 [tool.poetry.group.dev.dependencies]
 poetry = "^1.7.0"
