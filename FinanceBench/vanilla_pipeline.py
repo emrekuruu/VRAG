@@ -3,11 +3,14 @@ from datasets import load_dataset
 from BasePipelines.config import Config
 from BasePipelines.vanilla_pipeline import TextPipeline
 import pickle 
+import os 
+
+current_dir = os.path.dirname(__file__)
 
 class FinanceBenchPipeline(TextPipeline):
 
     def read_chunks(self):
-        with open("/Users/emrekuru/Developer/VRAG/FinanceBench/processed_documents.pkl", "rb") as f:
+        with open( os.path.join(current_dir,"processed_documents.pkl") , "rb")  as f:
             documents = pickle.load(f)
 
         documents = { k: v for k, v in documents.items() if len(v) > 0 }
@@ -39,5 +42,5 @@ class FinanceBenchPipeline(TextPipeline):
 
 if __name__ == "__main__":
     config = Config(bucket_name="finance-bench")
-    pipeline = FinanceBenchPipeline(config=config, task="FinanceBench", persist_directory="/Users/emrekuru/Developer/VRAG/FinanceBench/.chroma")
+    pipeline = FinanceBenchPipeline(config=config, task="FinanceBench",  persist_directory=os.path.join(current_dir, ".chroma"))
     asyncio.run(pipeline())

@@ -3,11 +3,15 @@ from datasets import load_dataset
 from BasePipelines.config import Config
 from BasePipelines.vanilla_pipeline import TextPipeline
 import pickle 
+import os 
+import pandas as pd 
+
+current_dir = os.path.dirname(__file__)
 
 class FinQATextPipeline(TextPipeline):
 
     def read_chunks(self):
-        with open("/Users/emrekuru/Developer/VRAG/FinQA/chunks.pkl", "rb") as f:
+        with open( os.path.join(current_dir,"chunks.pkl") , "rb")  as f:
             chunks = pickle.load(f)
         return chunks
 
@@ -43,5 +47,5 @@ class FinQATextPipeline(TextPipeline):
 
 if __name__ == "__main__":
     config = Config(bucket_name="colpali-docs")
-    pipeline = FinQATextPipeline(config=config, task="FinQA", persist_directory="/Users/emrekuru/Developer/VRAG/FinQA/.chroma")
+    pipeline = FinQATextPipeline(config=config, task="FinQA", persist_directory=os.path.join(current_dir, ".chroma"))
     asyncio.run(pipeline())

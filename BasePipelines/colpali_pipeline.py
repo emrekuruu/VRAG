@@ -4,6 +4,10 @@ import json
 from abc import ABC, abstractmethod
 from byaldi import RAGMultiModalModel
 from Generation.generation import image_based
+import os 
+
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.dirname(current_dir)
 
 class ColpaliPipeline(ABC):
     def __init__(self, config, task, index, device="mps"):
@@ -22,7 +26,7 @@ class ColpaliPipeline(ABC):
         self.aws_semaphore = asyncio.Semaphore(10)
         self.qrel_semaphore = asyncio.Semaphore(16)
         self.RAG = RAGMultiModalModel.from_index(
-            index_path=f"/Users/emrekuru/Developer/VRAG/{self.task}/.byaldi/{self.index}", device=self.device
+            index_path= os.path.join( parent_dir, f".byaldi/{self.index}"), device=self.device
         )
 
     @abstractmethod
@@ -72,13 +76,13 @@ class ColpaliPipeline(ABC):
 
         qrels, answers, context = await self.process_all(data)
 
-        with open(f"/Users/emrekuru/Developer/VRAG/.results/{self.task}/retrieval/colpali/colpali_qrels.json", "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/colpali/colpali_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(f"/Users/emrekuru/Developer/VRAG/.results/{self.task}/generation/image_answers.json", "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image_answers.json"), "w") as f:
             json.dump(answers, f, indent=4)
 
-        with open(f"/Users/emrekuru/Developer/VRAG/.results/{self.task}/generation/image_context.json", "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image_context.json"), "w") as f:
             json.dump(context, f, indent=4)
 
         print("Finished")

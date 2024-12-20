@@ -3,11 +3,13 @@ from datasets import load_dataset
 from BasePipelines.config import Config
 from BasePipelines.vanilla_pipeline import TextPipeline
 import pickle 
+import os 
 
+current_dir = os.path.dirname(__file__)
 class TableVQATextPipeline(TextPipeline):
-
+    
     def read_chunks(self):
-        with open("/Users/emrekuru/Developer/VRAG/Table_VQA/processed_documents.pkl", "rb") as f:
+        with open( os.path.join(current_dir,"processed_documents.pkl") , "rb")  as f:
             documents = pickle.load(f)
 
         documents = { k: v for k, v in documents.items() if len(v) > 0 }
@@ -61,5 +63,5 @@ class TableVQATextPipeline(TextPipeline):
 
 if __name__ == "__main__":
     config = Config(bucket_name="table-vqa")
-    pipeline = TableVQATextPipeline(config=config, task="Table_VQA", persist_directory="/Users/emrekuru/Developer/VRAG/Table_VQA/.chroma")
+    pipeline = TableVQATextPipeline(config=config, task="Table_VQA", persist_directory=os.path.join(current_dir, ".chroma"))
     asyncio.run(pipeline())

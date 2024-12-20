@@ -7,6 +7,9 @@ from Generation.generation import text_based
 import math 
 import os 
 
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.dirname(current_dir)
+
 class Embedder:
     def __init__(self, vo, batch_size=64):
         self.batch_size = batch_size  
@@ -142,13 +145,13 @@ class TextPipeline(ABC):
 
         qrels, answers, context = await self.process_all(data)
 
-        with open(f"/Users/emrekuru/Developer/VRAG/.results/{self.task}/retrieval/text/text_qrels.json", "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(f"/Users/emrekuru/Developer/VRAG/.results/{self.task}/generation/text_answers.json", "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text_answers.json"), "w") as f:
             json.dump(answers, f, indent=4)
 
-        with open(f"/Users/emrekuru/Developer/VRAG/.results/{self.task}/generation/text_context.json", "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text_context.json"), "w") as f:
             json.dump(context, f, indent=4)
 
         print("Finished")
