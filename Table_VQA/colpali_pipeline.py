@@ -27,8 +27,6 @@ class TableVQAPipeline(ColpaliPipeline):
         data["Company"] = [row[0] for row in data.qa_id.str.split("/")]
         data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
         data = data.rename(columns={"qa_id": "id"})
-
-        data = data.iloc[:2]
         return data
 
     async def retrieve(self, idx, data, top_n):
@@ -49,6 +47,7 @@ class TableVQAPipeline(ColpaliPipeline):
                 semaphore=self.aws_semaphore,
             )
             results[file_key] = {"score": doc.score, "base64": base64_images}
+
 
         return query, results
 

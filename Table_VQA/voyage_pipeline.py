@@ -54,6 +54,7 @@ class TableVQAVoyagePipeline(VoyagePipeline):
             qrels = {idx: {}}
             print(e)
 
+        self.logger.info(f"Done with query {idx}")
         return qrels
 
 if __name__ == "__main__":

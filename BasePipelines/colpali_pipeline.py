@@ -26,7 +26,7 @@ class ColpaliPipeline(ABC):
         self.aws_semaphore = asyncio.Semaphore(10)
         self.qrel_semaphore = asyncio.Semaphore(16)
         self.RAG = RAGMultiModalModel.from_index(
-            index_path= os.path.join( parent_dir, f".byaldi/{self.index}"), device=self.device
+            index_path= os.path.join( parent_dir, f"{task}/.byaldi/{self.index}"), device=self.device
         )
 
     @abstractmethod
@@ -40,13 +40,14 @@ class ColpaliPipeline(ABC):
     async def process_item(self, data, idx, top_k=5):
         async with self.qrel_semaphore:
             query, retrieved = await self.retrieve(idx, data, top_k)
+            logging.info(f"Done with query {idx}")
 
             sorted_retrieved = dict(sorted(retrieved.items(), key=lambda item: item[1]["score"], reverse=True))
 
             qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
             context = {k: v["base64"] for k, v in sorted_retrieved.items()}
 
-            answer = await image_based(query, context.values())
+            answer = "await image_based(query, context.values())"
 
             logging.info(f"Done with query {idx}")
 
@@ -79,10 +80,10 @@ class ColpaliPipeline(ABC):
         with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/colpali/colpali_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image_answers.json"), "w") as f:
-            json.dump(answers, f, indent=4)
+        # with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/answers.json"), "w") as f:
+        #     json.dump(answers, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image_context.json"), "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "w") as f:
             json.dump(context, f, indent=4)
 
         print("Finished")

@@ -41,8 +41,8 @@ class TextPipeline(ABC):
         self.embedder = Embedder(self.config.vo, batch_size=64)
 
         logging.basicConfig(
-            filename=f".logs{self.task}-text_retrieval.log",
-            filemode="w",
+            filename=f".logs{self.task}-colpali_retrieval.log",
+            filemode="w",  
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
         )

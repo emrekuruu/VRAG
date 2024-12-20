@@ -27,7 +27,8 @@ class FinanceBenchVoyagePipeline(VoyagePipeline):
 
         except Exception as e:
             qrels = {idx: {}}
-
+            
+        self.logger.info(f"Done with query {idx}")
         return qrels
 
 if __name__ == "__main__":

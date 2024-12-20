@@ -79,12 +79,12 @@ class VoyagePipeline(ABC):
         self.embedder = VoyageEmbedder(config.vo)
         self.faiss_db = FaissWithMetadata(index_file=index_file, metadata_file=metadata_file)
 
-        logging.basicConfig(
-            filename=f".logs/{self.task}-voyage_pipeline.log",
-            filemode="w",
-            format="%(asctime)s - %(levelname)s - %(message)s",
-            level=logging.INFO,
-        )
+        self.logger = logging.getLogger(self.task)
+        handler = logging.FileHandler(f".logs/{self.task}-voyage_retrieval.log", mode="w")
+        formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+        handler.setFormatter(formatter)
+        self.logger.addHandler(handler)
+        self.logger.setLevel(logging.INFO)
 
     @abstractmethod
     def prepare_dataset(self):
