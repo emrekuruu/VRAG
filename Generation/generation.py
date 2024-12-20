@@ -2,10 +2,58 @@ from pydantic import BaseModel
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
+from PIL import Image
+from io import BytesIO
+import base64
 
 class QAOutput(BaseModel):
     reasoning: str
     answer: str
+
+class Faithfulness(BaseModel):
+    reasoning: str 
+    score: str
+
+IMAGE_BASED_FAITHFULNESS_PROMPT = PromptTemplate(
+    input_variables=["query", "schema", "answer"],
+    template="""
+    You are an expert evaluator tasked with assessing the faithfulness of a response provided by an AI model based solely on the PDF pages you receive. Faithfulness means the response is accurate and supported by the provided content.
+
+    Instructions:
+    - You will receive a question, the AI's response, and PDF pages containing the context.
+    - Analyze the response sentence by sentence and evaluate how well it aligns with the context.
+    - Provide a detailed reasoning chain and assign a faithfulness score between 0 and 1.
+      - `1.0`: Completely faithful and accurate
+      - `0.0`: Entirely unsupported or contradictory
+
+    Produce your output in this strict JSON format:
+    {schema}
+
+    Question: {query}
+    Answer: {answer}
+    """
+)
+
+TEXT_BASED_FAITHFULNESS_PROMPT = PromptTemplate(
+    input_variables=["query", "context", "schema", "answer"],
+    template="""
+    You are an expert evaluator tasked with assessing the faithfulness of a response provided by an AI model based solely on the textual context you receive. Faithfulness means the response is accurate and supported by the provided content.
+
+    Instructions:
+    - You will receive a question, the AI's response, and the textual context.
+    - Analyze the response sentence by sentence and evaluate how well it aligns with the context.
+    - Provide a detailed reasoning chain and assign a faithfulness score between 0 and 1.
+      - `1.0`: Completely faithful and accurate
+      - `0.0`: Entirely unsupported or contradictory
+
+    Produce your output in this strict JSON format:
+    {schema}
+
+    Context: {context}
+    Question: {query}
+    Answer: {answer}
+    """
+)
 
 IMAGE_PROMPT = PromptTemplate(
     input_variables=["query", "schema"],
@@ -31,6 +79,7 @@ IMAGE_PROMPT = PromptTemplate(
     Question: {query}
     """
 )
+
 
 TEXT_PROMPT = PromptTemplate(
     input_variables=["query", "context", "schema"],
@@ -80,6 +129,40 @@ async def image_based(query, pages):
     response: QAOutput = await llm.ainvoke([message])
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response
+
+def convert_to_supported_format(image_bytes, output_format="PNG"):
+    with Image.open(BytesIO(image_bytes)) as img:
+        buffer = BytesIO()
+        img.save(buffer, format=output_format)
+        buffer.seek(0)
+        return base64.b64encode(buffer.read()).decode('utf-8')
+    
+async def evaluate_faithfulness(query, answer, context, type="text"):
+
+    llm = ChatOpenAI(model="gpt-4o")
+    llm = llm.with_structured_output(Faithfulness)
+    schema = Faithfulness.model_json_schema()
+
+    if type == "image":
+        prompt = IMAGE_BASED_FAITHFULNESS_PROMPT.format(query=query, schema=schema, answer=answer)
+
+        content = [
+            {"type": "text", "text": prompt},
+        ]
+        for p in context: 
+            content.append({
+                "type": "image_url",
+                "image_url": {"url": f"data:image/png;base64,{convert_to_supported_format(p)}"}
+            })
+
+        message = HumanMessage(content=content)
+        response: Faithfulness = await llm.ainvoke([message])
+
+    elif type == "text":
+        prompt = TEXT_BASED_FAITHFULNESS_PROMPT.format(query=query, context=context, schema=schema, answer=answer)
+        response: Faithfulness = await llm.ainvoke(prompt)
+
+    return {"reasoning": response.reasoning, "score": response.score}
 
 async def text_based(query, chunks):
     llm = ChatOpenAI(model="gpt-4o")

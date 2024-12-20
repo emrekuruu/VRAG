@@ -12,6 +12,7 @@ import asyncio
 import logging
 import base64
 import tempfile
+from Generation.generation import evaluate_faithfulness
 
 # Set up current and parent directories
 current_dir = os.path.dirname(__file__)
@@ -139,6 +140,7 @@ async def evaluate_query_async(query_idx, row, generations, retrieved_context, s
     golden_context = row["text_html_table"]
     actual_output = reasoning + "\n\n" + answer
     expected_output = row["answer"]
+    context = retrieved_context[str(query_idx)].values() if subfolder == "text" else [ base64.b64decode(base64string[0]) for base64string in list(retrieved_context[str(query_idx)].values())]
 
     # G-Eval for Correctness
     def run_g_eval():
@@ -153,8 +155,13 @@ async def evaluate_query_async(query_idx, row, generations, retrieved_context, s
             "G-Eval Reasoning": correctness_metric.reason,
         }
 
+    # Faithfulness Evaluation
+    async def run_faithfulness_evaluation():
+        return await evaluate_faithfulness(query=row["question"], answer=answer, context=context, type=subfolder)
+
     # Perform evaluations
     g_eval_result = await asyncio.to_thread(run_g_eval)
+    faithfulness_result = await run_faithfulness_evaluation()
 
     # Append results
     g_eval_scores.append({
@@ -162,6 +169,8 @@ async def evaluate_query_async(query_idx, row, generations, retrieved_context, s
         "Index": query_idx,
         "G-Eval Score": g_eval_result["G-Eval Score"],
         "G-Eval Reasoning": g_eval_result["G-Eval Reasoning"],
+        "Faithfulness Score": faithfulness_result["score"],
+        "Faithfulness Reasoning": faithfulness_result["reasoning"],
     })
 
     # Compute simple metrics
@@ -227,7 +236,7 @@ async def evaluate_generation(task, generation_folder):
         print(f"Results saved for {task} in {subfolder_path}")
 
 if __name__ == "__main__":
-    tasks = ["FinQA", "Table_VQA", "FinanceBench"]
+    tasks = ["Table_VQA"]
 
     async def main():
         for task in tasks:
