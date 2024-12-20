@@ -4,7 +4,7 @@ from BasePipelines.config import Config
 from BasePipelines.vanilla_pipeline import TextPipeline
 import pickle 
 
-class FinanceBenchPipeline(TextPipeline):
+class TableVQATextPipeline(TextPipeline):
 
     def read_chunks(self):
         with open("/Users/emrekuru/Developer/VRAG/Table_VQA/processed_documents.pkl", "rb") as f:
@@ -61,5 +61,5 @@ class FinanceBenchPipeline(TextPipeline):
 
 if __name__ == "__main__":
     config = Config(bucket_name="table-vqa")
-    pipeline = FinanceBenchPipeline(config=config, task="Table_VQA", persist_directory="/Users/emrekuru/Developer/VRAG/Table_VQA/.chroma")
+    pipeline = TableVQATextPipeline(config=config, task="Table_VQA", persist_directory="/Users/emrekuru/Developer/VRAG/Table_VQA/.chroma")
     asyncio.run(pipeline())
