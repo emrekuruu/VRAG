@@ -4,7 +4,7 @@ from BasePipelines.config import Config
 from BasePipelines.vanilla_pipeline import TextPipeline
 import pickle 
 
-class FinQATexthPipeline(TextPipeline):
+class FinQATextPipeline(TextPipeline):
 
     def read_chunks(self):
         with open("/Users/emrekuru/Developer/VRAG/FinQA/chunks.pkl", "rb") as f:
@@ -43,5 +43,5 @@ class FinQATexthPipeline(TextPipeline):
 
 if __name__ == "__main__":
     config = Config(bucket_name="colpali-docs")
-    pipeline = FinQATexthPipeline(config=config, task="FinQA", persist_directory="/Users/emrekuru/Developer/VRAG/FinQA/.chroma")
+    pipeline = FinQATextPipeline(config=config, task="FinQA", persist_directory="/Users/emrekuru/Developer/VRAG/FinQA/.chroma")
     asyncio.run(pipeline())

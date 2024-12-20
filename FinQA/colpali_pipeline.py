@@ -4,7 +4,7 @@ from BasePipelines.config import Config
 from BasePipelines.colpali_pipeline import ColpaliPipeline
 import pandas as pd 
 
-class TableVQAPipeline(ColpaliPipeline):
+class FinQAColpaliPipeline(ColpaliPipeline):
 
 
     def prepare_dataset(self):
@@ -39,6 +39,6 @@ class TableVQAPipeline(ColpaliPipeline):
         return query, results
 
 if __name__ == "__main__":
-    config = Config(bucket_name="table-vqa")
-    pipeline = TableVQAPipeline(config=config, task="Table_VQA", index="table_vqa")
+    config = Config(bucket_name="colpali-docs")
+    pipeline = FinQAColpaliPipeline(config=config, task="FinQA", index="finqa")
     asyncio.run(pipeline())

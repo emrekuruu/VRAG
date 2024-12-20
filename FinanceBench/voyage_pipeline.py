@@ -2,7 +2,7 @@ from datasets import load_dataset
 from BasePipelines.voyage_pipeline import VoyagePipeline
 import asyncio
 from BasePipelines.config import Config
-class FinanceVoyagePipeline(VoyagePipeline):
+class FinanceBenchVoyagePipeline(VoyagePipeline):
 
     def prepare_dataset(self):
         data = load_dataset("PatronusAI/financebench")['train'].to_pandas()
@@ -33,7 +33,7 @@ class FinanceVoyagePipeline(VoyagePipeline):
 if __name__ == "__main__":
     async def main():
         config = Config(bucket_name="finance-bench")
-        pipeline = FinanceVoyagePipeline(config=config, task="FinanceBench")
+        pipeline = FinanceBenchVoyagePipeline(config=config, task="FinanceBench")
         await pipeline()
 
     asyncio.run(main())

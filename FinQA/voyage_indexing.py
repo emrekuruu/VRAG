@@ -2,6 +2,7 @@ from datasets import load_dataset
 from BasePipelines.vanilla_indexing import VoyageIndexing
 import asyncio
 from BasePipelines.config import Config
+
 class FinQAVoyageIndexing(VoyageIndexing):
 
     def prepare_metadata(self, file_key):
