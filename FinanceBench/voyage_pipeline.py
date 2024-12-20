@@ -14,9 +14,9 @@ class FinanceBenchVoyagePipeline(VoyagePipeline):
             query = data.loc[idx, 'question']
             filename = data.loc[idx, 'doc_name'] + ".pdf"
 
-            query_embedding = await self.embedder.embed_query(query)
+            query_embedding = self.embedder.embed_query(query)
 
-            results = await self.search(query_embedding, k=5, metadata_filter={"Filename": filename})
+            results = await asyncio.to_thread(self.faiss_db.search, query_embedding, k=5, metadata_filter={"Filename": filename})
 
             qrels = {
                 idx: {

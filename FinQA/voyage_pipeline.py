@@ -18,19 +18,22 @@ class FinQAVoyagePipeline(VoyagePipeline):
 
     async def process_query(self, data, idx):
         try:
-            query = data.loc[idx, 'question']
-            filename = data.loc[idx, 'doc_name'] + ".pdf"
+            query = data.loc[idx, "question"]
+            company = data.loc[idx, "Company"]
+            year = data.loc[idx, "Year"]
 
-            query_embedding = await self.embedder.embed_query(query)
+            query_embedding = self.embedder.embed_query(query)
 
-            results = await self.search(query_embedding, k=5, metadata_filter={"Filename": filename})
+            results = asyncio.to_thread( self.faiss_db.search, query_embedding, k=5, metadata_filter={"Company": company, "Year": year})
 
             qrels = {
                 idx: {
-                    result['id']: 1 / (1 + float(result['distance']))
+                    (result["metadata"]["Company"] + "/" + result["metadata"]["Year"] + "/" + result["metadata"]["Filename"]): 1 / (1 + float(result["distance"]))
                     for result in results
                 }
             }
+
+            print("Done with query ", idx)
 
         except Exception as e:
             qrels = {idx: {}}
