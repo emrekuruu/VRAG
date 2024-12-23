@@ -129,13 +129,6 @@ async def image_based(query, pages):
     response: QAOutput = await llm.ainvoke([message])
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response
-
-def convert_to_supported_format(image_bytes, output_format="PNG"):
-    with Image.open(BytesIO(image_bytes)) as img:
-        buffer = BytesIO()
-        img.save(buffer, format=output_format)
-        buffer.seek(0)
-        return base64.b64encode(buffer.read()).decode('utf-8')
     
 async def evaluate_faithfulness(query, answer, context, type="text"):
 
@@ -152,7 +145,7 @@ async def evaluate_faithfulness(query, answer, context, type="text"):
         for p in context: 
             content.append({
                 "type": "image_url",
-                "image_url": {"url": f"data:image/png;base64,{convert_to_supported_format(p)}"}
+                "image_url": {"url": f"data:image/png;base64,{p}"}
             })
 
         message = HumanMessage(content=content)

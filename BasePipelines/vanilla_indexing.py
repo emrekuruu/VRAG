@@ -15,7 +15,7 @@ class Chunking(ABC):
         self.semaphore = asyncio.Semaphore(concurrency_limit)
 
         logging.basicConfig(
-            filename=f".logs{task}-chunking.log",
+            filename=f".logs/{task}-chunking.log",
             filemode="w",
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,

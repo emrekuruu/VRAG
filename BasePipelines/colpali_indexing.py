@@ -14,7 +14,7 @@ class ColpaliIndexing(ABC):
         self.index = index
 
         logging.basicConfig(
-            filename=f".logs{task}-colpali-indexing.log",
+            filename=f".logs/{task}-colpali-indexing.log",
             filemode="w",
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
