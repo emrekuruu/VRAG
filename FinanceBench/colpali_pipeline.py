@@ -8,7 +8,6 @@ class FinanceBenchColpaliPipeline(ColpaliPipeline):
     def prepare_dataset(self):
         data = load_dataset("PatronusAI/financebench")["train"].to_pandas()
         data["page_num"] = data["evidence"].apply(lambda x: x[0]["evidence_page_num"])
-        data = data.iloc[0:2]
         return data 
 
     async def retrieve(self, idx, data, top_n):
@@ -27,7 +26,7 @@ class FinanceBenchColpaliPipeline(ColpaliPipeline):
                 file_key=doc.metadata["Filename"],
                 filename=file_key,
                 semaphore=self.aws_semaphore,
-                page = doc.page_num - 1 
+                page = doc.page_num  
             )
             file_key = file_key + "_page_" + str(doc.page_num - 1)
             results[file_key] = {"score": doc.score, "base64": base64_images}

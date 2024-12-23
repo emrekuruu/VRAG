@@ -105,6 +105,7 @@ def prepare_data(task):
     if task == "FinanceBench":
         data = load_dataset("PatronusAI/financebench")["train"].to_pandas()
         data["page_num"] = data["evidence"].apply(lambda x: x[0]["evidence_page_num"])
+        data["evidence"] = data["evidence"].apply(lambda x: x[0]["evidence_text"])
         return data
     
     elif task == "FinQA":
@@ -126,14 +127,13 @@ def prepare_data(task):
         data.qa_id = data.qa_id.apply(process_qa_id)
         data["Company"] = [row[0] for row in data.qa_id.str.split("/")]
         data["Year"] = [row[1] for row in data.qa_id.str.split("/")]
-        data = data.rename(columns={"qa_id": "id", "gt": "answer"})
-        data = data.iloc[0:2]
+        data = data.rename(columns={"qa_id": "id", "gt": "answer", "text_html_table": "evidence"})
         return data
 
 async def evaluate_query_async(query_idx, row, generations, subfolder, g_eval_scores, simple_metrics):
     reasoning = generations[str(query_idx)]["reasoning"]
     answer = generations[str(query_idx)]["answer"]
-    golden_context = row["text_html_table"]
+    golden_context = row["evidence"] 
     actual_output = reasoning + "\n\n" + answer
     expected_output = row["answer"]
 
@@ -192,19 +192,11 @@ async def evaluate_generation(task, generation_folder):
         with open(answers_file, "r") as f:
             generations = json.load(f)
 
-        retrieved_context_file = os.path.join(subfolder_path, "context.json")
-        if not os.path.exists(retrieved_context_file):
-            print(f"Context file {retrieved_context_file} does not exist. Skipping.")
-            continue
-
-        with open(retrieved_context_file, "r") as f:
-            retrieved_context = json.load(f)
-
         g_eval_scores = []
         simple_metrics = []
 
         tasks = [
-            evaluate_query_async(idx, row, generations, retrieved_context, subfolder, g_eval_scores, simple_metrics)
+            evaluate_query_async(idx, row, generations, subfolder, g_eval_scores, simple_metrics)
             for idx, row in data.iterrows()
         ]
 
@@ -221,7 +213,7 @@ async def evaluate_generation(task, generation_folder):
         print(f"Results saved for {task} in {subfolder_path}")
 
 if __name__ == "__main__":
-    tasks = ["Table_VQA"]
+    tasks = ["FinanceBench"]
 
     async def main():
         for task in tasks:

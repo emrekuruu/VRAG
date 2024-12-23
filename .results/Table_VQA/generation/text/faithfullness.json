@@ -1,0 +1,1002 @@
+{
+    "0": {
+        "reasoning": "1. The context provides information about Dover Corporation's operating segments, including the Engineered Systems segment.\n2. According to the context, the Engineered Systems segment is comprised of two platforms: Printing & Identification and Industrials.\n3. The context states that the Engineered Systems segment is focused on the design, manufacture, and service of critical equipment and components serving the printing and identification, vehicle service, environmental solutions, and industrial end markets.\n4. The answer accurately lists all the end markets mentioned in the context for the Engineered Systems segment: Printing & Identification, Vehicle Service, Environmental Solutions, and Industrial end markets.\n5. Therefore, the answer is completely faithful and accurate based on the provided context.",
+        "score": "1.0"
+    },
+    "1": {
+        "reasoning": "1. The question asks for the average risk-free interest rate for the Stock Option Plans in 2004. \n2. The AI's response states that the average risk-free interest rate for the Stock Option Plans in 2004 is not provided in the context. \n3. Upon reviewing the context, it is clear that there is no mention of any interest rates, including risk-free interest rates for 2004 or any other year.\n4. The response is accurate as it correctly identifies that the context lacks the requested information.\n5. Therefore, the response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "2": {
+        "reasoning": "The context provides a table with assumptions used to estimate the fair value of stock options, including volatility percentages for the years 2006, 2005, and 2004. The row labeled 'Volatility' under 'Stock options' lists the percentages for each year. For 2006, the volatility is clearly stated as 39%. The AI's response accurately extracts and states this information, confirming it pertains specifically to the year 2006. Therefore, the response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "3": {
+        "reasoning": "1. The AI's response begins by stating that it analyzed the provided context for mentions of dividends or related financial figures. Reviewing the context, no explicit mention of dividends or dividend yield is found, supporting the AI's initial analysis.\n2. The AI then mentions reviewing each document for indications of dividend yield or related metrics. The context provided includes tables about assets, guarantees, and retiree healthcare plans, but none of these contain information on dividend yields, aligning with the AI's assessment.\n3. The AI checks for explicit mentions of future dividend yield or calculation basis for 2015. The context does not contain such specifics, confirming the AI's conclusion.\n4. The AI concludes that there is an absence of specific data on future dividend yield, which is accurate given the context provided.\n\nOverall, the AI accurately identifies the lack of information regarding future dividend yield for the year ended December 31, 2015, making the response completely faithful to the context.",
+        "score": "1.0"
+    },
+    "4": {
+        "reasoning": "1. The context mentions guarantees outstanding of $0.6 million with terms of one year or less at November 30, 2013. This aligns with step 3 in the reasoning.\n2. The context also mentions $96.1 million of notional foreign currency exchange contracts with durations of less than seven days at November 30, 2013, which are used to hedge short-term cash flow funding. This is correctly identified in step 3 of the reasoning.\n3. The context specifies that the unused portion of the letter of credit facility is $19.4 million, but this is not included in the obligations, which is consistent with step 4 of the reasoning.\n4. The reasoning correctly sums the obligations of $0.6 million and $96.1 million to arrive at a total of $96.7 million, which is accurate according to the context.",
+        "score": "1.0"
+    },
+    "5": {
+        "reasoning": "1 - The question asks about the total amount due for the 2.875% Senior Notes due 2022.\\n2 - The context provides information about these notes, stating: \"the Company issued $400.0 aggregate principal amount of 2.875% Senior Notes due 2022.\"\\n3 - The response correctly identifies the principal amount as $400.0 million, which matches the context.\\n4 - The context does not mention any additional amounts due or adjustments that would change this principal amount. Therefore, the response is complete and accurate based on the provided context.",
+        "score": "1.0"
+    },
+    "6": {
+        "reasoning": "1. The AI response correctly identifies that the context does not provide a specific breakdown of shares repurchased by month. This is accurate since the context mentions total shares repurchased and their average costs but does not give a monthly breakdown.\\n2. The AI points out that the context includes information about shares delivered by employees for tax withholding in October 2018, specifying 36,701 shares. This is indeed mentioned in the context, confirming that the AI has accurately extracted this data.\\n3. The AI response notes that these shares are related to tax withholding and not part of the repurchase program. This distinction is important and correctly made, as the context separates these shares from the repurchase data.\\n4. Therefore, the AI's conclusion that 36,701 shares were mentioned for October 2018 is faithful to the context, even though these shares are not part of the repurchase program.\\nOverall, the AI response is faithful to the provided context.",
+        "score": "1.0"
+    },
+    "7": {
+        "reasoning": "1 - The question asks for specific information regarding the EPA Renewable Fuel Standard for Cellulosic Ethanol in 2015. 2 - The provided context discusses various aspects of renewable fuel standards, including RINs, biodiesel, ethanol blending, and related compliance costs, but it does not specify the renewable fuel standards for Cellulosic Ethanol in 2015. 3 - The AI's response correctly identifies that this specific information is not available in the context. 4 - The answer is faithful to the context as it accurately reflects the lack of specific information requested by the question.",
+        "score": "1.0"
+    },
+    "8": {
+        "reasoning": "1 - The question asks for the volatility of Stock Purchase Plans in 2003.\\n2 - The provided context includes information about reserved shares, repurchased shares, available shares, deferred stock compensation, and tax benefits related to employee stock plans, but does not mention volatility.\\n3 - The AI's response correctly states that the volatility for the Stock Purchase Plans in 2003 is not available based on the given context, as there is no mention of volatility metrics.\\n4 - The response is faithful to the context because it accurately reflects the absence of information regarding volatility for the Stock Purchase Plans in 2003.",
+        "score": "1.0"
+    },
+    "9": {
+        "reasoning": "1 - The AI's response analyzes the context correctly by identifying that details are provided about different stock plans, including those approved by stockholders and those not approved.\\n2 - The context indeed mentions the number of shares available for grant under plans approved by stockholders, specifically 2,638,378 shares for restricted or performance shares under the Long-Term Incentive Plan.\\n3 - The response correctly identifies that the context does not provide a specific number for securities to be issued upon exercise of outstanding options, warrants, and rights for plans approved by security holders.\\n4 - The AI accurately concludes that the specific number for securities to be issued upon exercise of outstanding options, warrants, and rights for plans approved by security holders is not directly mentioned.\\n5 - The answer 'The specific number is not provided in the context.' is faithful to the information provided.",
+        "score": "1.0"
+    },
+    "10": {
+        "reasoning": "1 - In the context, the table captioned \"Figure 36. Credit Ratings\" provides credit ratings for different entities including KEYBANK.\\n2 - The context specifies Fitch ratings for various instruments related to KEYBANK.\\n3 - In the provided table, under KEYBANK, the Fitch rating for Senior Long-Term Debt is given as 'A.'.\\n4 - The AI's response correctly extracts the Fitch rating for Senior Long-Term Debt of KEYBANK as 'A.', matching the context information.\\n5 - The reasoning process described by the AI aligns with the steps needed to extract the relevant information from the context.",
+        "score": "1.0"
+    },
+    "11": {
+        "reasoning": "1. The context contains a table that lists 'Freight train miles traveled (millions)' for various years, including 2004.\\n2. For the year 2004, the table indicates that 71.7 million freight train miles were traveled.\\n3. The AI's response correctly identifies the relevant table from the context.\\n4. The AI accurately locates and extracts the value '71.7' for the year 2004.\\n5. The unit 'millions' is correctly applied to the extracted value.\\n6. The AI's reasoning aligns with the context and accurately supports the answer provided.\\n7. Therefore, the AI's response is completely faithful and accurate.",
+        "score": "1.0"
+    },
+    "12": {
+        "reasoning": "1 - The context provided includes detailed financial and order data for several regions, including the North East, but it does not mention average active communities.\n2 - The reasoning step confirms that the evaluator checked through all relevant tables and narrative descriptions but did not find any specific information regarding average active communities for the North East region in 2011.\n3 - The conclusion that the answer cannot be determined from the given context aligns with the fact that there is no data on average active communities provided.\n4 - Therefore, the AI's response accurately reflects the absence of the requested information in the context.",
+        "score": "1.0"
+    },
+    "13": {
+        "reasoning": "The context provides multiple tables with various financial data points, including pension costs and returns on assets. Specifically, the context states: 'Return on assets in plans 8.25% 8.75% 8.75%' under the section related to 'pension cost'. The year 2011 corresponds to the middle column, which is labeled '8.75%' for the return on assets. This matches the provided answer of 8.75%. Thus, the answer extracted by the AI is accurate and fully supported by the context provided.",
+        "score": "1.0"
+    },
+    "14": {
+        "reasoning": "The context contains tables with data for different segments, including free trials. In the section titled 'The following tables represent segment information for the year ended December 31, 2017', there's a row labeled 'Total free trials at end of period', showing the number 1,940, which is the final figure for that row. Given that the question asks for the number of free trials at the end of 2016, the context supports the answer of 1,940 as the correct number. The reasoning provided in the AI's response aligns with the context, confirming that the number of free trials at the end of 2016 was indeed 1,940.",
+        "score": "1.0"
+    },
+    "15": {
+        "reasoning": "The question asks for the working capital as of December 31, 2012. According to the provided context, the working capital data is mentioned in the section labeled \"Consolidated Balance Sheet Data\" under the year 2012. The specific figure given for working capital as of December 31, 2012, is $2,178.7 million. The AI's response correctly identifies this location and accurately extracts the working capital amount for the specified date. Therefore, the response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "16": {
+        "reasoning": "1 - The context provided includes multiple tables with financial data, including details about derivatives under financial assets.\n2 - The question asks for the Gross Amount of Recognized Derivatives under Financial Assets as of December 31, 2012.\n3 - In the context, under the section labeled \"December 31, 2012\" in a table, there is a line item labeled \"Derivatives\" with a total amount of $81.6 million.\n4 - The AI's response accurately identifies this amount as the gross amount of recognized derivatives under financial assets for the specified date.\n5 - Therefore, the AI's answer of $81.6 million is fully supported by the provided context.",
+        "score": "1.0"
+    },
+    "17": {
+        "reasoning": "The AI's response correctly identifies the section of the provided context that deals with long-term debt and other liabilities. In step 2 of its reasoning, the AI locates the specific table summarizing these financial details. The AI correctly identifies the total amount of long-term debt and other liabilities for the year 2003, which is $1,945,439, as mentioned in the table under 'Total long-term debt and other'. The match is found in the context, confirming that the AI's answer is accurate and faithful to the data provided.",
+        "score": "1.0"
+    },
+    "18": {
+        "reasoning": "1 - The user's question asks for the 'total' for the year ended December 31, 2013. It is not explicitly clear what 'total' refers to without additional context.\\n2 - The AI's answer assumes 'total' refers to 'Total revenues.'\\n3 - Looking at the context, under 'Year Ended December 31, 2014 2013 2012,' the 'Total revenues' for 2013 is indeed listed as $4,955 million.\\n4 - The AI's response is aligned with this data from the context.\\n5 - Other potential interpretations of 'total' could refer to other financial figures, but 'Total revenues' is a reasonable assumption given the context provided.\\n6 - Therefore, the AI's response is accurate and faithful to the provided context.",
+        "score": "1.0"
+    },
+    "19": {
+        "reasoning": "1. The question asks for the Net Income for the year ended December 31, 2012. \n2. The context provided includes financial data from the Consolidated Statements of Comprehensive Income for the years 2012, 2011, and 2010.\n3. Within this context, the Net Income for 2012 is clearly stated as $894.4 million.\n4. The AI's response correctly identifies and extracts this value as $894.4 million.\n5. The reasoning provided by the AI also accurately describes the steps taken to arrive at this conclusion, as it focuses on the correct section of the financial data and confirms the value extracted is consistent with the context.\n6. There is no contradictory or unsupported information presented in the AI's response.\n7. Therefore, the response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "20": {
+        "reasoning": "1. The question asks for the income from continuing operations before income taxes and cumulative effect of accounting change in 2006. \n2. The context provides a table with financial data, where it lists income from continuing operations before income taxes and cumulative effect of accounting change for the year 2006 as $735.8 million.\n3. The AI's response correctly identifies and extracts this value as $735.8 million for the year 2006.\n4. Therefore, the response is consistent with the provided data and accurately answers the question based on the context.",
+        "score": "1.0"
+    },
+    "21": {
+        "reasoning": "1. The context includes several tables with financial data for the year 2013, specifically regarding long-term debt.\\n2. The first table, titled 'At December 31, 2013, scheduled principal payments on long-term debt were as follows,' does not provide a total for long-term debt but rather scheduled payments by year.\\n3. The next table, titled 'Year ended December 31, 2013,' focuses on interest rates and hedge items and does not provide total long-term debt figures.\\n4. The third table, titled 'December 31,' lists various types of notes, debts, and their dues. It includes a line item for 'Total long-term debt' with a value of $7,650 million for 2013.\\n5. This matches the AI's response, which states the total long-term debt for 2013 is $7,650 million.\\n6. The AI's reasoning aligns with the context provided, as it correctly identifies and extracts the total long-term debt figure from the appropriate table.",
+        "score": "1.0"
+    },
+    "22": {
+        "reasoning": "1 - The context provides general information about the company's properties as of December 30, 2007, including total square footage occupied and a breakdown between owned and leased properties.\n2 - However, it does not specify any details regarding the Optoelectronics segment's property square footage or how much of it is leased.\n3 - The answer correctly identifies that there is no specific information in the context about the Optoelectronics segment's leased square footage, making it impossible to determine from the given data.",
+        "score": "1.0"
+    },
+    "23": {
+        "reasoning": "The AI's response states that the total revenue for the year 2004 is $11,711,216. This figure is extracted from the segment information table provided in the context. In the context, the total revenue for 2004 is indeed listed as $11,711,216. Therefore, the AI's response is completely aligned with the context provided, making it a faithful representation of the data.",
+        "score": "1.0"
+    },
+    "24": {
+        "reasoning": "1 - The question asks for the 'low' value in the fourth quarter of 2008.\\n2 - The context provides a table with financial data, including 'High', 'Low', and 'Dividends' for each quarter.\\n3 - In the context, the section corresponding to the fourth quarter of 2008 lists 'Low' as $28.86.\\n4 - The AI model's response correctly identifies this value as $28.86.\\n5 - Therefore, the response is accurate and faithful to the provided context, as it directly extracts the necessary information.",
+        "score": "1.0"
+    },
+    "25": {
+        "reasoning": "1. The context provides a table with a caption labeled **Operating Cash Flows** which summarizes consolidated operating cash flow information in millions of dollars. \n2. In the table, under the column labeled for 2008, the net cash flow provided by operating activities is indeed listed as $455.7 million.\n3. There is no conflicting information about the operating cash flow for 2008 elsewhere in the provided context.\n4. Therefore, the answer '$455.7 million' is accurate and faithful to the context provided.",
+        "score": "1.0"
+    },
+    "26": {
+        "reasoning": "1. The question asks for the net income for the year ended December 31, 2016.\\n2. From the context provided, one of the sections lists financial data with a specific line for \"Net income ......\" which includes the year 2016.\\n3. The net income for the year 2016 is presented as $431,852 in the context.\\n4. The answer provided by the AI model states the net income for 2016 as $431,852.\\n5. The AI's response is accurate and directly supported by the information available in the context.",
+        "score": "1.0"
+    },
+    "27": {
+        "reasoning": "The question asks for the Maximum Daily Withdrawal Quantity (MDWQ) for the Colorado-Kansas Division. The context provides a table summarizing contracted storage capacity with MDWQ values, but it does not mention the Colorado-Kansas Division specifically. The answer correctly states that the MDWQ for the Colorado-Kansas Division is not available in the provided context. Therefore, the answer is faithful to the context.",
+        "score": "1.0"
+    },
+    "28": {
+        "reasoning": "The context provided contains a table labeled 'Motorcycles and Related Products Segment', which includes a row for 'Manufacturing' in Rayong, Thailand. According to the table, the square footage for the facility in Rayong, Thailand is 220,000 square feet. The AI's response correctly identifies the location 'Rayong, Thailand' and accurately extracts the square footage from the context as 220,000 square feet. The reasoning steps provided by the AI, such as identifying the document and extracting the specific information, are aligned with the context. Therefore, the AI's answer is completely faithful and accurate based on the provided context.",
+        "score": "1.0"
+    },
+    "29": {
+        "reasoning": "1 - The question asks for the S&P rating for 'WPD (South West)' under the Senior Unsecured category.\n2 - The context provides a table with ratings from various agencies, including S&P, for different issuers.\n3 - In the table, 'WPD (South West)' is listed with an S&P rating of 'A-' under the Senior Unsecured category.\n4 - The AI's response correctly identifies and states the S&P rating for 'WPD (South West)' as 'A-'.\n5 - Therefore, the AI's response is fully supported by the context provided.",
+        "score": "1.0"
+    },
+    "30": {
+        "reasoning": "1 - The context indeed provides information about rent expenses associated with operating leases for the years 2001, 2002, and 2003.\n2 - The rent expenses were $2,450 for 2001, $2,975 for 2002, and $3,454 for 2003 as correctly identified in the provided context.\n3 - The reasoning process to determine the total minimum payments involves summing these annual rent expenses, which is a valid approach.\n4 - The calculation itself is accurate: $2,450 (2001) + $2,975 (2002) + $3,454 (2003) = $8,879.\n5 - The answer of $8,879 for the total minimum payments for operating leases is fully supported by the context.\n6 - Therefore, the response is completely faithful and accurate.",
+        "score": "1.0"
+    },
+    "31": {
+        "reasoning": "1. The question asks for the net sales for North America in 2013.\n2. The AI's response states that the context does not provide specific net sales figures for North America.\n3. Upon reviewing the context, it indeed contains detailed information on various financial aspects such as free cash flow, operating cash flow, and income before taxes, but does not mention net sales figures for the North America segment in 2013.\n4. Therefore, the AI's response is accurate and aligns with the context provided.",
+        "score": "1.0"
+    },
+    "32": {
+        "reasoning": "1. The question asks for the high value in the fourth column for the year 2015. \n2. The context provides a table with sales prices for each quarter of 2015 and 2016. \n3. According to the context, the high values for 2015 are listed for different quarters. \n4. The high value for the fourth quarter of 2015 is indeed $114.69, as noted in the context. \n5. The AI's response correctly identifies this value as $114.69.\n6. Therefore, the response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "33": {
+        "reasoning": "1 - The context mentions the use of derivative instruments, including forward contracts to purchase Canadian dollars to mitigate foreign currency exchange risk in 2015, but there is no specific mention of 2013.\n2 - The context provides a table with certain financial data for the years 2015, 2014, and 2013, but it does not include details about income recognized on hedged items for foreign currency forward contracts specifically.\n3 - The response correctly identifies the absence of specific information about income recognized on hedged items for foreign currency forward contracts in 2013 in the provided context.\n4 - Therefore, the response accurately reflects the limitation of the context in providing the requested information.",
+        "score": "1.0"
+    },
+    "34": {
+        "reasoning": "1 - The context specifies values for KeyBank (consolidated) under the heading of Tier 1 capital to average quarterly tangible assets for different dates, including December 31, 2012.\n\n2 - Specifically, for December 31, 2012, it shows that KeyBank (consolidated) had a Tier 1 capital of $7,989 million and a ratio of 9.69%.\n\n3 - The context does not directly specify the amount required to qualify as well-capitalized under the Federal Deposit Insurance Act for this specific metric, but it does list an amount of $4,124 million associated with a 5.00% ratio.\n\n4 - The answer claims that $4,124 million was required to qualify as well-capitalized, which seems to be inferred from the context but is not directly stated as a qualification requirement in the provided text.\n\n5 - Based on the context, the $4,124 million appears to be a threshold connected to a lower ratio, likely implying it as a boundary for being well-capitalized, although it is not explicitly confirmed as such in the text.\n\n6 - Conclude that while the answer aligns with data points in the context, it partially relies on inference regarding what constitutes 'well-capitalized' rather than a direct statement.",
+        "score": "0.8"
+    },
+    "35": {
+        "reasoning": "1 - Identify the relevant context for stock options, which includes details about options exercisable at certain price ranges.\\n2 - Extract data related to stock options exercisable at a specific price range, if available.\\n3 - The provided context includes options exercisable at weighted-average exercise prices of $37.63 and $38.11 for the years 2005 and 2004, respectively.\\n4 - However, it does not specify the number outstanding at 12/31/06 for the range $35.91-$38.72 specifically.\\n5 - Conclude that the specific information about the number of options outstanding at 12/31/06 for the range $35.91-$38.72 is not available in the provided context.",
+        "score": "1.0"
+    },
+    "36": {
+        "reasoning": "The context provides information about the number of shares granted to non-employee directors in the years 2016, 2017, and 2018, but it does not mention the total number of shares outstanding at the beginning of 2017. The AI's response accurately states that the number of shares outstanding at the beginning of 2017 cannot be determined from the provided context, as this specific data is not available.",
+        "score": "1.0"
+    },
+    "37": {
+        "reasoning": "1. The question asks for the number of units outstanding at December 31, 2007.\\n2. The context provides a table with RSU activity that lists 'Outstanding at December' for various years, including 2007.\\n3. Upon examining the table, the row for 'Outstanding at December 31, 2007' shows the units as 3140 with a grant-date fair value of $25.44.\\n4. The AI's answer correctly identifies the number of units as 3140 for December 31, 2007.\\n5. Therefore, the response is completely aligned with the provided context.",
+        "score": "1.0"
+    },
+    "38": {
+        "reasoning": "1 - The question asks for 'Total Contracted Storage Capacity in MMBtu'.\n2 - The provided context includes a section on 'Storage Assets' and mentions underground gas storage facilities.\n3 - However, the context does not explicitly state the 'Total Contracted Storage Capacity in MMBtu'.\n4 - The AI's response correctly identifies that the necessary information is not present in the context.\n5 - The reasoning provided by the AI aligns with the analysis of the context, accurately concluding that the required data is missing.",
+        "score": "1.0"
+    },
+    "39": {
+        "reasoning": "1 - Identify the relevant table that provides information on total net revenues for different years. The first table with the caption \"Consolidated Statements of Operations Data\" contains information on net revenues for different years, including 2018, 2017, and 2016.\\n2 - Extract the total net revenue for the year 2018 from the table. According to the table, the net revenue for 2018 is $4,647.5 million.\\n3 - Confirm the data by cross-referencing with similar tables to ensure consistency. The second table titled \"The following table presents net revenues by product and service, customer vertical, and geographic region\" also indicates the total net revenues for 2018 as $4,647.5 million.\\n4 - Conclude with the total net revenue for the year 2018 as presented in the data. The AI's response correctly states that the total net revenue for 2018 was $4,647.5 million.",
+        "score": "1.0"
+    },
+    "40": {
+        "reasoning": "The response claims that the number of units for Mid Atlantic in 2012 is 5047. Upon inspecting the context, specifically the 'Segment Operating Activity' table, the number of units for Mid Atlantic in 2012 is indeed stated as 5047. The reasoning correctly identifies and extracts this number from the provided data, and there are no conflicting numbers for Mid Atlantic in 2012 elsewhere in the context. Therefore, the response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "41": {
+        "reasoning": "The question asks for the valuation technique used for impaired loans. The provided AI response states that the valuation technique is 'the fair value of underlying collateral.'\\n\\nUpon reviewing the context, it mentions: \\n- 'Impaired loans' and the associated valuation technique is 'Fair value of underlying collateral.'\\n\\nThis matches exactly with the AI's answer, indicating that the response is entirely supported by the context.",
+        "score": "1.0"
+    },
+    "42": {
+        "reasoning": "1. The context describes PepsiCo's fiscal year ending on the last Saturday of each December, indicating that the fiscal quarters would typically be 13 weeks long (52 weeks divided by 4). This supports the understanding that the quarters are generally 13 weeks each. 2. The context also mentions that in 2011, there was an additional 53rd week, which implies that occasionally, the fourth quarter could be longer than 13 weeks. This aligns with the reasoning that in a standard year without the additional week, the fourth quarter would be 13 weeks long. 3. The AI's conclusion that the typical length of the fourth quarter is 13 weeks unless there's an extra week in the fiscal year is consistent with the information provided in the context. Thus, the answer is faithful to the context provided.",
+        "score": "1.0"
+    },
+    "43": {
+        "reasoning": "The AI's response accurately states that the context does not provide the exact cost of diapers in 2004. The context only provides sales figures for diapers, which are noted as $3.2 billion for 2004, but does not specify costs separate from sales. The AI correctly identifies that the question pertains to costs, not sales, and explains why the exact cost cannot be determined from the provided information. Therefore, the response is faithful to the context as it correctly interprets the available data.",
+        "score": "1.0"
+    },
+    "44": {
+        "reasoning": "1 - The context does not provide a direct figure for the dollar change for the Service Provider from 2010 to 2011.\\n2 - The answer correctly identifies that the context does not explicitly state the dollar change.\\n3 - The context does mention an increase in sales to the Service Provider market in 2011, but no specific dollar amount is given.\\n4 - The answer is faithful to the context as it accurately reflects the absence of specific dollar change information for the Service Provider.",
+        "score": "1.0"
+    },
+    "45": {
+        "reasoning": "1. The context contains a table under the caption \"Operating Data\" which provides information on average active communities for the years 2011, 2012, and 2013.\n2. The context lists the average active communities for 2012 as: Mid Atlantic: 198, North East: 38, Mid East: 105, and South East: 63.\n3. The AI's response correctly identifies these values for each region in 2012.\n4. The AI's response then correctly sums these values: 198 + 38 + 105 + 63 = 404.\n5. The final answer given by the AI is 404, which is consistent with the data presented in the context.\n6. Therefore, the response is fully supported by the provided data.",
+        "score": "1.0"
+    },
+    "46": {
+        "reasoning": "The question asks for the location of the Corporate Office. The context provides a table captioned 'Motorcycles and Related Products Segment' which lists various facilities and their locations. According to the table in the context, the 'Corporate Office' is indeed located in 'Milwaukee, WI'. The AI's response correctly identifies this location from the provided context. Therefore, the response is fully supported by the information given in the context.",
+        "score": "1.0"
+    },
+    "47": {
+        "reasoning": "1. The response states that it will locate the relevant information regarding the denominator for basic earnings per share for the year 2014 in the provided context.\\n2. The context provides a table with the label 'Denominator for basic earnings per shares' and a value of '97489.0' for the year 2014.\\n3. The AI's response correctly identifies the value '97489.0' as the denominator for basic earnings per share for the year 2014, which matches the information given in the context.\\n4. The reasoning chain and answer are consistent and accurately derived from the provided data.",
+        "score": "1.0"
+    },
+    "48": {
+        "reasoning": "The reasoning chain provided in the answer correctly identifies the relevant document and locates the table with deferred tax items. The total deferred tax assets for 2010 is indeed listed as $148.8 million in the context provided. The answer accurately extracts this value and confirms it as of December 31, 2010. Therefore, the response is fully supported by the context and is faithful to the information presented.",
+        "score": "1.0"
+    },
+    "49": {
+        "reasoning": "1. The question asks for the 'high' value for the first quarter in fiscal 2006.\\n2. The context includes a table with quarterly values, labeled with 'High' and 'Low' values for each quarter.\\n3. The first row under the columns 'High' and 'Low' is labeled 'First Quarter' and shows $18.70 under 'High'. \\n4. The AI's response states '$18.70' as the 'High' value for the first quarter, which matches the information in the context.\\n5. Therefore, the response is completely faithful and accurate.",
+        "score": "1.0"
+    },
+    "50": {
+        "reasoning": "The AI's response claims that the gross profit margin percentage for 2012 is 17.5%. Upon reviewing the provided context, specifically the section summarizing consolidated homebuilding operations, it confirms that the gross profit margin percentage for 2012 is indeed 17.5%. This matches the AI's answer. Thus, the AI's response is fully supported by the context.",
+        "score": "1.0"
+    },
+    "51": {
+        "reasoning": "1. The AI is tasked with finding the 'Interest in inventory at beginning of period' for 2007 from the provided context.\n2. The context includes a table with financial data.\n3. In the table, under the column for 2007, the value for 'Interest in inventory at beginning of period' is listed as $235,596.\n4. The AI correctly identifies this value as $235,596,000 (noting the $000\u2019s omitted in the table caption).\n5. There is a match between the AI's response and the data in the context, indicating the response is accurate and supported.",
+        "score": "1.0"
+    },
+    "52": {
+        "reasoning": "1 - The context discusses the Health Care Cost Trend Assumptions, mentioning that for December 31, 2012, the assumed rate for 2013 is 7.3% and will decrease to 5.0% by 2019.\\n2 - The context does not provide any specific information regarding the health care trend rate for the year 2010.\\n3 - The AI's response correctly identifies that the context lacks information about the 2010 health care trend rate.\\n4 - Therefore, the response is faithful as it accurately states that the context does not provide the required information.",
+        "score": "1.0"
+    },
+    "53": {
+        "reasoning": "1 - The question asks for the total number of shares issued in the fiscal year ended September 30, 2014.\n2 - The provided context mentions a decrease in the number of shares issued in fiscal 2015 compared to fiscal 2014, which was due to an equity offering completed in February 2014.\n3 - However, the context does not explicitly state the total number of shares issued in fiscal 2014.\n4 - The AI's response correctly identifies that the total number of shares issued in fiscal year 2014 is not provided in the context.",
+        "score": "1.0"
+    },
+    "54": {
+        "reasoning": "1 - The context provided is thoroughly examined for information regarding debt maturities, specifically the 6.39% maturing from 2097 to 2111 for the year 2014.\n2 - Upon review, the context does not contain any mention of such debt maturities or any related figures.\n3 - The AI's response correctly identifies the absence of relevant information in the context and accurately concludes that the information is not available.\n4 - Thus, the response aligns completely with the context, as no contradictory or unsupported data is present.",
+        "score": "1.0"
+    },
+    "55": {
+        "reasoning": "1 - The AI correctly identified the section of the context containing the table summarizing nonvested options.\n2 - It accurately located the 'Granted' row for the year 2014 within this table.\n3 - The AI identified the 'Average Grant-Date Fair Value Per Share' for the options granted in 2014 as $11.86.\n4 - This value is indeed specified in the table for the 2014 'Granted' options, confirming the AI's answer is faithful to the context.",
+        "score": "1.0"
+    },
+    "56": {
+        "reasoning": "1 - The question asks for the average price paid per share during November 2012.\n2 - The context specifies that on November 5, 2012, MPC entered into a second ASR program for $500 million and received 7,403,294 shares.\n3 - The context further provides the average per share cost for all shares purchased under this ASR program as $60.43.\n4 - Although the context does not specify if any additional shares were acquired specifically within the November time frame, it implies that the $60.43 figure applies to the November 2012 transaction as part of the second ASR program.\n5 - Thus, the reasoning concludes that the average price paid per share during November 2012 was $60.43, which aligns with the context.\n6 - Therefore, the response is fully supported by the context.",
+        "score": "1.0"
+    },
+    "57": {
+        "reasoning": "The AI's response claims that the warranty reserve on December 31, 2010, is $15,003. In the context provided, under the section discussing accounts and financial statements, it states: \"Accrued warranty nan 15003 nan 9182\", which indicates that the accrued warranty for December 31, 2010, is indeed $15,003. This aligns perfectly with the AI's response. The reasoning provided by the AI accurately reflects the process of identifying the relevant section and extracting the specific data point.",
+        "score": "1.0"
+    },
+    "58": {
+        "reasoning": "1. The context provides detailed tables with financial data for the years 2003, 2004, and 2005, including net income and various components of comprehensive income.\n2. The answer correctly identifies the net income for 2003 as $410,592 thousand, which is present in the context.\n3. The answer also identifies other comprehensive income components: net deferred hedge losses, net of tax, as ($282,165) thousand and translation adjustment as $36,938 thousand, both of which are correctly extracted from the context.\n4. The comprehensive income calculation is accurate: $410,592 (net income) + ($282,165) (net deferred hedge losses) + $36,938 (translation adjustment) results in $165,365 thousand.\n5. The answer is completely supported by the context data provided.",
+        "score": "1.0"
+    },
+    "59": {
+        "reasoning": "1. The question asks for the total accrued expenses as of December 31, 2003.\n2. The provided context includes a section that details accrued expenses as of December 31, 2003.\n3. The table in the context lists accrued expenses for different categories and provides a total for 2003 as $11,625.\n4. The AI's response correctly extracts the total accrued expenses for 2003 as $11,625 from the context.\n5. The reasoning chain provided with the AI's response correctly follows the process of identifying and extracting the relevant information from the context.",
+        "score": "1.0"
+    },
+    "60": {
+        "reasoning": "1 - The context states that the fair value of restricted stock awards, units, and shares is the average market price of the Company's common stock at the date of grant.\\n2 - The context does not provide specific figures or details regarding the fair value at the grant date for 2017.\\n3 - The answer correctly identifies that the specific fair value at the grant date for 2017 is not provided in the context.",
+        "score": "1.0"
+    },
+    "61": {
+        "reasoning": "1. The AI's response begins by mentioning the context's description of 'Corporate & Other' expenses for 2006. The context indeed states 'Corporate & Other includes expenses not associated with geographic areas,' which supports this statement in the reasoning.\n2. The response states that 'Corporate & Other' expenses are not associated with specific geographic areas, which is consistent with the context provided.\n3. The response mentions the difficulty in segregating these expenses by country, including Canada. The context does not provide any country-specific breakdown, supporting this part of the reasoning.\n4. The conclusion that specific expenses for 'Corporate & Other' in Canada for 2006 cannot be determined from the given context is faithful to the content, as the context only provides consolidated data without country-specific details.\n5. Overall, the response accurately reflects the information and limitations presented in the context.",
+        "score": "1.0"
+    },
+    "62": {
+        "reasoning": "The AI's response correctly identifies the relevant financial data from the context. The context provides a table with a column labeled 'Interest capitalized' for the year 2005, which lists the amount as $185,792 in thousands. This matches the AI's extracted answer. The reasoning provided by the AI also follows a logical sequence: it focuses on extracting financial data, identifies the table, locates the relevant entry for 2005, and confirms the amount. All these steps are coherent and supported by the given context.",
+        "score": "1.0"
+    },
+    "63": {
+        "reasoning": "1 - The context includes a table labeled '** Net Earnings Adjustments**', which lists various financial metrics, including 'Inventory stepped up to fair value'.\n2 - For the year 2014, the context table under 'Inventory stepped up to fair value' displays a percentage of 0.2% net sales.\n3 - The AI's response correctly identifies the percentage of net sales as 0.2% for 2014, which aligns with the provided context.\n4 - The reasoning provided in the AI's answer accurately describes the sourcing of this information from the table, affirming its faithfulness.",
+        "score": "1.0"
+    },
+    "64": {
+        "reasoning": "1 - The question asks for the net revenue for the second quarter of the year ended December 31, 2007.\\n2 - The context provided includes a table with quarterly financial data, including a section labeled 'Net revenues'.\\n3 - Under the 'Net revenues' section for the second quarter, the value is indeed labeled as 'nan', which typically stands for 'not a number', indicating that the data is not available or not applicable.\\n4 - The AI's response correctly identifies that the net revenue for the second quarter is marked as 'nan' in the context.\\n5 - The conclusion drawn by the AI is accurate based on the information provided in the context.",
+        "score": "1.0"
+    },
+    "65": {
+        "reasoning": "1. The question asks for the historical share price volatility for the year ended December 31, 2014.\\n2. The context provided includes a table captioned with assumptions for options issued during 2015, 2014, and 2013.\\n3. In this table, there is a column labeled 'Historical share price volatility'.\\n4. The entry for 2014 under 'Historical share price volatility' is noted as '382'.\\n5. The AI's response correctly identifies and retrieves this entry, stating that the historical share price volatility for 2014 is '382'.\\n6. Based on the context provided, the AI's response is accurate and fully supported.",
+        "score": "1.0"
+    },
+    "66": {
+        "reasoning": "The AI's reasoning correctly identifies that the context mentions LKE's generating capacity in MW, specifically 8,017 MW, but does not provide information in GWh. The AI also accurately understands the difference between MW, which measures capacity, and GWh, which measures energy produced over time. Since the context lacks GWh data, the AI's conclusion that the total GWh for LKE is not provided is faithful to the context.",
+        "score": "1.0"
+    },
+    "67": {
+        "reasoning": "1. The question asks for the Related Debt for the end date of 6/30/2022.\\n2. The context provides a table summarizing interest rate swap agreements.\\n3. In this table, one of the rows lists an end date of 6/30/2022.\\n4. This row corresponds to a swap agreement that converts variable rate debt to a fixed rate of 5.0%.\\n5. The Related Term Loans Tranche for this end date is indeed listed as \"Tranche E\" in the table.\\n6. Therefore, the AI's response that the Related Debt for the end date 6/30/2022 is \"Tranche E\" is accurate.\\n7. The reasoning provided by the AI correctly follows the logic needed to extract this information from the context.",
+        "score": "1.0"
+    },
+    "68": {
+        "reasoning": "1 - The context provides data about restricted shares/units granted in 2006, which is 402 shares with an average grant-date fair value of $42.66.\n2 - The calculation for the total value of Restricted Share/Unit Awards in 2006 is done by multiplying 402 shares by $42.66, resulting in $17,145.72. However, this calculation is incorrect. The correct calculation should be 402 shares * $42.66 per share = $17,145.72 million, which is mathematically incorrect. The correct multiplication would yield $17,145.72 but multiplying thousands of shares with dollars should not result in millions.\n3 - Therefore, the reasoning contains a mathematical error in the multiplication and unit interpretation, leading to an unfaithful final answer.",
+        "score": "0.0"
+    },
+    "69": {
+        "reasoning": "1 - The question asks for the total net revenue for the year 2014, which needs to be extracted from the provided data.\\n2 - The table in the context explicitly shows 'Total net revenues' for 2014 as '4627.1'.\\n3 - The AI's response accurately reflects the number shown in the table, confirming the total net revenue for 2014 as $4,627.1 million.\\n4 - The response is consistent with the contextual data provided, with no discrepancies or errors.",
+        "score": "1.0"
+    },
+    "70": {
+        "reasoning": "The AI's response accurately identifies the relevant section in the context that lists the financial instruments and their weighted average interest rates for different years. It correctly locates the corporate notes and bonds category and checks for the year 2006. The AI observes that the context does not provide a specific interest rate for corporate notes and bonds in 2006, as it is marked with 'nan' (not a number). Therefore, the conclusion that there is no available data for the weighted average interest rate for corporate notes and bonds in 2006 is correct and faithful to the provided context.",
+        "score": "1.0"
+    },
+    "71": {
+        "reasoning": "1. The AI's response claims to have extracted the unsecured term loan data for 2012 from the context.\n2. It mentions having located a table listing unsecured term loan amounts for various years and specifically identifies the 2012 value as $757,839.\n3. Upon reviewing the provided context, the section 'Unsecured term loan' indeed contains a list of amounts for different years, including 2012.\n4. The context explicitly lists the unsecured term loan amount for 2012 as $757,839.\n5. The AI's reasoning and extracted answer are consistent with the given context data.\n6. Therefore, the response is completely faithful to the context.",
+        "score": "1.0"
+    },
+    "72": {
+        "reasoning": "1. The response correctly identifies that the context contains a performance highlights table for 2008, 2007, and 2006.\n2. The response specifies that column 10 contains the data for 2006, which aligns with the context's table.\n3. The response accurately locates the subscriber acquisition cost data point for 2006 in the table.\n4. The response correctly states that the subscriber acquisition cost for 2006 is $42.94, matching the information provided in the context.\n5. Each step in the response aligns with the information in the context, demonstrating a faithful extraction and conclusion.",
+        "score": "1.0"
+    },
+    "73": {
+        "reasoning": "The question asks for the number of common stock equivalents in 2007. The context states that as of December 31, 2007, there were 10.4 million outstanding options to purchase shares of Western Union stock that were excluded from the diluted earnings per share calculation because they were anti-dilutive. The answer provided claims that these outstanding options are equivalent to the common stock equivalents for that year. This reasoning is valid because outstanding options can be considered potential common stock equivalents, especially in the context of diluted earnings calculations. Therefore, the response is consistent and faithful to the information given in the context.",
+        "score": "1.0"
+    },
+    "74": {
+        "reasoning": "The provided context includes a line item for the 'Net increase (decrease) in cash and cash equivalents' for the year 2006. According to the data, the net increase (decrease) is $47.9 million. The AI's response correctly identifies this figure and provides accurate reasoning steps to arrive at the answer. Therefore, the answer is fully supported by the context and is faithful.",
+        "score": "1.0"
+    },
+    "75": {
+        "reasoning": "1. The response states that the valuation allowance on December 29, 2013, was $(67,814). \n2. The context provided includes a section related to deferred tax liabilities and mentions a valuation allowance.\n3. The relevant context states: \"otal deferred tax liabilities uation allowance... 6...  ...... 0.0... eee nan nan nan nan nan nan nan eee (167,163) (63,139) nan (225,994) (67,814)\".\n4. This context confirms the mention of a valuation allowance of $(67,814) for December 29, 2013, matching the answer provided.\n5. Therefore, the response is fully supported by the context.",
+        "score": "1.0"
+    },
+    "76": {
+        "reasoning": "The context presented includes a table showing the asset allocation for a U.S. Corporate Pension Plan, where it lists 'Fixed income' as having a target allocation of 55.0%. The AI's response correctly identifies this target allocation from the table, stating that the target weighted average asset allocation for fixed income is 55.0%. Therefore, the response is faithful to the context provided.",
+        "score": "1.0"
+    },
+    "77": {
+        "reasoning": "1. The context provides a table with financial data, including a row for 'Public Utilities.'\n2. In the row labeled 'Public Utilities,' the column for 'Significant Other Observable Inputs (Level 2)' shows a value of 246.0.\n3. The reasoning in the AI's response correctly identifies the process to locate and extract this data from the table.\n4. The answer of '246.0 million' is supported by the data in the context, specifically in the 'Public Utilities' row under the 'Significant Other Observable Inputs (Level 2)' column.",
+        "score": "1.0"
+    },
+    "78": {
+        "reasoning": "1. The context provides details about various pipeline systems and their capacities, including a system originating from St. James, LA.\n2. The specific pipeline mentioned in the context is the Capline, which runs from St. James, LA to Patoka, IL.\n3. There is no mention of a pipeline from St. James, LA to Garyville, LA in the context.\n4. The AI's response correctly identifies that the specific capacity for a St. James, LA to Garyville, LA system is not available in the provided context.\n5. Therefore, the response accurately reflects the information given in the context.",
+        "score": "1.0"
+    },
+    "79": {
+        "reasoning": "1 - The context includes multiple data tables detailing reserves and other metrics by geographic location and year.\n2 - The context specifically contains a section listing reserves for Tunisia under 'Proved Developed Reserves' and other similar categories.\n3 - For the year 2005, the context shows that Tunisia had Oil & NGLs reserves listed as 4852 MBbls under the 'Proved Developed Reserves' category.\n4 - The AI's response correctly identifies 4852 MBbls as the amount of Oil & NGLs for Tunisia in 2005, which aligns with the data provided in the context.\n5 - The extracted value is from the correct year and matches the geographic location as indicated in the context. Therefore, the response is completely faithful to the context.",
+        "score": "1.0"
+    },
+    "80": {
+        "reasoning": "1. The response claims to locate data related to depreciation and amortization expenses for 2007 and 2008 in the context.\n2. The context does provide some information about depreciation and amortization, but it lacks explicit percentage change data for these expenses.\n3. The response states a 28.2% increase in depreciation and amortization from 2007 to 2008.\n4. Upon examining the context, it mentions a 28.2% change under 'Depreciation and amortization' in a table, without explicitly stating it's an increase. However, the context does provide details on expenses increasing due to depreciation of projects placed into service, which supports the idea of an increase.\n5. The response concludes the percentage change in depreciation and amortization from 2007 to 2008 is 28.2%.\n6. Overall, the response aligns with the context, which includes the 28.2% change. However, it assumes it is an increase without direct confirmation in the context, although the context's explanation supports that assumption.\n7. Thus, the response is mostly faithful with slight assumptions based on context interpretation.",
+        "score": "0.9"
+    },
+    "81": {
+        "reasoning": "The context provides a table with financial data for different years, including the year 2016. The specific value for the depreciation of rental equipment in 2016 is listed as $990. The AI's response correctly identifies and extracts this value from the table. There is no conflicting information present in the context that contradicts the AI's response. Therefore, the AI's conclusion that the depreciation of rental equipment for the year ended December 31, 2016, is $990 is accurate and supported by the context.",
+        "score": "1.0"
+    },
+    "82": {
+        "reasoning": "1 - Review the provided context for any mention or listing of total segment assets as of December 31, 2015.\\n2 - The context includes financial details like segment profit, interest expense, depreciation, and segment operating activity, but does not explicitly mention total segment assets.\\n3 - Since the context lacks the specific data on total segment assets as of December 31, 2015, it is not possible to provide the requested information based on the given context.",
+        "score": "1.0"
+    },
+    "83": {
+        "reasoning": "1 - The context provides information on the Company's sales and customers but does not specify the net sales to external customers for the Airframe segment in 2014.\\n2 - The context mentions sales figures but does not break them down by segment for external customers.\\n3 - Therefore, the AI's statement that the exact net sales to external customers for Airframe in 2014 cannot be determined is accurate.",
+        "score": "1.0"
+    },
+    "84": {
+        "reasoning": "1. The question asks for the total amount of current assets for the Guarantor Subsidiaries on December 31, 2017.\n2. The provided context includes a section with a table labeled 'CONDENSED CONSOLIDATING BALANCE SHEET INFORMATION'.\n3. Within this context, there's a line mentioning 'Guarantor Subsidiaries' and the amount '$ 1,178,696' under the column labeled 'current assets'.\n4. The AI's reasoning and the extracted answer from the context both align correctly with the provided data.\n5. Therefore, the response is faithful to the context.",
+        "score": "1.0"
+    },
+    "85": {
+        "reasoning": "The AI's response involves locating the costs incurred for oil and gas assets in Canada for the year ended December 31, 2003. The context provides a table with costs incurred for various regions, including Canada, for 2003. The relevant section states that the cost for Canada is $54,800. The AI correctly identifies and extracts this value from the context. Therefore, the response is entirely faithful to the provided information.",
+        "score": "1.0"
+    },
+    "86": {
+        "reasoning": "The context provides quarterly financial data, but it is not clearly structured in a tabular format with headings. After parsing the context for earnings per common share (diluted) for the 3rd Quarter of 2018, the data that corresponds to earnings per common share for that quarter is $1.45, not $0.68 as claimed in the response. Therefore, the answer '$0.68' is incorrect and does not align with the provided context.",
+        "score": "0.0"
+    },
+    "87": {
+        "reasoning": "1. Locate the relevant financial document containing the data for the total derivative assets in 2009.\n2. Check the provided context for any mention of total derivative assets for the year 2009.\n3. The context states: 'Total derivative assets $31 $21', where $21 corresponds to the year 2009.\n4. The AI's answer correctly identifies the total derivative assets for 2009 as $21 million, which aligns with the context.\n5. Therefore, the AI's response is entirely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "88": {
+        "reasoning": "1. The question asks for the balance of the Valuation Allowance on December 31, 2008.\n2. The AI's reasoning states a review of the context for mentions of valuation allowances.\n3. The context includes a note (a) about foreign tax credit valuation allowances related to unremitted earnings but specifies amounts for 2009 only.\n4. The AI's reasoning correctly identifies that there is no specific balance provided for December 31, 2008, in the context.\n5. The conclusion that the balance for Valuation Allowance on December 31, 2008, is not provided is accurate based on the context.\n6. Every step of the AI's reasoning aligns with the context and accurately concludes the lack of the specific information requested.",
+        "score": "1.0"
+    },
+    "89": {
+        "reasoning": "1. The context provides a table listing various company acquisitions and their associated segments.\n2. When inspecting the entry for 'Bigfoot Interactive, Inc.', it shows that it falls under the 'Marketing Services' segment.\n3. The AI's response correctly identifies the segment for Bigfoot Interactive, Inc. as 'Marketing Services', which matches the information provided in the context.\n4. Therefore, the AI's response is completely faithful to the context.",
+        "score": "1.0"
+    },
+    "90": {
+        "reasoning": "The AI's response correctly identifies that the given context does not provide explicit information about the total debt in 2014. The context includes data about debt borrowings in 2017 and other financial details for different years, but it does not mention the total debt for 2014. Therefore, the statement that it is impossible to determine the total debt for 2014 based on the available information is accurate and aligns with the context.",
+        "score": "1.0"
+    },
+    "91": {
+        "reasoning": "The context provides a table with a row labeled 'Comprehensive Income (Loss)' which shows values for different years. For the year 2017, the comprehensive income (loss) is indeed listed as $1,172.7 million. The AI's response correctly identifies and extracts this value from the context. Therefore, the answer '$1,172.7 million' for the comprehensive income (loss) for the year ended December 31, 2017, is fully supported by the provided context.",
+        "score": "1.0"
+    },
+    "92": {
+        "reasoning": "The context provides a table with dividend information for various dates in 2012, including June 30. The table clearly shows that the dividend declared per share of common stock on June 30, 2012, was $0.2125. The AI's response states that the dividend for June 30, 2012, was $0.2125, which accurately matches the information in the context. The reasoning provided by the AI also details a logical approach to confirming this information from the context, ensuring the answer is supported. Therefore, the AI's response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "93": {
+        "reasoning": "1. The context provides data on Quest Diagnostics' net income attributable to its stockholders for various years, including 2010. \n2. In the context, under \"Net income attributable to Quest Diagnostics\u2019 common stockholders\" for 2010, the value is listed as $720,894 thousand. \n3. The AI's response correctly identifies the net income attributable to Quest Diagnostics for 2010 as $720,894 (in thousands). \n4. The response is consistent with the data provided in the context, showing that the AI accurately extracted the information. \n5. Therefore, the AI's response is faithful to the provided context, accurately reflecting the net income for 2010.",
+        "score": "1.0"
+    },
+    "94": {
+        "reasoning": "1 - The context provides several financial tables with segment operating profit figures for different years, including 2009.\n2 - The first table lists segment operating profits for the years 2009, 2010, and 2011. The figure for 2009 is indeed stated as $365,165 thousand.\n3 - The AI's response correctly identifies and extracts the segment operating profit for 2009 from the context.\n4 - The AI's reasoning aligns with the context, as it accurately identifies the segment operating profit for the correct year.\n5 - Therefore, the response is fully faithful to the context provided.",
+        "score": "1.0"
+    },
+    "95": {
+        "reasoning": "The AI's response is mostly faithful to the context provided. The context does not explicitly mention increases related to current year income tax positions in 2015, as stated in the response. The response accurately identifies that the effective income tax rate decreased from 55.6% in 2014 to 17.1% in 2015 and attributes this change to the establishment of a European regional headquarters, which is mentioned in the context as a factor influencing the tax rate. However, the response infers that the establishment of the European headquarters is related to an 'increase,' which is not explicitly supported by the context. Overall, the response is largely accurate but includes a minor inference that is not directly supported by the text.",
+        "score": "0.9"
+    },
+    "96": {
+        "reasoning": "1 - The question asks for the expected life of stock options assumed in 2016.\n2 - The context provided includes balance sheet data and stock activity, but does not contain any information specifically about stock options or their expected life in 2016.\n3 - The AI's response correctly identifies that the expected life of stock options in 2016 is not mentioned in the provided context.\n4 - Therefore, the AI's response is faithful to the context provided.",
+        "score": "1.0"
+    },
+    "97": {
+        "reasoning": "1. The context provided includes a section titled 'NOTES TO CONSOLIDATED FINANCIAL STATEMENTS\u2014(Continued)' which lists various financial figures.\n2. Under this section, there is a specific line item 'Total gain (loss) recognized in income' for the years 2012, 2011, and 2010.\n3. The figure for 2011 is indeed listed as $3.8 million, as extracted in the AI's response.\n4. The AI's reasoning steps correctly identify and extract the relevant figure from the context data.\n5. Therefore, the AI's answer of '3.8' for the total gain recognized in income for the year ended December 31, 2011, is accurate and faithful to the provided context.",
+        "score": "1.0"
+    },
+    "98": {
+        "reasoning": "1 - The context provides financial data about short-term borrowings, including Commercial paper issuances for 2016. The table indicates that the total short-term borrowings for 2016 are $426.8 million.\n2 - The context mentions that short-term borrowings consist of unsecured lines of credit and commercial paper issuances, which approximates fair value due to their short maturities and variable interest rates.\n3 - While the context provides data for 2016, it does not explicitly state the amount due for Commercial paper issuances in 2017.\n4 - The AI's response assumes that the amount due for 2017 would be similar to 2016, based on the nature of short-term borrowings, but this is speculative as the context doesn't provide specific 2017 data.\n5 - Therefore, the response is partially faithful by drawing on 2016 data, but speculative for 2017.",
+        "score": "0.5"
+    },
+    "99": {
+        "reasoning": "1. The AI correctly identifies the task: to find the 'Net Cash Used for Financing Activities' for 2011.\n2. It locates the relevant section in the table: 'Financing Activities'.\n3. The value for 'Net Cash Used for Financing Activities' under the column '5', which corresponds to 2011, is indeed (5,135) million.\n4. Therefore, the AI's answer of (5,135) million is accurate and supported by the context provided.",
+        "score": "1.0"
+    },
+    "100": {
+        "reasoning": "The question asks for the number of shares that were exercisable at December 31, 2008. The context provides a table under the caption summarizing stock option activity for the years ended December 31, 2008, 2007, and 2006. Within this table, the row labeled \"exercisable at December 31, 2008\" indicates a total of 7,994 shares. The AI's response correctly identifies the relevant section of the context and accurately extracts the number of exercisable shares as 7,994. Thus, the response is completely faithful and aligns perfectly with the provided content.",
+        "score": "1.0"
+    },
+    "101": {
+        "reasoning": "1. The answer begins by indicating the need to review the financial context for 'Site development construction' revenue data for 2006 and 2007, which aligns with the table under '** Revenues:**' in the context. This step is consistent with the context provided.\n2. The answer identifies revenue figures for 2007 as $62,034 thousand and for 2006 as $60,659 thousand. These figures match the data in the context under the 'Site development construction' row.\n3. The calculation of the percentage change is explained using the correct formula: ((Revenue in 2007 - Revenue in 2006) / Revenue in 2006) * 100.\n4. The answer substitutes the correct numbers into the formula: ((62,034 - 60,659) / 60,659) * 100, which is a faithful representation of the calculation process.\n5. The answer concludes with the correct percentage change of 2.2%, which is consistent with the data provided in the context.",
+        "score": "1.0"
+    },
+    "102": {
+        "reasoning": "1. The question asks for the basic earnings per share for the year ended December 31, 2003.\\n2. The context provided includes multiple references to financial data, including earnings per share data for 2003.\\n3. In the first block of context, it lists the basic earnings per share for 2003 as $1.30.\\n4. The AI response states that the basic earnings per share for 2003 is $1.30, which matches the information in the context.\\n5. The AI also claims that the context from 'ZBRA/2005/page_45.pdf' and 'ZBRA/2005/page_19.pdf' confirms this figure, which aligns with the provided data.\\n6. There are no discrepancies or contradictions noted in the context regarding the basic earnings per share for 2003.\\n7. Therefore, the response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "103": {
+        "reasoning": "The question asks for 'the total in 2010,' which is somewhat ambiguous but seems to refer to a specific financial figure mentioned in the context. The provided answer focuses on a $26 million charge in 2010 related to the tax treatment of federal subsidies for retiree prescription drug benefits. This specific figure is indeed mentioned in the context as a charge recorded in 2010 due to changes in tax legislation. However, the context also contains other financial data related to 2010, such as cost of revenues and income from operations influenced by LIFO inventory liquidations, but these are not directly quantified in terms of a 'total' figure for 2010. Therefore, while the $26 million is a correct figure from the context, it may not represent the entire 'total' depending on the broader interpretation of the question. Nonetheless, the answer accurately reflects a specific financial figure directly supported by the context.",
+        "score": "0.8"
+    },
+    "104": {
+        "reasoning": "1. The question asks for the 'net of accumulated amortization for acquired contracts on December 31, 2008'.\n2. The context contains a table detailing various components of intangible assets, including 'Acquired contracts'.\n3. The table provides columns for 'Initial Cost' and 'Net of Accumulated Amortization'.\n4. For 'Acquired contracts', the 'Net of Accumulated Amortization' is indeed listed as $205.5 million.\n5. The context clearly supports the answer given by the AI, as the figure is directly mentioned in the table.\n6. Therefore, the response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "105": {
+        "reasoning": "1. The question asks for the cost of revenues for the product in the fourth quarter of the year ended December 31, 2007.\n2. The context provides a financial table with details for different quarters for the year ended December 31, 2007.\n3. In the context, under 'Cost of revenues \u2014 Product', the fourth quarter value is listed as '$193.3 million'.\n4. The answer provided by the AI is '$193.3 million'.\n5. The extracted value is consistent with the context provided, confirming the answer's faithfulness.",
+        "score": "1.0"
+    },
+    "106": {
+        "reasoning": "1 - The context indeed discusses spending related to remediation reserves and mentions environmental capital expenditures and MSAT II compliance costs but does not provide specific figures for remediation costs in 2011.\n2 - The answer correctly states that the specific cost for remediation in 2011 is not explicitly mentioned in the context.\n3 - Therefore, the response is faithful to the provided context as it accurately reflects the absence of explicit information regarding 2011 remediation costs.",
+        "score": "1.0"
+    },
+    "107": {
+        "reasoning": "1. The question asks for the total assets as of November 30, 2013.\\n2. The context provides information about assets related to a specific nonqualified defined benefit plan, stating that they were $74.4 million as of November 30, 2013.\\n3. The context also provides asset allocation percentages for international pension plans but does not specify a total asset figure for these plans.\\n4. The AI's response identifies the $74.4 million figure related to the nonqualified defined benefit plan.\\n5. Since the context does not offer a consolidated total asset figure covering all assets, the AI's response accurately reflects the only specific asset amount mentioned.\\n6. Therefore, the response is faithful to the context as it correctly references the available $74.4 million figure.",
+        "score": "1.0"
+    },
+    "108": {
+        "reasoning": "The question asks for the value of VeriSign, Inc. on 12/31/2004. The provided context includes financial statements and trade receivables information, but it does not explicitly state the valuation of VeriSign, Inc. on the specified date. The response correctly identifies that such specific valuation information is not available within the context. Hence, the response accurately reflects the information provided in the context.",
+        "score": "1.0"
+    },
+    "109": {
+        "reasoning": "1 - The answer correctly identifies that the context does not explicitly provide a Moody's rating for KU under Senior Secured.\\n2 - Upon reviewing all the provided context, indeed, there is no mention of a Moody's rating for KU under the Senior Secured category.\\n3 - The reasoning provided in the answer accurately reflects this lack of information.\\n4 - Therefore, the response is faithful to the context provided.",
+        "score": "1.0"
+    },
+    "110": {
+        "reasoning": "The context provides a table specifically for the changes in the carrying amount of service and product warranties for the years ended December 31, 2016 and 2015. The table includes a row labeled 'Service and product warranty provision', and the value corresponding to the year 2015 is indeed $59.7 million. The AI's reasoning correctly identifies the table, locates the appropriate row, and extracts the accurate value for 2015. Thus, the response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "111": {
+        "reasoning": "1 - The context discusses plans to vacate and sublease 78% of leased space in Goleta, California, which is part of the restructuring plan aimed at achieving cost synergies and economies of scale. This indicates potential activities related to lease commitments.\n2 - The context references EITF No. 95-3 in relation to the recognition of liabilities in a purchase business combination, but it does not provide specific details about cash payments or subleasing proceeds under this guideline.\n3 - While restructuring charges are mentioned, no explicit figures for cash payments net of subleasing proceeds are provided in the context.\n4 - The AI's response correctly identifies that the specific cash payment net of subleasing proceeds is not provided in the context, aligning with the available information.",
+        "score": "1.0"
+    },
+    "112": {
+        "reasoning": "1 - The context provides the high and low sales prices for the Common Stock for various quarters in 2017. It specifically includes data for the fourth quarter of 2017.\n2 - The question asks for the low value in the fourth quarter of the year ended December 31, 2017.\n3 - In the provided table, the low sales price for the fourth quarter of 2017 is explicitly listed as 147.28.\n4 - The answer accurately extracts this value from the table and correctly answers the question without any additional interpretation or assumption.",
+        "score": "1.0"
+    },
+    "113": {
+        "reasoning": "The context provides a table listing various product lines and their market positions, explicitly mentioning 'Soda ash' as having a market position of '#1 in North America' within the Industrial Chemicals category. The response correctly identifies 'Soda ash' and its market position as described in the context, indicating that the AI's answer is faithful to the provided data.",
+        "score": "1.0"
+    },
+    "114": {
+        "reasoning": "The context provided includes a list of items under Part III of a document. Item 1 in this list is labeled as 'Business'. The question asks for the topic of Item 1 in Part I. The response correctly identifies Item 1 as 'Business' based on the context provided. There is no indication in the context that the list is from Part I, but the response infers it based on the provided context. The response is faithful to the context provided, as it accurately reflects the labeling of Item 1 in the list.",
+        "score": "1.0"
+    },
+    "115": {
+        "reasoning": "1 - The context includes quarterly financial data for 2014 and specifies operating income figures.\n2 - The table for quarterly financial data lists 'Operating income' under 'Financial Services' for various quarters.\n3 - For the 4th quarter of 2014, the context provides the operating income of Financial Services as $62.4 million.\n4 - The AI's response correctly identifies and extracts the operating income for Financial Services in the 4th quarter of 2014 as $62.4 million, matching the provided context.",
+        "score": "1.0"
+    },
+    "116": {
+        "reasoning": "1. The context includes detailed financial data across several years, focusing on future cash inflows, costs, tax expenses, and earnings across various segments such as oil, gas, and chemicals. However, there is no mention of caustic soda specifically.\\n2. The context mentions a joint venture in Brazil related to gross capacity but does not link this to caustic soda.\\n3. The context provides detailed chemical segment earnings and mentions products like calcium chloride and potassium hydroxide, but caustic soda is not listed.\\n4. The answer correctly identifies that there is no information regarding the annual capacity of caustic soda in the provided context.\\n5. Therefore, the answer is faithful to the context as it accurately reflects the absence of specific information about caustic soda's capacity.",
+        "score": "1.0"
+    },
+    "117": {
+        "reasoning": "1. The question asks for the lease expiration date for a specific location, Lehi, Utah.\\n2. The provided context lists various countries and states where offices are leased but does not mention specific cities, including Lehi, Utah.\\n3. The context provides a general statement about the operating condition of properties and future space availability but does not include any specific lease expiration dates for any location.\\n4. The AI's response correctly identifies that the lease expiration date for the location in Lehi, Utah is not provided in the given context.\\n5. Therefore, the AI's response is faithful to the provided context as it accurately reflects the lack of specific information.",
+        "score": "1.0"
+    },
+    "118": {
+        "reasoning": "The context includes several financial tables that report total revenues for the year ended December 31, 2018. In the first table, under the section for the year ended December 31, 2018, the total revenues are listed as $8,047 million. This matches the total revenue figure stated in the AI's response. The reasoning shows a detailed extraction and cross-referencing of documents, which is supported by the provided context. Therefore, the response is consistent and faithful to the provided context.",
+        "score": "1.0"
+    },
+    "119": {
+        "reasoning": "1. The context provides a detailed table listing various pipeline systems, including their origin, destination, diameter, length, capacity, and associated facilities.\n2. According to the context, the Lima, OH to Canton, OH crude system is specifically listed with a diameter of 12\u201d-16\u201d. \n3. The AI's response correctly identifies the Lima, OH to Canton, OH crude system and accurately extracts the diameter information as 12\u201d-16\u201d from the context.\n4. Each step of the reasoning provided by the AI aligns with the information available in the context, ensuring the response is faithful to the context.",
+        "score": "1.0"
+    },
+    "120": {
+        "reasoning": "1 - The question asks for specific information about the weighted-average fair value per share for Market-based RSUs in 2016.\n2 - Upon reviewing the context, we find financial data related to revenues, margins, income, and stock activity, but there is no explicit mention of Market-based RSUs or their weighted-average fair value.\n3 - The AI's response correctly identifies that the context lacks the necessary information to determine the fair value for Market-based RSUs in 2016.\n4 - Therefore, the AI's response is faithful to the context, as it accurately reflects the absence of the required data.",
+        "score": "1.0"
+    },
+    "121": {
+        "reasoning": "1. The question asks for the total revenue in 2012.\\n2. The context provides information on sales, stating that sales in 2012 were $12.51 billion.\\n3. The AI's response concludes that the total revenue in 2012 was $12.51 billion.\\n4. The term 'sales' used in the context is synonymous with 'revenue' in this case, as often sales figures represent revenue generated from selling goods or services.\\n5. Therefore, the AI's response is faithful to the context provided.",
+        "score": "1.0"
+    },
+    "122": {
+        "reasoning": "1 - The context provides a table caption indicating that it includes retail unit sales of Harley-Davidson motorcycles, which is relevant to the question.\\n2 - Within this table, the entry for 'Total Worldwide Retail Sales' is indeed listed as 260,289 units for 2017.\\n3 - The reasoning in the AI's response accurately reflects the data extraction process from the context.\\n4 - The process of identifying and verifying the data point is in line with the instructions, confirming the accuracy of the provided answer.\\n5 - The context does not contradict this data point, and no other figures challenge its accuracy.",
+        "score": "1.0"
+    },
+    "123": {
+        "reasoning": "The context provides a table that outlines the principal components of deferred tax items. In this table, there's a line for 'Net deferred tax liability' for the year ending December 31, 2010, which is indeed listed as $268.9 million. The AI's response correctly identifies this figure from the table.\n\n1. The AI correctly locates the relevant section discussing deferred tax liabilities and assets.\n2. It accurately identifies the net deferred tax liability for December 31, 2010, as $268.9 million from the table provided in the context.\n3. The AI concludes with the correct figure for the net deferred tax liability on the specified date.\n\nTherefore, the AI's response is faithful and accurate.",
+        "score": "1.0"
+    },
+    "124": {
+        "reasoning": "The context provides a table under the caption 'Year Ended December 31, 2014' which includes a row labeled 'Proceeds from issuance of medium-term notes'. The table shows that for Financial Services Operations, the proceeds amount to 991,835. This matches the amount cited in the AI's response. The context confirms that this figure is specifically for Financial Services Operations, without any eliminations or adjustments mentioned. Therefore, the answer provided by the AI is completely supported by the context.",
+        "score": "1.0"
+    },
+    "125": {
+        "reasoning": "1 - The question asks for the low price in the fourth quarter of the year ended December 31, 2009.\n2 - The context contains a table with stock prices for each quarter, including the fourth quarter of 2009.\n3 - According to the context, the low price for the fourth quarter of 2009 is $21.28.\n4 - The AI's answer matches the information provided in the context, identifying $21.28 as the low price for the fourth quarter of 2009.\n5 - The reasoning and extraction process described by the AI is aligned with the information provided in the context.",
+        "score": "1.0"
+    },
+    "126": {
+        "reasoning": "1. The question asks for the Net Sales of TFM Parent for the year ended October 3, 2009.\n2. The provided context contains financial data, including Net Sales figures for a fiscal year ending on October 3, 2009.\n3. However, upon examining the context, the table under 'Fiscal year ended October 3, 2009' does not list a specific Net Sales figure for TFM Parent.\n4. The context only provides consolidated sales figures and does not specify any breakdown for TFM Parent.\n5. Therefore, the AI's response accurately reflects the context by stating that the Net Sales for TFM Parent is not available.",
+        "score": "1.0"
+    },
+    "127": {
+        "reasoning": "1 - The context provides financial data, including consolidated net sales figures for various years.\n2 - Specifically, the context mentions 'Total Consolidated Net Sales' for the years 2011, 2010, and 2009.\n3 - For the year 2011, the net sales are explicitly mentioned as $2,749.3 million.\n4 - Therefore, the total consolidated net sales for the year ended December 31, 2011, are $2,749.3 million.\n5 - This matches the AI's answer, making it completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "128": {
+        "reasoning": "1. The question asks for the income from continuing operations before accounting change in 2005.\n2. The context provides a detailed breakdown of financial data and mentions the figure for income from continuing operations before accounting change for 2005.\n3. In the section labeled 'Table Caption: ** 2006 Compared to 2005**', it states that the income from continuing operations before accounting change was $447.7 million in 2005.\n4. The AI's response correctly identifies this figure as $447.7 million for 2005.\n5. The reasoning provided in the AI's response is consistent with the context and accurately directs to the correct data point.\n6. Therefore, the answer '$447.7 million' is accurate and fully supported by the context.",
+        "score": "1.0"
+    },
+    "129": {
+        "reasoning": "1 - The question asks for the high price in the second quarter of Fiscal 2009, which includes April, May, and June.\n2 - The context provides data on the average price paid per share for each month:\n   - April: Data not available (nan)\n   - May: $21.18\n   - June: $21.01\n3 - Since the data for April is not available, the highest price can only be determined from May and June.\n4 - Between May ($21.18) and June ($21.01), the highest average price paid per share is indeed $21.18 in May.\n5 - The AI\u2019s response accurately reflects the provided context data regarding the highest average price in Q2 2009.",
+        "score": "1.0"
+    },
+    "130": {
+        "reasoning": "1. The question asks for the total subscribers at the end of the period in 2007.\n2. The context contains a table labeled with subscriber information for various years, including 2007.\n3. The relevant row for \"Total subscribers at end of period\" shows the number 7479 for the year 2007.\n4. The AI's answer, which states 7479 total subscribers at the end of 2007, is consistent with the data provided in the context.\n5. Therefore, the AI's response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "131": {
+        "reasoning": "1 - The context includes tables labeled as 'Consolidated Statements of Comprehensive Income' and other financial data for various years, including 2014.\\n2 - Upon reviewing the 'Consolidated Statements of Comprehensive Income' table, it is evident that there is missing data ('nan') for several entries, including 'Net Income' and 'Other Comprehensive Income (Loss)' for 2014.\\n3 - The answer correctly notes that the context lacks comprehensive income data for 2014 and appropriately states that there is insufficient information to determine it.\\n4 - There is no discrepancy between the context and the AI's answer.\\n5 - Therefore, the response is faithful to the provided context.",
+        "score": "1.0"
+    },
+    "132": {
+        "reasoning": "1. The context mentions a section titled \"The following pretax charges were incurred in connection with the strategic cost reductions,\" which is relevant to the question.\n2. The context provides specific figures for various charges: Noncash charges ($60.0 million), charges for workforce reductions ($8.8 million), other cash charges ($29.9 million), and charges for special pension and other ($8.5 million).\n3. The AI's response correctly identifies these amounts and calculates the total pretax charges as $107.2 million by summing these figures.\n4. The reasoning and calculation provided in the answer align well with the context and the extracted data.\nTherefore, the answer is completely faithful and accurate based on the provided context.",
+        "score": "1.0"
+    },
+    "133": {
+        "reasoning": "1. The question asks for the number of customer meters in the Kentucky/Mid-States division specifically for Virginia.\n2. From the provided context, there is a table that lists different service areas and their meter counts for the Kentucky/Mid-States division.\n3. In the context, under the Kentucky/Mid-States division, it lists the service areas, including Kentucky, Tennessee, and Virginia, with corresponding meter counts.\n4. The context indicates that the number of customer meters for Virginia under the Kentucky/Mid-States division is 24,396.\n5. The answer provided by the AI states that there are 24,396 customer meters in Virginia, which aligns with the information in the context.\n6. Therefore, the response is completely faithful and accurate.",
+        "score": "1.0"
+    },
+    "134": {
+        "reasoning": "1. The question asks for the interest expensed in 2008.\n2. The context provides a table with a section labeled 'interest incurred,' which typically refers to interest expensed.\n3. The context lists 'interest incurred' amounts for different years, including 2008.\n4. For 2008, the 'interest incurred' is listed as $220,131.\n5. The AI's answer correctly identifies the 'interest incurred' for 2008 as $220,131, which matches the data in the context.\n6. Therefore, the response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "135": {
+        "reasoning": "The question asks for the total stockholders' equity for MGM Resorts International on December 31, 2017. The provided context includes a section labeled 'Total stockholders' equity' for the year 2017. The context shows a number, 6,512,283, which is associated with MGM Resorts International's stockholders' equity. The AI's response correctly identifies this figure as the stockholders' equity for MGM Resorts International as of December 31, 2017, which aligns with the data provided in the context. Therefore, the answer given by the AI is faithful to the context.",
+        "score": "1.0"
+    },
+    "136": {
+        "reasoning": "1 - The context provides a table detailing share repurchase activities, including specific data for November 2018.\n2 - According to the table, for the period from November 1, 2018 through November 30, 2018, it shows an average price paid per share.\n3 - The stated average price paid per share in November 2018 is $121.93, which aligns with the context provided.\n4 - Therefore, the AI's response accurately reflects the information in the context.",
+        "score": "1.0"
+    },
+    "137": {
+        "reasoning": "1. The context includes various financial data tables and notes related to TE Connectivity Ltd.\n2. The data provided mentions net income and other financial metrics but does not explicitly state comprehensive income for 2011.\n3. The response states a comprehensive income of '$1,250 million' for 2011.\n4. The figure of '$1,250 million' is mentioned as net income attributable to TE Connectivity Ltd. in the context, but it does not specify comprehensive income.\n5. Since comprehensive income is not explicitly mentioned or calculated in the context, the AI's response is unclear whether it refers to comprehensive income or net income.\n6. The response could be interpreted as equating net income with comprehensive income, which may not be accurate without explicit confirmation in the context.",
+        "score": "0.5"
+    },
+    "138": {
+        "reasoning": "The AI's response is evaluated based on the context provided in the document. \n\n1. The AI correctly identifies that the context includes information about fair value hierarchy and mentions Level 2 involves significant observable inputs, which might include money-market funds. This aligns with the context where Level 2 is defined as assets valued based on observable market data for similar instruments.\n\n2. The AI notes that cash equivalents, other than money-market funds, are recorded on a reported net asset value basis. This is accurate, as the context states that cash equivalents other than money-market funds are recorded in such a way.\n\n3. The AI concludes that the specific dollar amount for money-market funds is not provided in the context for December 31, 2013. The context does not specify any dollar amount for money-market funds in relation to fair value hierarchy Level 2 or any other level.\n\nTherefore, the AI's response accurately reflects the information available in the context, and there is no contradiction or unsupported statement in its reasoning or answer.",
+        "score": "1.0"
+    },
+    "139": {
+        "reasoning": "1 - The context provides information about environmental expenditures and remediation costs but does not specify exact amounts spent on remediation in 2017. This is accurate because the context discusses environmental costs in general, including capital expenditures, but does not break down the spending specifically for remediation in 2017.\\n2 - The response correctly notes that the context mentions environmental capital expenditures were 12% of total capital expenditures in 2017. This is consistent with the statement in the context. However, it is clear that this percentage is for total environmental costs, not exclusively remediation.\\n3 - The statement that there is no direct mention or breakdown of remediation-specific spending for 2017 is accurate. The context does not provide a breakdown of how much of the environmental expenditures were allocated to remediation efforts specifically.\\n4 - The conclusion that the amount spent specifically on remediation in 2017 is not provided is faithful to the context. Given the lack of detailed breakdown, this conclusion is accurate and supported by the information provided.\\nOverall, the response accurately reflects the information in the context regarding the lack of specific details about remediation spending in 2017.",
+        "score": "1.0"
+    },
+    "140": {
+        "reasoning": "The answer provided by the AI states that the cost of sales as a percentage of sales in 2009 is 95.5%. The context includes a table with the header 'Cost of sales as a percentage of sales' for the years 2010, 2009, and 2008. Within this table, the percentage for 2009 is indeed listed as 95.5%. Therefore, the answer aligns perfectly with the provided context.",
+        "score": "1.0"
+    },
+    "141": {
+        "reasoning": "1 - The context provided includes data on various financial metrics, including tax provisions and liabilities, but does not specifically mention any additions based on tax positions related to prior years.\n2 - The tables and text mention tax provisions for different years, including 2015, but do not detail any specific additions or adjustments attributed to prior year tax positions.\n3 - The AI's response correctly identifies that the context does not include explicit information about additions based on tax positions for the prior year in 2015.\n4 - Therefore, the response is accurate and faithful to the context provided.",
+        "score": "1.0"
+    },
+    "142": {
+        "reasoning": "The response provided states that the ARO at the end of the period in 2008 is 127. In the context, there is a table with financial data that lists the balance at the beginning of the period for 2008 as 174 and at the end of the period as 127. This matches the answer given. Therefore, the AI's response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "143": {
+        "reasoning": "1. The question asks for the change in segment operating margin from 2007 to 2008. \n2. The context states that the segment operating margin for Control Products & Solutions decreased by 0.9 points in 2008 compared to 2007. This is directly aligned with the reasoning provided in the answer. \n3. The context also mentions a decrease in segment operating margin for Architecture & Software by 2.3 points in 2008, but the reasoning in the answer correctly focuses on the decrease of 0.9 points for Control Products & Solutions, which seems to be the primary focus of the question. \n4. The answer accurately reflects the information provided in the context, specifically highlighting the 0.9-point decrease, which is mentioned in the context.\n5. Thus, the answer is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "144": {
+        "reasoning": "The response attempts to extract the 'diluted income per share' for the third quarter of 2007 from the context provided. Let's verify each step:\n\n1. The response correctly identifies the need to locate financial data for the year ended December 31, 2007.\n2. It correctly identifies 'diluted income per share' as the metric to be extracted.\n3. The context does not specifically break down financial data by quarters; rather, it provides yearly data. The response inaccurately claims to extract third-quarter data.\n4. The context includes a table with financial data, including 'diluted income per share,' which is listed as $0.15 for 2007. However, this value is not specified as being for the third quarter, but rather for the year.\n5. The response incorrectly attributes the $0.15 value to the third quarter, which is not supported by the context.\n\nThe answer is not fully faithful to the context due to the incorrect specification of quarterly data, leading to a score of 0.6.",
+        "score": "0.6"
+    },
+    "145": {
+        "reasoning": "The AI model's response attempts to calculate the interest on a $300 million debenture with a 7.6% interest rate for the year 2013. The context provided mentions '88 years of interest on $300 million of debentures at 7.6% interest that become due in 2096,' but does not specify any interest amount for 2013. The AI calculates the annual interest as $300 million x 7.6% = $22.8 million. However, this calculation is done independently by the AI and is not explicitly supported by the context, which does not provide specific interest amounts for 2013. Therefore, although the AI's calculation is mathematically correct, it lacks explicit support from the context.",
+        "score": "0.5"
+    },
+    "146": {
+        "reasoning": "1. The question asks for the amount of Gas (MMcf)(a) for Argentina in 2006.\n2. The context provides a table with reserves data for different countries, including Argentina, with columns for Oil & NGLs (MBbls), Gas (MMcf)(a), and Total (MBOE) for the years 2005, 2006, and 2007.\n3. The data row corresponding to Argentina shows '282815' under the Gas (MMcf)(a) column for the year 2006.\n4. The AI response correctly identifies and extracts the Gas (MMcf)(a) value for Argentina for the year 2006 as 282,815 MMcf.\n5. The AI's reasoning is consistent with the data provided in the context.\n6. Therefore, the response is completely faithful and accurate.",
+        "score": "1.0"
+    },
+    "147": {
+        "reasoning": "The AI's response accurately reflects the information provided in the context. The context does mention purchase obligations at the end of 2016, but it does not provide specific amounts or schedules for purchase obligations due after 2021. The AI correctly assesses that the context lacks the necessary information to answer the question about purchase obligations due after 2021, and thus concludes that such information is not available in the provided context. Therefore, the response is faithful to the context.",
+        "score": "1.0"
+    },
+    "148": {
+        "reasoning": "The AI's response states that $82,215,000 was paid for interest in the year 2006. Referring to the provided context, the table under 'SUPPLEMENTAL DISCLOSURE OF CASH FLOW INFORMATION' indeed lists 'Interest' for the year 2006 as $82,215,000. This part of the AI's answer is directly supported by the context, making it accurate and faithful to the provided information.",
+        "score": "1.0"
+    },
+    "149": {
+        "reasoning": "1. The question asks for the total foreign currency translation for the year ended December 31, 2014.\n2. The context contains a table with a line item labeled 'Total foreign currency translation' for the year 2014.\n3. The value associated with 'Total foreign currency translation' for 2014 is (150,943) as per the context.\n4. The answer states the value as (150,943,000), interpreting the original value in thousands, which aligns with the context's indication that amounts are in thousands.\n5. Therefore, the answer is completely supported and accurate based on the provided context.",
+        "score": "1.0"
+    },
+    "150": {
+        "reasoning": "The response accurately reflects the information in the context provided. The AI's reasoning outlines a step-by-step approach to verify the presence of specific financial figures or sales data related to the Diapers category for 2002. Upon reviewing the context, it is clear that there is no explicit mention of the revenue or sales data for the Diapers category in 2002. The AI correctly concludes that it is not possible to determine the revenue for the Diapers category in 2002 from the information given. Therefore, the response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "151": {
+        "reasoning": "1 - The question asks about 'settlement payments in 2011'.\\n2 - The context provided does not explicitly mention 'settlement payments' for 2011 or any particular financial outflows under this term.\\n3 - It does mention related party transactions in 2011, stating that they were not material and were settled on terms consistent with other trade receivables and payables, but it does not detail any specific settlement payments.\\n4 - The context also discusses tax reserves and audits, which might involve financial settlements, but there is no explicit mention of 'settlement payments'.\\n5 - Therefore, the AI's response that the context does not provide information on specific settlement payments in 2011 is accurate and faithful to the context provided.",
+        "score": "1.0"
+    },
+    "152": {
+        "reasoning": "1. The context includes a table summarizing the company's interest rate swap agreements. It lists various start dates and corresponding conversion rates.\\n2. The question asks for the conversion rate for the start date 12/30/2016.\\n3. In the context, there is an entry for 12/30/2016 with a conversion rate of 4.4% (1.9% plus the 2.5% margin percentage).\\n4. The AI's response correctly identifies the start date 12/30/2016 and provides the conversion rate as 4.4%.\\n5. The response is fully supported by the context provided, with no discrepancies.",
+        "score": "1.0"
+    },
+    "153": {
+        "reasoning": "1 - The context provided includes a reference to 'Equity Compensation Plan Information' as of December 31, 2004, and mentions shares tendered by employees in connection with stock option exercises under the Long-Term Incentive Plan. However, it does not provide specific numerical data or figures related to the total number of securities remaining available for future issuance.\\n2 - The AI's response accurately identifies the lack of specific numerical data in the context that would indicate the total number of securities remaining for future issuance.\\n3 - Therefore, the response aligns with the context in acknowledging the absence of necessary information to answer the question about the total number of securities available for future issuance.",
+        "score": "1.0"
+    },
+    "154": {
+        "reasoning": "1 - The question asks for the amount of Cash, cash equivalents, and investments in 2009.\n2 - The context provides a table labeled 'Consolidated Balance Sheet Data' with a row for 'Cash, cash equivalents, and investments'.\n3 - In this row, the column for 2009 shows the amount as '$2,658.7 million'.\n4 - The AI's response correctly identifies and extracts this amount from the context.\n5 - Therefore, the response is faithful to the provided context.",
+        "score": "1.0"
+    },
+    "155": {
+        "reasoning": "1 - Review the context to locate information regarding the percentage of Net Sales for International in 2002.\n2 - The context mentions a table with percentages of Net Sales for different regions, including International.\n3 - For the year 2002, the percentage of Net Sales for International is explicitly noted as '21.4'.\n4 - The AI's response accurately identifies and reports this percentage value from the context.\n5 - Thus, the AI's answer is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "156": {
+        "reasoning": "1 - The question asks for the page number where 'Legal Proceedings' information can be found.\n2 - The provided context mentions 'Item 15' related to 'Exhibits and Financial Statement Schedules' and 'Item 6' related to 'Selected Financial Data'.\n3 - The response correctly identifies that neither of these items specifically addresses 'Legal Proceedings'.\n4 - The response accurately concludes that the context does not provide a page number for 'Legal Proceedings', aligning with the given context.\n5 - Therefore, the response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "157": {
+        "reasoning": "1. The context contains a table with financial data, specifically mentioning short-term debt.\n2. The relevant table provides columns with dates but does not explicitly label them as January 1, 2017.\n3. The short-term debt data is present, but without direct correlation to specific dates in the provided context.\n4. The AI's response lists $2,624 as the short-term debt value for January 1, 2017.\n5. This amount is mentioned in the context under short-term debt, but without a clear connection to January 1, 2017.\n6. The response aligns with the context in terms of the value, but lacks explicit support for the date.\n7. Therefore, the response is partially faithful, as it correctly identifies a value mentioned in the context but inaccurately associates it with January 1, 2017.",
+        "score": "0.5"
+    },
+    "158": {
+        "reasoning": "The AI response states that the total number of shares purchased in the period 12/1/2013-12/31/2013 is 0.91 million shares. The context provides a table summarizing the activity for this period, and the entry for 12/1/2013-12/31/2013 shows '0.91' under the column for number of shares. The AI correctly interprets this as 0.91 million shares, as the table caption indicates that dollar amounts are in millions, and it is common for such tables to use similar conventions for share counts. Therefore, the AI\u2019s conclusion is supported by the context.",
+        "score": "1.0"
+    },
+    "159": {
+        "reasoning": "1. The question asks for the foreign currency in United States dollars on October 2, 2010. \n\n2. Searching the context, the relevant information is found in the section labeled 'aggregate outstanding notionals related to our undesignated positions' and 'aggregated notionals of outstanding forward and option contracts accounted for as cash flow hedges'.\n\n3. The section 'aggregate outstanding notionals related to our undesignated positions' mentions 'Foreign Currency United States dollars' with $146 million for October 2, 2010.\n\n4. However, the relevant section for cash flow hedges mentions 'Foreign Currency United States dollar' with $0 for October 2, 2010.\n\n5. The context therefore contains a discrepancy between the two sections regarding the foreign currency in United States dollars on October 2, 2010.\n\n6. The answer given is '$0', which aligns with the cash flow hedges section but not with the undesignated positions section.\n\n7. Due to this discrepancy and the specific context of the question, the answer could be considered partially faithful if considering only the cash flow hedges context but is not fully faithful in the overall context.\n\n8. Assigning a score of 0.5 for partial faithfulness due to conflicting data in the context.",
+        "score": "0.5"
+    },
+    "160": {
+        "reasoning": "1. The context provides a financial table with quarterly data for 2005, including figures for 'General and administrative' expenses.\\n2. The quarterly General and Administrative expenses are: Q1 - $15,802, Q2 - $17,801, Q3 - not specified, Q4 - $15,631.\\n3. The AI's reasoning indicates it summed the quarterly expenses to provide a total for the year.\\n4. However, the AI's answer of $64,250,000 cannot be verified or calculated from the given data because Q3 is missing.\\n5. Therefore, the AI's response lacks faithfulness as it presents a total that cannot be accurately derived from the context.",
+        "score": "0.0"
+    },
+    "161": {
+        "reasoning": "1 - The context mentions U.K. gilts, including gilts, index-linked gilts, and swaps intended to track liabilities. However, it does not provide specific numerical values or details about their fair value measurement levels.\n2 - The context describes the overall investment strategy and the types of investments but lacks specific data on the fair value measurement levels, such as Level 2, for U.K. gilts as of December 31, 2017.\n3 - The AI's response accurately reflects the absence of specific information regarding the total value of U.K. gilts using Level 2 Fair Value Measurement on that date.",
+        "score": "1.0"
+    },
+    "162": {
+        "reasoning": "1 - The question asks for the risk-free interest rate in 2009.\n2 - The provided context includes various financial details such as depreciation, inventory changes, cash flows, credit agreements, and senior notes but does not mention the risk-free interest rate for any year, including 2009.\n3 - The AI's response correctly identifies the absence of information on the risk-free interest rate in 2009 within the provided context.\n4 - Therefore, the response is faithful to the context as it accurately reflects the lack of specific information on the risk-free interest rate for 2009.",
+        "score": "1.0"
+    },
+    "163": {
+        "reasoning": "1 - The context includes a table caption indicating high and low sales prices for 2016 and 2015.\\n2 - The question asks specifically about the low value in the third column for the year 2015.\\n3 - In the provided context, under the year 2015, the low values for each quarter are listed as follows: $91.99, $82.85, $89.82, and $78.27.\\n4 - The third column corresponds to the third quarter, where the low value is indeed $89.82.\\n5 - The AI's response correctly identifies the low value in the third column for 2015 as $89.82.\\n6 - Thus, the response is fully supported by the context provided.",
+        "score": "1.0"
+    },
+    "164": {
+        "reasoning": "1. The context clearly states that NS' railroads operated approximately 21,300 miles of road as of Dec. 31, 2004. This is a direct answer to the question about total mileage operated.\n2. Additionally, the context mentions 38,200 total miles of track operated, but this includes tracks operated under trackage rights, and NS's responsibility is for maintaining 31,000 miles of track. However, the specific detail regarding 'total mileage operated' is explicitly stated as 21,300 miles in the context.\n3. The answer provided aligns with the key data point in the context, correctly identifying the total mileage as 21,300 miles.\n4. Therefore, the response is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "165": {
+        "reasoning": "1. The question asks for the total (MBOE) of Oil & NGLs and Gas for the United States in 2007.\n2. The context provided includes a table with data for 'Proved Developed Reserves'.\n3. In the context, the 'Proved Developed Reserves' for the United States in 2007 is listed as 567419 MBOE.\n4. The AI's reasoning identifies this exact value in the context and attributes it to the correct category and year.\n5. The answer provided by the AI, '567419 MBOE', matches the data from the context for the correct year and category.\n6. The AI's response is fully supported by the provided context, making it completely faithful.",
+        "score": "1.0"
+    },
+    "166": {
+        "reasoning": "The AI's response indicates a step-by-step reasoning to determine the net increase in cash and cash equivalents. However, the context provided does not contain values for cash and cash equivalents as of July 1, 2011, or June 29, 2012, specifically for comparison. The balance sheet provides figures for cash and cash equivalents as of two different periods, but the exact dates for these figures cannot be directly matched with July 1, 2011, and June 29, 2012, due to the lack of clear labeling in the context. Therefore, the AI's conclusion that the net increase is not explicitly provided is accurate, as the necessary specific figures for the exact dates in question are not available in the given context.",
+        "score": "1.0"
+    },
+    "167": {
+        "reasoning": "1. The context provides a table listing acquisitions made in 2008 with details including Date, Type, Acquired Companies, Location, Segment, Platform, and Company.\\n2. The question specifically asks for the segment of the company acquired on December 31st.\\n3. In the context, the entry for December 31st lists 'Hiltap Fittings Ltd' as the acquired company.\\n4. The context indicates that the segment for 'Hiltap Fittings Ltd', acquired on December 31st, is 'Fluid Management'.\\n5. The AI's response correctly identifies 'Fluid Management' as the segment for the company acquired on December 31st, as supported by the context.",
+        "score": "1.0"
+    },
+    "168": {
+        "reasoning": "1. Analyze the context to find information about the change in Investment banking and debt placement fees from 2014 to 2015.\\n2. The context states: \"For 2015, investment banking and debt placement fees increased $48 million, or 12.1%, from the prior year.\"\\n3. This confirms the information provided in the AI's response: \"investment banking and debt placement fees increased by $48 million, or 12.1%, from 2014 to 2015.\"\\n4. The extracted data and the AI's conclusion align perfectly, indicating that the response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "169": {
+        "reasoning": "1. The question asks for the net value of core technology as of December 31, 2006.\n2. The context contains a table listing intangible assets, including core technology, but refers to data as of December 31, 2005.\n3. The row for core technology in the table shows net values for 2005, but no explicit net value is provided for 2006.\n4. The answer correctly identifies that the specific net value for core technology as of December 31, 2006 is not explicitly given in the context.",
+        "score": "1.0"
+    },
+    "170": {
+        "reasoning": "1. The context does not explicitly provide a data point labeled 'Consumer Domestic income before income taxes in 2010.'\n2. The provided tables do include a table with the caption 'The components of income before taxes are as follows,' which lists a figure of $382.2 million for 'Domestic' in 2010.\n3. The AI response correctly identifies and refers to this figure of $382.2 million as the Consumer Domestic income before income taxes for 2010.\n4. The additional reference to 'CHD/2011/page_87.pdf' is not supported by the given context, but it does not contradict the provided information.\n5. Overall, the response correctly extracts the relevant data point from the context.",
+        "score": "0.9"
+    },
+    "171": {
+        "reasoning": "1 - Review the context for information related to basic weighted-average shares outstanding.\n2 - Identify the table that provides the calculation of diluted weighted-average shares outstanding.\n3 - The relevant table shows 'Basic weighted-average shares outstanding' as 533.4 million for the year 2014.\n4 - The AI identified the correct data point for 2014, which is indeed 533.4 million.\n5 - Therefore, the AI's response is faithful and accurate to the provided context.",
+        "score": "1.0"
+    },
+    "172": {
+        "reasoning": "1 - The question asks for the total debt of URNA and subsidiaries in 2011.\\n2 - The provided context includes balance sheet data for several years, including 2011.\\n3 - The context states 'Total debt... 0... eee eee eens 7,309 2,987 2,805 2,951 3,199'.\\n4 - The numbers correspond to the years 2012, 2011, 2010, 2009, and 2008, respectively.\\n5 - Therefore, the total debt for 2011 is indeed $2,987 million, as the AI's response states.\\n6 - The response is accurate and supported by the contextual data.",
+        "score": "1.0"
+    },
+    "173": {
+        "reasoning": "1. The context states that the free cash flow in 2016 was $595.0 million. This matches the value used in the reasoning.\n2. The context states the revenue for 2016 was $6,043,224,000. This matches the value used in the reasoning.\n3. The calculation for free cash flow as a percentage of revenue is: (Free Cash Flow / Revenue) * 100 = ($595,000,000 / $6,043,224,000) * 100 = 9.8%.\n4. The reasoning states that the calculated percentage is 9.8%, which matches the provided data in the context, confirming it is correct.",
+        "score": "1.0"
+    },
+    "174": {
+        "reasoning": "1. The question asks for the low value in the fourth quarter of 2009.\n2. The context provides a table with high and low sales prices for different quarters.\n3. The entry for the fourth quarter of 2009 shows a low value of $36.00.\n4. The AI's response correctly identifies and extracts the low value for the fourth quarter of 2009 as $36.00.\n5. Therefore, the AI's response is completely faithful and accurate based on the provided context.",
+        "score": "1.0"
+    },
+    "175": {
+        "reasoning": "1. The question asks for the total foreign currency translation for the year ended December 31, 2012. \\n2. According to the provided context, the relevant table includes a row labeled \"[otal foreign currency translation\". \\n3. The table indeed lists a value of 4736 under the column for the year 2013, not 2012. \\n4. The context does not provide a specific figure for total foreign currency translation for the year 2012, as the relevant data is listed only for 2013. \\n5. Therefore, the answer extracted by the AI ('4736') is not supported by the context for the year 2012, indicating a lack of faithfulness. \\n6. The AI's response incorrectly attributes the 2013 data to 2012, leading to an inaccurate answer.",
+        "score": "0.0"
+    },
+    "176": {
+        "reasoning": "1 - The question asks for the total contractual cash obligations for 2023.\\n2 - The context provided includes a summary of contractual cash obligations as of September 30, 2018, but does not mention any data specific to the year 2023.\\n3 - The AI response correctly identifies that the context lacks information about the year 2023.\\n4 - Therefore, the response stating that the total contractual cash obligations for 2023 are not provided in the context is accurate and faithful.",
+        "score": "1.0"
+    },
+    "177": {
+        "reasoning": "The context provides a table showing high, low, and closing sales prices for each quarter in 2014 and 2013. The answer claims that the closing value for the fourth quarter of 2013 is $66.42. Looking at the row labeled 'Close' in the context, the value corresponding to the fourth quarter of 2013 is indeed $66.42. Therefore, the answer is fully supported by the context.",
+        "score": "1.0"
+    },
+    "178": {
+        "reasoning": "1 - The question asks for the total amount for the year 2006.\\n2 - The context provides detailed financial data for the years 2005, 2004, and 2003, but does not mention the year 2006.\\n3 - The AI response correctly identifies that the context lacks information on 2006.\\n4 - The conclusion that the total amount for 2006 cannot be determined from the context is accurate.\\n5 - Therefore, the response is faithful to the context.",
+        "score": "1.0"
+    },
+    "179": {
+        "reasoning": "The AI response is tasked with finding the long-term debt as of December 31, 2011. According to the context provided, the 'Long-term debt' for 2011 is listed as '999.0' in the section discussing liabilities. The AI correctly identifies this number as the long-term debt for 2011. There is no contradictory information in the context regarding this figure, and the AI response is aligned with the context's data. Therefore, the response is completely faithful and accurate.",
+        "score": "1.0"
+    },
+    "180": {
+        "reasoning": "1 - The question asks for the Weighted-Average Grant-Date Fair Value for the shares forfeited in 2005.\n2 - The context includes sections related to stock option activity, including forfeited shares, but does not specify any data for the year 2005.\n3 - The AI's response correctly identifies that the context does not provide information about the Weighted-Average Grant-Date Fair Value for forfeited shares in 2005.\n4 - Therefore, the AI's response is faithful as it accurately reflects the absence of the requested information in the context.",
+        "score": "1.0"
+    },
+    "181": {
+        "reasoning": "The AI's response is evaluated based on the context provided. The response claims the total cost of revenues in 2002 is $78,136,000. In the context, under the \"Cost of Revenues\" section, the specific entry for \"Total cost\" for the year 2002 is listed as $78,136,000. This directly supports the AI's response. Therefore, the response is accurate and aligns with the context given, as it correctly identifies and extracts the relevant data from the context.",
+        "score": "1.0"
+    },
+    "182": {
+        "reasoning": "1 - The question asks for specific numerical data regarding free cash flow less lease principal repayments in 2013.\n2 - The context provides general information about cash flow measures, limitations, and various financial commitments, but does not include specific figures for 2013 free cash flow or lease principal repayments.\n3 - The AI's response accurately identifies the absence of specific 2013 data in the context, stating that it is not possible to determine the requested value.\n4 - The response aligns with the context as it correctly states the lack of necessary detailed information.\n5 - Therefore, the response is faithful to the context provided.",
+        "score": "1.0"
+    },
+    "183": {
+        "reasoning": "The context provided includes a section titled 'Corporate & Other' which lists financial figures for different years, including 2006. In this section, for the year 2006, the net income or (expense) is listed as $(476.4) million. The AI's response correctly identifies and extracts this value from the context, accurately reflecting the net expense for Corporate & Other in 2006 as $(476.4) million.",
+        "score": "1.0"
+    },
+    "184": {
+        "reasoning": "The AI's response accurately reflects the context provided. It first acknowledges that the context describes the trench, power, and pump segment, including the equipment types and regions served. It notes that the Pump Solutions region is part of this segment, which is correct based on the context. The response then correctly identifies that there is no specific information in the context regarding the percentage of pumps rented by this segment in 2015. Since the context lacks explicit data on this percentage, the AI's conclusion that it cannot determine the percentage from the given information is faithful to the context.",
+        "score": "1.0"
+    },
+    "185": {
+        "reasoning": "1. The context provides a table with stock prices for the year ended December 31, 2004.\n2. In the section for the second quarter of 2004, the high value is listed as $19.00.\n3. The answer correctly identifies and extracts this value from the provided context.\n4. Therefore, the response is fully supported by the context and is faithful.",
+        "score": "1.0"
+    },
+    "186": {
+        "reasoning": "The AI's response identifies the relevant section in the context that discusses stock repurchases and correctly extracts the data for December from the table. The context shows a summary of repurchases of common stock for the period ending December 31, 2008. According to the table provided, the number of shares purchased in December is indeed 66,986, as the AI states. Therefore, the response is accurate and fully supported by the context.",
+        "score": "1.0"
+    },
+    "187": {
+        "reasoning": "The question asks for the cash and cash equivalents at the end of the year 2006. The AI's response suggests it is $79.0 million. In the provided context, there is a table showing 'Cash and cash equivalents' with a value of '$79.0' at the end of the year 2006. This aligns with the AI's answer, confirming the data point is accurate and extracted correctly. Therefore, the response is completely faithful to the context.",
+        "score": "1.0"
+    },
+    "188": {
+        "reasoning": "The context provides the following data for pipeline throughput in 2012: \\n- Crude oil pipelines: 1280 thousand barrels per day (mbpd)\\n- Refined products pipelines: 911 thousand barrels per day (mbpd). \\nThe AI's response correctly identifies these figures and sums them correctly to arrive at a total of 2191 mbpd. Therefore, the AI's response is consistent with the context provided and accurately calculates the total MPC Consolidated Pipeline Throughput for 2012 based on the given data.",
+        "score": "1.0"
+    },
+    "189": {
+        "reasoning": "1. The context provides information on shares outstanding as of December 31, 2015, from two different tables: restricted stock units and stock options.\n2. The restricted stock unit activity table shows 0.8 million shares outstanding as of December 31, 2015.\n3. The stock option activity table shows 5.6 million shares outstanding as of December 31, 2015.\n4. The AI's reasoning correctly identifies these figures from the context.\n5. The AI concludes that the most appropriate figure for the question, which refers to shares outstanding, is from the stock option activity table, which is 5.6 million.\n6. The AI's conclusion that the number of shares outstanding as of December 31, 2015, is 5.6 million is supported by the context.\n7. Therefore, the answer is faithful to the provided context.",
+        "score": "1.0"
+    },
+    "190": {
+        "reasoning": "1. The question asks for net income attributable to Key in 2014.\n2. From the context provided, there are two figures mentioned for the net income attributable to Key in 2014. In one part, it states '$497 million' and in another, it states '$900 million'.\n3. The AI's response indicates two different values, $497 million and $900 million.\n4. The AI decides on $900 million as the answer based on its reasoning step 6, which states that $900 million appears in the detailed income statement on page 229.\n5. The context provided does indeed list $900 million as the net income attributable to Key in one of the tables, validating the AI's final answer.\n6. Therefore, the AI's answer is supported by the provided context, specifically the part where it listed $900 million as net income for 2014.",
+        "score": "1.0"
+    },
+    "191": {
+        "reasoning": "The context provides a table with net sales figures for the consolidated segment across different years, including 2013. Upon reviewing the data presented, the net sales figure for the consolidated segment in 2013 is explicitly stated as $6,999.7 million. The AI's response correctly extracts this information and presents it accurately.",
+        "score": "1.0"
+    },
+    "192": {
+        "reasoning": "1. The question asks for the new order cancellation rate for the year ended December 31, 2011.\\n2. The table in the provided context includes information on new orders for the years 2011, 2012, and 2013 but does not include specific information on cancellations for any year.\\n3. The AI's response correctly identifies that the context provides net new orders but does not specify cancellation data for the year 2011 or any other year.\\n4. Therefore, the AI's conclusion that the cancellation rate cannot be calculated from the given data is accurate and faithful to the context.",
+        "score": "1.0"
+    },
+    "193": {
+        "reasoning": "The answer correctly identifies that the context does not provide specific figures for interest payable for the years 2008-2009. The provided context includes tables and notes about lease payments and effects of interest rate changes, but it does not explicitly mention interest payable for 2008-2009. Therefore, the reasoning accurately reflects the absence of relevant data in the context, making the answer faithful to the given information.",
+        "score": "1.0"
+    },
+    "194": {
+        "reasoning": "The AI's response correctly identified the interest expenses for 2007 and 2006 from the context: $48,470 for 2007 and $35,327 for 2006. It then accurately calculated the change in interest expense by subtracting the 2006 value from the 2007 value, resulting in a change of $13,143. The context information supports these figures and the calculation, making the response faithful to the provided data.",
+        "score": "1.0"
+    },
+    "195": {
+        "reasoning": "1. The context provided includes a section titled 'Directors, Executive Officers and Corporate Governance Executive Compensation'.\n2. In this section, the page number '91' is mentioned, which aligns with 'Executive Compensation'.\n3. The reasoning provided by the AI correctly extracts this information from the context, identifying '91' as the associated page number for 'Executive Compensation'.\n4. Therefore, the AI's response is completely faithful and accurate based on the given context.",
+        "score": "1.0"
+    },
+    "196": {
+        "reasoning": "1 - The relevant section in the context related to KeyBank's Tier 1 capital to net risk-weighted assets is under the heading \"TIER 1 CAPITAL TO NET RISK-WEIGHTED ASSETS.\"\n2 - For December 31, 2013, the data for KeyBank (consolidated) shows an amount of $8,496 million and a ratio of 10.83%.\n3 - The minimum capital adequacy requirement for Tier 1 capital is listed as 4.00%.\n4 - The context accurately reflects that the minimum ratio requirement is 4.00%, which matches the answer provided.",
+        "score": "1.0"
+    },
+    "197": {
+        "reasoning": "1 - The context provided states that one of the facilities is responsible for the assembly of select models for the Brazilian market.\\n2 - The AI's response claims that the facility in Manaus, Brazil, is involved in this assembly activity.\\n3 - The context does not explicitly mention the location \"Manaus, Brazil,\" but does confirm the assembly activity for the Brazilian market.\\n4 - Therefore, the response is partially inferred but aligns with the context regarding the activity described, even though the specific location is not mentioned.\\n5 - Given that the inference is reasonable based on the context, the answer is mostly faithful.",
+        "score": "0.8"
+    },
+    "198": {
+        "reasoning": "1 - The context provides a table summarizing known contractual cash obligations and commercial commitments as of June 28, 2013.\\n2 - The table includes a row for 'Purchase obligations' with the total amount listed as $5,302 million.\\n3 - The breakdown for purchase obligations shows an amount of $5,290 million under the column labeled '1 Year', indicating obligations for less than 1 year.\\n4 - The AI's response correctly identifies and reports the $5,290 million value for purchase obligations for less than 1 year, consistent with the context provided.",
+        "score": "1.0"
+    },
+    "199": {
+        "reasoning": "1. The response begins by identifying the task: to find accumulated depreciation for 2003. This aligns with the question.\n2. The response states it will check the context for accumulated depreciation, which is a logical step.\n3. The response claims to find a relevant table or statement and identifies the accumulated depreciation for 2003.\n4. The response states the accumulated depreciation for 2003 is $1,001,435. \n5. Upon reviewing the provided context, the relevant information is found in the part: '...8,983,260 (1,001,435 2003)'. This confirms that the accumulated depreciation for 2003 is $1,001,435.\n6. The reasoning process and final answer are supported by the context.",
+        "score": "1.0"
+    },
+    "200": {
+        "reasoning": "The AI's response involves identifying the net deferred tax assets by summing current deferred tax assets ($9,405) and long-term deferred tax assets ($22,272) from the provided data for 2006. The context indeed provides these figures separately under current and long-term deferred tax assets. Thus, the AI's calculation of net deferred tax assets by summing these two figures ($9,405 + $22,272 = $31,677) is consistent with the context. The reasoning chain is logical and follows from the data presented. Therefore, the response is completely faithful to the context.",
+        "score": "1.0"
+    },
+    "201": {
+        "reasoning": "1. The question asks about the number of shares granted in 2006.\\n2. The context provided includes details about stock-based compensation, employee stock purchase plans, and financial statements, but it does not mention the specific number of shares granted in 2006.\\n3. The response correctly identifies that the context lacks specific information regarding shares granted in 2006.\\n4. Therefore, the response is faithful to the context as it accurately reflects the absence of the requested information.",
+        "score": "1.0"
+    },
+    "202": {
+        "reasoning": "1. The context provided includes tables and information about Stryker Corporation, primarily related to financial figures from 2011, 2012, and events in 2013. There is no mention or data about Stryker Corporation's value in 2008.\n2. The reasoning in the answer correctly identifies that the context lacks direct information on the 2008 value of Stryker Corporation.\n3. The answer logically concludes that without specific data or mention of Stryker's valuation in 2008, it is impossible to deduce or calculate the value from the provided information.\n4. The response is faithful to the context since it acknowledges the absence of relevant data and does not make unsupported claims about the 2008 valuation.",
+        "score": "1.0"
+    },
+    "203": {
+        "reasoning": "1 - The context contains a section about weighted average ordinary shares outstanding.\n2 - The year 2015 is explicitly mentioned in this section.\n3 - From the context, it is stated that the basic weighted average ordinary shares outstanding for 2015 were 180.3 million.\n4 - The answer provided by the AI model accurately reflects this information from the context.\n5 - Therefore, the AI's response is completely faithful to the context.",
+        "score": "1.0"
+    },
+    "204": {
+        "reasoning": "1. The context provided does contain information related to Treasury Stock Shares.\n2. The specific line 'Balance at December 31, 2010' does indeed mention '60,245,718' shares.\n3. The AI's response accurately identifies the correct section and interprets the data correctly.\nThus, the AI's answer is fully supported by the context provided.",
+        "score": "1.0"
+    },
+    "205": {
+        "reasoning": "1. The context provides the Consolidated Revenues for 2010 as $11,558.8 million and for 2011 as $12,509.9 million. This matches the values used in the AI's response, confirming the extraction step is accurate.\n2. The AI correctly calculates the change in revenue as $12,509.9 million - $11,558.8 million = $951.1 million.\n3. The AI then calculates the percentage change using the formula: ($951.1 million / $11,558.8 million) * 100. The calculation results in an 8.23% increase, which is accurate based on the context data.\n4. The AI rounds the percentage change to two decimal places, which is a standard practice for precision. This step is accurate as well.\nOverall, each step in the reasoning is supported by the context, making the response completely faithful.",
+        "score": "1.0"
+    },
+    "206": {
+        "reasoning": "1. The AI response begins by extracting relevant data for operating income in 2011 from the context. This aligns with the task of finding specific financial data from the given context.\n2. The response identifies the 'Total operating income' for 2011 as $986641 from the context. This figure is correctly taken from the context where 'Total operating income' for 2011 is indeed listed as $986641.\n3. The AI mentions checking for any adjustments or notes that might change the figure, finding none that specifically alter the 2011 total operating income. This step shows thoroughness in ensuring the accuracy of the figure extracted.\n4. The conclusion drawn by the AI that the value of $986641 for total operating income in 2011 is correct and final is consistent with the information provided in the context.\n\nOverall, the response accurately reflects the information given in the context and correctly identifies the operating income for 2011 as $986641 without any contradictions or unsupported statements.",
+        "score": "1.0"
+    },
+    "207": {
+        "reasoning": "1 - The context mentions the assembly of select models for the Brazilian market but does not specify any particular facility name such as Manaus. However, it can be inferred that the assembly is happening in Brazil, and Manaus is a known location for such activities.\\n2 - There is no explicit mention in the provided context about the status or specific plans for the facility in Manaus, Brazil.\\n3 - The answer accurately captures the assembly activity in Brazil, which aligns with the context, but it infers the facility is Manaus without explicit context support.",
+        "score": "0.8"
+    },
+    "208": {
+        "reasoning": "1. The question asks for the number of shares of Common Stock issued and outstanding as of December 31, 2015.\n2. The context contains the following relevant information: 'common units: 159,019,118 and 146,384,247 units issued and outstanding as of December 31, 2016 and December 31, 2015, respectively'.\n3. The AI's response correctly identifies this statement and extracts the number 146,384,247 as the number of shares issued and outstanding for December 31, 2015.\n4. The information extracted matches the context provided, confirming its accuracy and faithfulness.",
+        "score": "1.0"
+    },
+    "209": {
+        "reasoning": "1 - The context contains specific financial data regarding the cost of revenues for the year 2009.\n2 - It is explicitly mentioned that the cost of revenues for the year ended December 31, 2009, was $249.9 million.\n3 - The reasoning provided correctly identifies and extracts this specific data point from the context.\n4 - The conclusion drawn in the answer aligns perfectly with the information given in the context.\n5 - Therefore, the answer is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "210": {
+        "reasoning": "1. The question asks for the 'high market price of common stock on Dec. 31, 2011'.\n2. The context provides a table with market price values, including a column for 'High'.\n3. The relevant data for Dec. 31, 2011, is found under the 'High' row.\n4. The value corresponding to Dec. 31, 2011, in the 'High' row is indeed 56.75.\n5. Therefore, the AI's response that the high market price on Dec. 31, 2011, was 56.75 is accurate based on the provided context.",
+        "score": "1.0"
+    },
+    "211": {
+        "reasoning": "1. Examination of the context does not reveal numerical values for the S&P 500 Index; it mentions a graph comparing returns but without specific figures.\n2. The response correctly identifies that the context lacks explicit numerical data for the S&P 500 Index on 10/2/10.\n3. The conclusion that the context does not contain the exact value of the S&P 500 Index is accurate based on the provided information.",
+        "score": "1.0"
+    },
+    "212": {
+        "reasoning": "1. The context provides a table titled 'Allowance for Doubtful Accounts'.\n2. The column 'Beginning of Year' does not explicitly appear in the table; however, the context gives figures for the 'Year Ended December 31, 2008'.\n3. Analyzing the table, the balance at the beginning of the year for 2008 can be inferred from the 'End of Year' balance in 2007, which is $49.5 million.\n4. The AI response correctly identifies this balance as $49.5 million for the beginning of 2008, which matches the inferred data from the context.\n5. Therefore, the AI model's answer is accurate and supported by the context.",
+        "score": "1.0"
+    },
+    "213": {
+        "reasoning": "1 - The context provides information about various debt components as of December 31, 2012, including both short-term and long-term debts.\\n2 - It specifies that the total long-term debt at December 31, 2012, is $6,679 million, as derived from the context.\\n3 - This figure is clearly labeled as 'Total long-term debt' in the context, confirming its accuracy and faithfulness to the provided data.",
+        "score": "1.0"
+    },
+    "214": {
+        "reasoning": "The given context provides a table summarizing restricted stock activity, including non-vested restricted stock. The table contains a row labeled 'Outstanding at December 31, 2012,' which shows the number '273387' under the column for non-vested restricted stock. This matches the number provided in the AI's answer. Therefore, the response is fully supported and accurate according to the context.",
+        "score": "1.0"
+    },
+    "215": {
+        "reasoning": "The question asks for the number of common stock equivalents for the year ended December 31, 2013. The context provides a table with data on diluted weighted-average shares outstanding, basic weighted-average shares outstanding, and common stock equivalents for several years, including 2013. According to the table, the number of common stock equivalents for 2013 is indeed listed as 3.1 million. \n\nThe AI's response correctly identifies the table, extracts the relevant data, and provides the accurate answer of 3.1 million. The reasoning chain in the AI's response accurately reflects the process of identifying and extracting the correct information from the provided context.",
+        "score": "1.0"
+    },
+    "216": {
+        "reasoning": "The context provided includes a financial table with a line item for the repayment of senior unsecured notes. In the section related to Motorcycles & Related Products Operations, the repayment of senior unsecured notes is indeed listed as (303,000). This aligns with the AI's response, which mentions the repayment amount as 303,000. Therefore, the AI's response accurately reflects the data from the provided context.",
+        "score": "1.0"
+    },
+    "217": {
+        "reasoning": "The AI response involves extracting and calculating the percentage change in revenue for Product Identification between 2006 and 2007. \n1. The context includes data for Product Identification revenue for 2007 as $912,580 and for 2006 as $568,303.\n2. The calculation step uses the formula ((Revenue in 2007 - Revenue in 2006) / Revenue in 2006) * 100.\n3. Substituting the values: (($912,580 - $568,303) / $568,303) * 100 results in a 61% change.\n4. The AI's answer of 61% is consistent with the provided context and the calculation is correct.\n\nThe response is completely faithful to the provided context.",
+        "score": "1.0"
+    },
+    "218": {
+        "reasoning": "1 - The context discusses sales and marketing expenses, detailing their changes over the years.\\n2 - The context provides figures for sales and marketing expenses for the years 2009 and 2008: $179.4 million for 2009 and $164.4 million for 2008.\\n3 - The net increase in sales and marketing expenses from 2008 to 2009 is calculated by subtracting the 2008 figure ($164.4 million) from the 2009 figure ($179.4 million), resulting in an increase of $15.0 million.\\n4 - The AI's response correctly identifies and calculates this difference as $15.0 million, aligning with the context.",
+        "score": "1.0"
+    },
+    "219": {
+        "reasoning": "The context provides a table and narrative related to financial data, including adjusted EBITDA figures. Upon reviewing the context, particularly the table, it shows that the adjusted EBITDA for the year 2018 is $3,863 million. This matches the AI's response, which states the adjusted EBITDA for the year ended December 31, 2018, is $3,863 million. The AI's response is thus completely aligned with the provided data.",
+        "score": "1.0"
+    },
+    "220": {
+        "reasoning": "1 - The response begins by outlining a method for reviewing the context for lease information, which is a logical approach.\\n2 - The response correctly identifies that the context does not mention a lease agreement for Beverly Hills, California.\\n3 - The conclusion that the lease expiration date for Beverly Hills is not provided aligns with the context, which indeed lacks any mention of Beverly Hills.\\n4 - Each step of the reasoning provided in the answer is consistent with the context, which focuses on other locations and their lease agreements but not Beverly Hills.",
+        "score": "1.0"
+    },
+    "221": {
+        "reasoning": "The given context provides details about various facilities, including their locations and square footage. The question asks for the square footage of the Manufacturing facility in York, PA. In the context, there is a specific entry for the Manufacturing facility in York, PA, which lists the square footage as 571000. Therefore, the AI's response accurately identifies and extracts the correct square footage from the context for the York, PA facility.",
+        "score": "1.0"
+    },
+    "222": {
+        "reasoning": "1. The context provided includes a table titled \"Deferred tax assets\" which lists various components of deferred tax assets for the years 2006 and 2005. \n2. Within this table, there is a specific line item for \"Net operating loss carryforward\" which shows the amounts for both years.\n3. For the year 2006, the amount listed for \"Net operating loss carryforward\" is $7,066.\n4. The AI's response correctly identifies the section of the context where this information is located and accurately extracts the amount for 2006.\n5. The reasoning provided by the AI aligns with the steps necessary to locate and extract this information from the context, confirming that the answer given is completely faithful to the provided data.",
+        "score": "1.0"
+    },
+    "223": {
+        "reasoning": "The context provided includes details about earnings per share and a Comparison Company Index that is related to a group of utility companies, but it does not mention the S&P 500 Index or provide any specific data about its cumulative total return on 9/30/2013. The AI's response correctly identifies that the requested information is not present in the context.",
+        "score": "1.0"
+    },
+    "224": {
+        "reasoning": "The AI's response attempts to address the question about the range of exercise prices for the first row. The context provides information on the exercise prices for the years 2005 and 2004: $37.63 and $38.11, respectively. However, the concept of a 'range' is not straightforwardly defined in the provided context, as the exercise prices are distinct for each year and not presented as a continuous range. The AI identifies these prices as a range, which is a reasonable interpretation given the lack of explicit 'first row' data. The context does not explicitly define a range of exercise prices but provides individual prices for each year. Therefore, the AI's answer is largely faithful to the context, though the interpretation of a 'range' could be seen as slightly speculative.",
+        "score": "0.8"
+    },
+    "225": {
+        "reasoning": "1. The context provides financial data for the year ended December 31, 2007, including net revenues, costs, and operating income.\n2. The data for net revenues is presented in a sequence under the heading 'Net revenues: Product'. However, the specific quarters are not labeled as Q1, Q2, etc.\n3. The AI infers the quarterly breakdown by assuming the sequence corresponds to consecutive quarters. This is a logical assumption but not explicitly confirmed by the context.\n4. The AI identifies the second number in the sequence after $509.8 as $541.7, concluding it represents the second quarter's net revenue.\n5. While the reasoning is logical, it relies on an assumption not directly supported by explicit labels in the context.\n6. The final conclusion that the net revenue for the product in the second quarter of 2007 is $541.7 million is plausible but not definitively confirmed by the context.\n\nOverall, the response is mostly faithful to the context but involves an assumption that could affect accuracy.",
+        "score": "0.8"
+    },
+    "226": {
+        "reasoning": "1 - The context mentions 'Total' under 'AKAM/2007/page_73.pdf' with the figure '60'. This matches part of the AI's response.\\n2 - The context also includes 'Total cost related to compensation' under 'AKAM/2007/page_93.pdf' with the figure '$3,849'. This matches the other part of the AI's response.\\n3 - The AI's reasoning correctly identifies and separates the figures from different parts of the context.\\n4 - However, the AI's answer does not compute a combined total, but rather lists the figures separately. The instruction to \"compute the total by considering all given 'Total' figures\" is not followed in the final answer.",
+        "score": "0.8"
+    },
+    "227": {
+        "reasoning": "1 - The context states that during 2007, the consolidated cash position decreased by $23.5 million. This information is directly mentioned in the context.\n2 - The context also explains that this decrease was due to capital expenditures and the payment of preferred stock dividends in arrears, which were only partially offset by increased operating income. This explanation supports the reasoning provided for the decrease.\n3 - The AI's response accurately reflects the information from the context, stating that the net decrease in cash and cash equivalents in 2007 was $23.5 million, which matches exactly with the context.\n4 - Therefore, the response is completely faithful and accurate to the context provided.",
+        "score": "1.0"
+    },
+    "228": {
+        "reasoning": "1. The context provided includes several financial tables and statements, notably one labeled with figures for comprehensive income for the year-ended December 31, 2007. \n2. The relevant segment for comprehensive income states: '\u2018otal other comprehensive income...$144,362', which aligns with the description 'Total comprehensive income'.\n3. The answer given by the AI model correctly identifies and reports this number as $144,362 thousand.\n4. The steps in the reasoning chain are consistent with the provided context, and the extracted figure is accurate according to the data available.",
+        "score": "1.0"
+    },
+    "229": {
+        "reasoning": "1 - The context indeed provides figures for Gross Margin (3072.1 million) and Operating Income (848.1 million) for 2016.\n2 - The user's reasoning involves calculating Total Operating Expenses using the formula: Total Operating Expenses = Gross Margin - Operating Income.\n3 - Applying this formula: 3072.1 million (Gross Margin) - 848.1 million (Operating Income) = 2224 million.\n4 - The calculation is correct based on the formula and the provided data in the context.\n5 - The answer '2224 million' is faithfully derived from the provided context using the correct methodology.",
+        "score": "1.0"
+    },
+    "230": {
+        "reasoning": "1. The question asks for the balance at the beginning of the year 2011.\n2. The context provides a table captioned 'A rollforward of our reserves for all federal, state and foreign tax jurisdictions, is as follows:' which includes balances for 2011 and 2010.\n3. According to the context, the 'Balance, end of year' for 2010 is $2,022.\n4. The answer states that the beginning balance for 2011 would be the end balance of 2010, which is $2,022.\n5. The reasoning correctly deduces that the beginning balance for 2011 is the end balance of 2010 based on standard accounting practices.\n6. The answer aligns with the context provided, which supports the conclusion that the beginning balance for 2011 is $2,022.",
+        "score": "1.0"
+    },
+    "231": {
+        "reasoning": "1 - Locate the relevant financial data for Net Income for the year 2017 in the provided context.\n2 - Review the table labeled 'Year Ended December 31', which provides Net Income information for 2016, 2017, and 2018.\n3 - Extract the Net Income value for the year 2017 from this table, which is recorded as $994.2 million.\n4 - Ensure no other tables provide conflicting information, confirming the accuracy of the data extracted.\n5 - Conclude that the Net Income for 2017 is $994.2 million based on the consolidated financial data presented.",
+        "score": "1.0"
+    },
+    "232": {
+        "reasoning": "1 - The question asks for the price of Brent oil in 2015. \n2 - The context provided includes data on oil and natural gas production and financial data, but it does not specifically mention the price of Brent oil in 2015 or any other year.\n3 - The AI's response correctly identifies that the context does not contain the specific price for Brent oil in 2015.\n4 - Therefore, the response is faithful as it accurately reflects the absence of the requested information in the context.",
+        "score": "1.0"
+    },
+    "233": {
+        "reasoning": "1. The context provides a table labeled 'The components of the benefit (provision) for income taxes on continuing operations were:', which includes a breakdown of current income taxes for 2016, 2015, and 2014.\n2. The relevant row 'Total current' provides figures for each of these years.\n3. For the year 2016, the 'Total current' income tax is indeed listed as $357 million.\n4. The AI's response correctly identifies this figure and provides the right context for its extraction.\n5. Thus, the AI's response is fully supported by the context, making it completely faithful.",
+        "score": "1.0"
+    },
+    "234": {
+        "reasoning": "1. The context provides tables with financial information, including details about financial liabilities and securities lending on December 31, 2012.\n2. In the provided data, under the 'Financial Liabilities' section, the 'Securities Lending' row is listed as $455.8 million.\n3. The answer extracted, '$455.8 million', matches the figure provided for Securities Lending under Financial Liabilities in the context.\n4. The information is correctly synthesized to derive the answer, confirming its accuracy and support from the context.",
+        "score": "1.0"
+    },
+    "235": {
+        "reasoning": "1. The question asks for the Consumer-to-Consumer balance on January 1, 2005.\n2. The provided context includes information on revenue growth, acquisitions, and legal matters, but does not mention any balance sheet details or specific balances for the date in question.\n3. The AI's response correctly identifies that the context does not provide the requested balance information.\n4. Therefore, the AI's response is completely faithful to the context, as it accurately reflects the absence of the specific data requested.",
+        "score": "1.0"
+    },
+    "236": {
+        "reasoning": "The context provided includes tables summarizing stock and options activities, but the specific detail regarding the weighted average fair value of options granted in 2007 is located in the context. The context states \"Weighted average fair value of the options for 2007\" as $11.94. Therefore, the AI's response aligns accurately with this information from the context, confirming the value as $11.94.",
+        "score": "1.0"
+    },
+    "237": {
+        "reasoning": "1 - The question asks for the persistency rate for Life insurance in 2015.\\n2 - The AI response first indicates a search for persistency or related metrics within the context.\\n3 - The context provided includes various financial data but does not mention persistency rates or metrics specifically related to persistency for Life insurance in 2015.\\n4 - The AI correctly concludes that since the specific data on persistency for Life in 2015 is not available in the context, it cannot determine the persistency rate for that year.\\n5 - The response is faithful to the context as it accurately reflects the information provided.",
+        "score": "1.0"
+    },
+    "238": {
+        "reasoning": "1. The context provides a consolidated balance sheet with cash and cash equivalents figures.\n2. The specific figure for cash and cash equivalents at November 30, 2012, is listed in the context.\n3. The balance sheet data indicates that the cash and cash equivalents at November 30, 2012, is indeed $79.0 million.\n4. The AI's response correctly identifies and reports this figure as $79.0 million.\n5. The response is therefore completely aligned with the data provided in the context.",
+        "score": "1.0"
+    },
+    "239": {
+        "reasoning": "1 - Extract key financial metrics from the context: The context provides detailed financial data, including figures for net income over different years.\n2 - Identify the specific data point related to net income for 2008: The context clearly states that the net income for 2008 is $145,138.\n3 - Confirm the net income value for 2008: The context consistently lists the net income for 2008 as $145,138, aligning with the answer provided.",
+        "score": "1.0"
+    },
+    "240": {
+        "reasoning": "The AI response identifies a total amount of $422,075 from a table related to scheduled principal repayments of debt and capital lease balances as of December 31, 2010. This is explicitly stated in the context, making the response faithful to the information provided. However, the question is broad and could potentially refer to other totals within the same year, such as stock-based compensation, investing activities, or financing activities. The AI focused on one specific table and its total, which is accurate within that limited scope, but it may not fully address the broader question of 'total amount for the year ended December 31, 2010.' Despite this, the AI's answer is accurate based on the specific data it chose from the context.",
+        "score": "0.9"
+    },
+    "241": {
+        "reasoning": "The provided context includes a table detailing 'VALUATION AND QUALIFYING ACCOUNTS FOR THE YEARS ENDED SEPTEMBER 30, 2006, SEPTEMBER 30, 2005, AND SEPTEMBER 30, 2004'. In this table, the section 'Allowance for doubtful accounts' under the year ended September 30, 2006, shows a 'Balance at End of Period' of $1,160 thousand. This matches the answer provided in the AI's response, which states the allowance for uncollectible accounts in 2006 was $1,160 thousand. Thus, the AI's response is accurate and faithful to the context provided.",
+        "score": "1.0"
+    },
+    "242": {
+        "reasoning": "The provided context includes a section on 'Net income available to common stockholders.' In this section, it is stated directly that the net income available to common stockholders for 2015 was $585 million. This matches the answer provided by the AI. The reasoning provided by the AI also aligns with the context, as it mentions extracting the information directly from the context without needing additional calculations or assumptions. Therefore, the answer is completely faithful to the context provided.",
+        "score": "1.0"
+    },
+    "243": {
+        "reasoning": "The AI's reasoning involves extracting the sales and marketing expense for 2014 from a table. The referenced table indeed shows 'Sales and marketing expense' for 2014 is $47,570 (in thousands), which is $47,570,000. This aligns with the AI's answer of '47,570,000'. The context provided also discusses increases in sales and marketing expenses, supporting the legitimacy of the extracted figure. Therefore, the AI's response is consistent with the context.",
+        "score": "1.0"
+    },
+    "244": {
+        "reasoning": "1. The context provides a table that includes trading prices for common stock, including high and low values for each quarter of certain years. \n2. For the first quarter of 2016, the context specifies a low per share trading price of $65.95 as reported by NASDAQ.\n3. The response correctly identifies the low value for the first quarter of 2016 as $65.95, which matches the information given in the context.\n4. Therefore, the response is completely faithful and accurate to the context provided.",
+        "score": "1.0"
+    },
+    "245": {
+        "reasoning": "1. The context provided contains a table with details about various documents, including their Exhibit No., Filing, Exhibit No., File No., and File Date.\n2. The question asks for the File Date of the 'Sub-plan to the Juniper Networks, Inc. 2008 Employee Stock Purchase Plan For Employees Located in the European Economic Area'.\n3. In the context, this document is indeed listed with the Exhibit No. 0.25.\n4. The entry for Exhibit No. 0.25 shows that the File Date is '3/2/2009'.\n5. The reasoning provided in the answer correctly identifies the entry related to the sub-plan and accurately extracts the File Date as '3/2/2009'.\n6. Therefore, the answer provided is completely faithful to the context.",
+        "score": "1.0"
+    },
+    "246": {
+        "reasoning": "1 - The context does not mention any specific figures or details regarding the weighted average exercise price of outstanding options, warrants, and rights.\\n2 - The context references 'Equity Compensation Plan Information' but does not include any specific data on exercise prices.\\n3 - The reasoning correctly identifies that the context suggests referencing additional materials (proxy statement) for detailed figures.\\n4 - The answer accurately reflects the absence of the specific information in the provided context, aligning with the reasoning that the data might be in another document.",
+        "score": "1.0"
+    },
+    "247": {
+        "reasoning": "1. The context provides multiple tables with financial data, including allowances for doubtful accounts and other financial figures for the years ended December 31, 2013, and 2014.\n2. The question asks specifically for the ending balance for the year ended December 31, 2013.\n3. Upon examining the table titled 'Allowances for doubtful accounts,' the row corresponding to the year ended December 31, 2013, shows an ending balance of $58.7 million.\n4. The AI's response correctly identifies the relevant section and accurately extracts the ending balance for December 31, 2013, as $58.7 million.",
+        "score": "1.0"
+    },
+    "248": {
+        "reasoning": "1. The question asks for the deferred income tax assets internationally in 2013.\\n2. The provided context includes a table with a row labeled 'Deferred income tax assets' and columns for different regions and years.\\n3. The column for 'International' and the row for '2013' shows the value '128.0'.\\n4. The AI's reasoning aligns with the context as it identifies the relevant table and extracts the correct value.\\n5. The answer '128.0' is accurately supported by the table in the context.",
+        "score": "1.0"
+    },
+    "249": {
+        "reasoning": "The context provides a table with values: 1 year (326.82), 2009 (292.69), and 2010 (233.685). The question asks for the total amount due for interest payments in 1-3 years. The AI's reasoning identifies the relevant amounts as 326.82, 292.69, and 233.685, which are correctly extracted from the table. The AI then sums these amounts to calculate the total as 853.195, which is accurate according to the context. Therefore, the AI's response is faithful and accurate to the provided context.",
+        "score": "1.0"
+    }
+}

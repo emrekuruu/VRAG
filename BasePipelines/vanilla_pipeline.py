@@ -3,7 +3,7 @@ import logging
 import json
 from abc import ABC, abstractmethod
 from langchain_community.vectorstores import Chroma
-from Generation.generation import text_based
+from Generation.generation import text_based, evaluate_faithfulness
 import math 
 import os 
 
@@ -41,7 +41,7 @@ class TextPipeline(ABC):
         self.embedder = Embedder(self.config.vo, batch_size=64)
 
         logging.basicConfig(
-            filename=f".logs/{self.task}-colpali_retrieval.log",
+            filename=f".logs/{self.task}-text_retrieval.log",
             filemode="w",  
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
@@ -114,27 +114,29 @@ class TextPipeline(ABC):
 
             qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
             context = {k: v["content"] for k, v in sorted_retrieved.items()}
-            answer =  text_based(query, context)
+
+            answer =  await text_based(query, context)
+            faithfullnes = await evaluate_faithfulness(query, answer, context.values(), type="text")
 
             logging.info(f"Done with query {idx}")
 
-            return idx, qrels, answer, context
+            return idx, qrels, answer, faithfullnes
 
     async def process_all(self, data):
         qrels = {}
         answers = {}
-        context = {}
+        faithfullness = {}
 
         tasks = [self.process_item(data, idx) for idx in data.index]
 
         results_list = await asyncio.gather(*tasks)
 
-        for query_id, retrieved_qrels, answer, query_context in results_list:
+        for query_id, retrieved_qrels, answer, faithfullness_score in results_list:
             qrels[query_id] = retrieved_qrels
             answers[query_id] = answer
-            context[query_id] = query_context
+            faithfullness[query_id] = faithfullness_score
 
-        return qrels, answers, context
+        return qrels, answers, faithfullness
 
     async def __call__(self):
 
@@ -143,15 +145,15 @@ class TextPipeline(ABC):
         chunks = self.read_chunks()
         self.chroma_db = await self.create_db(chunks)
 
-        qrels, answers, context = await self.process_all(data)
+        qrels, answers, faithfullness = await self.process_all(data)
 
         with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text_answers.json"), "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/answers.json"), "w") as f:
             json.dump(answers, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text_context.json"), "w") as f:
-            json.dump(context, f, indent=4)
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/faithfullness.json"), "w") as f:
+            json.dump(faithfullness, f, indent=4)
 
         print("Finished")

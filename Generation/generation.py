@@ -2,9 +2,6 @@ from pydantic import BaseModel
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
-from PIL import Image
-from io import BytesIO
-import base64
 
 class QAOutput(BaseModel):
     reasoning: str

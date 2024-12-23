@@ -41,10 +41,7 @@ class ColpaliPipeline(ABC):
         async with self.qrel_semaphore:
 
             try:
-
                 query, retrieved = await self.retrieve(idx, data, top_k)
-                logging.info(f"Done with query {idx}")
-
                 sorted_retrieved = dict(sorted(retrieved.items(), key=lambda item: item[1]["score"], reverse=True))
 
                 qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
@@ -90,8 +87,8 @@ class ColpaliPipeline(ABC):
         with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/colpali/colpali_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        # with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/answers.json"), "w") as f:
-        #     json.dump(answers, f, indent=4)
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/answers.json"), "w") as f:
+            json.dump(answers, f, indent=4)
 
         with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/faithfullness.json"), "w") as f:
             json.dump(faithfullness, f, indent=4)
