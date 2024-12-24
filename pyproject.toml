@@ -43,6 +43,7 @@ transformers = ">=4.46.1,<4.47.0"
 evaluate = "^0.4.3"
 bert-score = "^0.3.13"
 rouge-score = "^0.1.2"
+ragas = "^0.2.9"
 
 [tool.poetry.group.dev.dependencies]
 poetry = "^1.7.0"

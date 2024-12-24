@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 from byaldi import RAGMultiModalModel
 from Generation.generation import image_based, evaluate_faithfulness
 import os 
+from Evaluation.Generation.multi_model_ragas import evaluate_multimodal_faithfulness
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
@@ -48,7 +49,9 @@ class ColpaliPipeline(ABC):
                 context = {k: v["base64"] for k, v in sorted_retrieved.items()}
 
                 answer = await image_based(query, context.values())
-                faithfullnes = await evaluate_faithfulness(query, answer, context.values(), type="image")
+                
+                full_answer = answer["reasoning"] + "\n\n" + answer["answer"]
+                faithfullnes = await evaluate_multimodal_faithfulness(query, full_answer, context.values())
 
                 logging.info(f"Done with query {idx}")
 
@@ -56,7 +59,7 @@ class ColpaliPipeline(ABC):
                 logging.warning(f"Error processing query {idx}: {e}")
                 qrels = {}
                 answer = ""
-                faithfullnes = {"reasoning" : "Error", "score": 0.0}
+                faithfullnes = 0
 
             return idx, qrels, answer, faithfullnes
 

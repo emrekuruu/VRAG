@@ -99,10 +99,6 @@ class VoyagePipeline(ABC):
         with open(self.metadata_file, "r") as f:
             self.metadata = json.load(f)
 
-    @abstractmethod
-    async def process_query(self, data,idx):
-        pass
-
     async def process_queries(self, data):
         tasks = [self.process_query(data, idx) for idx in data.index]
         results = await asyncio.gather(*tasks)

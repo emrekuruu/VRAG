@@ -1367,6 +1367,17 @@ files = [
 ]
 
 [[package]]
+name = "diskcache"
+version = "5.6.3"
+description = "Disk Cache -- Disk and file backed persistent cache."
+optional = false
+python-versions = ">=3"
+files = [
+    {file = "diskcache-5.6.3-py3-none-any.whl", hash = "sha256:5e31b2d5fbad117cc363ebaf6b689474db18a1f6438bc82358b024abd4c2ca19"},
+    {file = "diskcache-5.6.3.tar.gz", hash = "sha256:2c3a3fa2743d8535d832ec61c2054a1641f41775aa7c556758a109941e33e4fc"},
+]
+
+[[package]]
 name = "distlib"
 version = "0.3.9"
 description = "Distribution utilities"
@@ -6384,18 +6395,19 @@ decord = ["decord"]
 
 [[package]]
 name = "ragas"
-version = "0.2.8"
+version = "0.2.9"
 description = ""
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "ragas-0.2.8-py3-none-any.whl", hash = "sha256:ae267bbd761de59ed1d912e4423f9b111ba73112c79783863708707ad9d711cd"},
-    {file = "ragas-0.2.8.tar.gz", hash = "sha256:95c9b0f7c9cb9851487b6c40f6a2639fcb18791b435a2c8ceb5d4ddcf45fed12"},
+    {file = "ragas-0.2.9-py3-none-any.whl", hash = "sha256:cb57a5c15eebea1127994c669824b1ad987c674cd223ed1954e4ebc4f16b74a7"},
+    {file = "ragas-0.2.9.tar.gz", hash = "sha256:5b470907ee2590234853dcd56c081afbc0348876a664747b9c3357d8f152b0c8"},
 ]
 
 [package.dependencies]
 appdirs = "*"
 datasets = "*"
+diskcache = ">=5.6.3"
 langchain = "*"
 langchain-community = "*"
 langchain-core = "*"
@@ -8784,4 +8796,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.13"
-content-hash = "939c1a1a1abd20a2f73510df86763043a7e962bd2b5c144297ea1b14f8919389"
+content-hash = "f82341e5f280ca9dddd539eceb16d44d6a8cedabd007c28c9da91a7794edb78b"
