@@ -3,12 +3,14 @@ import logging
 import json
 from abc import ABC, abstractmethod
 from byaldi import RAGMultiModalModel
-from Generation.generation import image_based, evaluate_faithfulness
+from Generation.generation import image_based
 import os 
-from Evaluation.Generation.multi_model_ragas import evaluate_multimodal_faithfulness
+import pickle 
+import math 
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
+model_type = "google"
 
 class ColpaliPipeline(ABC):
     def __init__(self, config, task, index, device="mps"):
@@ -18,7 +20,7 @@ class ColpaliPipeline(ABC):
         self.device = device
 
         logging.basicConfig(
-            filename=f".logs/{self.task}-colpali_retrieval.log",
+            filename=f".logs/{self.task}/colpali_retrieval.log",
             filemode="w",  
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
@@ -47,11 +49,7 @@ class ColpaliPipeline(ABC):
 
                 qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
                 context = {k: v["base64"] for k, v in sorted_retrieved.items()}
-
-                answer = await image_based(query, context.values())
-                
-                full_answer = answer["reasoning"] + "\n\n" + answer["answer"]
-                faithfullnes = await evaluate_multimodal_faithfulness(query, full_answer, context.values())
+                answer = await image_based(query, context.values(), model_type=model_type)
 
                 logging.info(f"Done with query {idx}")
 
@@ -59,42 +57,70 @@ class ColpaliPipeline(ABC):
                 logging.warning(f"Error processing query {idx}: {e}")
                 qrels = {}
                 answer = ""
-                faithfullnes = 0
 
-            return idx, qrels, answer, faithfullnes
+            return idx, qrels, answer, list(context.values())
 
-    async def process_all(self, data):
-        qrels = {}
-        answers = {}
-        faithfullness = {}
+    async def process_all(self, qrels, answers, context, data, batch_size=10):
+        results = []
 
-        tasks = [
-            self.process_item(data, idx)
-            for idx in data.index
-        ]
+        for i in range(0, len(data), batch_size):
+            tasks = []
+            logging.info(f"Processing batch {i // batch_size + 1} out of {math.ceil(len(data) / batch_size)}")
 
-        results_list = await asyncio.gather(*tasks)
+            for j in range(i, i + batch_size):
+                idx = data.index[j] if j < len(data) else None
+                if str(idx) in answers.keys() or j >= len(data):
+                    continue
+                else:
+                    tasks.append(self.process_item(data, idx))
 
-        for query_id, retrieved_qrels, answer, faithfullness_score in results_list:
-            qrels[query_id] = retrieved_qrels
-            answers[query_id] = answer
-            faithfullness[query_id] = faithfullness_score
+            batch_results = await asyncio.gather(*tasks)
 
-        return qrels, answers, faithfullness
+            results.extend(batch_results)
+
+            for idx, qrel, answer, query_context in results:
+                qrels[idx] = qrel
+                answers[idx] = answer
+                context[idx] = query_context
+
+            with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/colpali/colpali_qrels.json"), "w") as f:
+                json.dump(qrels, f, indent=4)
+
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json"), "w") as f:
+                json.dump(answers, f, indent=4)
+
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "w") as f:
+                json.dump(context, f, indent=4)
+
+        return qrels, answers, context
+    
 
     async def __call__(self):
         data = self.prepare_dataset()
 
-        qrels, answers, faithfullness = await self.process_all(data)
+        if not os.path.exists(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json")):
+            qrels = {}
+            answers = {}
+            context = {}
+        else:
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json"), "r") as f:
+                answers = json.load(f)
+            
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "r") as f:    
+                context = json.load(f)
+
+            qrels = {}
+
+        qrels, answers, context = await self.process_all(qrels=qrels, context=context, answers=answers, data=data)
 
         with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/colpali/colpali_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/answers.json"), "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json"), "w") as f:
             json.dump(answers, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/faithfullness.json"), "w") as f:
-            json.dump(faithfullness, f, indent=4)
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "w") as f:
+            json.dump(context, f, indent=4)
 
         print("Finished")
 

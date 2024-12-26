@@ -3,12 +3,14 @@ import logging
 import json
 from abc import ABC, abstractmethod
 from langchain_community.vectorstores import Chroma
-from Generation.generation import text_based, evaluate_faithfulness
+from Generation.generation import text_based
 import math 
 import os 
+import pickle 
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
+model_type = "claude"
 
 class Embedder:
     def __init__(self, vo, batch_size=64):
@@ -41,13 +43,13 @@ class TextPipeline(ABC):
         self.embedder = Embedder(self.config.vo, batch_size=64)
 
         logging.basicConfig(
-            filename=f".logs/{self.task}-text_retrieval.log",
+            filename=f".logs/{self.task}/text_retrieval.log",
             filemode="w",  
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
         )
 
-        self.qrel_semaphore = asyncio.Semaphore(16)
+        self.qrel_semaphore = asyncio.Semaphore(32)
 
     @abstractmethod
     def prepare_dataset(self):
@@ -102,41 +104,52 @@ class TextPipeline(ABC):
             }
 
         return scores
-
-    async def process_item(self, data, idx, top_n = 10):
-
+    
+    async def process_item(self, data, idx, top_n = 10):  
         async with self.qrel_semaphore:
             query, ids, documents = await self.retrieve(idx, data, top_n)
-
             reranked = await self.rerank(query, documents, ids)
-
             sorted_retrieved = dict(sorted(reranked.items(), key=lambda item: item[1]["score"], reverse=True))
 
             qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
             context = {k: v["content"] for k, v in sorted_retrieved.items()}
 
-            answer =  await text_based(query, context)
-            faithfullnes = await evaluate_faithfulness(query, answer, context.values(), type="text")
-
+            answer =  await text_based(query, context, model_type=model_type)
             logging.info(f"Done with query {idx}")
+            return idx, qrels, answer, list(context.values())
 
-            return idx, qrels, answer, faithfullnes
+    async def process_all(self, qrels, answers, context, data, batch_size=10, top_n=10):
+        results = []
 
-    async def process_all(self, data):
-        qrels = {}
-        answers = {}
-        faithfullness = {}
+        for i in range(0, len(data), batch_size):
+            tasks = []
+            logging.info(f"Processing batch {i // batch_size + 1} out of {math.ceil(len(data) / batch_size)}")
+            for j in range(i, i + batch_size):
+                idx = data.index[j]
+                if str(idx) in answers.keys() or j >= len(data):
+                    continue
+                else:
+                    tasks.append(self.process_item(data, idx, top_n))
 
-        tasks = [self.process_item(data, idx) for idx in data.index]
+            batch_results = await asyncio.gather(*tasks)
 
-        results_list = await asyncio.gather(*tasks)
+            results.extend(batch_results)
 
-        for query_id, retrieved_qrels, answer, faithfullness_score in results_list:
-            qrels[query_id] = retrieved_qrels
-            answers[query_id] = answer
-            faithfullness[query_id] = faithfullness_score
+            for idx, qrel, answer, query_context in results:
+                qrels[idx] = qrel
+                answers[idx] = answer
+                context[idx] = query_context
 
-        return qrels, answers, faithfullness
+            with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "w") as f:
+                json.dump(qrels, f, indent=4)
+
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json"), "w") as f:
+                json.dump(answers, f, indent=4)
+
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "w") as f:
+                json.dump(context, f, indent=4)
+
+        return qrels, answers, context
 
     async def __call__(self):
 
@@ -145,15 +158,29 @@ class TextPipeline(ABC):
         chunks = self.read_chunks()
         self.chroma_db = await self.create_db(chunks)
 
-        qrels, answers, faithfullness = await self.process_all(data)
+        if not os.path.exists(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json")):
+            qrels = {}
+            answers = {}
+            context = {}
+        else:
+            with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "r") as f:
+                qrels = json.load(f)
+            
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json"), "r") as f:
+                answers = json.load(f)
+            
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "r") as f:    
+                context = json.load(f)
+
+        qrels, answers, context = await self.process_all(qrels=qrels, context=context, answers=answers, data=data)
 
         with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/answers.json"), "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json"), "w") as f:
             json.dump(answers, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/faithfullness.json"), "w") as f:
-            json.dump(faithfullness, f, indent=4)
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "w") as f:
+            json.dump(context, f, indent=4)
 
         print("Finished")

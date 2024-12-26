@@ -12,3 +12,4 @@ docs/
 **/metadata.json
 **/results
 .deepeval_telemtry.txt
+**/context.json

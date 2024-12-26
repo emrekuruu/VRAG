@@ -80,7 +80,7 @@ class VoyagePipeline(ABC):
         self.faiss_db = FaissWithMetadata(index_file=index_file, metadata_file=metadata_file)
 
         self.logger = logging.getLogger(self.task)
-        handler = logging.FileHandler(f".logs/{self.task}-voyage_retrieval.log", mode="w")
+        handler = logging.FileHandler(f".logs/{self.task}voyage_retrieval.log", mode="w")
         formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)

@@ -35,7 +35,7 @@ class FinanceBenchPipeline(TextPipeline):
             }
         )
 
-        ids = [doc.metadata["Filename"] +  "_page_" + str(doc.page_num - 1)  for doc in retrieved] 
+        ids = [doc.metadata["Filename"] +  "_page_" + str(doc.metadata["page_num"] -1 - 1)  for doc in retrieved] 
         documents = [doc.page_content for doc in retrieved]
 
         return query, ids, documents
