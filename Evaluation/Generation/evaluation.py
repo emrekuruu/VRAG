@@ -152,13 +152,13 @@ async def evaluate_query_async(query_idx, row, generations, subfolder, g_eval_sc
                     "G-Eval Reasoning": correctness_metric.reason,
                 }
 
-            # g_eval_result = await asyncio.to_thread(run_g_eval)
-            # g_eval_scores.append({
-            #     "Subfolder": subfolder,
-            #     "Index": query_idx,
-            #     "G-Eval Score": g_eval_result["G-Eval Score"],
-            #     "G-Eval Reasoning": g_eval_result["G-Eval Reasoning"],
-            # })
+            g_eval_result = await asyncio.to_thread(run_g_eval)
+            g_eval_scores.append({
+                "Subfolder": subfolder,
+                "Index": query_idx,
+                "G-Eval Score": g_eval_result["G-Eval Score"],
+                "G-Eval Reasoning": g_eval_result["G-Eval Reasoning"],
+            })
 
             # Compute simple metrics
             exact_result = exact_match.compute(predictions=[preprocess_text(answer)], references=[preprocess_text(expected_output)])
@@ -213,8 +213,8 @@ async def evaluate_generation(task, generation_folder):
 
             model_type = answer_file.split(("_"))[0]
 
-            # g_eval_df = pd.DataFrame(g_eval_scores)
-            # g_eval_df.to_csv(os.path.join(subfolder_path, f"{current_dir}/intermidiate_results/{task}/{subfolder}/{model_type}_g_eval.csv"), index=False)
+            g_eval_df = pd.DataFrame(g_eval_scores)
+            g_eval_df.to_csv(os.path.join(subfolder_path, f"{current_dir}/intermidiate_results/{task}/{subfolder}/{model_type}_g_eval.csv"), index=False)
 
             # Save Simple Metrics
             simple_df = pd.DataFrame(simple_metrics)
@@ -223,7 +223,7 @@ async def evaluate_generation(task, generation_folder):
             print(f"Results saved for {task} in {subfolder_path}")
 
 if __name__ == "__main__":
-    tasks = ["Table_VQA"]
+    tasks = ["FinanceBench"]
 
     async def main():
         for task in tasks:

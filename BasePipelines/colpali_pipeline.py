@@ -54,7 +54,7 @@ class ColpaliPipeline(ABC):
                 logging.info(f"Done with query {idx}")
 
             except Exception as e:
-                logging.warning(f"Error processing query {idx}: {e}")
+                logging.error(f"Error processing query {idx}: {e}")
                 qrels = {}
                 answer = ""
 

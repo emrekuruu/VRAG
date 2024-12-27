@@ -23,7 +23,8 @@ IMAGE_PROMPT = PromptTemplate(
       2 - Apply financial reasoning or calculations
       3 - Cross-check figures or context
       4 - Arrive at the final conclusion
-    - The 'answer' field should contain only the final concise answer, with no extra reasoning steps.
+
+    - The 'answer' field should contain only the final concise answer, with no extra reasoning steps.  Try to answer the question as directly as possible with no extra information.
 
     Be sure to consider all PDF pages provided. Base your reasoning and final answer solely on the content of these pages.
 
@@ -45,10 +46,12 @@ TEXT_PROMPT = PromptTemplate(
     - The 'reasoning' field should contain a chain-of-thought as a numbered list, detailing how you leverage the given 
       textual context to arrive at your answer:
       For example:
-      1 - Extract key financial metrics or data points
-      2 - Apply relevant financial analysis or logical reasoning
-      3 - Synthesize findings to answer the question
-    - The 'answer' field should contain only the final concise answer, with no reasoning steps included.
+      1 - Identify relevant financial information or metrics from the context
+      2 - Apply financial reasoning or calculations
+      3 - Cross-check context
+      4 - Arrive at the final conclusion
+
+    - The 'answer' field should contain only the final concise answer, with no reasoning steps included.  Try to answer the question as directly as possible with no extra information.
 
     Base your reasoning and final answer solely on the provided context below.
 
@@ -64,6 +67,7 @@ HYBRID_PROMPT = PromptTemplate(
     You are a highly-skilled financial analyst with deep expertise in evaluating financial documents and extracting insights.
     You will receive multi-modal context in the form of both PDF pages (image-based) and textual content. Your task is to answer the user's financial-related question 
     based solely on this combined input. Examine the given textual context first, then while you are examining the image context, give more attention to the sections of the images that intersect with the textual contexts.
+    Start by reviewing the textual context, then focus on the image context, especially on the sections of the images that intersect with the textual content. However, the final answer should prioritize information from the images.
 
     You must produce your answer in the following strict JSON format:
     {schema}
@@ -72,14 +76,18 @@ HYBRID_PROMPT = PromptTemplate(
     - The 'reasoning' field should contain a chain-of-thought as a numbered list, detailing how you leverage the given 
       textual context to arrive at your answer:
       For example:
-      1 - Extract key financial metrics or data points
-      2 - Apply relevant financial analysis or logical reasoning
-      3 - Synthesize findings to answer the question
-    - The 'answer' field should contain only the final concise answer, with no reasoning steps included.
+      1 - Identify relevant financial information or metrics from the textual context
+      2 - Check for any intersections between the textual and image contexts
+      3 - Identify relevant financial figures or metrics from the pdf pages giving more attention to the sections that intersect with the textual context
+      4 - Apply financial reasoning or calculations
+      5 - Cross-check figures or context
+      6 - Arrive at the final conclusion
 
-    Base your reasoning and final answer solely on the provided context below.
+    - The 'answer' field should contain only the final concise answer, with no reasoning steps included.  Try to answer the question as directly as possible with no extra information.
 
-    Context: {context}
+    Base your reasoning and final answer solely on the provided textual and image context.
+
+    Textual Context: {context}
 
     Question: {query}
     """

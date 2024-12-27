@@ -9,7 +9,7 @@ import math
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
-model_type = "claude"
+model_type = "google"
 
 with open(f".keys/openai_api_key.txt", "r") as file:
     os.environ["OPENAI_API_KEY"] = file.read().strip()
@@ -142,6 +142,6 @@ class HybridPipeline:
             print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    task = "Table_VQA"
+    task = "FinanceBench"
     pipeline = HybridPipeline(task)
     asyncio.run(pipeline())

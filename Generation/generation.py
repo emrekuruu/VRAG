@@ -1,5 +1,5 @@
 
-from . import Openai, Claude, Google
+from . import Openai, Claude, Google, Qwen
 
 async def image_based(query, pages, model_type):
     if model_type == "openai":
@@ -8,6 +8,8 @@ async def image_based(query, pages, model_type):
         return await Claude.image_based(query, pages)
     elif model_type == "google":
         return await Google.image_based(query, pages)
+    elif model_type == "qwen":
+        return await Qwen.image_based(query, pages)
     
 async def text_based(query, chunks, model_type):
     if model_type == "openai":
@@ -16,7 +18,9 @@ async def text_based(query, chunks, model_type):
         return await Claude.text_based(query, chunks)
     elif model_type == "google":
         return await Google.text_based(query, chunks)
-
+    elif model_type == "qwen":
+        return await Qwen.text_based(query, chunks)
+    
 async def hybrid(query, pages, chunks, model_type):
     if model_type == "openai":
         return await Openai.hybrid(query, pages, chunks)
@@ -24,3 +28,6 @@ async def hybrid(query, pages, chunks, model_type):
         return await Claude.hybrid(query, pages, chunks)
     elif model_type == "google":
         return await Google.hybrid(query, pages, chunks)
+    elif model_type == "qwen":
+        return await Qwen.hybrid(query, pages, chunks)
+    

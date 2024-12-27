@@ -10,7 +10,7 @@ import pickle
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
-model_type = "claude"
+model_type = "qwen"
 
 class Embedder:
     def __init__(self, vo, batch_size=64):
