@@ -11,11 +11,11 @@ import math
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
 
-model_type = "openrouter-amazon/nova-pro-v1"
-log_model_type = "nova-pro-v1"
+model_type = "qwen-qvq"
+log_model_type = "qwen-qvq"
 
 class ColpaliPipeline(ABC):
-    def __init__(self, config, task, index, device="mps"):
+    def __init__(self, config, task, index, device="cuda"):
         self.config = config
         self.task = task
         self.index = index
@@ -29,10 +29,18 @@ class ColpaliPipeline(ABC):
         )
 
         self.aws_semaphore = asyncio.Semaphore(10)
-        self.qrel_semaphore = asyncio.Semaphore(16)
-        self.RAG = RAGMultiModalModel.from_index(
-            index_path= os.path.join( parent_dir, f"{task}/.byaldi/{self.index}"), device=self.device
-        )
+        self.qrel_semaphore = asyncio.Semaphore(1)
+
+        if os.path.exists( os.path.join( parent_dir, f"{task}/.byaldi/{self.index}") ):
+            self.RAG = RAGMultiModalModel.from_index(
+                index_path= os.path.join( parent_dir, f"{task}/.byaldi/{self.index}"), device=self.device
+            )
+        else:
+            os.mkdir(os.path.join(parent_dir, f"{task}/.byaldi/"))
+            self.config.download_s3_folder("byaldi",os.path.join(parent_dir, f"{task}/.byaldi/"))
+            self.RAG = RAGMultiModalModel.from_index(
+                index_path= os.path.join( parent_dir, f"{task}/.byaldi/{self.index}"), device=self.device
+            )
 
     @abstractmethod
     def prepare_dataset(self):
@@ -48,7 +56,6 @@ class ColpaliPipeline(ABC):
             try:
                 query, retrieved = await self.retrieve(idx, data, top_k)
                 sorted_retrieved = dict(sorted(retrieved.items(), key=lambda item: item[1]["score"], reverse=True))
-
                 qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
                 context = {k: v["base64"] for k, v in sorted_retrieved.items()}
                 answer = await image_based(query, context.values(), model_type=model_type)
@@ -61,7 +68,7 @@ class ColpaliPipeline(ABC):
 
             return idx, qrels, answer, list(context.values())
 
-    async def process_all(self, qrels, answers, context, data, batch_size=10):
+    async def process_all(self, qrels, answers, context, data, batch_size=2):
         results = []
 
         for i in range(0, len(data), batch_size):

@@ -42,7 +42,7 @@ class TableVQAPipeline(ColpaliPipeline):
         for doc in retrieved:
             file_key = doc.metadata["Filename"]
             base64_images = await self.config.fetch_file_as_base64_images(
-                file_key=f"{company}/{year}/{doc.metadata["Filename"]}",
+                file_key=f'{company}/{year}/{doc.metadata["Filename"]}',
                 filename=file_key,
                 semaphore=self.aws_semaphore,
             )
