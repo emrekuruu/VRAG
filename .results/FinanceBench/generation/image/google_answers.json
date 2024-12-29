@@ -83,7 +83,6 @@
         "reasoning": "1 - The provided document does not contain an income statement. 2 - Without the income statement, I cannot identify Amazon's FY2019 net income attributable to shareholders. 3 - Therefore, I cannot answer the question based solely on the information given in the document. ",
         "answer": "Based solely on the provided document, I cannot answer the question. The income statement is not included in the document."
     },
-    "21": "",
     "22": {
         "reasoning": "1 - The document is an 8-K filing by AMCOR PLC, dated July 1, 2022. \\n2 - The document lists several exhibits including supplemental indentures related to different series of notes. \\n3 - The filing indicates that it is reporting on 'Other Events' which is further described as the execution of a supplemental indenture.\\n4 - Therefore, the key agenda was to report on the supplemental indenture related to the company's debt securities.",
         "answer": "The key agenda of AMCOR's 8k filing dated 1st July 2022 was to report on a supplemental indenture related to the company's debt securities."
@@ -595,5 +594,6 @@
     "149": {
         "reasoning": "1 - The question asks for unadjusted EBITDA, which is defined as unadjusted operating income + depreciation and amortization from the cash flow statement. \\n2 - The provided document includes the income statement, which contains the unadjusted operating income, but does not include the cash flow statement. \\n3 - Therefore, I cannot calculate unadjusted EBITDA without the necessary depreciation and amortization data from the cash flow statement. \\n4 - Because I cannot calculate unadjusted EBITDA, I cannot calculate the average unadjusted EBITDA % margin and have to respond that I cannot answer the question",
         "answer": "I am unable to calculate the average unadjusted EBITDA % margin because the cash flow statement was not provided in the document."
-    }
+    },
+    "21": ""
 }

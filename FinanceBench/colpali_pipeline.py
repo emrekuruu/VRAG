@@ -11,7 +11,6 @@ class FinanceBenchColpaliPipeline(ColpaliPipeline):
         return data 
 
     async def retrieve(self, idx, data, top_n):
-        query = data.iloc[idx]["question"]
         query = data.loc[idx, "question"]
         filename = data.loc[idx]["doc_name"] + ".pdf"
 

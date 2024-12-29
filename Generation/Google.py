@@ -3,6 +3,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 import asyncio
 from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT, QAOutput
 
+
 with open(f"/Users/emrekuru/Developer/VRAG/.keys/google_api_key.txt",  "r") as file:
     google = file.read().strip()
 
@@ -17,8 +18,8 @@ async def exponential_backoff(func, *args, retries=20, initial_wait=10, **kwargs
             await asyncio.sleep(wait_time)
             wait_time += 10
 
-async def image_based(query, pages):
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp", api_key=google)  
+async def image_based(query, pages, model_type="gemini-2.0-flash-exp"):
+    llm = ChatGoogleGenerativeAI(model=model_type, api_key=google)  
     llm = llm.with_structured_output(QAOutput) 
     schema = QAOutput.model_json_schema()
 
@@ -38,8 +39,8 @@ async def image_based(query, pages):
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response
 
-async def text_based(query, chunks):
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp", api_key=google)  
+async def text_based(query, chunks, model_type="gemini-2.0-flash-exp"):
+    llm = ChatGoogleGenerativeAI(model=model_type, api_key=google)  
     llm = llm.with_structured_output(QAOutput)  
     schema = QAOutput.model_json_schema()
 
@@ -48,8 +49,8 @@ async def text_based(query, chunks):
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response
 
-async def hybrid(query, pages, chunks):
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp", api_key=google)    
+async def hybrid(query, pages, chunks, model_type="gemini-2.0-flash-exp"):
+    llm = ChatGoogleGenerativeAI(model=model_type, api_key=google)    
     llm = llm.with_structured_output(QAOutput)  
     schema = QAOutput.model_json_schema()
 
@@ -65,6 +66,6 @@ async def hybrid(query, pages, chunks):
         })
 
     message = HumanMessage(content=content)
-    response: QAOutput = await llm.ainvoke([message])
+    response: QAOutput = await exponential_backoff(llm.ainvoke, [message])
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response

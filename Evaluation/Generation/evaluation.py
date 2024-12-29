@@ -3,15 +3,16 @@ import evaluate
 import pandas as pd
 from datasets import load_dataset
 import json
-from deepeval.metrics import GEval
-from deepeval.test_case import LLMTestCaseParams, LLMTestCase
 from collections import Counter
 import re
 from io import StringIO
 import asyncio
 import logging
+from ragas.metrics import FactualCorrectness
+from ragas.llms import LangchainLLMWrapper
+from langchain_openai import ChatOpenAI
+from ragas.dataset_schema import SingleTurnSample
 
-# Set up current and parent directories
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(os.path.dirname(current_dir))
 
@@ -20,12 +21,9 @@ with open(os.path.join(parent_dir, ".keys/openai_api_key.txt"), "r") as file:
 
 os.environ["OPENAI_API_KEY"] = openai_key
 
-correctness_metric = GEval(
-    name="Correctness",
-    criteria="Evaluate the factual accuracy of the actual output by considering both the final answer and the reasoning steps leading to it. Assess whether the intermediate steps align with the given context and contribute logically to the correct answer.",
-    evaluation_params=[LLMTestCaseParams.INPUT, LLMTestCaseParams.ACTUAL_OUTPUT],
-    verbose_mode=False,
-)
+# Initialize LLM Wrapper and Factual Correctness Metric
+evaluator_llm = LangchainLLMWrapper(ChatOpenAI(model="gpt-4o"))
+factual_correctness_metric = FactualCorrectness(llm=evaluator_llm)
 
 # Set up logging
 logging.basicConfig(
@@ -38,6 +36,8 @@ logging.basicConfig(
 exact_match = evaluate.load("exact_match")
 f1 = evaluate.load("f1")
 meteor = evaluate.load("meteor")
+bert_score = evaluate.load("bertscore")
+
 CURRENCY_SYMBOLS = {"$", "€", "£", "¥"}  
 
 def html_to_string(html_string):
@@ -85,7 +85,6 @@ def compute_token_f1(prediction, reference):
     pred_tokens = tokenize(pred_text)
     ref_tokens = tokenize(ref_text)
 
-    # Domain normalization (numeric normalization, currency removal, etc.)
     pred_tokens = domain_normalize_tokens(pred_tokens)
     ref_tokens = domain_normalize_tokens(ref_tokens)
 
@@ -130,40 +129,28 @@ def prepare_data(task):
         data = data.rename(columns={"qa_id": "id", "gt": "answer", "text_html_table": "evidence"})
         return data
 
-async def evaluate_query_async(query_idx, row, generations, subfolder, g_eval_scores, simple_metrics, semaphore):
+async def evaluate_query_async(query_idx, row, generations, subfolder, simple_metrics, semaphore):
     async with semaphore:
         try:
-            reasoning = generations[str(query_idx)]["reasoning"]
-            answer = generations[str(query_idx)]["answer"]
+            query = row["question"]
             golden_context = row["evidence"] 
+            expected_output = row["answer"]           
+
+            reasoning = generations[str(query_idx)]["reasoning"]
+            reasoning = " ".join(reasoning) if type(reasoning) == list else reasoning
+            answer = generations[str(query_idx)]["answer"]
             actual_output = reasoning + "\n\n" + answer
-            expected_output = row["answer"]
 
-            # G-Eval for Correctness
-            def run_g_eval():
-                test_case = LLMTestCase(
-                    input=golden_context,
-                    actual_output=actual_output,
-                    expected_output=expected_output
-                )
-                correctness_metric.measure(test_case)
-                return {
-                    "G-Eval Score": correctness_metric.score,
-                    "G-Eval Reasoning": correctness_metric.reason,
-                }
+            sample = SingleTurnSample(
+                response=answer,
+                reference=expected_output
+            )
+            # factual_correctness_score = await factual_correctness_metric.single_turn_ascore(sample)
 
-            g_eval_result = await asyncio.to_thread(run_g_eval)
-            g_eval_scores.append({
-                "Subfolder": subfolder,
-                "Index": query_idx,
-                "G-Eval Score": g_eval_result["G-Eval Score"],
-                "G-Eval Reasoning": g_eval_result["G-Eval Reasoning"],
-            })
-
-            # Compute simple metrics
             exact_result = exact_match.compute(predictions=[preprocess_text(answer)], references=[preprocess_text(expected_output)])
             f1_score = compute_token_f1(answer, expected_output)
             meteor_result = meteor.compute(predictions=[preprocess_text(actual_output)], references=[preprocess_text(expected_output)])
+            bert_result = bert_score.compute(predictions=[preprocess_text(answer)], references=[preprocess_text(expected_output)],  model_type='bert-base-uncased')
 
             simple_metrics.append({
                 "Subfolder": subfolder,
@@ -171,12 +158,13 @@ async def evaluate_query_async(query_idx, row, generations, subfolder, g_eval_sc
                 "Exact Match": exact_result["exact_match"],
                 "F1-Score": f1_score,
                 "METEOR": meteor_result["meteor"],
+                "BERTScore": bert_result["f1"][0],
+                # "RAGAS Factual Correctness Score": factual_correctness_score
             })
 
             logging.info(f"Done with query {query_idx}")
         except Exception as e:
             logging.error(f"Error evaluating query {query_idx}: {e}")
-
 
 async def evaluate_generation(task, generation_folder):
     semaphore = asyncio.Semaphore(16)
@@ -190,6 +178,7 @@ async def evaluate_generation(task, generation_folder):
             continue
 
         answer_files = [f for f in os.listdir(subfolder_path) if f.endswith("answers.json")]
+        print(answer_files)
 
         if not answer_files:
             print(f"No answers files found in {subfolder_path}. Skipping.")
@@ -201,11 +190,10 @@ async def evaluate_generation(task, generation_folder):
             with open(answer_file_path, "r") as f:
                 generations = json.load(f)
 
-            g_eval_scores = []
             simple_metrics = []
 
             tasks = [
-            evaluate_query_async(idx, row, generations, subfolder, g_eval_scores, simple_metrics, semaphore)
+            evaluate_query_async(idx, row, generations, subfolder, simple_metrics, semaphore)
             for idx, row in data.iterrows()
             ]
 
@@ -213,17 +201,13 @@ async def evaluate_generation(task, generation_folder):
 
             model_type = answer_file.split(("_"))[0]
 
-            g_eval_df = pd.DataFrame(g_eval_scores)
-            g_eval_df.to_csv(os.path.join(subfolder_path, f"{current_dir}/intermidiate_results/{task}/{subfolder}/{model_type}_g_eval.csv"), index=False)
-
-            # Save Simple Metrics
             simple_df = pd.DataFrame(simple_metrics)
-            simple_df.to_csv(os.path.join(subfolder_path, f"{current_dir}/intermidiate_results/{task}/{subfolder}/{model_type}_simple_metrics.csv"), index=False)
+            simple_df.to_csv(os.path.join(subfolder_path, f"{current_dir}/intermidiate_results/{task}/{subfolder}/{model_type}_metrics.csv"), index=False)
 
             print(f"Results saved for {task} in {subfolder_path}")
 
 if __name__ == "__main__":
-    tasks = ["FinanceBench"]
+    tasks = ["Table_VQA"]
 
     async def main():
         for task in tasks:

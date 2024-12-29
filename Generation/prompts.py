@@ -5,6 +5,105 @@ class QAOutput(BaseModel):
     reasoning: str
     answer: str
 
+OPEN_ROUTER_TEXT_PROMPT = PromptTemplate(
+    input_variables=["query", "context"],
+    template="""
+    You are a highly-skilled financial analyst with deep expertise in evaluating financial documents and extracting insights.
+    You will receive some textual context (financial data, narrative, or supporting information). Your task is to answer the user's financial-related question 
+    based solely on this context. Make sure to consider all the information provided in the context.
+
+    You must produce your answer in the following strict JSON format:
+    {{
+        "reasoning": "string - Provide a detailed, numbered chain-of-thought explanation here.",
+        "answer": "string - Provide a concise numerical value, percentage, or extremely short sentence here."
+    }}
+
+    Instructions:
+    - The 'reasoning' field should contain a detailed chain-of-thought explanation as a numbered list, showing how you derive the answer:
+      Example:
+      1 - Identify relevant financial information or metrics from the context.
+      2 - Apply financial reasoning or calculations.
+      3 - Cross-check the context for accuracy.
+      4 - Arrive at the final conclusion.
+
+    - The 'answer' field should be extremely concise, in the form of a numerical value, percentage, or an extremely short and simple sentence including units where relevant. 
+      Examples: '0.5%', '$500.0', '2 billion gallons', or 'B-'.
+
+    Base your reasoning and final answer solely on the provided context below.
+
+    Context: {context}
+
+    Question: {query}
+    """
+)
+
+OPEN_ROUTER_IMAGE_PROMPT = PromptTemplate(
+    input_variables=["query"],
+    template="""
+    You are a highly-skilled financial analyst with deep expertise in evaluating financial documents and extracting insights.
+    You will receive PDF pages containing relevant information. Your task is to answer the user's financial-related question 
+    based solely on these PDF pages. Make sure you considered all PDF pages provided.
+
+    You must produce your answer in the following strict JSON format:
+    {{
+        "reasoning": "string - Provide a detailed, numbered chain-of-thought explanation here.",
+        "answer": "string - Provide a concise numerical value, percentage, or extremely short sentence here."
+    }}
+
+    Instructions:
+    - The 'reasoning' field should contain your detailed chain-of-thought as a numbered list, showing how you derive the answer:
+      For example:
+      1 - Identify relevant financial figures or metrics from the pages
+      2 - Apply financial reasoning or calculations
+      3 - Cross-check figures or context
+      4 - Arrive at the final conclusion
+
+    - The 'answer' field should be extremely concise. Your response should be in the form of numerical values, percentages, or an extremely short and simple sentence, including units where relevant. 
+      For example: '0.5%', '$500.0', '2 billion gallons', or 'B-'.
+
+    Be sure to consider all PDF pages provided. Base your reasoning and final answer solely on the content of these pages.
+
+    Question: {query}
+    """
+)
+
+
+OPEN_ROUTER_HYBRID_PROMPT = PromptTemplate(
+    input_variables=["query", "context"],
+    template="""
+    You are a highly-skilled financial analyst with deep expertise in evaluating financial documents and extracting insights.
+    You will receive multi-modal context in the form of both PDF pages (image-based) and textual content. Your task is to answer the user's financial-related question 
+    based solely on this combined input. Examine the given textual context first, then while you are examining the image context, give more attention to the sections of the images that intersect with the textual contexts.
+    Start by reviewing the textual context, then focus on the image context, especially on the sections of the images that intersect with the textual content. However, the final answer should prioritize information from the images. Make sure you considered all PDF pages provided.
+
+    You must produce your answer in the following strict JSON format:
+    {{
+        "reasoning": "string - Provide a detailed, numbered chain-of-thought explanation here.",
+        "answer": "string - Provide a concise numerical value, percentage, or extremely short sentence here."
+    }}
+
+    Instructions:
+    - The 'reasoning' field should contain a chain-of-thought as a numbered list, detailing how you leverage the given 
+      textual context to arrive at your answer:
+      For example:
+      1 - Identify relevant financial information or metrics from the textual context
+      2 - Check for any intersections between the textual and image contexts
+      3 - Identify relevant financial figures or metrics from the pdf pages giving more attention to the sections that intersect with the textual context
+      4 - Apply financial reasoning or calculations
+      5 - Cross-check figures or context
+      6 - Arrive at the final conclusion
+
+    - The 'answer' field should be extremely concise. Your response should be in the form of numerical values, percentages, or an extremely short and simple sentence, including units where relevant. 
+      For example: '0.5%', '$500.0', '2 billion gallons', or 'B-'.
+
+    Base your reasoning and final answer solely on the provided textual and image context.
+
+    Textual Context: {context}
+
+    Question: {query}
+    """
+)
+
 
 IMAGE_PROMPT = PromptTemplate(
     input_variables=["query", "schema"],
@@ -24,7 +123,8 @@ IMAGE_PROMPT = PromptTemplate(
       3 - Cross-check figures or context
       4 - Arrive at the final conclusion
 
-    - The 'answer' field should contain only the final concise answer, with no extra reasoning steps.  Try to answer the question as directly as possible with no extra information.
+    - The 'answer' field should be extremely concise. Your response should be in the form of numerical values, percentages, or an extremely short and simple sentence, including units where relevant. 
+      For example: '0.5%', '$500.0', '2 billion gallons', or 'B-'.
 
     Be sure to consider all PDF pages provided. Base your reasoning and final answer solely on the content of these pages.
 
@@ -40,6 +140,7 @@ TEXT_PROMPT = PromptTemplate(
     based solely on this context.
 
     You must produce your answer in the following strict JSON format:
+    
     {schema}
 
     Instructions:
@@ -51,7 +152,8 @@ TEXT_PROMPT = PromptTemplate(
       3 - Cross-check context
       4 - Arrive at the final conclusion
 
-    - The 'answer' field should contain only the final concise answer, with no reasoning steps included.  Try to answer the question as directly as possible with no extra information.
+    - The 'answer' field should be extremely concise. Your response should be in the form of numerical values, percentages, or an extremely short and simple sentence, including units where relevant. 
+      For example: '0.5%', '$500.0', '2 billion gallons', or 'B-'.
 
     Base your reasoning and final answer solely on the provided context below.
 
@@ -83,7 +185,8 @@ HYBRID_PROMPT = PromptTemplate(
       5 - Cross-check figures or context
       6 - Arrive at the final conclusion
 
-    - The 'answer' field should contain only the final concise answer, with no reasoning steps included.  Try to answer the question as directly as possible with no extra information.
+    - The 'answer' field should be extremely concise. Your response should be in the form of numerical values, percentages, or an extremely short and simple sentence, including units where relevant. 
+      For example: '0.5%', '$500.0', '2 billion gallons', or 'B-'.
 
     Base your reasoning and final answer solely on the provided textual and image context.
 

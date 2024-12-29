@@ -1,33 +1,45 @@
 
-from . import Openai, Claude, Google, Qwen
+from . import OpenRouter, Openai, Claude, Google
 
 async def image_based(query, pages, model_type):
-    if model_type == "openai":
-        return await Openai.image_based(query, pages)
-    elif model_type == "claude":
-        return await Claude.image_based(query, pages)
-    elif model_type == "google":
-        return await Google.image_based(query, pages)
-    elif model_type == "qwen":
-        return await Qwen.image_based(query, pages)
+
+    provider = model_type.split("-")[0]
+    model = model_type[len(provider)+1:]
+
+    if provider == "openai":
+        return await Openai.image_based(query, pages,  model)
+    elif provider == "claude":
+        return await Claude.image_based(query, pages,  model)
+    elif provider == "google":
+        return await Google.image_based(query, pages,  model)
+    else:
+        return await OpenRouter.image_based(query, pages, model)
+
     
 async def text_based(query, chunks, model_type):
-    if model_type == "openai":
-        return await Openai.text_based(query, chunks)
-    elif model_type == "claude":
-        return await Claude.text_based(query, chunks)
-    elif model_type == "google":
-        return await Google.text_based(query, chunks)
-    elif model_type == "qwen":
-        return await Qwen.text_based(query, chunks)
+    provider = model_type.split("-")[0]
+    model = model_type[len(provider)+1:]
+
+    if provider == "openai":
+        return await Openai.text_based(query, chunks,  model)
+    elif provider == "claude":
+        return await Claude.text_based(query, chunks,  model)
+    elif provider == "google":
+        return await Google.text_based(query, chunks, model) 
+    else:
+        return await OpenRouter.text_based(query, chunks,  model)
     
+
 async def hybrid(query, pages, chunks, model_type):
-    if model_type == "openai":
-        return await Openai.hybrid(query, pages, chunks)
-    elif model_type == "claude":
-        return await Claude.hybrid(query, pages, chunks)
-    elif model_type == "google":
-        return await Google.hybrid(query, pages, chunks)
-    elif model_type == "qwen":
-        return await Qwen.hybrid(query, pages, chunks)
-    
+
+    provider = model_type.split("-")[0]
+    model = model_type[len(provider)+1:]
+
+    if provider == "openai":
+        return await Openai.hybrid(query, pages, chunks,  model)
+    elif provider == "claude":
+        return await Claude.hybrid(query, pages, chunks,  model)
+    elif provider == "google":
+        return await Google.hybrid(query, pages, chunks,  model)
+    else:
+        return await OpenRouter.hybrid(query, pages, chunks,  model)

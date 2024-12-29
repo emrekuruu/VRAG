@@ -75,6 +75,6 @@ async def hybrid(query, pages, chunks):
         })
 
     message = HumanMessage(content=content)
-    response: QAOutput = await llm.ainvoke([message])
+    response: QAOutput = await exponential_backoff(llm.ainvoke, [message])
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response

@@ -10,7 +10,9 @@ import math
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
-model_type = "google"
+
+model_type = "openrouter-amazon/nova-pro-v1"
+log_model_type = "nova-pro-v1"
 
 class ColpaliPipeline(ABC):
     def __init__(self, config, task, index, device="mps"):
@@ -20,7 +22,7 @@ class ColpaliPipeline(ABC):
         self.device = device
 
         logging.basicConfig(
-            filename=f".logs/{self.task}/colpali_retrieval.log",
+            filename=f".logs/{self.task}/{log_model_type}-colpali_retrieval.log",
             filemode="w",  
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
@@ -50,7 +52,6 @@ class ColpaliPipeline(ABC):
                 qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
                 context = {k: v["base64"] for k, v in sorted_retrieved.items()}
                 answer = await image_based(query, context.values(), model_type=model_type)
-
                 logging.info(f"Done with query {idx}")
 
             except Exception as e:
@@ -69,7 +70,7 @@ class ColpaliPipeline(ABC):
 
             for j in range(i, i + batch_size):
                 idx = data.index[j] if j < len(data) else None
-                if str(idx) in answers.keys() or j >= len(data):
+                if f'{idx}' in answers.keys() or j >= len(data):
                     continue
                 else:
                     tasks.append(self.process_item(data, idx))
@@ -86,11 +87,11 @@ class ColpaliPipeline(ABC):
             with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/colpali/colpali_qrels.json"), "w") as f:
                 json.dump(qrels, f, indent=4)
 
-            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json"), "w") as f:
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{log_model_type}_answers.json"), "w") as f:
                 json.dump(answers, f, indent=4)
 
-            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "w") as f:
-                json.dump(context, f, indent=4)
+            # with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "w") as f:
+            #     json.dump(context, f, indent=4)
 
         return qrels, answers, context
     
@@ -98,13 +99,14 @@ class ColpaliPipeline(ABC):
     async def __call__(self):
         data = self.prepare_dataset()
 
-        if not os.path.exists(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json")):
+        if not os.path.exists(os.path.join(parent_dir, f".results/{self.task}/generation/image/{log_model_type}_answers.json")):
             qrels = {}
             answers = {}
             context = {}
         else:
-            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json"), "r") as f:
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{log_model_type}_answers.json"), "r") as f:
                 answers = json.load(f)
+                answers = {k: v for k, v in answers.items() if v != ""}
             
             with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "r") as f:    
                 context = json.load(f)
@@ -116,11 +118,11 @@ class ColpaliPipeline(ABC):
         with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/colpali/colpali_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{model_type}_answers.json"), "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/{log_model_type}_answers.json"), "w") as f:
             json.dump(answers, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "w") as f:
-            json.dump(context, f, indent=4)
+        # with open(os.path.join(parent_dir, f".results/{self.task}/generation/image/context.json"), "w") as f:
+        #     json.dump(context, f, indent=4)
 
         print("Finished")
 

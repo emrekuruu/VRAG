@@ -6,13 +6,13 @@ from datasets import load_dataset
 from Generation.generation import hybrid
 import asyncio
 import math 
+import os 
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
-model_type = "google"
 
-with open(f".keys/openai_api_key.txt", "r") as file:
-    os.environ["OPENAI_API_KEY"] = file.read().strip()
+model_type = "google-gemini-1.5-pro"
+log_model_type = "gemini-1.5-pro"
 
 class HybridPipeline:
     def __init__(self, task, max_concurrent_tasks=16):
@@ -23,7 +23,7 @@ class HybridPipeline:
         os.makedirs(log_dir, exist_ok=True)
 
         logging.basicConfig(
-            filename=os.path.join(log_dir, "hybrid_generation.log"),
+            filename=os.path.join(log_dir, f"{log_model_type}-hybrid_generation.log"),
             filemode="w",
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
@@ -80,7 +80,7 @@ class HybridPipeline:
     async def process_query(self, query_id, query, text_context, image_context):
         async with self.semaphore:
             try:
-                query_id = str(query_id)
+                query_id = f'{query_id}' 
                 text_data = text_context[query_id]
                 image_data = image_context[query_id]
                 answer = await hybrid(query=query, pages=image_data, chunks=text_data, model_type=model_type)
@@ -108,7 +108,7 @@ class HybridPipeline:
             for query_id, answer in batch_results:
                 answers[query_id] = answer
             
-            with open(os.path.join(output_dir, f"{model_type}_answers.json"), "w") as f:
+            with open(os.path.join(output_dir, f"{log_model_type}_answers.json"), "w") as f:
                 json.dump(answers, f, indent=4)
 
         return answers
@@ -122,16 +122,16 @@ class HybridPipeline:
             dataset = self.prepare_data(self.task)
             text_context, image_context = self.load_contexts()
 
-            if not os.path.exists(os.path.join(output_dir, f"{model_type}_answers.json")):
+            if not os.path.exists(os.path.join(output_dir, f"{log_model_type}_answers.json")):
                 answers = {}
             else:
-                with open(os.path.join(output_dir, f"{model_type}_answers.json"), "r") as f:
+                with open(os.path.join(output_dir, f"{log_model_type}_answers.json"), "r") as f:
                     answers = json.load(f)
                     answers = {k: v for k, v in answers.items() if v["reasoning"] != "Error"}
 
             answers = await self.generate_answers(dataset, text_context, image_context, answers)
 
-            with open(os.path.join(output_dir, f"{model_type}_answers.json"), "w") as f:
+            with open(os.path.join(output_dir, f"{log_model_type}_answers.json"), "w") as f:
                 json.dump(answers, f, indent=4)
 
             logging.info("Pipeline finished successfully.")
@@ -142,6 +142,6 @@ class HybridPipeline:
             print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    task = "FinanceBench"
+    task = "Table_VQA"
     pipeline = HybridPipeline(task)
     asyncio.run(pipeline())

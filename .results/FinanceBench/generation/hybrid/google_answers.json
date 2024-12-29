@@ -515,34 +515,6 @@
         "reasoning": "1 - The question asks for a comparison of JnJ's US and international sales growth in FY2022.\\n2 - The provided text includes a table with sales data for different segments and regions, including the US and International for the full year 2022.\\n3 - The table shows that US sales grew by 3.0% and International sales declined by 0.6% in FY2022.\\n4 - Based on the data in the table, I can directly answer the question.",
         "answer": "In FY2022, JnJ's US sales grew by 3.0%, while international sales decreased by 0.6%."
     },
-    "92": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
-    "94": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
-    "95": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
-    "101": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
-    "103": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
-    "107": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
-    "108": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
     "120": {
         "reasoning": "1 - The textual context mentions the largest operations of Pepsico are in the United States, Mexico, Russia, Canada, China, the United Kingdom and South Africa.\\n2 - The image context does not contradict this information.\\n3 - The final answer is based on the textual context, which is more specific in this case",
         "answer": "Based on the provided documents, PepsiCo's largest operations are in the United States, Mexico, Russia, Canada, China, the United Kingdom, and South Africa."
@@ -563,10 +535,6 @@
         "reasoning": "1 - The textual context describes two credit agreements: a 364-day agreement and a five-year agreement, each with a borrowing capacity of $4,200,000,000.\\n2 - The image context confirms the existence of these two agreements.\\n3 - The image context provides the borrowing amount for both the 364-day agreement and the 5-year agreement, each at $4,200,000,000.\\n4 - Adding the two borrowing capacities together gives a total of $8,400,000,000.\\n5 - The textual context and the image context corroborate the amounts.\\n6 - The total borrowing capacity for both agreements is $8,400,000,000",
         "answer": "PepsiCo has two credit agreements. The 364-day credit agreement allows for borrowing up to $4,200,000,000, and the five-year credit agreement allows for borrowing up to $4,200,000,000. Therefore, the total amount PepsiCo may borrow is $8,400,000,000."
     },
-    "128": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
     "129": {
         "reasoning": "1 - The textual context states: \\\"Given our strong start to the year, we now expect our full-year 2023 organic revenue to increase 8 percent (previously 6 percent) and core constant currency EPS to increase 9 percent (previously 8 percent)\\\".\\n2 - The question asks about the increase in core constant currency EPS growth guidance.\\n3 - The text indicates the core constant currency EPS growth guidance was raised from 8 percent to 9 percent.\\n4 - The difference between 9 percent and 8 percent is 1 percentage point.\\n5 - Therefore, the increase in full-year guidance for core constant currency EPS growth is 1 percentage point.\\n",
         "answer": "1 percentage point"
@@ -579,17 +547,9 @@
         "reasoning": "1 - The question asks about wage expenses as a percentage of net sales in FY2023.\\n2 - The provided text and images do not explicitly state wage expenses as a percentage of net sales for either FY2022 or FY2023.\\n3 - While SG&A expenses are provided, which includes wages, it is not broken out separately.\\n4 - Without the specific wage expense figures, it is impossible to determine if it increased or decreased as a percentage of sales.\\n5 - Therefore, the answer cannot be determined from the given information.",
         "answer": "Based on the provided information, it is not possible to determine if Ulta Beauty's wages expense as a percent of net sales increased or decreased in FY2023. The provided text and images do not contain specific figures for wage expenses as a percentage of net sales."
     },
-    "142": {
-        "reasoning": "Error",
-        "answer": "Error"
-    },
     "145": {
         "reasoning": "1 - The text mentions that Verizon's strategy requires significant capital investments, primarily to acquire wireless spectrum, put the spectrum into service, provide additional capacity for growth in their networks, invest in fiber, and develop IT systems.\\n2 - The text also states that 2022 was a peak year of capital investment for Verizon due to the rapid deployment of C-Band spectrum.\\n3 - The text provides the amount of capital expenditures which was $23.1 billion in 2022, a significant amount, and that it increased by $2.8 billion compared to 2021.\\n4 - The image confirms this by showing capital expenditures of $23,087 million for 2022 and $20,286 million for 2021.\\n5 - Based on these factors, it can be concluded that Verizon is a capital intensive business, as they invest heavily in infrastructure and spectrum.",
         "answer": "Yes, based on the provided data, Verizon is a capital-intensive business."
-    },
-    "146": {
-        "reasoning": "Error",
-        "answer": "Error"
     },
     "147": {
         "reasoning": "1 - The user is asking for a financial calculation (DPO) that requires average accounts payable, cost of goods sold (COGS), and change in inventory.\\n2 - The provided text includes the definition of free cash flow, and information on various financial metrics such as total revenues, net sales, operating income, and inventory.\\n3 - The provided images contain financial statements including balance sheets and income statements, but they do not directly provide accounts payable or cost of goods sold (COGS) and their average. Additionally, the provided balance sheet images do not include accounts payable, and the provided income statement images do not include COGS.\\n4 - The required financial data to calculate DPO (average accounts payable and COGS) are not available in the provided context.\\n5 - Therefore, I cannot calculate DPO for Walmart based on the given information",
@@ -598,5 +558,45 @@
     "148": {
         "reasoning": "1 - Extract operating income and net sales for 2018 and 2019 from the Consolidated Statements of Income table.\\n2 - Calculate the operating income margin for each year by dividing operating income by net sales.\\n3 - Calculate the change in operating income margin by subtracting the 2018 margin from the 2019 margin.\\n4 - Round the result to one decimal place.\\n5 - Final Answer: 0.2%",
         "answer": "Based on the provided text and image, the operating income margin for 2018 is 20437/495761 = 4.12%. For 2019, it is 21987/510329 = 4.31%. The change from 2018 to 2019 is 4.31% - 4.12% = 0.19%, which rounded to one decimal place is 0.2%."
+    },
+    "92": {
+        "reasoning": "1 - The textual context mentions the cash proceeds from the Kenvue separation.\\n2 - The image context (Exhibit 99.1) also states the cash proceeds from the Kenvue separation.\\n3 - The cash proceeds from the Kenvue debt offering and initial public offering is $13.2 billion based on the image and text context.\\n4 - The final answer is based on the information from the image and text context",
+        "answer": "The company secured $13.2 billion in cash proceeds from the Kenvue debt offering and initial public offering."
+    },
+    "94": {
+        "reasoning": "1 - The question asks for the lowest net revenue among JPM's business segments in 2021 Q1.\\n2 - The provided text includes a table summarizing the firm's results by segment for the three months ended March 31, 2021, and includes net revenue for each segment.\\n3 - The table shows the following net revenues for 2021 Q1: Consumer & Community Banking: $14,605 million; Corporate & Investment Bank: $2,393 million; Commercial Banking: $4,077 million; Asset & Wealth Management: $(473) million; Corporate: $(473) million.\\n4 - Comparing the net revenues of each segment, the Corporate segment has the lowest net revenue with $(473) million.\\n5 - The image does not contain information about net revenue per business segment, so the answer is solely based on the text.\\n6 - Therefore, the answer is Corporate with a net revenue of $(473) million in 2021 Q1. The table indicates the corporate segment and the Asset & Wealth Management segment both have a net revenue of $(473), but the question is asking for the lowest net revenue. ",
+        "answer": "Corporate had the lowest net revenue in 2021 Q1 with a net revenue of $(473) million."
+    },
+    "101": {
+        "reasoning": "1 - The question asks for the net working capital for FY2021, which is defined as total current assets less total current liabilities.\\n2 - From the provided balance sheet (image context), total current assets for 2021 are $19,815 million and total current liabilities for 2021 are $13,997 million.\\n3 - Calculating the difference: $19,815 - $13,997 = $5,818 million.\\n4 - The final answer is 5818 million USD",
+        "answer": "5818"
+    },
+    "103": {
+        "reasoning": "1 - The question asks for the accounts payable for MGM Resorts at the end of FY2018, in USD millions.  \\n2 -  The text provides a consolidated balance sheet for MGM Resorts International and subsidiaries, with values in thousands.\\n3 - The image contains a balance sheet for MGM Resorts International and subsidiaries, with values in thousands. Accounts payable is listed as $302,578 in thousands. \\n4 - Convert $302,578 thousands to millions to get $302.578 million.\\n5 - The textual context does not provide the specific accounts payable for MGM Resorts, so the image is the only reliable source for this value.\\n6 - The final answer is $302.578 million based on the image data",
+        "answer": "302.578"
+    },
+    "107": {
+        "reasoning": "1 - Identify relevant financial information or metrics from the textual context.\\n2 - From the text, identify the Adjusted EBITDAR for 2022 as $3,497,254 thousand.  Also from the text, identify the Interest expense for 2022 as $799,593 thousand.\\n3 - Calculate the interest coverage ratio by dividing the Adjusted EBITDAR by Interest Expense: $3,497,254 / $799,593 = 4.37\\n4 - From the text, identify the Adjusted EBITDAR for 2022 as $3,497,254 thousand.  Also from the text, identify the Interest expense for 2022 as $799,593 thousand.\\n5 - Calculate the interest coverage ratio by dividing the Adjusted EBIT by Interest Expense: $1,768,204 / $799,593 = 2.21\\n6 - The final answer is 2.21",
+        "answer": "The interest coverage ratio for MGM using FY2022 Adjusted EBIT as the numerator and annual Interest Expense as the denominator is 2.21."
+    },
+    "108": {
+        "reasoning": "1 - The question asks for the region with the worst topline performance, which is a measure of revenue.\\n2 - The text mentions that MGM China's net revenue decreased by 44%.\\n3 - The text also mentions that Las Vegas Strip Resorts' net revenue increased by 77% and Regional Operations' net revenue increased by 12%.\\n4 - Comparing the three regions, MGM China's revenue decrease is the worst performance.\\n5 - The image context confirms the same information, with MGM China's net revenues decreasing by 44%.\\n6 - Therefore, MGM China had the worst topline performance for FY2022",
+        "answer": "MGM China had the worst topline performance with a 44% decrease in revenue."
+    },
+    "142": {
+        "reasoning": "1 - The text mentions various derivative instruments, including cross currency swaps, forward starting interest rate swaps, interest rate swaps, treasury rate locks, and foreign exchange forwards.\\n2 - The question asks for the instrument with the highest notional value in FY 2021.\\n3 - The table in the image provides the notional values for these instruments at December 31, 2021.\\n4 - According to the table, cross currency swaps had a notional value of $32,502 million (or $32.5 billion), which is the highest among all listed derivative instruments.\\n5 - The textual context also confirms the notional amount of cross currency swaps was $32.5 billion at December 31, 2021.\\n6 - Therefore, the final answer is cross currency swaps with a notional value of $32.5 billion.",
+        "answer": "Cross currency swaps had the highest notional value at $32.5 billion in FY 2021."
+    },
+    "146": {
+        "reasoning": "1 - The question asks about the change in Verizon's total debt between 2021 and 2022.\\n2 - The textual context provides a table with the total debt for both years.\\n3 - According to the table, the total debt in 2021 was $150,868 million and in 2022 was $150,639 million.\\n4 - The debt decreased from $150,868 to $150,639, therefore Verizon's debt decreased between 2021 and 2022.\\n5 - The image context confirms the debt numbers presented in the text and the decrease in total debt from 2021 to 2022",
+        "answer": "No, Verizon's total debt decreased from $150,868 million in 2021 to $150,639 million in 2022."
+    },
+    "95": {
+        "reasoning": "1 - The question asks how much each shareholder would receive if JPM was liquidated in 2021 Q1.\\n2 - The text contains the 'Book value per share' for 2021 Q1 which represents the amount each shareholder would get if the company was liquidated.\\n3 - The image does not contain the 'Book value per share' for 2021 Q1. It contains the number of shares of common stock outstanding as of March 31, 2021, which is 3,027,128,112, but this information is not required to answer the question.\\n4 - The 'Book value per share' for 2021 Q1 is $82.31.\\n5 - Therefore, each shareholder would receive approximately $82.31 per share if JPM was liquidated in 2021 Q1.\\n6 - The final answer is $82.31 per share",
+        "answer": "Based on the provided data, if JPM liquidated all assets in 2021 Q1, each shareholder would receive approximately $82.31 per share."
+    },
+    "128": {
+        "reasoning": "1 - The question asks why Pepsico raised its full-year guidance for FY2023.\\n2 - The text mentions that Pepsico raised its full-year 2023 organic revenue growth guidance to 8% (previously 6%) and core constant currency EPS growth guidance to 9% (previously 8%).\\n3 - The text also attributes this to the company's strong business performance in the first quarter.\\n4 - The image context confirms the guidance increase from 6% to 8% for organic revenue growth and 8% to 9% for core constant currency EPS growth.\\n5 - Therefore, the answer is based on the provided text and image context, which clearly states the revised guidance and the reason behind it.",
+        "answer": "Pepsico raised its full-year 2023 organic revenue growth guidance to 8% (from 6%) and core constant currency EPS growth guidance to 9% (from 8%) due to strong business performance in the first quarter."
     }
 }

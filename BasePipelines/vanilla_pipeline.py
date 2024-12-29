@@ -10,7 +10,9 @@ import pickle
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
-model_type = "qwen"
+
+model_type = "google-gemini-1.5-pro"
+log_model_type = "gemini-1.5-pro"
 
 class Embedder:
     def __init__(self, vo, batch_size=64):
@@ -43,7 +45,7 @@ class TextPipeline(ABC):
         self.embedder = Embedder(self.config.vo, batch_size=64)
 
         logging.basicConfig(
-            filename=f".logs/{self.task}/text_retrieval.log",
+            filename=f".logs/{self.task}/{log_model_type}-text_retrieval.log",
             filemode="w",  
             format="%(asctime)s - %(levelname)s - %(message)s",
             level=logging.INFO,
@@ -143,11 +145,11 @@ class TextPipeline(ABC):
             with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "w") as f:
                 json.dump(qrels, f, indent=4)
 
-            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json"), "w") as f:
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{log_model_type}_answers.json"), "w") as f:
                 json.dump(answers, f, indent=4)
 
-            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "w") as f:
-                json.dump(context, f, indent=4)
+            # with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "w") as f:
+            #     json.dump(context, f, indent=4)
 
         return qrels, answers, context
 
@@ -158,7 +160,7 @@ class TextPipeline(ABC):
         chunks = self.read_chunks()
         self.chroma_db = await self.create_db(chunks)
 
-        if not os.path.exists(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json")):
+        if not os.path.exists(os.path.join(parent_dir, f".results/{self.task}/generation/text/{log_model_type}_answers.json")):
             qrels = {}
             answers = {}
             context = {}
@@ -166,7 +168,7 @@ class TextPipeline(ABC):
             with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "r") as f:
                 qrels = json.load(f)
             
-            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json"), "r") as f:
+            with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{log_model_type}_answers.json"), "r") as f:
                 answers = json.load(f)
             
             with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "r") as f:    
@@ -177,10 +179,10 @@ class TextPipeline(ABC):
         with open(os.path.join(parent_dir, f".results/{self.task}/retrieval/text/text_qrels.json"), "w") as f:
             json.dump(qrels, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{model_type}_answers.json"), "w") as f:
+        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{log_model_type}_answers.json"), "w") as f:
             json.dump(answers, f, indent=4)
 
-        with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "w") as f:
-            json.dump(context, f, indent=4)
+        # with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "w") as f:
+        #     json.dump(context, f, indent=4)
 
         print("Finished")
