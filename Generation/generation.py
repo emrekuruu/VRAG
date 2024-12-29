@@ -1,5 +1,5 @@
 
-from . import OpenRouter, Openai, Claude, Google
+from . import OpenRouter, Openai, Claude, Google, QwenLocal
 
 async def image_based(query, pages, model_type):
 
@@ -12,6 +12,9 @@ async def image_based(query, pages, model_type):
         return await Claude.image_based(query, pages,  model)
     elif provider == "google":
         return await Google.image_based(query, pages,  model)
+    elif provider == "qwen":
+        print(provider)
+        return await QwenLocal.image_based(query, pages)
     else:
         return await OpenRouter.image_based(query, pages, model)
 
@@ -26,6 +29,8 @@ async def text_based(query, chunks, model_type):
         return await Claude.text_based(query, chunks,  model)
     elif provider == "google":
         return await Google.text_based(query, chunks, model) 
+    elif provider == "qwen":
+        return await QwenLocal.image_based(query, chunks) 
     else:
         return await OpenRouter.text_based(query, chunks,  model)
     
