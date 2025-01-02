@@ -11,8 +11,8 @@ import math
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
 
-model_type = "openrouter-amazon/nova-pro-v1"
-log_model_type = "nova-pro-v1"
+model_type = "openrouter-Qwen/QVQ-72B-Preview"
+log_model_type = "qvq-72b-preview"
 
 class ColpaliPipeline(ABC):
     def __init__(self, config, task, index, device="mps"):
@@ -29,7 +29,7 @@ class ColpaliPipeline(ABC):
         )
 
         self.aws_semaphore = asyncio.Semaphore(10)
-        self.qrel_semaphore = asyncio.Semaphore(16)
+        self.qrel_semaphore = asyncio.Semaphore(1)
         self.RAG = RAGMultiModalModel.from_index(
             index_path= os.path.join( parent_dir, f"{task}/.byaldi/{self.index}"), device=self.device
         )
@@ -61,7 +61,7 @@ class ColpaliPipeline(ABC):
 
             return idx, qrels, answer, list(context.values())
 
-    async def process_all(self, qrels, answers, context, data, batch_size=10):
+    async def process_all(self, qrels, answers, context, data, batch_size=1):
         results = []
 
         for i in range(0, len(data), batch_size):

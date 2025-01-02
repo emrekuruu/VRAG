@@ -170,7 +170,7 @@ async def evaluate_generation(task, generation_folder):
     semaphore = asyncio.Semaphore(16)
     data = prepare_data(task)
 
-    for subfolder in ["text", "image", "hybrid"]:
+    for subfolder in ["hybrid"]:
         subfolder_path = os.path.join(generation_folder, subfolder)
 
         if not os.path.exists(subfolder_path):

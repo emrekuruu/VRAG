@@ -6,13 +6,12 @@ from langchain_community.vectorstores import Chroma
 from Generation.generation import text_based
 import math 
 import os 
-import pickle 
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
 
-model_type = "google-gemini-1.5-pro"
-log_model_type = "gemini-1.5-pro"
+model_type = "openrouter-Qwen/QVQ-72B-Preview"
+log_model_type = "qvq-72b-preview"
 
 class Embedder:
     def __init__(self, vo, batch_size=64):
@@ -51,7 +50,7 @@ class TextPipeline(ABC):
             level=logging.INFO,
         )
 
-        self.qrel_semaphore = asyncio.Semaphore(32)
+        self.qrel_semaphore = asyncio.Semaphore(2)
 
     @abstractmethod
     def prepare_dataset(self):
@@ -109,6 +108,7 @@ class TextPipeline(ABC):
     
     async def process_item(self, data, idx, top_n = 10):  
         async with self.qrel_semaphore:
+
             query, ids, documents = await self.retrieve(idx, data, top_n)
             reranked = await self.rerank(query, documents, ids)
             sorted_retrieved = dict(sorted(reranked.items(), key=lambda item: item[1]["score"], reverse=True))
@@ -116,11 +116,17 @@ class TextPipeline(ABC):
             qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
             context = {k: v["content"] for k, v in sorted_retrieved.items()}
 
-            answer =  await text_based(query, context, model_type=model_type)
-            logging.info(f"Done with query {idx}")
-            return idx, qrels, answer, list(context.values())
-
-    async def process_all(self, qrels, answers, context, data, batch_size=10, top_n=10):
+            try:
+                answer =  await text_based(query,  list(context.values())[0:2], model_type=model_type)
+                logging.info(f"Done with query {idx}")
+                return idx, qrels, answer, list(context.values())
+            except Exception as e:
+                logging.error(f"Error processing query {idx}: {e}")
+                qrels = {}
+                answer = ""
+                return idx, qrels, "", context
+            
+    async def process_all(self, qrels, answers, context, data, batch_size=1, top_n=10):
         results = []
 
         for i in range(0, len(data), batch_size):
@@ -170,6 +176,7 @@ class TextPipeline(ABC):
             
             with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/{log_model_type}_answers.json"), "r") as f:
                 answers = json.load(f)
+                answers = {k: v for k, v in answers.items() if v != ""}
             
             with open(os.path.join(parent_dir, f".results/{self.task}/generation/text/context.json"), "r") as f:    
                 context = json.load(f)

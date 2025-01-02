@@ -1,0 +1,1656 @@
+{
+    "0": {
+        "reasoning": "1 - The first relevant table is found on page 9, titled 'Competition'.\n2 - This table lists each segment and its corresponding 'End Market'.\n3 - For the 'Engineered Systems' segment, the listed end markets are 'Printing & Identification' and 'Industrials'.\n4 - The second relevant section is on page 3, under 'ITEM 1. BUSINESS - Overview'.\n5 - This section describes the four segments and their key end markets.\n6 - For 'Our Engineered Systems segment', the listed end markets are 'Printing & Identification' and 'vehicle service, environmental solutions and industrial end markets'.\n7 - Combining the information from both sources, the end markets for the Engineered Systems segment are Printing & Identification and Industrials (which includes vehicle service and environmental solutions).",
+        "answer": "Printing & Identification, Industrials"
+    },
+    "1": {
+        "reasoning": [
+            "1 - Located the 'Stock-Based Compensation' section on page 1.",
+            "2 - Identified the table titled 'Stock Option Plans:' which contains the average risk free interest rate.",
+            "3 - Found the row for 'Average risk free interest rate'.",
+            "4 - Read the value corresponding to the year 2004 in that row."
+        ],
+        "answer": "3.14%"
+    },
+    "2": {
+        "reasoning": "1 - Locate the table presenting the fair value assumptions for stock options.\n2 - Identify the row labeled 'Volatility' under 'Stock options:'.\n3 - Find the corresponding value in the '2006' column.",
+        "answer": "39%"
+    },
+    "5": {
+        "reasoning": "1 - Located the table 'Commitments as of December 31, 2016' on page 54.\n2 - Identified the line item '2.875% Senior Notes due 2022' under 'Short & Long-Term Debt'.\n3 - The 'Total' column for this line item shows '$400.0'.\n4 - Confirmed on page 77, under 'Long-term debt', the line item '2.875% Senior Notes due October 1, 2022' with a value of '$400.0'.",
+        "answer": "$400.0"
+    },
+    "6": {
+        "reasoning": [
+            "1 - Located the table titled 'Issuer Purchases of Equity Securities' on page 86.",
+            "2 - Identified the row corresponding to the period '10/01/18-10/31/18'.",
+            "3 - Extracted the value from the 'Total Number of Shares Purchased' column for this period."
+        ],
+        "answer": "36,701"
+    },
+    "8": {
+        "reasoning": [
+            "1 - Located the table on page 71 titled 'The weighted-average estimated fair value of options granted during fiscal 2004, 2003 and 2002...'",
+            "2 - Identified the section 'Stock Purchase Plans' within the table.",
+            "3 - Found the 'Volatility' row under 'Stock Purchase Plans'.",
+            "4 - Read the value in the 'Volatility' row corresponding to the '2003' column."
+        ],
+        "answer": "50%"
+    },
+    "9": {
+        "reasoning": [
+            "1 - Locate the table containing information about equity compensation plans.",
+            "2 - Identify the row corresponding to plans approved by security holders.",
+            "3 - Find the column representing the 'Number of securities to be issued upon exercise of outstanding options, warrants and rights'.",
+            "4 - Extract the value in the intersection of the identified row and column."
+        ],
+        "answer": "34,325,304"
+    },
+    "11": {
+        "reasoning": [
+            "1 - Locate the 'Rail Operating Statistics' table on page K5 of the PDF.",
+            "2 - Identify the row labeled 'Freight train miles (millions)'.",
+            "3 - Find the value in the '2004' column for the 'Freight train miles (millions)' row."
+        ],
+        "answer": "77.7"
+    },
+    "12": {
+        "reasoning": [
+            "1 - The 'Average active communities' table is located on page 23 of the PDF document.",
+            "2 - Within this table, the row labeled 'North East' represents the data for the North East region.",
+            "3 - The column labeled '2011' provides the data for the year 2011.",
+            "4 - The value at the intersection of the 'North East' row and the '2011' column is 30."
+        ],
+        "answer": "30"
+    },
+    "13": {
+        "reasoning": [
+            "1 - Locate the section on 'Pension Cost Trend Assumptions' on page K62.",
+            "2 - Identify the row labeled 'Return on assets in plans'.",
+            "3 - Find the value in the '2011' column for 'Return on assets in plans'."
+        ],
+        "answer": "8.75%"
+    },
+    "14": {
+        "reasoning": "1 - Locate the table showing segment information for the year ended December 31, 2016.\n2 - Identify the 'Free trials at end of period' for the Domestic Streaming segment, which is 1,526.\n3 - Identify the 'Free trials at end of period' for the International Streaming segment, which is 3,180.\n4 - Identify the 'Free trials at end of period' for the Domestic DVD segment, which is 85.\n5 - Sum the free trials from all segments: 1,526 + 3,180 + 85 = 4,791.",
+        "answer": "4,791"
+    },
+    "15": {
+        "reasoning": [
+            "1 - I located the 'Consolidated Balance Sheet Data' on page 31.",
+            "2 - I found the 'Working capital' line item in the table.",
+            "3 - I identified the value corresponding to December 31, 2012, for 'Working capital'."
+        ],
+        "answer": "$2,178.7"
+    },
+    "16": {
+        "reasoning": [
+            "1 - Navigate to the 'Notes To Consolidated Financial Statements' section.",
+            "2 - Locate the table displaying 'Gross Amount of Recognized Financial Instruments' for 'Financial Assets' as of 'December 31, 2012'.",
+            "3 - Identify the row corresponding to 'Derivatives' under 'Financial Assets'.",
+            "4 - Read the value in the 'Gross Amount of Recognized Financial Instruments' column for 'December 31, 2012'."
+        ],
+        "answer": "81.6"
+    },
+    "17": {
+        "reasoning": [
+            "1 - Located the 'Note 6\u2014LONG-TERM DEBT AND OTHER' section on page 63.",
+            "2 - Identified the table summarizing long-term debt and other liabilities.",
+            "3 - Found the row labeled 'Total long-term debt and other'.",
+            "4 - Extracted the value in the '2003' column for this row, which is '$1,945,439'."
+        ],
+        "answer": "$1,945,439"
+    },
+    "18": {
+        "reasoning": [
+            "1 - Locate the table detailing the components of the provision for income taxes.",
+            "2 - Identify the row labeled 'Total' within this table.",
+            "3 - Extract the value corresponding to the year ended December 31, 2013 from the 'Total' row."
+        ],
+        "answer": "$218"
+    },
+    "19": {
+        "reasoning": [
+            "1 - Located the 'Consolidated Statements of Income' on page 90.",
+            "2 - Identified the 'Net Income' line item.",
+            "3 - Read the value under the '2012' column for 'Net Income'.",
+            "4 - Noted the unit was in 'millions of dollars'."
+        ],
+        "answer": "894.4 million dollars"
+    },
+    "20": {
+        "reasoning": [
+            "1 - Locate the 'Consolidated Statement of Operations Data' on page 15.",
+            "2 - Find the line item 'Income from continuing operations before accounting change'.",
+            "3 - Identify the value in the column corresponding to the year '2006(c)'.",
+            "4 - The value is 529.3."
+        ],
+        "answer": "529.3"
+    },
+    "21": {
+        "reasoning": "1 - Located the 'Long-Term Debt' section on page 200.\n2 - Identified the table presenting the components of long-term debt as of December 31, 2013.\n3 - Found the row labeled 'Total long-term debt'.\n4 - Extracted the corresponding value for 2013, which is $7,650.",
+        "answer": "$7,650"
+    },
+    "22": {
+        "reasoning": [
+            "1 - Located the 'Properties' section on page 20.",
+            "2 - Identified the table showing the breakdown of owned and leased square footage for different properties.",
+            "3 - Found the row corresponding to 'Optoelectronics'.",
+            "4 - Extracted the value in the 'Leased (Approximate)' column for 'Optoelectronics'."
+        ],
+        "answer": "576,000 sq ft"
+    },
+    "23": {
+        "reasoning": "1 - Locate the table containing revenue information for the year 2004.\n2 - Identify the table titled 'Supplemental Operating Data by Geographic Region' on page 43.\n3 - Find the row labeled 'Total revenues' for the year 2004.\n4 - Extract the numerical value for total revenues in 2004, which is $11,711,216 (in thousands of dollars).",
+        "answer": "$11,711,216"
+    },
+    "24": {
+        "reasoning": "1 - I located the table titled 'MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES' on page 20.\n2 - I identified the section for the year '2008'.\n3 - I found the row corresponding to the 'Fourth Quarter'.\n4 - I extracted the 'Low' value for the fourth quarter of 2008, which is '$28.86'.",
+        "answer": "$28.86"
+    },
+    "25": {
+        "reasoning": [
+            "1 - Located the 'Summary cash flow data' section on page 41.",
+            "2 - Identified the line item 'Cash flows provided by (used for): Operating activities'.",
+            "3 - Extracted the value corresponding to the year 2008 for this line item.",
+            "4 - Verified the extracted value by cross-referencing with the 'Operating Cash Flows' section on page 42, where 'Net cash provided by operating activities' for 2008 is also listed."
+        ],
+        "answer": "455.7"
+    },
+    "26": {
+        "reasoning": "1 - I located the 'Consolidated Statements of Comprehensive Income' on page 118 and page 108.\n2 - I found the line item 'Net income' under the 'Year Ended December 31, 2016' column.\n3 - The value for 'Net income' for the year ended December 31, 2016 is $431,852 (in thousands).\n4 - I also verified this information on page 72 under the 'Results of Operations' section, where the 'Net income' for the year ended December 31, 2016 is listed as $431,852 (in thousands).",
+        "answer": "$431,852"
+    },
+    "28": {
+        "reasoning": "1 - Located the table titled 'Properties' which lists the operating properties of the company.\n2 - Identified the row with 'Manufacturing(5)' as the 'Type of Facility' and 'Rayong, Thailand' as the 'Location'.\n3 - Extracted the 'Approximate Square Feet' value for this facility, which is '220,000'.",
+        "answer": "220,000"
+    },
+    "29": {
+        "reasoning": [
+            "1 - I located the table on the first page of the PDF titled 'Issuer'.",
+            "2 - I identified the row corresponding to 'WPD (South West)'.",
+            "3 - I found the column labeled 'Senior Unsecured' under the 'S&P' heading.",
+            "4 - The value at the intersection of the 'WPD (South West)' row and the 'Senior Unsecured' 'S&P' column is 'A-'."
+        ],
+        "answer": "A-"
+    },
+    "30": {
+        "reasoning": [
+            "1 - Located the section titled 'Commitments and Contingencies' on page F-16.",
+            "2 - Identified the subsection 'Lease Commitments'.",
+            "3 - Found the table showing 'Total minimum payments' broken down by 'Capital Leases' and 'Operating Leases'.",
+            "4 - Extracted the total minimum payments for Operating Leases for the years 2004, 2005, and 2006: $3,592, $2,076, and $175 respectively.",
+            "5 - Summed these values to arrive at the total minimum payments for Operating Leases: $3,592 + $2,076 + $175 = $5,843."
+        ],
+        "answer": "$5,843"
+    },
+    "31": {
+        "reasoning": [
+            "1 - Navigate to page 23 of the PDF document.",
+            "2 - Locate the 'Net Sales' table under the 'Results of Operations' section.",
+            "3 - Identify the row corresponding to 'North America' and the column corresponding to the year '2013'.",
+            "4 - Extract the numerical value at the intersection of the 'North America' row and the '2013' column."
+        ],
+        "answer": "44,517"
+    },
+    "32": {
+        "reasoning": [
+            "1 - The table showing the high and low sales prices of common stock is located on page 43.",
+            "2 - The question asks for the high value in the fourth column for the year 2015.",
+            "3 - In the table, the row for '2015' and the column for 'Fourth' under the 'High' section shows a value of '$102.07'."
+        ],
+        "answer": "$102.07"
+    },
+    "33": {
+        "reasoning": "1 - Located the table titled 'The effect of our derivative instruments on our consolidated statements of income for the years ended December 31, 2015, 2014 and 2013' on page 75.\n2 - Identified the section 'Derivatives not designated as hedging instruments'.\n3 - Found the row for 'Foreign currency forward contracts' under the year ended December 31, 2013.\n4 - Read the value in the 'Amount of income recognized on hedged item' column for that row.",
+        "answer": "$3"
+    },
+    "34": {
+        "reasoning": "1 - Located the table titled 'For additional information on capital adequacy, see \u201cSupervision and Regulation\u201d in Item 1 of this report.' on the first PDF page.\n2 - Identified the section for 'December 31, 2012'.\n3 - Found the row corresponding to 'TIER 1 CAPITAL TO AVERAGE QUARTERLY TANGIBLE ASSETS'.\n4 - Located the value under the column 'To Qualify as Well Capitalized Under Federal Deposit Insurance Act' for 'KeyBank (consolidated)'.",
+        "answer": "$ 4,124"
+    },
+    "36": {
+        "reasoning": [
+            "1 - Locate the table summarizing Stock Appreciation Rights (SARs) on page 67.",
+            "2 - Identify the 'Outstanding at beginning of year' shares for 2017, which is 1,740,786.",
+            "3 - Locate the table summarizing Restricted Stock Awards (RSAs) on page 68.",
+            "4 - Identify the 'Outstanding at beginning of year' shares for 2017, which is 628,642.",
+            "5 - Locate the table summarizing Performance Share Awards (PSAs) on page 68.",
+            "6 - Identify the 'Outstanding at beginning of year' shares for 2017, which is 379,226.",
+            "7 - Sum the outstanding shares for all three types of awards: 1,740,786 + 628,642 + 379,226 = 2,748,654."
+        ],
+        "answer": "2,748,654"
+    },
+    "37": {
+        "reasoning": [
+            "1 - Locate the table summarizing RSU activity on page 89.",
+            "2 - Identify the 'Outstanding at December 31, 2007' value for RSUs, which is 4,595 units.",
+            "3 - Locate the table summarizing DSU activity on page 89.",
+            "4 - Identify the 'Outstanding at December 31, 2007' value for DSUs, which is 196 units.",
+            "5 - Locate the table summarizing stock option activity on page 87.",
+            "6 - Identify the 'Outstanding at December 31, 2007' value for stock options, which is 12,034 units.",
+            "7 - Locate the table summarizing Restricted Stock Units on page 89.",
+            "8 - Identify the 'Total' value for the year ended December 31, 2007, which is 2,427 units.",
+            "9 - Sum the outstanding units from each category: 4,595 (RSUs) + 196 (DSUs) + 12,034 (Stock Options) + 2,427 (Restricted Stock Units) = 19,252 units."
+        ],
+        "answer": "19,252"
+    },
+    "38": {
+        "reasoning": "1 - Locate the table titled 'Storage Assets' on page 22.\n2 - Identify the row labeled 'Total Contracted Storage Capacity'.\n3 - Extract the corresponding value in the 'Maximum Storage Capacity (MMBtu)' column.",
+        "answer": "32,633,242"
+    },
+    "39": {
+        "reasoning": "1 - Located the 'Results of Operations' table on page 48.\n2 - Identified the row labeled 'Total net revenues'.\n3 - Extracted the value for the year 2018 from this row.",
+        "answer": "$4,647.5"
+    },
+    "40": {
+        "reasoning": [
+            "1 - Locate the 'Selected Segment Financial Data' table.",
+            "2 - Identify the 'Settlements' section within this table.",
+            "3 - Find the 'Units' column under the 'Settlements' section.",
+            "4 - Locate the 'Mid Atlantic' row.",
+            "5 - Identify the value in the 'Units' column for 'Mid Atlantic' in the '2012' year."
+        ],
+        "answer": "5,047"
+    },
+    "41": {
+        "reasoning": "1 - On page 166, under the section 'Quantitative Information about Level 3 Fair Value Measurements', there is a table showing the valuation techniques used for different assets.\n2 - For 'Impaired loans' under the 'Nonrecurring' category for December 31, 2015, the listed valuation technique is 'Discounted cash flow and market data'.",
+        "answer": "Discounted cash flow and market data"
+    },
+    "42": {
+        "reasoning": "1 - Located the table titled 'Basis of Presentation' on page 56.\n2 - Identified the section within the table detailing the duration of each quarter for the U.S. and Canada.\n3 - Read the value corresponding to 'Fourth Quarter' in the 'U.S. and Canada' column.\n4 - The table indicates the Fourth Quarter lasts for '13 weeks'.",
+        "answer": "13 weeks"
+    },
+    "43": {
+        "reasoning": "1 - Located the section 'Sales of Principal Products' on page 72.\n2 - Identified the row for 'Diapers'.\n3 - Found the corresponding value in the '2004' column, which is $5.3.\n4 - The table indicates the values are in 'Billions of dollars'.",
+        "answer": "$5.3 billion"
+    },
+    "44": {
+        "reasoning": "1 - Located the 'Net Revenues by Market and Customer' table on page 38.\n2 - Identified the 'Service Provider' row.\n3 - Extracted the revenue for 2010: $2,631.5 million.\n4 - Extracted the revenue for 2011: $2,833.0 million.\n5 - Calculated the dollar change: $2,833.0 - $2,631.5 = $201.5 million.",
+        "answer": "$201.5 million"
+    },
+    "45": {
+        "reasoning": [
+            "1 - Located the table labeled 'Average active communities' on page 23.",
+            "2 - Identified the column corresponding to the year 2012.",
+            "3 - Extracted the 'Total' value for 2012 from the table, which is 404."
+        ],
+        "answer": "404"
+    },
+    "46": {
+        "reasoning": "1 - I located the table titled 'Properties' which provides a summary of the principal operating properties of the Company as of December 31, 2018.\n2 - I found the row corresponding to 'Corporate Office' under the 'Type of Facility' column.\n3 - I identified the location listed in the 'Location' column for 'Corporate Office'.",
+        "answer": "Milwaukee, WI"
+    },
+    "47": {
+        "reasoning": "1 - Navigate to the 'Earnings Per Share' section in the provided PDF document.\n2 - Locate the 'Denominator' subsection.\n3 - Identify the line item 'Denominator for basic earnings per share\u2014weighted-average common shares'.\n4 - Extract the value corresponding to the year 2014.",
+        "answer": "97,489"
+    },
+    "48": {
+        "reasoning": [
+            "1 - Locate the table detailing deferred tax assets on the provided PDF pages.",
+            "2 - Identify the row corresponding to 'Total deferred tax assets'.",
+            "3 - Extract the value listed under the 'December 31, 2010' column for 'Total deferred tax assets'."
+        ],
+        "answer": "124.4"
+    },
+    "49": {
+        "reasoning": [
+            "1 - Locate the 'CLOSING PRICE OF COMPANY'S COMMON STOCK' table.",
+            "2 - Identify the row corresponding to 'First Quarter'.",
+            "3 - Find the column labeled 'Fiscal 2006'.",
+            "4 - Read the 'High' value for the 'First Quarter' in the 'Fiscal 2006' column."
+        ],
+        "answer": "$18.70"
+    },
+    "50": {
+        "reasoning": [
+            "1 - Navigate to the 'Homebuilding Operations' section on page 19.",
+            "2 - Locate the table displaying operating activity for the last three years.",
+            "3 - Identify the row labeled 'Gross profit margin percentage'.",
+            "4 - Find the value corresponding to the year ended December 31, 2012."
+        ],
+        "answer": "17.5%"
+    },
+    "51": {
+        "reasoning": [
+            "1 - Located the table titled 'Interest capitalized into homebuilding inventory' on page 32 and page 56 of the PDF.\n2 - Identified the row 'Interest in homebuilding inventory at beginning of year'.\n3 - Read the value corresponding to the year 2007 for this row.",
+            "4 - The value is 235,596."
+        ],
+        "answer": "235,596"
+    },
+    "52": {
+        "reasoning": [
+            "1 - Locate the section discussing assumptions for pension and other postretirement benefits on page K62.",
+            "2 - Identify the row corresponding to 'Health care trend rate' within the 'Other postretirement benefits cost' section.",
+            "3 - Find the value in the '2010' column for the 'Health care trend rate'."
+        ],
+        "answer": "8.50%"
+    },
+    "53": {
+        "reasoning": "1 - Located the table titled 'The following table shows the number of shares issued for the fiscal years ended September 30, 2016, 2015 and 2014:' on page 41.\n2 - Identified the row labeled 'Total shares issued'.\n3 - Identified the column corresponding to the fiscal year ended September 30, 2014.\n4 - Extracted the value at the intersection of the 'Total shares issued' row and the '2014' column, which is 9,938,015.",
+        "answer": "9,938,015"
+    },
+    "54": {
+        "reasoning": [
+            "1 - Locate the table titled '8. Debt' which contains information about debt maturities.",
+            "2 - Identify the row corresponding to '6.39% maturing 2097 to 2111'.",
+            "3 - Find the value in the '2014' column for that row.",
+            "4 - The value is 1,328."
+        ],
+        "answer": "1,328"
+    },
+    "55": {
+        "reasoning": [
+            "1 - I located the table on page 96 titled 'A summary of the status of the Company's nonvested options and changes is presented below:'.",
+            "2 - I found the row corresponding to the year 2014.",
+            "3 - I identified the value in the 'Weighted Average Grant-Date Fair Value Per Share' column for the 'Granted' options in 2014."
+        ],
+        "answer": "$13.58"
+    },
+    "56": {
+        "reasoning": "1 - Located the table titled 'Issuer Purchases of Equity Securities' on page 10.\n2 - Identified the row corresponding to the period '11/01/12 - 11/30/12'.\n3 - Extracted the 'Average Price Paid per Share' value for this period, which is '$ 53.69'.",
+        "answer": "53.69"
+    },
+    "57": {
+        "reasoning": "1 - Located the 'Components of deferred tax assets and liabilities' section on page 71.\n2 - Identified the line item 'Warranty reserve'.\n3 - Read the value corresponding to December 31, 2010.",
+        "answer": "11,632"
+    },
+    "58": {
+        "reasoning": [
+            "1 - Locate the Consolidated Statements of Comprehensive Income.",
+            "2 - Identify the 'Comprehensive income' line item.",
+            "3 - Find the corresponding value under the 'Year Ended December 31, 2003' column."
+        ],
+        "answer": "$333,845"
+    },
+    "59": {
+        "reasoning": "1 - Located the 'Accrued Expenses' section in the 'NOTES TO FINANCIAL STATEMENTS' on page F-14.\n2 - Identified the column for 'As of December 31, 2003'.\n3 - Found the 'Total accrued expenses' value for 2003, which is $11,625.",
+        "answer": "11,625"
+    },
+    "60": {
+        "reasoning": "1 - Located the 'Employee and Non-employee Director Stock Ownership Programs' section on page F-38.\n2 - Found a table presenting the weighted average assumptions used in valuing stock options.\n3 - Identified the 'Fair value at grant date' row within this table.\n4 - Located the column corresponding to the year 2017.\n5 - Extracted the value of $15.98 for the fair value at the grant date in 2017.",
+        "answer": "$15.98"
+    },
+    "61": {
+        "reasoning": "1 - Located the 'Corporate & Other' expenses table on page 78.\n2 - Identified the 'Canada' column within the table.\n3 - Located the '2006' row.\n4 - The value at the intersection of the 'Canada' column and '2006' row is '$(16.7)'.",
+        "answer": "-$16.7"
+    },
+    "62": {
+        "reasoning": [
+            "1 - Navigate to page 32 of the PDF, which contains information about interest capitalized into homebuilding inventory.",
+            "2 - Locate the table titled 'Interest capitalized into homebuilding inventory is as follows ($000's omitted):'.",
+            "3 - Identify the row labeled 'Interest capitalized into homebuilding inventory'.",
+            "4 - Find the column corresponding to the year '2005'.",
+            "5 - Extract the value at the intersection of the identified row and column, which is '185,792'."
+        ],
+        "answer": "185,792"
+    },
+    "63": {
+        "reasoning": [
+            "1 - Located the table titled 'Selling, General and Administrative Adjustments' on page 1 of the PDF.",
+            "2 - Identified the row corresponding to 'Inventory stepped up to fair value'.",
+            "3 - Extracted the value from the '% Net Sales' column for the year 2014."
+        ],
+        "answer": "0.2%"
+    },
+    "65": {
+        "reasoning": "1 - Located the table on page 195 titled 'Year ended December 31.'\n2 - Identified the row labeled 'Historical share price volatility.'\n3 - Extracted the value corresponding to the year 2014 from this row.",
+        "answer": "1.9%"
+    },
+    "66": {
+        "reasoning": [
+            "1 - Locate the table on page 11 titled 'During 2017, LKE's power plants generated the following amounts of electricity'.",
+            "2 - Identify the 'GWh' column for 'LKE'.",
+            "3 - Extract the GWh values for each fuel source: Coal (a) - 16,248, Hydro - 1,105, Solar - 18.",
+            "4 - Sum the GWh values: 16,248 + 1,105 + 18 = 17,371."
+        ],
+        "answer": "17,371"
+    },
+    "67": {
+        "reasoning": [
+            "1 - Located the table titled 'The following table summarizes the Company's interest rate cap agreements'.",
+            "2 - Identified the 'End Date' column and found the row with the date '6/30/2022'.",
+            "3 - Identified the corresponding 'Related Debt' for that row, which is 'Three month LIBO rate of 2.5%'."
+        ],
+        "answer": "Three month LIBO rate of 2.5%"
+    },
+    "68": {
+        "reasoning": [
+            "1 - Located the table titled 'The components of pre-tax stock-based compensation expense are as follows:' in Note 5 on page F-30.",
+            "2 - Identified the row corresponding to 'Restricted Share/Unit Awards'.",
+            "3 - Extracted the value in the '2006 (a)' column for 'Restricted Share/Unit Awards'."
+        ],
+        "answer": "$7.5"
+    },
+    "70": {
+        "reasoning": [
+            "1 - I located the table titled 'The following table provides information about our cash equivalent and marketable fixed income securities, including principal cash flows by expected maturity and the related weighted average interest rates at December 31, 2004 (in thousands, except percentages):'",
+            "2 - I identified the row labeled 'Corporate notes and bonds'.",
+            "3 - I found the value in the '2006' column for this row, which represents the weighted average interest rate for corporate notes and bonds in 2006."
+        ],
+        "answer": "2.90%"
+    },
+    "71": {
+        "reasoning": "1 - I located the 'Balance Sheet Data' section in the provided PDF pages.\n2 - I identified the line item 'Unsecured term loan'.\n3 - I found the corresponding value for the year 2012 in the column labeled '2012'.",
+        "answer": "$757,759"
+    },
+    "72": {
+        "reasoning": "1 - On page 25, in the 'Performance Highlights' section, there's a table showing key metrics for 2008, 2007, and 2006.\n2 - Within this table, the 'Subscriber acquisition cost' is listed.\n3 - The value for 'Subscriber acquisition cost' in 2006 is presented as $42.94.",
+        "answer": "$42.94"
+    },
+    "75": {
+        "reasoning": "1 - Located the 'NOTES TO CONSOLIDATED FINANCIAL STATEMENTS' on page 91.\n2 - Identified the section detailing 'The tax effects of temporary differences and attributes that gave rise to deferred income tax assets and liabilities as of December 29, 2013 and December 30, 2012 were as follows:'.\n3 - Found the line item 'Valuation allowance' within the deferred tax liabilities section.\n4 - Read the corresponding value for 'December 29, 2013' which is '(63,139)'.\n5 - The values are presented in thousands.",
+        "answer": "-$63,139 thousands"
+    },
+    "76": {
+        "reasoning": "1 - The table on page 96 titled 'The Company's actual and target weighted average asset allocation for our U.S. Corporate Pension Plan was as follows:' contains the target allocation for fixed income.\n2 - The 'Current Target' column shows the target allocation for different asset classes.\n3 - The row labeled 'Fixed income' in the 'Current Target' column shows a value of '55 %'.",
+        "answer": "55 %"
+    },
+    "78": {
+        "reasoning": [
+            "1 - Located the table titled 'Midstream-MPLX' on page 46 of the PDF.",
+            "2 - Identified the section 'Crude oil pipeline systems (mbpd)' within the table.",
+            "3 - Found the row where the 'Origin' is 'St James, LA' and the 'Destination' is 'Garyville, LA'.",
+            "4 - Extracted the corresponding 'Capacity' value, which is 620."
+        ],
+        "answer": "620 mbpd"
+    },
+    "79": {
+        "reasoning": "1 - Locate the table containing information on Proved Developed Reserves.\n2 - Identify the row corresponding to 'Tunisia'.\n3 - Identify the column corresponding to 'Oil & NGLs (MBbls)' for the year '2005'.\n4 - Extract the value at the intersection of the 'Tunisia' row and the '2005' 'Oil & NGLs (MBbls)' column.",
+        "answer": "3,769"
+    },
+    "80": {
+        "reasoning": [
+            "1 - Locate the 'Depreciation and amortization' line item under 'Operating Expenses' on page 108.",
+            "2 - Identify the value for 2007 as $5,314 (in thousands).",
+            "3 - Identify the value for 2008 as $379 (in thousands).",
+            "4 - Calculate the change in value: $379 - $5,314 = -$4,935.",
+            "5 - Calculate the percentage change: (-$4,935 / $5,314) * 100.",
+            "6 - The percentage change is approximately -92.87%."
+        ],
+        "answer": "-92.9%"
+    },
+    "81": {
+        "reasoning": [
+            "1 - Navigate to the Consolidated Statements of Income for the year ended December 31, 2016.",
+            "2 - Locate the line item 'Depreciation of rental equipment' under the 'Cost of revenues' section.",
+            "3 - Extract the corresponding value for the year 2016."
+        ],
+        "answer": "$990"
+    },
+    "82": {
+        "reasoning": "1 - Located the 'Assets:' table in the provided PDF.\n2 - Identified the row labeled 'Total segment assets'.\n3 - Extracted the value corresponding to 'As of December 31, 2015', which is '$1,895,779'.",
+        "answer": "$1,895,779"
+    },
+    "83": {
+        "reasoning": [
+            "1 - Located the table on page F-24 presenting net sales to external customers by reportable segment.",
+            "2 - Identified the row corresponding to the 'Airframe' segment.",
+            "3 - Found the column for the fiscal year ended September 30, 2014.",
+            "4 - Extracted the value at the intersection of the 'Airframe' row and the '2014' column, which is $735,909."
+        ],
+        "answer": "$735,909"
+    },
+    "85": {
+        "reasoning": [
+            "1 - Locate the table titled 'Costs Incurred for Oil and Gas Producing Activities'.",
+            "2 - Identify the row corresponding to 'Canada'.",
+            "3 - Identify the column for the year ended 'December 31, 2003'.",
+            "4 - Extract the value at the intersection of the 'Canada' row and the 'December 31, 2003' column."
+        ],
+        "answer": "$54,800"
+    },
+    "87": {
+        "reasoning": [
+            "1 - I located the table titled 'The following table sets forth the fair value of all derivative instruments outstanding in the Consolidated Balance Sheets (in millions):'.",
+            "2 - I identified the row labeled 'Total derivative assets'.",
+            "3 - I found the corresponding value in the '2009' column for 'Total derivative assets', which is $21."
+        ],
+        "answer": "$21"
+    },
+    "88": {
+        "reasoning": "1 - Located the table titled 'VALUATION AND QUALIFYING ACCOUNTS' on page 94.\n2 - Identified the row corresponding to 'Valuation Allowance'.\n3 - Found the column labeled 'Balance at End of Period'.\n4 - Read the value in the 'Balance at End of Period' column for the 'December 31, 2008' row, which is $319.",
+        "answer": "$319"
+    },
+    "89": {
+        "reasoning": "1 - On page F-15, under the section '4. ACQUISITIONS AND DISPOSITIONS', there is a table detailing company acquisitions during the past three years.\n2 - In the year 2005, 'Bigfoot Interactive, Inc.' is listed as an acquired company.\n3 - The 'Segment' column for this acquisition indicates 'Marketing Services'.",
+        "answer": "Marketing Services"
+    },
+    "90": {
+        "reasoning": "1 - Located the 'SELECTED FINANCIAL DATA' table on page 29.\n2 - Identified the 'Financial Position' section within the table.\n3 - Found the 'Total Debt' line item in the 'Financial Position' section.\n4 - Located the '2014' column in the table.\n5 - Extracted the value at the intersection of the 'Total Debt' row and the '2014' column.",
+        "answer": "$1,086.7"
+    },
+    "91": {
+        "reasoning": "1 - Located the 'SCHEDULE II--CONDENSED FINANCIAL INFORMATION OF REGISTRANT (Continued)' which contains the 'STATEMENTS OF OPERATIONS'.\n2 - Identified the column for the 'Year Ended December 31' with the year '2017'.\n3 - Found the line item 'Comprehensive Income (Loss)'.\n4 - The corresponding value for 2017 is $1,172.7.",
+        "answer": "$1,172.7"
+    },
+    "93": {
+        "reasoning": [
+            "1 - Navigated to the Consolidated Statements of Comprehensive Income on page F-4.",
+            "2 - Located the line item 'Net income attributable to Quest Diagnostics'.",
+            "3 - Identified the value under the '2010' column for this line item."
+        ],
+        "answer": "$720,894"
+    },
+    "94": {
+        "reasoning": [
+            "1 - Locate the table containing 'Segment Operating Profit' information.",
+            "2 - Identify the column corresponding to the year '2009'.",
+            "3 - Read the 'Segment Operating Profit' value for 2009 from the table on page 33.",
+            "4 - The value is presented in thousands of dollars."
+        ],
+        "answer": "$365,165"
+    },
+    "95": {
+        "reasoning": "1 - Located the 'Uncertain Income Tax Positions' section on page 1.\n2 - Identified the line item 'Increases related to current year income tax positions'.\n3 - Read the value corresponding to 2015 for this line item.",
+        "answer": "21"
+    },
+    "96": {
+        "reasoning": [
+            "1 - Located the 'Valuation Assumptions' table on page 1 of the PDF.",
+            "2 - Identified the row corresponding to 'Stock Options Assumed'.",
+            "3 - Found the 'Expected life (years)' value under the '2016' column for 'Stock Options Assumed'."
+        ],
+        "answer": "1.3"
+    },
+    "98": {
+        "reasoning": [
+            "1 - Located the 'Commitments as of December 31, 2016' table on page 54.",
+            "2 - Identified the row for 'Commercial paper issuances'.",
+            "3 - Found the corresponding value in the '2017' column."
+        ],
+        "answer": "420.0"
+    },
+    "99": {
+        "reasoning": [
+            "1 - Navigate to the 'Consolidated Statement of Cash Flows'.",
+            "2 - Locate the section titled 'Financing Activities'.",
+            "3 - Identify the line item 'Net Cash Used for Financing Activities'.",
+            "4 - Find the corresponding value for the year 2011."
+        ],
+        "answer": "($5,135)"
+    },
+    "100": {
+        "reasoning": [
+            "1 - Locate the table summarizing stock option activity during the years ended December 31, 2008, 2007 and 2006 on page 88.",
+            "2 - Identify the row labeled 'Exercisable at December 31, 2008'.",
+            "3 - Extract the corresponding value in the 'Shares (in thousands)' column, which is 7,994.",
+            "4 - Since the unit is 'in thousands', multiply 7,994 by 1,000 to get the actual number of shares."
+        ],
+        "answer": "7,994,000"
+    },
+    "102": {
+        "reasoning": "1 - Located the 'Note 6 Earnings Per Share' table on page F-17.\n2 - Identified the 'Basic earnings per share' section within the table.\n3 - Found the value corresponding to the year ended December 31, 2003.",
+        "answer": "$1.30"
+    },
+    "103": {
+        "reasoning": "1 - Located the 'Supplementary Statistics' table on page 132.\n2 - Identified the 'Total' row within the table.\n3 - Located the '2010' column.\n4 - Extracted the value at the intersection of the 'Total' row and '2010' column.",
+        "answer": "$1,173"
+    },
+    "104": {
+        "reasoning": "1 - I located the table titled 'The following table provides the components of other intangible assets (in millions):'.\n2 - I found the row corresponding to 'Acquired contracts'.\n3 - I identified the column 'Net of Accumulated Amortization' under the 'December 31, 2008' section.\n4 - The value in that cell is $78.2.",
+        "answer": "$78.2"
+    },
+    "105": {
+        "reasoning": [
+            "1 - Locate the 'Consolidated Statements of Operations' table on page 107.",
+            "2 - Identify the row labeled 'Cost of revenues - Product'.",
+            "3 - Find the column corresponding to the 'Fourth Quarter' of the year ended December 31, 2007.",
+            "4 - Extract the value at the intersection of the identified row and column."
+        ],
+        "answer": "193.3"
+    },
+    "106": {
+        "reasoning": [
+            "1 - Locate the table containing environmental expenditure information.",
+            "2 - Identify the row corresponding to 'Remediation'.",
+            "3 - Identify the column corresponding to the year '2011'.",
+            "4 - Extract the value at the intersection of the 'Remediation' row and the '2011' column."
+        ],
+        "answer": "27"
+    },
+    "108": {
+        "reasoning": "1 - I located the table on page 52 titled 'Performance Graph'.\n2 - I found the row for 'VeriSign, Inc.'.\n3 - I found the column for the date '12/31/2004'.\n4 - The value at the intersection of the 'VeriSign, Inc.' row and the '12/31/2004' column is '$88'.",
+        "answer": "$88"
+    },
+    "109": {
+        "reasoning": "1 - Locate the table containing credit ratings for different issuers.\n2 - Find the row corresponding to 'KU'.\n3 - Identify the column representing 'Senior Secured' under Moody's.\n4 - Extract the rating listed in the 'KU' row and 'Senior Secured' (Moody's) column.",
+        "answer": "A1"
+    },
+    "111": {
+        "reasoning": [
+            "1 - Locate the table summarizing the restructuring activity for the year ended December 31, 2003.",
+            "2 - Identify the row corresponding to 'Cash payments, net of subleasing proceeds'.",
+            "3 - Find the value in the column under 'EITF No. 95-3 Lease Commitments'."
+        ],
+        "answer": "(303)"
+    },
+    "112": {
+        "reasoning": [
+            "1 - Locate the table containing quarterly stock prices under 'Part II, Item 5. Market Information'.",
+            "2 - Identify the section for 'Year Ended December 31, 2017'.",
+            "3 - Find the row corresponding to 'Fourth Quarter'.",
+            "4 - Read the 'Low' value for the fourth quarter of 2017."
+        ],
+        "answer": "147.28"
+    },
+    "113": {
+        "reasoning": "1 - Locate the 'Competition' section in the provided document.\n2 - Identify the table within this section that lists 'Market Position' for different product categories.\n3 - Filter the table to find the 'Industrial Chemicals' category.\n4 - Identify the product 'Soda ash' within the 'Industrial Chemicals' category.\n5 - Note the market position listed for 'Soda ash'.",
+        "answer": "#1 in North America"
+    },
+    "114": {
+        "reasoning": "1 - I located the Table of Contents on the first page.\n2 - I identified the section labeled \"PART I\".\n3 - I found \"Item 1.\" listed under \"PART I\".\n4 - I read the corresponding topic for \"Item 1.\"",
+        "answer": "Business"
+    },
+    "115": {
+        "reasoning": "1 - I located the 'Supplementary Data Quarterly financial data (unaudited)' table on page 107.\n2 - I identified the 'Financial Services' section within the table.\n3 - I found the 'Operating income' row within the 'Financial Services' section.\n4 - I located the '4th Quarter' column for the year '2014'.\n5 - I extracted the value at the intersection of the 'Operating income' row and the '4th Quarter 2014' column, which is '$62.4'.",
+        "answer": "$62.4"
+    },
+    "116": {
+        "reasoning": [
+            "1 - I located the 'Principal Products' table on page 4 of the PDF.",
+            "2 - I identified the row corresponding to 'Caustic soda'.",
+            "3 - I found the 'Annual Capacity' listed for 'Caustic soda' is '4.2 million tons'."
+        ],
+        "answer": "4.2 million tons"
+    },
+    "118": {
+        "reasoning": "1 - On page 103, in the section titled '16. Quarterly Financial Information (Unaudited)', there is a table showing financial data for the year ended December 31, 2018.\n2 - Within this table, the line item 'Total revenues' for the full year is listed as $8,047.",
+        "answer": "$8,047"
+    },
+    "119": {
+        "reasoning": "1 - I located the table titled 'Midstream-MPLX' which lists crude oil pipeline systems.\n2 - I found the row with 'Patoka, IL to Lima, OH crude system' and 'Lima, OH to Canton, OH' listed under 'Origin' and 'Destination' respectively.\n3 - The corresponding 'Diameter (inches)' for this pipeline is '12\"-16\"'.",
+        "answer": "12\"-16\""
+    },
+    "120": {
+        "reasoning": [
+            "1 - Locate the section regarding valuation assumptions in the provided PDF document.",
+            "2 - Identify the specific table detailing the weighted-average assumptions for ESPP, Market-based RSUs, and Stock Options Assumed.",
+            "3 - Focus on the 'Market-based RSUs' section within the table.",
+            "4 - Find the row labeled 'Weighted-average fair value per share'.",
+            "5 - Extract the value corresponding to the year ended December 31, 2016."
+        ],
+        "answer": "$14.71"
+    },
+    "121": {
+        "reasoning": "1 - Locate the table displaying revenue information for 2012.\n2 - Identify the row labeled 'Consolidated Revenues'.\n3 - Extract the value in the '2012' column for 'Consolidated Revenues'.\n4 - The value is presented in 'Dollars in millions'.",
+        "answer": "$12,509.9"
+    },
+    "122": {
+        "reasoning": "1 - Navigate to page 27 of the provided PDF document.\n2 - Locate the table titled 'Motorcycle Retail Sales and Registration Data'.\n3 - Identify the row labeled 'Total Worldwide Retail Sales'.\n4 - Find the corresponding value in the '2017' column.",
+        "answer": "242,788"
+    },
+    "123": {
+        "reasoning": "1 - Located the section titled 'Deferred tax assets and liabilities are recognized for the expected tax consequences of temporary differences between the book and tax bases of the Company's assets and liabilities.'\n2 - Identified the table outlining 'the principal components of deferred tax items'.\n3 - Found the line item 'Net deferred tax liability' within this table.\n4 - Extracted the value corresponding to 'December 31, 2010' for 'Net deferred tax liability'.",
+        "answer": "$ 289.9"
+    },
+    "124": {
+        "reasoning": [
+            "1 - Located the 'Consolidated Statements of Cash Flows' for the year ended December 31, 2014 on page 102.",
+            "2 - Identified the section 'Cash flows from financing activities:'.",
+            "3 - Found the line item 'Proceeds from issuance of medium-term notes'.",
+            "4 - Read the corresponding value under the 'Financial Services Operations' column, which is '991,835'."
+        ],
+        "answer": "991,835"
+    },
+    "125": {
+        "reasoning": "1 - Located the table titled 'Price Range of Common Stock' on the first page of the PDF.\n2 - Identified the row corresponding to 'Fourth Quarter' under the 'Year ended December 31, 2009'.\n3 - Extracted the 'Low' price from that row.",
+        "answer": "17.59"
+    },
+    "127": {
+        "reasoning": [
+            "1 - Locate the table on page 41 titled 'Segment sales and income before taxes and minority interest for each of the three years ended December 31, 2011, 2010 and 2009'.",
+            "2 - Identify the row labeled 'Total Consolidated Net Sales'.",
+            "3 - Find the value in the '2011' column for 'Total Consolidated Net Sales'.",
+            "4 - The value is $2,749.3 (in millions)."
+        ],
+        "answer": "$2,749.3"
+    },
+    "128": {
+        "reasoning": [
+            "1 - Located the 'Consolidated Statement of Operations' on page 37.",
+            "2 - Identified the line item 'Income from continuing operations before accounting change'.",
+            "3 - Found the value corresponding to the year 2005 for this line item."
+        ],
+        "answer": "447.7"
+    },
+    "129": {
+        "reasoning": [
+            "1 - I located the table titled 'Market For Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities' on page 22.",
+            "2 - I identified the section for 'Fiscal 2009'.",
+            "3 - I found the row corresponding to 'Second Quarter' within the 'Fiscal 2009' section.",
+            "4 - I extracted the 'High' price listed for the second quarter of Fiscal 2009."
+        ],
+        "answer": "$23.58"
+    },
+    "130": {
+        "reasoning": "1 - I located the table titled 'The following table presents our ending subscriber information:' on page 32.\n2 - I identified the 'Total subscribers' row.\n3 - I found the value corresponding to the year '2007' in the 'Total subscribers' row, which is '7,479'.\n4 - The table indicates that the values are 'in thousands'.\n5 - Therefore, the total subscribers at the end of the period in 2007 was 7,479 thousands.",
+        "answer": "7,479,000"
+    },
+    "131": {
+        "reasoning": "1 - I located the 'Consolidated Statements of Comprehensive Income'.\n2 - I found the row labeled 'Comprehensive Income'.\n3 - I identified the column for the year ended December 31, 2014.\n4 - I extracted the value at the intersection of the 'Comprehensive Income' row and the '2014' column, which is $313.5.",
+        "answer": "$313.5"
+    },
+    "132": {
+        "reasoning": "1 - Locate the table on page 49 titled 'The following pretax charges were incurred in connection with the strategic cost reductions:'.\n2 - Identify the row labeled 'Total pretax charges'.\n3 - Find the value in the '2007' column for the 'Total pretax charges' row.",
+        "answer": "$107.2"
+    },
+    "133": {
+        "reasoning": [
+            "1 - Locate the table on page 5 titled 'Distribution Segment Overview'.",
+            "2 - Identify the row corresponding to the 'Kentucky/Mid-States' division.",
+            "3 - Find the 'Communities Served' column for the 'Kentucky/Mid-States' division, which lists 'Kentucky', 'Tennessee', and 'Virginia'.",
+            "4 - Locate the 'Customer Meter' column for the 'Kentucky/Mid-States' division.",
+            "5 - The value in the 'Customer Meter' column for the 'Kentucky/Mid-States' division is '180,661'. This represents the total customer meters for the Kentucky/Mid-States division across all listed service areas, including Virginia."
+        ],
+        "answer": "180,661"
+    },
+    "134": {
+        "reasoning": "1 - Located the table titled 'Information related to interest capitalized into inventory' on pages 67 and 83.\n2 - Identified the line item 'Interest expensed' within the table.\n3 - Extracted the value corresponding to the year 2008 for 'Interest expensed'.",
+        "answer": "$210,709"
+    },
+    "135": {
+        "reasoning": [
+            "1 - Located the Consolidated Balance Sheet.",
+            "2 - Identified the section for the period ending December 31, 2017.",
+            "3 - Found the line item 'Total stockholders' equity' under the 'Consolidated' column.",
+            "4 - Extracted the corresponding value."
+        ],
+        "answer": "4,060,042"
+    },
+    "136": {
+        "reasoning": "1 - Locate the table detailing Issuer Purchases of Equity Securities.\n2 - Identify the row corresponding to 'November 1, 2018 through November 30, 2018'.\n3 - Extract the 'Average Price Paid per Share' value for that period.",
+        "answer": "$121.93"
+    },
+    "137": {
+        "reasoning": [
+            "1 - Located the 'CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME' table on the first page.",
+            "2 - Identified the line item 'Comprehensive income attributable to TE Connectivity Ltd.'",
+            "3 - Read the corresponding value under the 'Fiscal 2011' column."
+        ],
+        "answer": "$1,427"
+    },
+    "138": {
+        "reasoning": [
+            "1 - Located the table on page 75 titled 'Fair Value Measurements'.",
+            "2 - Identified the row 'Cash equivalents - money-market funds'.",
+            "3 - Found the column 'Significant Other Observable Inputs (Level 2)'.",
+            "4 - Extracted the value for December 31, 2013, from the intersection of this row and column."
+        ],
+        "answer": "$889"
+    },
+    "139": {
+        "reasoning": "1 - I located the table titled \"Our environmental expenditures, including non-regulatory expenditures, for each of the last three years\" on page 101.\n2 - I identified the row labeled \"Remediation\".\n3 - I found the value in the \"2017\" column for the \"Remediation\" row, which is 36.",
+        "answer": "36"
+    },
+    "140": {
+        "reasoning": [
+            "1 - Locate the 'Consolidated Statements of Income' or similar financial summary table in the provided PDF pages.",
+            "2 - Identify the 'Sales' and 'Cost of Sales' figures for the year 2009.",
+            "3 - The table on page 20 explicitly provides the 'Cost of sales as a percentage of sales' for 2009."
+        ],
+        "answer": "95.5%"
+    },
+    "141": {
+        "reasoning": [
+            "1 - I located the 'Reconciliation of the beginning and ending amount of unrecognized tax benefits' table on page F-24.",
+            "2 - I identified the row labeled 'Additions based on tax positions related to the prior year'.",
+            "3 - I found the corresponding value in the '2015' column, which is 1,304."
+        ],
+        "answer": "1,304"
+    },
+    "143": {
+        "reasoning": [
+            "1 - Locate the tables containing segment information for 2007 and 2008.",
+            "2 - Identify the 'Segment operating margin' for 'Architecture & Software' in 2007 and 2008.",
+            "3 - Identify the 'Segment operating margin' for 'Control Products & Solutions' in 2007 and 2008.",
+            "4 - Calculate the change in 'Segment operating margin' for 'Architecture & Software' by subtracting the 2007 value from the 2008 value: 24.2% - 26.5% = -2.3%.",
+            "5 - Calculate the change in 'Segment operating margin' for 'Control Products & Solutions' by subtracting the 2007 value from the 2008 value: 13.4% - 14.3% = -0.9%."
+        ],
+        "answer": "Architecture & Software: -2.3%; Control Products & Solutions: -0.9%"
+    },
+    "144": {
+        "reasoning": [
+            "1 - Navigate to the table titled 'Selected Quarterly Financial Data (Unaudited)' on page 114.",
+            "2 - Identify the row labeled 'Diluted income per share'.",
+            "3 - Identify the column labeled 'Third Quarter' under the year ended December 31, 2007.",
+            "4 - Locate the value at the intersection of the 'Diluted income per share' row and the 'Third Quarter' column."
+        ],
+        "answer": "$0.15"
+    },
+    "145": {
+        "reasoning": [
+            "1 - Locate the table summarizing contractual obligations and other long-term liabilities.",
+            "2 - Identify the row corresponding to 'Interest on debt (a)'.",
+            "3 - Identify the column corresponding to the year '2013'.",
+            "4 - Find the intersection of the 'Interest on debt (a)' row and the '2013' column.",
+            "5 - The value at the intersection is the total amount of interest on debt due in 2013."
+        ],
+        "answer": "127"
+    },
+    "147": {
+        "reasoning": "1 - Located the 'Commitments as of December 31, 2016' table on page 54.\n2 - Identified the 'Purchase Obligations' row within the table.\n3 - Identified the 'After 2021' column, which represents payments due after 2021.\n4 - Extracted the value from the intersection of the 'Purchase Obligations' row and the 'After 2021' column, which is $6.5.",
+        "answer": "6.5"
+    },
+    "148": {
+        "reasoning": [
+            "1 - Located the 'SUPPLEMENTAL DISCLOSURE OF CASH FLOW INFORMATION' section in the Consolidated Statements of Cash Flows on page F-6.",
+            "2 - Identified the line item 'Cash paid during the period for: Interest'.",
+            "3 - Read the corresponding value for the year ended December 31, 2006, which is $82,215 (in thousands)."
+        ],
+        "answer": "82215"
+    },
+    "149": {
+        "reasoning": [
+            "1 - Locate the Consolidated Statements of Comprehensive Earnings.",
+            "2 - Identify the line item 'Total foreign currency translation'.",
+            "3 - Find the value corresponding to the year ended December 31, 2014."
+        ],
+        "answer": "-$150,943"
+    },
+    "151": {
+        "reasoning": [
+            "1 - Located the 'Changes in Carryforward and Allowances' table on page 63.",
+            "2 - Identified the row labeled 'Settlement payments'.",
+            "3 - Extracted the value corresponding to 'Settlement payments' under the '2011' column."
+        ],
+        "answer": "$(15)"
+    },
+    "152": {
+        "reasoning": "1 - Locate the table summarizing the company's interest rate cap agreements on page F-49.\n2 - Identify the row with the 'Start Date' of 12/30/2016.\n3 - Find the corresponding value in the 'Offsets Variable Rate Debt Attributable to Fluctuations' column for that row.",
+        "answer": "Three month LIBO rate of 2.5%"
+    },
+    "153": {
+        "reasoning": [
+            "1 - Locate the table titled 'Equity Compensation Plan Information (as of Dec. 31, 2004)' on the first page of the PDF.",
+            "2 - Identify the column labeled 'Number of securities remaining available for future issuance under equity compensation plans (excluding securities reflected in column (a))'.",
+            "3 - Find the 'Total' value in this column, which represents the sum of securities available under plans approved and not approved by security holders.",
+            "4 - The total number of securities remaining available for future issuance is given as 16,845,353."
+        ],
+        "answer": "16,845,353"
+    },
+    "156": {
+        "reasoning": [
+            "1 - Located the 'INDEX' page.",
+            "2 - Searched for the term 'Legal Proceedings' in the index.",
+            "3 - Found 'Legal Proceedings' listed under 'Item 3'.",
+            "4 - Identified the corresponding page number for 'Item 3'."
+        ],
+        "answer": "14"
+    },
+    "158": {
+        "reasoning": "1 - Located the table on page 8 titled 'Total Number of Shares Purchased as Part of Publicly Announced Under the Plan'.\n2 - Identified the row corresponding to the period '12/1/2013-12/31/2013'.\n3 - Extracted the value from the 'Total Number of Shares Purchased' column for that period, which is 345.",
+        "answer": "345"
+    },
+    "159": {
+        "reasoning": [
+            "1 - Located the table on page 56 titled 'We had the following aggregated notionals of outstanding forward and option contracts accounted for as cash flow hedges:'.",
+            "2 - Identified the row labeled 'Foreign Currency' with the unit 'United States Dollar'.",
+            "3 - Found the corresponding value for 'October 2, 2010' in that row."
+        ],
+        "answer": "$0"
+    },
+    "160": {
+        "reasoning": [
+            "1 - Locate the section titled \"General and Administrative Expenses\" on the first PDF page.",
+            "2 - Identify the row corresponding to \"December 31, 2005\".",
+            "3 - Extract the numerical value listed under the \"General and Administrative Expenses\" column for that date."
+        ],
+        "answer": "$64,288"
+    },
+    "161": {
+        "reasoning": "1 - Located the table titled \"The fair value of assets in the U.K. pension plans by asset class and level within the fair value hierarchy\" on page 147.\n2 - Identified the row corresponding to \"U.K. gilts\" under the \"Debt Securities\" category.\n3 - Found the column for \"December 31, 2017\" and the sub-column for \"Level 2\".\n4 - The value at the intersection of the \"U.K. gilts\" row and the \"Level 2\" column for December 31, 2017 is $0.",
+        "answer": "$0"
+    },
+    "162": {
+        "reasoning": [
+            "1 - Located the table titled 'Black Scholes valuation assumptions for stock option grants' on page 66.",
+            "2 - Identified the row labeled 'Risk-free interest rate'.",
+            "3 - Found the value corresponding to the year 2009 in that row."
+        ],
+        "answer": "2.82%"
+    },
+    "163": {
+        "reasoning": "1 - I located the table titled 'Market Information for Common Stock' on page 43.\n2 - I identified the section for the year '2015'.\n3 - I found the row labeled 'Low'.\n4 - I identified the third column, labeled 'Third'.\n5 - The value at the intersection of the 'Low' row and the 'Third' column for 2015 is '$89.82'.",
+        "answer": "$89.82"
+    },
+    "164": {
+        "reasoning": [
+            "1 - Locate the section titled 'RAIL ROAD OPERATIONS - As of Dec. 31, 2004.' on page K4.",
+            "2 - Identify the table titled 'Mileage Operated as of Dec. 31, 2004'.",
+            "3 - Find the 'Total' column in the table.",
+            "4 - Extract the value in the 'Total' column for the 'Total' row, which represents the total mileage operated."
+        ],
+        "answer": "38,235"
+    },
+    "165": {
+        "reasoning": [
+            "1 - Located the 'Proved Developed Reserves' table on page 117.",
+            "2 - Identified the row for 'United States' under the '2007' heading.",
+            "3 - Extracted the values for 'Oil & NGLs (MBbls)' (211,814) and 'Gas (MMcf)(a)' (1,805,974).",
+            "4 - Noted the footnote (a) indicating that 6 Mcf is equivalent to 1 Boe.",
+            "5 - Converted the Gas production from MMcf to MBOE: 1,805,974 MMcf / 6 Mcf/Boe = 300,995.67 MBOE.",
+            "6 - Added the Oil & NGLs and Gas production in MBOE: 211,814 MBOE + 300,995.67 MBOE = 512,809.67 MBOE.",
+            "7 - Rounded the total to the nearest whole number as the provided data is in whole numbers."
+        ],
+        "answer": "512,810 (MBOE)"
+    },
+    "166": {
+        "reasoning": "1 - Locate the table that provides information on cash flow.\n2 - Identify the row for 'Net increase (decrease) in cash and cash equivalents'.\n3 - Find the value corresponding to the period ended 'July 1, 2011'.",
+        "answer": "$-282"
+    },
+    "167": {
+        "reasoning": [
+            "1 - Located the '2008 Acquisitions' table on page 52.",
+            "2 - Found the entry with the date '31-Dec'.",
+            "3 - Identified the corresponding 'Segment' for this entry as 'Fluid Management Solutions'."
+        ],
+        "answer": "Fluid Management Solutions"
+    },
+    "168": {
+        "reasoning": "1 - Locate the 'Noninterest Income' table (Figure 7) on page 49.\n2 - Identify the row for 'Investment banking and debt placement fees'.\n3 - Extract the values for 2014 ($397 million) and 2015 ($442 million).\n4 - Calculate the percentage change using the formula: [(2015 value - 2014 value) / 2014 value] * 100.\n5 - Calculation: (($442 - $397) / $397) * 100 = (45 / 397) * 100 = 11.335%.\n6 - Round the percentage change to one decimal place as shown in the table.",
+        "answer": "11.3%"
+    },
+    "169": {
+        "reasoning": "1 - Located the table titled 'NOTE 5. GOODWILL AND INTANGIBLE ASSETS' on page 62.\n2 - Identified the 'Intangibles' section within the table.\n3 - Found the sub-table presenting details of intangible assets as of December 31, 2006.\n4 - Located the row corresponding to 'Core technology'.\n5 - Extracted the 'Net' value for 'Core technology' as of December 31, 2006, which is $1,658.",
+        "answer": "1,658"
+    },
+    "170": {
+        "reasoning": "1 - Located the table on page 41 titled 'Segment sales and income before taxes and minority interest for each of the three years ended December 31, 2011, 2010 and 2009 were as follows:'.\n2 - Identified the row labeled 'Income Before Income Taxes'.\n3 - Found the column for the year '2010'.\n4 - Extracted the value for 'Consumer Domestic' in the 'Income Before Income Taxes' row and '2010' column, which is 341.9.",
+        "answer": "341.9"
+    },
+    "171": {
+        "reasoning": [
+            "1 - Locate the table titled 'The following table provides the calculation of diluted weighted-average shares outstanding (in millions):'",
+            "2 - Identify the row labeled 'Basic weighted-average shares outstanding'.",
+            "3 - Find the value in the '2014' column for the 'Basic weighted-average shares outstanding' row."
+        ],
+        "answer": "533.4"
+    },
+    "172": {
+        "reasoning": "1 - Located the section titled 'Debt' on page 78.\n2 - Identified the sub-section 'URNA and subsidiaries debt:'.\n3 - Found the row labeled 'Total URNA and subsidiaries debt'.\n4 - Extracted the value in the '2011' column for this row.",
+        "answer": "$2,858"
+    },
+    "173": {
+        "reasoning": [
+            "1 - Locate the table on page 1 titled 'Free Cash Flow' which contains the free cash flow figures for different years.",
+            "2 - Identify the free cash flow for the year 2016, which is $531,958 (in thousands).",
+            "3 - Locate the table on page 2 titled 'Summarized Results of Operations' which contains the revenue figures for different years.",
+            "4 - Identify the revenue for the year 2016, which is $7,518,808 (in thousands).",
+            "5 - Calculate the free cash flow as a percentage of revenue by dividing the free cash flow by the revenue and multiplying by 100: (531,958 / 7,518,808) * 100.",
+            "6 - The calculation results in approximately 7.07%."
+        ],
+        "answer": "7.1%"
+    },
+    "174": {
+        "reasoning": "1 - Located the table under 'Item 5. MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES' on page 21.\n2 - Identified the section for the year '2009'.\n3 - Found the row corresponding to 'Fourth Quarter'.\n4 - Read the value in the 'Low' column for the 'Fourth Quarter' of 2009.",
+        "answer": "$36.00"
+    },
+    "175": {
+        "reasoning": [
+            "1 - Locate the Consolidated Statements of Comprehensive Earnings.",
+            "2 - Identify the line item for 'Total foreign currency translation'.",
+            "3 - Extract the value corresponding to the year ended December 31, 2012."
+        ],
+        "answer": "38,880"
+    },
+    "177": {
+        "reasoning": [
+            "1 - Locate the table on page 26 that contains quarterly stock price information for 2013.",
+            "2 - Identify the row labeled 'Close', which represents the closing value.",
+            "3 - Find the column corresponding to the 'Fourth' quarter of '2013'.",
+            "4 - The value at the intersection of the 'Close' row and the 'Fourth' quarter of '2013' column is 77.97."
+        ],
+        "answer": "77.97"
+    },
+    "178": {
+        "reasoning": "1 - Located a table on page 1 titled 'Twelve Months Ended December 31,' which includes financial data for various years.\n2 - Identified the row corresponding to the year 2006.\n3 - Located the 'Total' column for the year 2006.\n4 - Extracted the value from the 'Total' column for 2006.",
+        "answer": "$435,515"
+    },
+    "179": {
+        "reasoning": "1 - Located the 'Consolidated Balance Sheets' on page 1.\n2 - Identified the 'LIABILITIES AND STOCKHOLDERS' EQUITY' section.\n3 - Found the line item 'Long-term debt'.\n4 - Read the value corresponding to 'December 31, 2011'.",
+        "answer": "999.0"
+    },
+    "180": {
+        "reasoning": [
+            "1 - Locate the table summarizing unvested restricted stock award activity.",
+            "2 - Identify the row corresponding to 'Forfeited' shares.",
+            "3 - Find the 'Weighted-Average Grant-Date Fair Value' for the year 2005 in that row."
+        ],
+        "answer": "$26.40"
+    },
+    "181": {
+        "reasoning": [
+            "1 - Navigate to page 16 of the PDF document.",
+            "2 - Locate the 'Results of Operations' table.",
+            "3 - Identify the row labeled 'Total cost of revenues'.",
+            "4 - Find the value corresponding to the year '2002'.",
+            "5 - The value is '51.1'."
+        ],
+        "answer": "51.1"
+    },
+    "183": {
+        "reasoning": [
+            "1 - Located the table on page 78 titled \"Corporate & Other\" which provides financial information for this segment.",
+            "2 - Identified the row labeled \"Net Income\".",
+            "3 - Found the value in the \"Total\" column for the year 2006 in the \"Net Income\" row.",
+            "4 - The value is ($476.4)."
+        ],
+        "answer": "-$476.4"
+    },
+    "184": {
+        "reasoning": [
+            "1 - Locate the table on page 64 titled 'The following table presents the percentage of equipment rental revenue by equipment type for the years ended December 31, 2016, 2015 and 2014:'.",
+            "2 - Identify the section 'Primarily rented by our trench, power and pump segment'.",
+            "3 - Find the row corresponding to 'Pumps'.",
+            "4 - Read the percentage value for the year 2015 in the 'Pumps' row under the specified segment."
+        ],
+        "answer": "3%"
+    },
+    "185": {
+        "reasoning": "1 - Located the table titled 'PRICE RANGE OF COMMON STOCK' on page 31.\n2 - Identified the section 'Year Ended December 31, 2004'.\n3 - Found the row for 'Second Quarter'.\n4 - Extracted the 'High' value for the second quarter of 2004, which is $27.42.",
+        "answer": "$27.42"
+    },
+    "186": {
+        "reasoning": "1 - Locate the table summarizing share repurchases.\n2 - Identify the row corresponding to December 1-31.\n3 - Extract the 'Total Number of Shares Purchased' for December.",
+        "answer": "66,886"
+    },
+    "187": {
+        "reasoning": [
+            "1 - I located the 'Summary cash flow data follows (in millions)' table on page 41 of the PDF.",
+            "2 - I identified the row labeled 'Cash and cash equivalents end of year'.",
+            "3 - I found the column corresponding to the year '2006'.",
+            "4 - I extracted the value at the intersection of this row and column, which is '79.0'."
+        ],
+        "answer": "79.0"
+    },
+    "188": {
+        "reasoning": "1 - Located the table titled 'MPC Consolidated Pipeline Throughput (mbpd)' on page 16.\n2 - Identified the 'Total' row within the table.\n3 - Located the column representing the year 2012.\n4 - Extracted the value at the intersection of the 'Total' row and the '2012' column, which is 2,170.",
+        "answer": "2,170"
+    },
+    "189": {
+        "reasoning": [
+            "1 - Located the 'Restricted stock units' table on page 99 which provides details on share activity.",
+            "2 - Identified the 'Outstanding as of December 31, 2015' row in the table and noted the 'Number of Shares' as '0.8' million.",
+            "3 - Located the 'Stock options' table on page 98 which provides details on stock option activity.",
+            "4 - Identified the 'Outstanding as of December 31, 2015' row in this table and noted the 'Number of shares' as '5.6' million.",
+            "5 - Summed the outstanding shares from restricted stock units and stock options: 0.8 million + 5.6 million = 6.4 million."
+        ],
+        "answer": "6.4 million"
+    },
+    "191": {
+        "reasoning": [
+            "1 - Navigate to page 100 of the PDF document.",
+            "2 - Locate the table titled 'Financial information reportable segment is included in the following summary'.",
+            "3 - Identify the 'Consolidated' row within the table.",
+            "4 - Find the 'Net sales' column and the corresponding value for the year 2013.",
+            "5 - The value for consolidated net sales in 2013 is $6,999.7."
+        ],
+        "answer": "$6,999.7"
+    },
+    "192": {
+        "reasoning": [
+            "1 - Located the table titled 'New order cancellation rate:' on page 23.",
+            "2 - Identified the column for the year ended December 31, 2011.",
+            "3 - Extracted the total new order cancellation rate for 2011."
+        ],
+        "answer": "13.6%"
+    },
+    "193": {
+        "reasoning": "1 - Located the 'Contractual Commitments' table on page 50.\n2 - Identified the 'Interest payable(2)' row in the table.\n3 - Found the corresponding value in the '2008-2009' column, which is '102,906'.\n4 - Noted that the table provides information in thousands.",
+        "answer": "$102,906,000"
+    },
+    "194": {
+        "reasoning": "1 - Identify the 'Interest expense' for 2007 and 2006 from the consolidated statements of operations.\n2 - From page 51, the Interest expense for 2007 is $64,404 (in thousands).\n3 - From page 51, the Interest expense for 2006 is $49,595 (in thousands).\n4 - Calculate the change in interest expense by subtracting the 2006 value from the 2007 value: $64,404 - $49,595 = $14,809.\n5 - The question refers to the overall change in interest expense, so we must also consider interest expense from discontinued operations.\n6 - From page 54, the Interest expense for discontinued operations in 2007 is ($607) (in thousands).\n7 - From page 54, the Interest expense for discontinued operations in 2006 is ($3,076) (in thousands).\n8 - Calculate the total interest expense for 2007: $64,404 - $607 = $63,797.\n9 - Calculate the total interest expense for 2006: $49,595 - $3,076 = $46,519.\n10 - Calculate the change in total interest expense from 2007 to 2006: $63,797 - $46,519 = $17,278.",
+        "answer": "$17,278"
+    },
+    "196": {
+        "reasoning": [
+            "1 - Locate the table containing information about capital adequacy on the first PDF page.",
+            "2 - Identify the section for 'December 31, 2013'.",
+            "3 - Find the row corresponding to 'KeyBank (consolidated)'.",
+            "4 - Locate the column labeled 'To Meet Minimum Capital Adequacy Requirements'.",
+            "5 - Identify the value under the 'Ratio' sub-column for 'TIER 1 CAPITAL TO NET RISK-WEIGHTED ASSETS'."
+        ],
+        "answer": "8.00%"
+    },
+    "197": {
+        "reasoning": [
+            "1 - Located the table titled 'Motorcycles & Related Products Segment' on page 17.",
+            "2 - Identified the row with 'Manufacturing' as the 'Type of Facility' and 'Manaus, Brazil' as the 'Location'.",
+            "3 - Read the corresponding 'Status' for this facility."
+        ],
+        "answer": "Lease expiring 2021"
+    },
+    "198": {
+        "reasoning": [
+            "1 - Located the 'Contractual Obligations and Commitments' section on page 45 of the PDF.",
+            "2 - Identified the row labeled 'Purchase obligations'.",
+            "3 - Found the corresponding value under the 'Less than 1 year' column, which is '$10'."
+        ],
+        "answer": "$10"
+    },
+    "199": {
+        "reasoning": "1 - I located the 'A summary of activity for real estate and accumulated depreciation' table on page 137.\n2 - I identified the 'Accumulated Depreciation' section within this table.\n3 - I found the 'Balance at the end of the year' row.\n4 - I read the value corresponding to the year 2003 in that row, which is '$958,531'.",
+        "answer": "$958,531"
+    },
+    "200": {
+        "reasoning": "1 - Located the section titled 'Deferred tax assets' on the first page of the PDF document.\n2 - Identified the line item 'Net deferred tax assets'.\n3 - Extracted the value corresponding to the year 2006 for 'Net deferred tax assets'.",
+        "answer": "$31,677"
+    },
+    "201": {
+        "reasoning": [
+            "1 - Located the table titled 'Restricted Stock Units' on page 153.",
+            "2 - Identified the 'Granted' row and the '2006' column.",
+            "3 - Extracted the number of shares granted for Restricted Stock Units in 2006: 1,058,053.",
+            "4 - Located the table titled 'Option Activity' on page 152.",
+            "5 - Identified the 'Granted' row and the '2006' column.",
+            "6 - Extracted the number of shares granted for Stock Options in 2006: 7,387,357.",
+            "7 - Summed the shares granted for Restricted Stock Units and Stock Options: 1,058,053 + 7,387,357 = 8,445,410."
+        ],
+        "answer": "8,445,410"
+    },
+    "202": {
+        "reasoning": "1 - Locate the Consolidated Balance Sheet on page 10 of the PDF.\n2 - Identify the 'Shareholders' equity' line item.\n3 - Find the value corresponding to the year 2008 for 'Shareholders' equity'.",
+        "answer": "$5,407"
+    },
+    "203": {
+        "reasoning": "1 - I located the 'Consolidated Statements of Operations and Comprehensive Income (Loss)' on page 46.\n2 - In the 'Earnings (loss) per share' section, I found the 'Weighted average ordinary shares outstanding' line.\n3 - I identified the value corresponding to 'Basic' for the year '2015'.\n4 - The value is 180.3.",
+        "answer": "180.3 million"
+    },
+    "204": {
+        "reasoning": [
+            "1 - I located the table titled 'The following table summarizes transactions relating to Common Stock for the three years ending December 31, 2010:' on page 55.",
+            "2 - I identified the row corresponding to 'Balance at December 31, 2010'.",
+            "3 - I found the value in the 'Treasury Stock' column for that row, which is '60,245,718'."
+        ],
+        "answer": "60,245,718"
+    },
+    "206": {
+        "reasoning": [
+            "1 - Located the 'Operations Data' table on page 43.",
+            "2 - Identified the 'Operating income' line item within the table.",
+            "3 - Found the corresponding value for the year 2011, which is '986,641'.",
+            "4 - Noted the unit provided in the table header: '(in thousands, except per share data)'."
+        ],
+        "answer": "986,641 thousands"
+    },
+    "207": {
+        "reasoning": [
+            "1 - I scanned the table on page 18 titled 'Properties'.",
+            "2 - I located the row where the 'Location' is 'Manaus, Brazil'.",
+            "3 - The corresponding 'Status' for the facility in Manaus, Brazil is 'Lease expiring 2019'."
+        ],
+        "answer": "Lease expiring 2019"
+    },
+    "208": {
+        "reasoning": [
+            "1 - Located the 'CONSOLIDATED BALANCE SHEETS' on page 106.",
+            "2 - Identified the section for 'Stockholders' Equity'.",
+            "3 - Found the line item 'Common Stock: $0.01 par value, 265,000,000 shares authorized as of December 31, 2016 and 2015, respectively'.",
+            "4 - Extracted the number of shares issued and outstanding as of December 31, 2015, which is listed as '146,384,247'."
+        ],
+        "answer": "146,384,247"
+    },
+    "209": {
+        "reasoning": "1 - Navigate to the 'CONSOLIDATED STATEMENTS OF OPERATIONS' on page 52.\n2 - Locate the 'Cost of revenues' line item.\n3 - Identify the value under the '2009' column for 'Cost of revenues'.\n4 - The value is 249,938 (in thousands).",
+        "answer": "249,938"
+    },
+    "210": {
+        "reasoning": [
+            "1 - Located the table titled 'MARKET FOR THE REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES' in PART II, ITEM 5.",
+            "2 - Identified the section '2011 Quarter Ended'.",
+            "3 - Found the row labeled 'High' under 'Market price per share of common stock'.",
+            "4 - Located the value at the intersection of the 'High' row and the 'Dec. 31' column within the '2011 Quarter Ended' section."
+        ],
+        "answer": "$51.13"
+    },
+    "211": {
+        "reasoning": [
+            "1 - Locate the table titled 'COMPARISON OF 5 YEAR CUMULATIVE TOTAL RETURN'.",
+            "2 - Find the row corresponding to 'S&P 500 Index'.",
+            "3 - Identify the column with the year ending date '10/2/10'.",
+            "4 - Read the value at the intersection of the 'S&P 500 Index' row and the '10/2/10' column."
+        ],
+        "answer": "109.22"
+    },
+    "212": {
+        "reasoning": "1 - Located the 'Consolidated Statement of Cash Flows' on page F-7.\n2 - Identified the line item 'Cash and Cash Equivalents at Beginning of Year'.\n3 - Found the corresponding value for the year ended December 31, 2008, which is $625.1.",
+        "answer": "$625.1"
+    },
+    "213": {
+        "reasoning": [
+            "1 - Located the 'Debt' section on page 78.",
+            "2 - Identified the line item 'Total long-term debt'.",
+            "3 - Read the corresponding value under the '2012' column, which is '$6,679'."
+        ],
+        "answer": "$6,679"
+    },
+    "214": {
+        "reasoning": "1 - Located the table on page 80 titled 'The following table summarizes the restricted stock activity for the 2011 Plan, the 2000 Plan and the Directors Plan, and incentive stock awards activity for the 2011 Plan and the 2000 Plan with related information for the years ended December 31:'.\n2 - Identified the row labeled 'Outstanding at December 31, 2012'.\n3 - Identified the column labeled 'Non-Vested Restricted Stock'.\n4 - The value at the intersection of this row and column is 273,387.",
+        "answer": "273,387"
+    },
+    "215": {
+        "reasoning": "1 - Located the 'NOTES TO CONSOLIDATED FINANCIAL STATEMENTS' section on page 99.\n2 - Identified the table providing diluted weighted-average shares outstanding (in millions).\n3 - Read the value for 'Common stock equivalents' for the year ended December 31, 2013.",
+        "answer": "3.1"
+    },
+    "216": {
+        "reasoning": [
+            "1 - I located the 'Consolidated Statements of Cash Flows' for the year ended December 31, 2014 on page 102.",
+            "2 - I identified the section 'Cash flows from financing activities'.",
+            "3 - I found the line item 'Repayment of senior unsecured notes'.",
+            "4 - I extracted the value under the 'Motorcycles & Related Products Operations' column for this line item, which is '(303,000)'."
+        ],
+        "answer": "(303,000)"
+    },
+    "217": {
+        "reasoning": [
+            "1 - Locate the 'Engineered Systems' revenue table on page 30.",
+            "2 - Identify the 'Product Identification' revenue for 2007, which is $912,580 (in thousands).",
+            "3 - Identify the 'Product Identification' revenue for 2006, which is $568,303 (in thousands).",
+            "4 - Calculate the percentage change using the formula: ((Revenue in 2007 - Revenue in 2006) / Revenue in 2006) * 100.",
+            "5 - Calculation: (($912,580 - $568,303) / $568,303) * 100 = (344277 / 568303) * 100 = 60.579%.",
+            "6 - The '% Change' column on page 30 for Product Identification shows 61%."
+        ],
+        "answer": "61%"
+    },
+    "218": {
+        "reasoning": [
+            "1 - Locate the table on page 38 titled 'The following table quantifies the net increase in the various components of our sales and marketing expenses for the periods presented (in millions):'",
+            "2 - Identify the row 'Total net increase' and the column '2009 to 2008'.",
+            "3 - The value in that cell represents the total net increase in sales and marketing expenses from 2009 to 2008."
+        ],
+        "answer": "$15.1"
+    },
+    "219": {
+        "reasoning": "1 - Locate the table containing Adjusted EBITDA on page 33.\n2 - Find the column corresponding to the year ended December 31, 2018.\n3 - Identify the value of Adjusted EBITDA for that year.",
+        "answer": "$3,863"
+    },
+    "220": {
+        "reasoning": [
+            "1 - I located a table on the first page titled 'Properties' which lists location, estimated square footage, lease expiration date, and primary use.",
+            "2 - I identified the row corresponding to 'Beverly Hills, California'.",
+            "3 - I read the 'Lease Expiration Date' for this location."
+        ],
+        "answer": "December 2006"
+    },
+    "221": {
+        "reasoning": [
+            "1 - I located the 'Properties' section of the document.",
+            "2 - I identified the table listing the principal operating properties of the Company as of December 31, 2016.",
+            "3 - I found the row where the 'Type of Facility' is 'Manufacturing' and the 'Location' is 'York, PA'.",
+            "4 - I extracted the corresponding 'Approximate Square Feet' value, which is '571,000'."
+        ],
+        "answer": "571,000"
+    },
+    "222": {
+        "reasoning": "1 - Located the 'Deferred tax assets' section on page 1 which lists 'Net operating loss carryforward'.\n2 - Identified the '2006' column in the table.\n3 - Extracted the value of 'Net operating loss carryforward' for 2006, which is $7,066.",
+        "answer": "$7,066"
+    },
+    "223": {
+        "reasoning": [
+            "1 - Locate the 'Performance Graph' section on the first PDF page.",
+            "2 - Identify the table titled 'Comparison of Five-Year Cumulative Total Return among Atmos Energy Corporation, S&P 500 Index and Comparison Company Index'.",
+            "3 - Find the row corresponding to the date '9/30/2013'.",
+            "4 - Find the column corresponding to 'S&P 500 Index'.",
+            "5 - The value at the intersection of this row and column is the Cumulative Total Return of the S&P 500 Index on 9/30/2013."
+        ],
+        "answer": "150.20"
+    },
+    "224": {
+        "reasoning": "1 - Locate the table summarizing stock options outstanding at December 31, 2006.\n2 - Identify the 'Range of Exercise Prices' column in the table.\n3 - Extract the value from the first row of the 'Range of Exercise Prices' column.",
+        "answer": "$22.98-$34.65"
+    },
+    "225": {
+        "reasoning": [
+            "1 - Located the table titled 'Note 14. Selected Quarterly Financial Data (Unaudited)' on page 114.",
+            "2 - Identified the row labeled 'Net revenues: Product'.",
+            "3 - Located the column for 'Second Quarter' under the year ended December 31, 2007.",
+            "4 - The value at the intersection of the 'Net revenues - Product' row and 'Second Quarter' column is $541.7.",
+            "5 - The note above the table states 'The table below sets forth selected unaudited financial data for each quarter of the last two years (in millions, except per share amounts):'."
+        ],
+        "answer": "541.7 million"
+    },
+    "226": {
+        "reasoning": [
+            "1 - On page 63, under the heading 'Total consideration:', the value '$157,479' is listed.",
+            "2 - The note above this table states '(In thousands)', indicating the amounts are in thousands of dollars.",
+            "3 - Therefore, the total amount is $157,479 thousand."
+        ],
+        "answer": "$157,479"
+    },
+    "227": {
+        "reasoning": [
+            "1 - Locate the 'Summary cash flow data' table on page 41.",
+            "2 - Identify the row labeled 'Net increase (decrease) in cash and cash equivalents'.",
+            "3 - Extract the value corresponding to the year 2007 from that row."
+        ],
+        "answer": "-$23.5"
+    },
+    "228": {
+        "reasoning": [
+            "1 - Located the 'CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY' on page 57.",
+            "2 - Identified the line item 'Total comprehensive income' for the year ended December 31, 2007.",
+            "3 - Extracted the corresponding value of $144,362.",
+            "4 - Located 'NOTE 7. STOCKHOLDERS' EQUITY COMPREHENSIVE INCOME' on page 70.",
+            "5 - Identified the line item 'Total comprehensive income' for the year ended December 31, 2007 with a value of $144,362."
+        ],
+        "answer": "$144,362"
+    },
+    "229": {
+        "reasoning": "1 - Located the table titled 'Operating Expenses' on page 50.\n2 - Identified the row labeled 'Total operating expenses'.\n3 - Found the column for the year ended December 31, 2016.\n4 - Extracted the value at the intersection of the 'Total operating expenses' row and the '2016' column.",
+        "answer": "$2,267.8"
+    },
+    "230": {
+        "reasoning": [
+            "1 - Located the section titled 'Analysis of valuation allowances' in the 'Notes to Consolidated Financial Statements' on page 64.",
+            "2 - Identified the row labeled 'Balance, beginning of year'.",
+            "3 - Read the value in the '2011' column for that row, which is $879."
+        ],
+        "answer": "$879"
+    },
+    "231": {
+        "reasoning": "1 - I located the 'Consolidated Operating Results' statement on page 54.\n2 - I found the 'Net Income' line item within the statement.\n3 - I identified the value corresponding to the year 2017 under the 'Net Income' line.",
+        "answer": "994.2"
+    },
+    "232": {
+        "reasoning": "1 - I located the table on page 24 that provides the average oil and natural gas prices for 2016, 2015, and 2014.\n2 - I identified the row labeled 'Oil price - Brent'.\n3 - I found the corresponding value in the '2015' column.",
+        "answer": "52.36"
+    },
+    "233": {
+        "reasoning": [
+            "1 - Locate the section on income taxes in the provided PDF pages.",
+            "2 - Identify the table detailing the components of the benefit (provision) for income taxes on continuing operations.",
+            "3 - Find the row labeled 'Total current' under the 'Current income taxes' section.",
+            "4 - Extract the value corresponding to the year ended December 31, 2016.",
+            "5 - Note the unit is in 'Millions of dollars'."
+        ],
+        "answer": "357"
+    },
+    "234": {
+        "reasoning": [
+            "1 - Locate the table detailing financial liabilities as of December 31, 2012.",
+            "2 - Identify the 'Securities Lending' line item under 'Financial Liabilities'.",
+            "3 - Find the corresponding 'Net Amount' for 'Securities Lending' on December 31, 2012.",
+            "4 - The value is presented in millions of dollars."
+        ],
+        "answer": "$3.0"
+    },
+    "235": {
+        "reasoning": "1 - Locate the table showing changes in goodwill which includes the Consumer-to-Consumer balance.\n2 - Identify the row corresponding to 'January 1, 2005 balance' and the column for 'Consumer-to-Consumer'.\n3 - Extract the value at the intersection of this row and column.",
+        "answer": "$1,167.6"
+    },
+    "236": {
+        "reasoning": "1 - Locate the table on page 75 that provides information on option pricing assumptions.\n2 - Identify the row labeled \"Weighted average fair value of options granted during the year\".\n3 - Extract the value corresponding to the year ended December 31, 2007 from this row.",
+        "answer": "$11.94"
+    },
+    "237": {
+        "reasoning": "1 - Located the 'Management's Discussion and Analysis of Financial Condition and Results of Operations' section.\n2 - Identified the 'Colonial Life Segment' subsection which contains persistency information.\n3 - Found the 'Persistency' section within the 'Operating Results' table.\n4 - Located the row corresponding to 'Life'.\n5 - Read the value under the 'Year Ended December 31, 2015' column for the 'Life' persistency.",
+        "answer": "84.9%"
+    },
+    "238": {
+        "reasoning": "1 - Located the Consolidated Balance Sheet as of November 30, 2013 and 2012 on page 43.\n2 - Identified the line item 'Cash and cash equivalents' under the 'Assets' section.\n3 - Read the value corresponding to the year 2012 for 'Cash and cash equivalents'.",
+        "answer": "$79.0"
+    },
+    "239": {
+        "reasoning": "1 - Located the Consolidated Statements of Operations.\n2 - Identified the 'Net income' line item.\n3 - Read the value in the '2008' column for the 'Net income' line item.",
+        "answer": "$145,138"
+    },
+    "240": {
+        "reasoning": [
+            "1 - Located the 'Defined Contribution Plans' section on page 69.",
+            "2 - Identified the table summarizing costs recognized under these plans.",
+            "3 - Found the 'Total' row for the year ended December 31, 2010.",
+            "4 - Extracted the total amount of $10,861."
+        ],
+        "answer": "$10,861"
+    },
+    "241": {
+        "reasoning": [
+            "1 - Locate the 'Trade Accounts Receivable' section on page F-11.",
+            "2 - Identify the line item labeled 'Allowance for uncollectible accounts'.",
+            "3 - Read the value corresponding to the year 2006 for this line item."
+        ],
+        "answer": "$1,160"
+    },
+    "242": {
+        "reasoning": [
+            "1 - Navigate to page 90 of the PDF document.",
+            "2 - Locate the section titled 'Earnings Per Share'.",
+            "3 - Identify the table presenting the 'Numerator' and 'Denominator' for basic and diluted earnings per share.",
+            "4 - Find the row labeled 'Net income available to common stockholders'.",
+            "5 - Extract the value corresponding to the year 2015 from this row."
+        ],
+        "answer": "$585"
+    },
+    "243": {
+        "reasoning": "1 - I located the 'Sales and Marketing Expenses' section in the provided PDF.\n2 - I identified the 'For the Years Ended December 31, 2014' column.\n3 - I found the 'Total sales and marketing' figure for 2014, which is '$ 379,035'.\n4 - The table indicates that the amounts are presented in thousands, so the actual value is $379,035,000.",
+        "answer": "$379,035 thousands"
+    },
+    "245": {
+        "reasoning": "1 - Located the \"Sub-plan to the Juniper Networks, Inc. 2008 Employee Stock Purchase Plan For Employees Located in the European Economic Area\" on page 108 in the 'Exhibit' column.\n2 - Identified the corresponding 'File Date' in the same row.",
+        "answer": "3/2/2009"
+    },
+    "246": {
+        "reasoning": [
+            "1 - Located the table titled 'Equity Compensation Plan Information' on page 194.",
+            "2 - Identified the row corresponding to 'Equity Compensation Plans Approved by Shareholders'.",
+            "3 - Found the 'Weighted average exercise price of outstanding options, warrants and rights' in column (b) for this row."
+        ],
+        "answer": "$24.41"
+    },
+    "247": {
+        "reasoning": [
+            "1 - Navigate to the Consolidated Statements of Cash Flows.",
+            "2 - Locate the line item 'Cash and cash equivalents, end of year'.",
+            "3 - Identify the value corresponding to the year ended December 31, 2013."
+        ],
+        "answer": "$256.0"
+    },
+    "248": {
+        "reasoning": [
+            "1 - Located the 'Deferred tax assets are comprised of the following' table on page 59.",
+            "2 - Identified the 'Deferred tax assets' row within the table.",
+            "3 - Identified the 'International' column and the '2013' year column.",
+            "4 - Extracted the value at the intersection of the 'Deferred tax assets' row and the 'International' and '2013' columns, which is 59.4."
+        ],
+        "answer": "59.4"
+    },
+    "249": {
+        "reasoning": [
+            "1 - Located the 'Commitments and Contractual Obligations' table on page 1 of the PDF.",
+            "2 - Identified the row corresponding to 'Interest payments'.",
+            "3 - Found the value in the '1-3 Years' column for the 'Interest payments' row, which is '$184,039'."
+        ],
+        "answer": "$184,039"
+    },
+    "3": {
+        "reasoning": "1 - Located the table titled 'Year ended December 31' on page 195.\n2 - Identified the row labeled 'Share dividend yield'.\n3 - Read the value in the '2015' column for the 'Share dividend yield' row.",
+        "answer": "1.84%"
+    },
+    "4": {
+        "reasoning": "1 - Located the table labeled \"CONTRACTUAL OBLIGATIONS AND COMMERCIAL COMMITMENTS\".\n2 - Identified the sub-table \"CONTRACTUAL CASH OBLIGATIONS BY YEAR\".\n3 - Found the column titled \"Less than 1 year\".\n4 - Located the row titled \"Total contractual cash obligations\".\n5 - Extracted the value at the intersection of the identified row and column, which is $641.8.",
+        "answer": "$641.8"
+    },
+    "7": {
+        "reasoning": "1 - Located the table titled 'EPA Renewable Fuel Standards (billions of gallons)' on page 29.\n2 - Identified the row corresponding to 'Cellulosic Ethanol'.\n3 - Found the value in the '2015' column for the 'Cellulosic Ethanol' row.",
+        "answer": "0.123 billions of gallons"
+    },
+    "10": {
+        "reasoning": "1 - Located Figure 36, titled 'Credit Ratings', on page 86 of the PDF document.\n2 - Identified the row corresponding to 'KEYBANK' within the table.\n3 - Located the column labeled 'Senior Long-Term Debt' under the 'Fitch' rating agency.\n4 - The Fitch rating for Senior Long-Term Debt of KEYBANK is 'A-'.",
+        "answer": "A-"
+    },
+    "27": {
+        "reasoning": "1 - Locate the table on page 22 titled 'Storage Assets' which details Maximum Daily Withdrawal Quantity (MDWQ).\n2 - Identify the row corresponding to the 'Colorado-Kansas Division'.\n3 - Read the value in the 'Maximum Daily Withdrawal Quantity (MMBtu)' column for that row.",
+        "answer": "147,965"
+    },
+    "35": {
+        "reasoning": "1 - Locate the table titled 'Options Outstanding' on page 1.\n2 - Identify the row corresponding to the 'Range of Exercise Price' of '$35.91-$38.72'.\n3 - Read the value in the 'Number Outstanding at 12/31/06' column for that row.",
+        "answer": "2,124,698"
+    },
+    "64": {
+        "reasoning": [
+            "1 - Located the table titled 'Net Revenues: Year Ended December 31, 2007' on page 107.",
+            "2 - Identified the row labeled 'Total net revenues'.",
+            "3 - Found the value corresponding to 'Total net revenues' under the 'Second Quarter' column."
+        ],
+        "answer": "735.1"
+    },
+    "69": {
+        "reasoning": "1 - I located the table titled 'Net Revenues by Market and Customer'.\n2 - I found the row labeled 'Total net revenues'.\n3 - I identified the value in the '2014' column for 'Total net revenues'.\n4 - The value is $4,627.1.",
+        "answer": "$4,627.1"
+    },
+    "73": {
+        "reasoning": [
+            "1 - I located the table on page 81 titled 'The following table provides the calculation of diluted weighted-average shares outstanding (in millions):'.",
+            "2 - I identified the row labeled 'Common stock equivalents'.",
+            "3 - I found the corresponding value in the column for the year ended December 31, 2007."
+        ],
+        "answer": "12.7"
+    },
+    "74": {
+        "reasoning": [
+            "1 - Located the 'Consolidated Statements of Cash Flows' on page 59.",
+            "2 - Identified the line item 'Net increase (decrease) during each year'.",
+            "3 - Extracted the value corresponding to the year 2006 for this line item."
+        ],
+        "answer": "47.9"
+    },
+    "77": {
+        "reasoning": "1 - Located the table on page 105 titled 'Fair value measurements by input level for financial instruments carried at fair value as are as follows:' for the date 'December 31, 2013'.\n2 - Identified the 'Assets' section within the table.\n3 - Found the row corresponding to 'Public Utilities'.\n4 - Located the column for 'Significant Other Observable Inputs (Level 2)'.\n5 - Extracted the value at the intersection of the 'Public Utilities' row and the 'Significant Other Observable Inputs (Level 2)' column, which is 2,611.9.",
+        "answer": "2,611.9"
+    },
+    "84": {
+        "reasoning": "1 - Located the 'Condensed Consolidating Balance Sheet' for the year ended December 31, 2018, which also includes comparative data for December 31, 2017.\n2 - Identified the 'Current assets' line item.\n3 - Found the corresponding value under the 'Guarantor Subsidiaries' column for December 31, 2017.",
+        "answer": "13,521"
+    },
+    "86": {
+        "reasoning": "1 - Located the table titled 'Supplementary Data (In millions, except per share data)' on page 110.\n2 - Identified the 'Earnings per common share' section within the table.\n3 - Found the 'Diluted' row in that section.\n4 - Located the column corresponding to the '3rd Quarter' of 2018 (September 30, 2018).\n5 - The value at the intersection of the 'Diluted' row and the '3rd Quarter 2018' column is $0.40.",
+        "answer": "$0.40"
+    },
+    "92": {
+        "reasoning": [
+            "1 - Located the table on page 9 titled 'MARKET FOR THE REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES'.",
+            "2 - Identified the row labeled 'Dividends declared per share of common stock'.",
+            "3 - Located the column corresponding to the '2012 Quarter Ended' and specifically 'June 30'.",
+            "4 - Extracted the value at the intersection of the identified row and column, which is '$0.2125'."
+        ],
+        "answer": "$0.2125"
+    },
+    "97": {
+        "reasoning": [
+            "1 - Locate the table titled 'Amount of Gain (Loss) Recognized in Income' on page 71.",
+            "2 - Identify the column for the year ended December 31, 2011.",
+            "3 - Sum the values in that column: $3.8 (Equity derivatives) + $0.0 (Diesel fuel contracts) = $3.8."
+        ],
+        "answer": "$3.8"
+    },
+    "101": {
+        "reasoning": [
+            "1 - Locate the 'Year Ended December Compared to Year Ended' section on page 28.",
+            "2 - Identify the 'Site development construction' revenue for 2007 and 2006.",
+            "3 - The revenue for 2007 is $60,659 (in thousands).",
+            "4 - The revenue for 2006 is $62,034 (in thousands).",
+            "5 - Calculate the dollar change: $60,659 - $62,034 = -$1,375 (in thousands).",
+            "6 - Calculate the percentage change: (-$1,375 / $62,034) * 100 = -2.2165...%.",
+            "7 - Round the percentage change to one decimal place as shown in the table."
+        ],
+        "answer": "-2.2%"
+    },
+    "107": {
+        "reasoning": "1 - Locate the Consolidated Balance Sheet.\n2 - Identify the 'Total assets' line item.\n3 - Find the corresponding value under the '2013' column.",
+        "answer": "$4,449.7"
+    },
+    "110": {
+        "reasoning": "1 - Located the section titled 'Changes in the carrying amount of service and product warranties' on page 84.\n2 - Identified the row for 'Service and product warranty provision'.\n3 - Read the value corresponding to the year 2015 from the table.",
+        "answer": "56.6"
+    },
+    "117": {
+        "reasoning": [
+            "1 - Located the table titled 'Properties' on page 25.",
+            "2 - Identified the row corresponding to the location 'Lehi, Utah'.",
+            "3 - Read the 'Lease Expiration Date' listed in the same row for Lehi, Utah."
+        ],
+        "answer": "January 31, 2024"
+    },
+    "126": {
+        "reasoning": "1 - Located the 'Consolidated Condensed Statement of Income' for the year ended October 3, 2009 on page 57.\n2 - Identified the 'Net Sales' line item.\n3 - Found the corresponding value under the 'TFM Parent' column, which is '$ 14,530'.",
+        "answer": "14,530"
+    },
+    "142": {
+        "reasoning": "1 - Located the section titled 'Asset Retirement Obligations' on page 187.\n2 - Found the table displaying 'Changes in current AROs' which includes the 'ARO at end of period'.\n3 - Identified the 'ARO at end of period' row.\n4 - Read the value under the '2008' column for 'ARO at end of period', which is 389.",
+        "answer": "389"
+    },
+    "146": {
+        "reasoning": [
+            "1 - I located the 'Proved Developed Reserves' table on page 117.",
+            "2 - I identified the row for 'Argentina'.",
+            "3 - I found the column for the year '2006' and the sub-column 'Gas (MMcf)(a)'.",
+            "4 - The value at the intersection of the 'Argentina' row and the '2006' 'Gas (MMcf)(a)' column is 21,665."
+        ],
+        "answer": "21,665"
+    },
+    "150": {
+        "reasoning": "1 - Located the 'Sales of Principal Products' table on page 27.\n2 - Identified the 'Diapers' category row in the table.\n3 - Identified the '2002' column in the table.\n4 - Extracted the value at the intersection of the 'Diapers' row and the '2002' column, which is 3.0.",
+        "answer": "3.0"
+    },
+    "154": {
+        "reasoning": "1 - Located the 'Consolidated Balance Sheet Data' on page 1.\n2 - Identified the line item 'Cash, cash equivalents, and investments'.\n3 - Extracted the value corresponding to the year 2009 from the table.",
+        "answer": "$2,293.4"
+    },
+    "155": {
+        "reasoning": [
+            "1 - Navigate to the 'Direct Segment Operating Expenses' section on page 38.",
+            "2 - Locate the table titled 'Percent of Net Sales'.",
+            "3 - Identify the row corresponding to 'International'.",
+            "4 - Identify the column corresponding to the year '2002'.",
+            "5 - Extract the value at the intersection of the 'International' row and the '2002' column."
+        ],
+        "answer": "21.4%"
+    },
+    "157": {
+        "reasoning": "1 - Navigate to the 'Balance Sheet Data' section in the provided PDF.\n2 - Locate the row labeled 'Short-term debt'.\n3 - Find the value in the 'As of January 1, 2017' column for the 'Short-term debt' row.",
+        "answer": "1,172"
+    },
+    "176": {
+        "reasoning": [
+            "1 - Locate the 'Contractual Obligations' table on page 49.",
+            "2 - Identify the column for the year '2023'.",
+            "3 - Sum the values in the '2023' column: $3,457.4 + $1,200.0 + $750.0 + $500.0 + $300.0 + $586.8 + $9.7 + $21.2.",
+            "4 - Calculate the total: 3457.4 + 1200.0 + 750.0 + 500.0 + 300.0 + 586.8 + 9.7 + 21.2 = 6824.9."
+        ],
+        "answer": "6,824.9"
+    },
+    "182": {
+        "reasoning": "1 - I located the table on page 32 that contains the line item \"Free cash flow less lease principal repayments\".\n2 - I identified the column for the year 2013.\n3 - I found the corresponding value in the 2013 column for \"Free cash flow less lease principal repayments\", which is $1,251.",
+        "answer": "$1,251"
+    },
+    "190": {
+        "reasoning": "1 - Navigate to the 'Consolidated Statements of Comprehensive Income' on the first page of the PDF.\n2 - Locate the line item labeled 'Net income (loss)'.\n3 - Identify the corresponding value for the year 2014.",
+        "answer": "$907"
+    },
+    "195": {
+        "reasoning": "1 - I scanned the Table of Contents to locate the entry for 'Executive Compensation'.\n2 - I identified 'Executive Compensation' as item number 11 under 'PART III'.\n3 - I noted the corresponding page number listed for 'Executive Compensation'.",
+        "answer": "91"
+    },
+    "205": {
+        "reasoning": [
+            "1 - Locate the 'Consolidated Revenues' section under 'Results of Operations' for both 2010 and 2011 on page 41.",
+            "2 - Identify the Consolidated Revenues for 2010 as $10,393.1 million.",
+            "3 - Identify the Consolidated Revenues for 2011 as $11,558.8 million.",
+            "4 - Calculate the percentage change using the formula: [(Revenue in 2011 - Revenue in 2010) / Revenue in 2010] * 100.",
+            "5 - Calculation: [($11,558.8 - $10,393.1) / $10,393.1] * 100 = (1165.7 / 10393.1) * 100 \u2248 11.22%.",
+            "6 - The 'Change' column for 'Consolidated Revenues' on page 41 explicitly states 11%."
+        ],
+        "answer": "11%"
+    },
+    "244": {
+        "reasoning": [
+            "1 - Located the table titled 'The following table shows the quarterly range of the closing high and low per share trading prices for our common stock as reported by the NASDAQ Global Select Market for the years ending December 31:' on page 28.",
+            "2 - Identified the '2016' column in the table.",
+            "3 - Found the row corresponding to 'First Quarter'.",
+            "4 - Extracted the 'Low' value for the 'First Quarter' in 2016."
+        ],
+        "answer": "$65.95"
+    }
+}

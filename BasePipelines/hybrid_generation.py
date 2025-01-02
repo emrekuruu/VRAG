@@ -11,8 +11,8 @@ import os
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
 
-model_type = "google-gemini-1.5-pro"
-log_model_type = "gemini-1.5-pro"
+model_type = "google-gemini-2.0-flash-thinking-exp"
+log_model_type = "gemini-2.0-flash-thinking-exp"
 
 class HybridPipeline:
     def __init__(self, task, max_concurrent_tasks=16):
@@ -81,7 +81,7 @@ class HybridPipeline:
         async with self.semaphore:
             try:
                 query_id = f'{query_id}' 
-                text_data = text_context[query_id]
+                text_data = text_context[query_id][0:2]
                 image_data = image_context[query_id]
                 answer = await hybrid(query=query, pages=image_data, chunks=text_data, model_type=model_type)
                 logging.info(f"Generated answer for query {query_id}")

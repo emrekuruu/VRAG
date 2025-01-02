@@ -1,0 +1,215 @@
+{
+    "0": {
+        "reasoning": "1. Dover Corporation is a diversified global manufacturer with multiple operating segments, each focusing on specific end markets. \n2. The Engineered Systems segment comprises two platforms: Printing & Identification and Industrials. \n3. The segment is involved in the design, manufacture, and service of critical equipment and components. \n4. It serves several end markets: printing and identification, vehicle service, environmental solutions, and industrial. \n5. The question asks for \"the end market,\" suggesting a singular focus, but the description indicates multiple end markets. \n6. The context specifies that Engineered Systems serves the printing and identification, vehicle service, environmental solutions, and industrial end markets. \n7. Listing them, they are: \n   - Printing & Identification \n   - Vehicle Service \n   - Environmental Solutions \n   - Industrial \n8. There is no further specification of a singular primary market, thus it serves multiple end markets.",
+        "answer": "Printing & Identification, Vehicle Service, Environmental Solutions, and Industrial"
+    },
+    "1": {
+        "reasoning": "1. The context includes several stock plans and an acquisition, but no direct mention of risk-free interest rates. 2. The text discusses exercise prices and share purchase agreements but lacks details on interest rates. 3. The evergreen provision is mentioned but without specifics on interest rates. 4. Risk-free interest rates might be part of the option pricing model like Black-Scholes, though not explicitly stated in the context.",
+        "answer": "No explicit average risk-free interest rate provided."
+    },
+    "2": {
+        "reasoning": "1. The question asks for the volatility of stock options in the year 2006.\\n2. A table is referenced which lists various financial assumptions for stock options, including volatility.\\n3. The table includes data for the years 2004, 2005, and 2006 under a section labeled 'Stock options'.\\n4. The 'Volatility' row in this section shows the following percentages: 2006: 39%, 2005: 56%, 2004: 82%.\\n5. A separate section for 'Employee Stock Purchase Plan options' shows different volatility percentages but is not relevant to the query.\\n6. The table caption confirms that the data pertains to both stock options and purchase plan options, but since the question specifies 'stock options', we focus on that section.",
+        "answer": "39%"
+    },
+    "3": {
+        "reasoning": "1. Understand the concept of dividend yield: total dividends divided by market value, expressed as a percentage.\\n2. Consider the term 'future dividend yield': possibly expected dividends based on past trends or current data.\\n3. Check the provided table with data from December 31, 2015, listing asset classes and their net assets at fair value.\\n4. Realize the table doesn't directly provide expected dividends, only net assets.\\n5. Consider assumptions based on historical dividend rates or current policies.\\n6. Alternatively, consider dividends paid during 2015 as indicative of future rates.\\n7. Clarify that 'future dividend yield for the year ended December 31, 2015' might refer to the projected yield for that specific year.",
+        "answer": "The future dividend yield for the year ended December 31, 2015, was not directly provided in the data."
+    },
+    "4": {
+        "reasoning": "1. Identify the question: Determine the total contractual cash obligations due in less than one year.\\n2. Define contractual cash obligations: Fixed payments as per agreements, e.g., goods/services payments, leases, debts.\\n3. Examine financial elements: Guarantees, letters of credit, derivatives.\\n4. Analyze guarantees: $0.6 million in guarantees, unclear if payable within a year, set aside.\\n5. Analyze letters of credit: $61.9 million, unclear if payable within a year, set aside.\\n6. Analyze derivatives: Used for risk management, details insufficient for determining cash obligation within a year.\\n7. Conclusion: Without clear information on these being payable within a year, unable to sum exact obligations.",
+        "answer": "Unable to determine exact amount."
+    },
+    "5": {
+        "reasoning": "1. Identify what 2.875% Senior Notes are: These are bonds issued by a company with a fixed interest rate and maturity date.\n2. Confirm the details: The notes were issued in 2012 with a $400.0 million principal amount and a 2.875% interest rate, maturing on October 1, 2022.\n3. Determine what 'total amount due' means: Typically, the total amount due at maturity for such notes would be just the principal, assuming all interest has been paid periodically.\n4. Calculate the total amount due: Since interest is paid semi-annually and the company expects no issues in meeting obligations, the total amount due at maturity is just the principal.\n5. Validate against available information: The context does not suggest any additional amounts or complications affecting the principal due.",
+        "answer": "$400.0 million"
+    },
+    "6": {
+        "reasoning": "1. The context mentions share repurchases since January 1, 2012, and provides some figures for the total authorizations and repurchases up to December 31, 2018. 2. However, the tables summarizing total share repurchases are not formatted properly, making it difficult to extract specific data for October 2018. 3. Without access to further detailed notes or a clear table, it's impossible to determine the exact number of shares repurchased in October 2018 based solely on the given information.",
+        "answer": "Unable to determine from given data."
+    },
+    "7": {
+        "reasoning": "1. The response string provided does not contain a JSON object enclosed within triple backticks.\n2. The response string simply states an inability to assist, without providing any reasoning or answer content.\n3. Therefore, there is no reasoning or answer to extract, parse, or format according to the specified schema.",
+        "answer": "No JSON object to parse."
+    },
+    "8": {
+        "reasoning": "1. Understand the concept of volatility as it relates to stock purchase plans. Volatility is a measure of price fluctuations over time, which can impact the value of stock options or shares.\\n2. Identify if the context contains specific information about volatility for the year 2003.\\n3. Review the provided context, which discusses stock options and equity incentive plans.\\n4. Note the lack of specific mention of volatility figures or calculations for the year 2003 in the context provided.\\n5. Conclude that the context does not contain the specific volatility information for stock purchase plans in 2003.",
+        "answer": "Not available in the provided context."
+    },
+    "9": {
+        "reasoning": "1. Understand the question: The query asks for the number of shares to be issued upon the exercise of options, warrants, and rights under plans approved by security holders.\n2. Identify relevant plans: The Norfolk Southern Corporation Long-Term Incentive Plan (LTIP) and Thoroughbred Stock Option Plan (TSOP) are both mentioned as approved by security holders.\n3. Examine the LTIP: Originally established in 1983 and most recently approved in 2001 by stockholders, allowing for 30,000,000 shares to be issued, with restrictions on 6 million as restricted/performance shares.\n4. Examine the TSOP: This plan allows for the issuance of up to 6,000,000 shares of Common Stock via stock options.\n5. Determine outstanding securities: Need to focus on options, warrants, or rights part of these approved plans, still outstanding (not yet exercised).",
+        "answer": "The number of securities to be issued upon exercise of outstanding options, warrants, and rights for plans approved by security holders is not explicitly stated in the provided context."
+    },
+    "10": {
+        "reasoning": "1. Identify the relevant table: Figure 36. Credit Ratings.\n\n2. Locate the row for \"KEYBANK.\"\n\n3. Find the column for \"Senior Long-Term Debt.\"\n\n4. Identify the rating provided by Fitch, which is \"A.\"\n\n5. Confirm that there is no other information in the table that contradicts this rating.",
+        "answer": "A"
+    },
+    "11": {
+        "reasoning": "1. Identified the \"Rail Operating Statistics\" table which provides data for the years 2002 to 2006.\n2. Located the row for \"Freight train miles traveled (millions)\".\n3. Found the value for the year 2004, which is 71.7 million.\n4. Confirmed that this is the required information.",
+        "answer": "71.7 million"
+    },
+    "12": {
+        "reasoning": "1. Understand the question: It asks for the average active communities in the North East region in 2011.\n2. Identify relevant data: Focus on tables provided, especially the one titled \"Year Ended December 31,\" which includes data for 2011.\n3. Define 'average active communities': Likely refers to housing or similar communities in the region.\n4. Extract relevant data: Look at the North East region data for 2011, which shows units as 872.0 and average price as 300.1.\n5. Assess data consistency: Note any inconsistencies like 'nan', 'PRAAAH', or 'PRARAAHR' which could affect accuracy.\n6. Interpret units data: Units of 872.0 likely represent new orders, net of cancellations, for 2011 in the North East region.",
+        "answer": "872.0"
+    },
+    "13": {
+        "reasoning": "1. The question is about the return on assets for pension costs in 2011. 2. I need to find the relevant data from the provided table. 3. The table contains assumptions for different years, with columns labeled as 1, 2, and 3. 4. The section mentioning 'Return on assets in plans' is crucial for answering the question. 5. The table shows percentages for return on assets: 8.25%, 8.75%, and 8.75%. 6. Assuming the columns represent consecutive years and given the context, the first column corresponds to 2011. 7. Therefore, the return on assets for pension costs in 2011 is 8.25%.",
+        "answer": "8.25%"
+    },
+    "14": {
+        "reasoning": "1. Identify the relevant segment for the question, which is the international streaming segment.\n2. Locate the relevant data point in the international streaming segment table, specifically the 'free trials at end of period'.\n3. Determine the appropriate column representing the year 2016, which is column 2.\n4. Extract the data from column 2 for the 'free trials at end of period', which shows the number 7131.\n5. Cross-reference with any other data to ensure this is indeed the figure for the end of 2016, confirming it's not 'nan' or another year.",
+        "answer": "7131"
+    },
+    "15": {
+        "reasoning": "1. Understand what working capital is: Current assets minus current liabilities.\n2. Identify where to find current assets and liabilities: In the table labeled 'Consolidated Balance Sheet Data'.\n3. Locate the row labeled 'Working capital' in the table: Values for different years are listed.\n4. For 2012, the table shows 2178.7 million under 'Working capital'.\n5. Cross-reference the narrative text: It mentions a decrease in working capital but does not give the specific amount for December 31, 2012.\n6. The narrative says there was a decrease of $794.3 million, aligning with a decrease from 2973.0 million in 2011 to 2178.7 million in 2012 in the table.\n7. Conclude that the table's value of 2178.7 million for 2012 is the correct working capital for December 31, 2012.",
+        "answer": "2178.7 million"
+    },
+    "16": {
+        "reasoning": "1. The question asks for the 'Gross Amount of Recognized' for derivatives under financial assets as of December 31, 2012.\\n2. I first identify a table with the caption 'Gross Amount of Recognized Financial Instruments' and check for derivatives under financial assets.\\n3. I find a value of $81.6 million in this table for derivatives under financial assets.\\n4. I cross-reference with another table captioned 'December 31, 2012,' showing a breakdown by valuation levels.\\n5. In this second table, I find derivatives categorized under 'Other Long-term Investments' with specific instruments like interest rate swaps and foreign exchange contracts totaling $81.6 million.\\n6. The values match between the two tables, confirming the consistency of the $81.6 million figure as the gross amount recognized for derivatives under financial assets on the specified date.",
+        "answer": "$81.6 million"
+    },
+    "17": {
+        "reasoning": "1. Analyze the table structure to understand the context of long-term debt and liabilities for 2003 and 2002, noting that values are in thousands of dollars.\n2. Identify the various debt instruments listed, including their interest rates, types, and due dates.\n3. Extract the relevant items from the 2003 data:\n   - 4.75% Convertible Subordinated Notes: $1,049,760\n   - 6.875% PEACS due February 2010: $869,711\n   - Long-term restructuring liabilities: $20,066\n   - Subtract current portion of capital lease obligations: $1,949,655\n   - Subtract current portion of other long-term debt: (1,558)\n4. Calculate the total long-term debt and other liabilities for 2003: $1,945,439\n5. Repeat the process for 2002 data and calculate the total: $2,277,305\n6. Note the footnote regarding sublease agreements impacting future payments.",
+        "answer": "The total long-term debt and other liabilities for 2003 is $1,945,439 and for 2002 is $2,277,305."
+    },
+    "18": {
+        "reasoning": "1. Identify the context: Two main tables with financial data for the years 2012, 2013, and 2014.\n2. Determine what 'total' refers to: Possible candidates are total revenues or total income.\n3. Examine the table 'Year Ended December 31, 2014, 2013, 2012': Lists revenue sources and total revenues.\n4. Note the figures: For 2013, total revenues are $4,955.\n5. Consider other possibilities: Check if 'total' might refer to total assets, liabilities, or equity.\n6. Verify with the balance sheet: Total assets for 2013 are $11,231.\n7. Conclude: Given the context and data, 'total' likely refers to total revenues for 2013, which is $4,955.",
+        "answer": "$4,955"
+    },
+    "19": {
+        "reasoning": "1. Identify the relevant tables and their captions to find where the net income figures are located. 2. Look at the first table labeled 'Consolidated Statements of Comprehensive Income' and notice the columns for different years, including 2012. 3. Find the 'Net Income' row in this first table, which shows S$ 894.4 million for 2012. 4. Realize the question is asking for the net income for the year ended December 31, 2012, and this table indicates it's S$ 894.4 million. 5. Verify if this table is correct by checking for adjustments or footnotes that might affect the number. 6. Look at the second table labeled 'Year Ended December 31' and find a 'Net Income' row showing $ 894.4 million for 2012. 7. Notice that both tables show net income as 894.4 million but in different currencies: S$ in the first table and $ in the second. 8. Consider whether S$ refers to Singapore Dollars and $ to US Dollars, and ponder the implications of different currencies. 9. Conclude that the question does not specify a currency, leading to the assumption that both numbers might refer to the same currency or one is adjusted for exchange rates, but both indicate 894.4 million.",
+        "answer": "S$ 894.4 million"
+    },
+    "20": {
+        "reasoning": "1. Understand the meaning of \"income from continuing operations before income taxes.\" This refers to the profit from the company's main business activities, excluding taxes and any accounting changes.\n2. Look at the financial data for 2006 under the \"Consolidated Statement of Operations Data.\"\n3. Identify \"Income from continuing operations before accounting change\" for 2006, which is $529.3 million.\n4. Note the \"Cumulative effect of accounting change per diluted share,\" which is $0.10 in 2006.\n5. Understand that \"Income from continuing operations before accounting change\" is already before the effect of the accounting change.\n6. Conclude that $529.3 million is the income before income taxes and cumulative effect of accounting change, as required by the question.",
+        "answer": "$529.3 million"
+    },
+    "21": {
+        "reasoning": "1. The first table provides scheduled principal payments from 2014 onwards, which does not directly indicate the total long-term debt for 2013.\n2. The second table includes various financial details for the year ended December 31, 2013, including interest expenses related to long-term debt.\n3. There is an interest expense of $222 million for long-term debt, but no clear interest rate is provided that could allow for calculation of the principal amount based solely on this.\n4. The total long-term debt for 2013 is not explicitly stated in the provided tables, and there is insufficient information to calculate it directly from the given data.",
+        "answer": "Total long-term debt for 2013 is not explicitly provided."
+    },
+    "22": {
+        "reasoning": "1. The question is about the square footage of the Optoelectronics property that is leased.\\n2. I need to examine the properties section for information on square footage and leasing.\\n3. The company occupies approximately 2,575,000 square feet in total.\\n4. They own 600,000 square feet, implying the remaining space is leased.\\n5. Therefore, the leased space is 2,575,000 minus 600,000, which equals 1,975,000 square feet.",
+        "answer": "1,975,000 square feet"
+    },
+    "23": {
+        "reasoning": "1. The task requires identifying the revenue for the year 2004 from a given table.\n2. The table contains segment information for domestic and international revenues for the years 2002 to 2004.\n3. The specific figures for 2004 are:\n   - Domestic United States: $11,514,476\n   - International: $196,740\n4. The sum of these revenues gives the total revenue for 2004:\n   - Total revenue = $11,514,476 (Domestic) + $196,740 (International) = $11,711,216\n5. Therefore, the revenue for the year 2004 is $11,711,216.",
+        "answer": "$11,711,216"
+    },
+    "24": {
+        "reasoning": "1. Identify what \"low value\" refers to, which is likely the low sales price of the company's common stock during the fourth quarter of 2008.\n2. Examine the table data, noting that it contains 'High,' 'Low,' and 'Dividends' for each quarter of 2008.\n3. Focus on the fourth quarter of 2008 and locate the \"Low\" value in the table.\n4. Verify the \"Low\" value against other mentioned financial data (e.g., sales and net income) to ensure it relates to stock price.\n5. Conclude that the \"Low\" sales price in the fourth quarter of 2008 was $28.",
+        "answer": "$28"
+    },
+    "25": {
+        "reasoning": "1. The table provides information on cash flows, including a section labeled \"Net cash flow provided by operating activities.\" 2. Column 5 of the table is assumed to represent the year 2008. 3. The table states \"$455.7 million\" as the net cash flow from operating activities in column 5. 4. The context around the table indicates that column 5 likely corresponds to 2008 based on the positioning and comparison with other years. 5. Additional information confirms the table is about consolidated operating cash flow information in millions, supporting the interpretation that the number pertains to 2008.",
+        "answer": "$455.7 million"
+    },
+    "26": {
+        "reasoning": "1. The task is to find the net income for the year ended December 31, 2016, using the financial data provided.\\n2. The first table summarizes operating results for 2016, 2015, and 2014, with values in thousands of dollars.\\n3. Under the 'Income Statement' section, the net income for 2016 is listed as $431,852 thousand.\\n4. Since values are in thousands, the actual net income is $431,852,000.\\n5. A check against a second table with quarterly information for 2016 confirms the findings from the first table.",
+        "answer": "$431,852,000"
+    },
+    "27": "",
+    "28": "",
+    "29": "",
+    "30": "",
+    "31": "",
+    "32": "",
+    "33": "",
+    "34": "",
+    "35": "",
+    "36": "",
+    "37": "",
+    "38": {
+        "reasoning": "1. I analyzed the table with financial data, which included headers like 'scal year 2018', 'Operating revenues', 'Distribution', 'Pipeline and storage', and financial figures. However, none of these directly mentioned storage capacity.\n2. I checked the 'Risk Management Activities' section, which mentioned the use of physical storage to manage gas price risks but did not provide specific storage capacity figures.\n3. I considered the possibility of footnotes or additional explanations providing this data, but found references to financial instruments valued using external market quotes and indices, which seemed unrelated to storage capacity.\n4. I revisited the table to ensure no details were missed that might indicate storage capacity.",
+        "answer": "No specific data on total contracted storage capacity in MMBtu was found."
+    },
+    "39": {
+        "reasoning": "1. Identified the \"Consolidated Statements of Operations Data\" table.\n\n2. Located the \"Net revenues\" row.\n\n3. Confirmed the value for 2018 is $4,647.5 million.\n\n4. Cross-referenced with the second table to ensure consistency.\n\n5. Confirmed that both tables show the same total net revenue for 2018.",
+        "answer": "$4,647.5 million"
+    },
+    "40": {
+        "reasoning": "1. Analyze the context with two tables containing unit data for different regions and years.\n2. Identify the question's requirement: units in Mid Atlantic for 2012.\n3. Examine the first table with heading 'Segment Operating Activity' which lists units for 2012 as 5047.\n4. Examine the second table with heading 'Year Ended December 31,' which lists units for 2012 as 5757.\n5. Determine the relevance of each table to the question by considering the table captions.\n6. Conclude that the first table is more relevant as it likely pertains to 'Segment Operating Activity,' matching the question's context.",
+        "answer": "5047"
+    },
+    "41": "",
+    "42": "",
+    "43": "",
+    "44": "",
+    "45": "",
+    "46": "",
+    "47": "",
+    "48": "",
+    "49": "",
+    "50": "",
+    "51": "",
+    "52": "",
+    "53": "",
+    "54": "",
+    "55": "",
+    "56": "",
+    "57": "",
+    "58": "",
+    "59": "",
+    "60": "",
+    "61": "",
+    "62": "",
+    "63": "",
+    "64": "",
+    "65": "",
+    "66": "",
+    "67": {
+        "reasoning": "1. Understand the question: It asks for \"Related Debt\" for the end date 6/30/2022. 2. Identify the relevant table: The swaps table is relevant as it summarizes interest rate swap agreements. 3. Locate the correct entry: Look for the row where the end date is 6/30/2022. 4. Identify the related debt: For the swap ending on 6/30/2022, the related debt is identified as \"Tranche E\" in the swaps table. 5. Verify the focus: The question pertains to the swaps table, not the indentures table, confirming that the related debt is indeed \"Tranche E\".",
+        "answer": "Tranche E"
+    },
+    "68": {
+        "reasoning": "1. The question asks for the amount related to Restricted Share/Unit Awards for the year 2006.\n2. I looked at a table about pre-tax stock-based compensation expense, which includes data for 2006 but does not directly mention Restricted Share/Unit Awards.\n3. It's possible that Restricted Share/Unit Awards are part of the Total Stock-based Compensation Expense, but this is not confirmed.\n4. Another table about the status of restricted shares/units covers the years 2006, 2007, and 2008.\n5. In the table for 2006, I found data regarding shares and their grant-date fair value:\n   - Unvested at December 31, 2005: 199 thousand shares at $27.03\n   - Granted: 402 thousand shares at $42.66\n   - Issued in connection with Fisher merger: 936 thousand shares at $38.93\n   - Vesting: (268) thousand shares at $29.62\n6. The table does not provide a clear, direct figure for Restricted Share/Unit Awards for 2006.",
+        "answer": "Not mentioned directly"
+    },
+    "69": {
+        "reasoning": "1. A table is mentioned presenting net revenues by market, but it isn't fully visible. Some numbers like \"$3,100.4,\" \"$3054.2,\" etc., are visible.\n2. Sections titled \"2014 Compared to 2013\" and \"2013 Compared to 2012\" provide a comparison of net revenues over these years.\n3. A line in the text mentions total net revenues as \"$4627.1 $4669.1 $43654 $ (42.0) (1)% $303.7 M%,\" suggesting these are figures for different years.\n4. The total net revenue for 2014 appears to be $4,627.1 million based on the table and text.\n5. The \"2014 Compared to 2013\" section notes regional revenue changes but doesn't provide an exact breakdown, making the total provided the most reliable figure.",
+        "answer": "$4,627.1 million"
+    },
+    "70": {
+        "reasoning": "1. Review the context which includes a table with securities details and interest rates.\n2. Focus on the category 'Corporate notes and bonds'.\n3. Identify the principal amounts for each year, noting that 2006 has $3760.\n4. Note the overall weighted average interest rate for corporate notes and bonds is 2.52%.\n5. Consider whether the 2.52% applies specifically to 2006 or to the entire portfolio.\n6. Conclude that the given rate is for the entire portfolio, not year-specific.",
+        "answer": "2.52%"
+    },
+    "71": {
+        "reasoning": "1. I need to find the amount of the unsecured term loan for the year 2012 from the provided financial data.\n2. The data is presented in a tabular format with financial figures for multiple years, including the year 2012.\n3. In the table labeled 'Table Caption: ** December 31,**', I locate the row labeled 'Unsecured term loan'.\n4. The financial figure for the year 2012, under the 'Unsecured term loan' row, is $757,839.\n5. Therefore, the amount of the unsecured term loan in 2012 is $757,839.",
+        "answer": "$757,839"
+    },
+    "72": {
+        "reasoning": "1. Analyzing the table provided, which contains financial metrics for the years 2008, 2007, and 2006. \n2. Identifying that subscriber acquisition cost is listed under column 10 for 2006, and the value is noted as \"$42.94.\"\n3. Verifying if footnotes or additional notes affect this figure. Footnote (5) defines subscriber acquisition cost as total marketing expenses divided by total gross subscriber additions.\n4. Noting that there's a reference to page 25 for more information, but access to the full document is unavailable. \n5. Checking for anomalies or additional information in the data, but confirming the table's figure as $42.94 for 2006.",
+        "answer": "$42.94"
+    },
+    "73": {
+        "reasoning": "1. Identify the meaning of 'common stock equivalents' in the financial context, which refers to shares potentially convertible into common stock such as options and restricted stock units.\\n2. Examine the provided financial context about stock options, restricted stock awards, and the earnings per share (EPS) calculations.\\n3. Determine that diluted EPS considers potential dilution from outstanding options and restricted stock using the treasury stock method.\\n4. Understand that the treasury stock method involves using proceeds from exercising options to buy back shares, reducing dilution.\\n5. Recognize that the question seeks the number of common stock equivalents, meaning shares issued upon exercise of options and vesting of restricted stock units.\\n6. Identify cash proceeds from stock options in 2007 as $211.8 million but lack exercise prices to calculate shares.\\n7. Consider the intrinsic value of options exercised in 2007 as $91.0 million, but without exercise prices, the number of shares can't be derived.\\n8. Note irrelevant data about outstanding options as of 2009, which doesn't aid the 2007 calculation.",
+        "answer": "Unable to determine the exact number of common stock equivalents for 2007 due to missing exercise prices."
+    },
+    "74": {
+        "reasoning": "1. Identify the requirement to find the net increase or decrease in cash and cash equivalents specifically for the year 2006. \n2. Locate the relevant tables that contain financial data, specifically focusing on columns labeled by years. \n3. Examine the \"Change in cash and cash equivalents\" row to find the specific value for 2006. \n4. Observe that the value for 2006 is $47.9 million, which is a positive number, indicating a net increase. \n5. Consider confirming this information using the cash flow statement structure, which includes operating, investing, and financing activities, but the direct value from the table suffices for the answer.",
+        "answer": "$47.9 million"
+    },
+    "75": {
+        "reasoning": "1. Analyze the first table to understand the balances for different years.\n2. Note the starting balance, provisions, charges/write-offs, other adjustments, and ending balance for each year.\n3. For the year ended December 29, 2013, calculate the ending balance using starting balance, provisions, charges/write-offs, and other adjustments.\n4. The ending balance on December 29, 2013, is $30,210, which initially suggests that the valuation allowance might be $30,210.\n5. Check the second table which summarizes the Q3 2012 Plan activity and notes a balance at December 29, 2013, as $3,758.\n6. The question specifically asks for the valuation allowance on December 29, 2013, and the most relevant figure from the tables provided is $30,210.",
+        "answer": "$30,210"
+    },
+    "76": {
+        "reasoning": "1. The question asks for the 'current target for fixed income' within the context of a company's U.S. Corporate Pension Plan asset allocation.\n2. 'Target weighted average asset allocation' refers to the planned distribution of assets among categories like equities, fixed income, and real estate.\n3. The table mentioned provides percentages for 'actual' and 'target' allocations across four years, but the years aren't specified.\n4. 'Current' is ambiguous without knowing which year is considered 'current' by the company. A reasonable assumption is the most recent year provided in the table.\n5. The table caption indicates the presence of both actual and target percentages for each year.\n6. Given data shows fixed income percentages: 55%, 33%, 55.0%, and presumably 5% for years 1 to 4.\n7. Despite potential typos, it's inferred that the most recently provided percentage for fixed income is the 'current' target.\n8. Assuming the most recent complete data, the 'current' target for fixed income is 55.0%.",
+        "answer": "55.0%"
+    },
+    "77": {
+        "reasoning": "1. The table is divided into different levels of valuation methods for financial instruments, specifically Levels 1, 2, and 3.\\n2. The task is to find the value of Significant Other Observable Inputs, which corresponds to Level 2, for Public Utilities as of December 31, 2013.\\n3. In the row corresponding to Public Utilities, the Level 2 value is listed as 139.3.\\n4. Despite multiple columns and totals that don't add up directly, the focus remains on the Level 2 value for Public Utilities.",
+        "answer": "139.3"
+    },
+    "78": {
+        "reasoning": "1. The question asks for the capacity of the crude system between St. James, LA, and Garyville, LA. 2. Two tables were provided: one with refinery capacities and another with pipeline systems. 3. The Capline pipeline originates in St. James, LA, but it does not end in Garyville, LA; it ends in Patoka, IL. 4. The Maumee pipeline does not involve St. James or Garyville. 5. Neither table directly provides a pipeline connecting St. James to Garyville. 6. The first table lists a refinery in Garyville with a refining capacity of 556 mbpcd, but this is not the pipeline capacity. 7. There is no direct information provided about a crude system capacity from St. James to Garyville in the tables.",
+        "answer": "Information not provided"
+    },
+    "79": {
+        "reasoning": "1. The question asks for the amount of Oil & NGLs (MBbls) for Tunisia in the year 2005.\\n2. The information needs to be located in one of the two provided tables.\\n3. The first table is examined, which includes columns for Oil & NGLs (MBbls), Gas (MMcf), and Total (MBOE), and rows for different regions including Tunisia.\\n4. The data in the first table is confusing because it seems to have multiple sections and is not clear.\\n5. The second table is considered, which mentions 'TUNISIA Oil and gas producing activities.'\\n6. The second table contains financial data such as future cash inflows and costs for the years 2007, 2006, and 2005.\\n7. It is concluded that the second table provides financial data in thousands of dollars and not in MBbls, which suggests it may not contain the required data.",
+        "answer": "Data not found"
+    },
+    "80": {
+        "reasoning": "1. Identify the depreciation and amortization expense for 2007 and 2008 from the provided table.\n2. For 2007, the depreciation and amortization expense (additions) is 81,318.\n3. For 2008, the depreciation and amortization expense (additions) is 115,158.\n4. Use the percentage change formula: Percentage change = [(new value - old value) / old value] * 100%.\n5. Substitute the values into the formula: [(115,158 - 81,318) / 81,318] * 100%.\n6. Calculate the difference: 115,158 - 81,318 = 33,840.\n7. Divide the difference by the 2007 expense: 33,840 / 81,318 = 0.416.\n8. Multiply by 100 to get the percentage: 0.416 * 100% = 41.6%.",
+        "answer": "41.6%"
+    }
+}

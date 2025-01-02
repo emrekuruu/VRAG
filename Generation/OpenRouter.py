@@ -1,59 +1,75 @@
 from openai import OpenAI
-import json  
-from .prompts import OPEN_ROUTER_IMAGE_PROMPT, OPEN_ROUTER_HYBRID_PROMPT, OPEN_ROUTER_TEXT_PROMPT
+from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT,  QAOutput, jsonify
 import asyncio
+import re 
+import json 
 
-with open(".keys/openrouter_api_key.txt", "r") as file:
+with open(".keys/deep_api_key.txt", "r") as file:
     api_key = file.read().strip()
 
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
+    base_url="https://api.deepinfra.com/v1/openai",
     api_key=api_key
 )
 
-async def query_model_async(messages, model):
+schema = QAOutput.model_json_schema()
+structured = True
+
+async def query_model_async(messages, model, structured = True):
 
     def sync_query_model():
-        try:
+    
+        if structured:
+            try:
+                completion = client.beta.chat.completions.parse(
+                    model=model,
+                    messages=messages,
+                    response_format=QAOutput,
+                )
+                return completion.choices[0].message.parsed
+        
+            except Exception as e:
+                completion = client.chat.completions.create(
+                    model=model,
+                    messages=messages,
+                )
+        else:
             completion = client.chat.completions.create(
                 model=model,
-                messages=messages
+                messages=messages,
             )
-            return completion.choices[0].message.content
-        except Exception as e:
-            print(f"Error querying model: {e}")
-            raise e
+        
+        return completion.choices[0].message.content
         
     return await asyncio.to_thread(sync_query_model)
 
-def extract_and_load_json(raw_string):
-    try:
-        start = raw_string.find("{")
-        end = raw_string.rfind("}")
-
-        if start == -1 or end == -1 or start > end:
-            raise ValueError("No valid JSON object found in the string.")
-
-        json_string = raw_string[start:end + 1]
-
-        return json.loads(json_string)
-    except Exception as e:
-        print(raw_string)
-        print(f"Error extracting and loading JSON: {e}")
-        return None
     
 async def image_based(query, pages, model):
+    global structured
+    
+    prompt = IMAGE_PROMPT.format(query=query, schema=schema)
 
-    prompt = OPEN_ROUTER_IMAGE_PROMPT.format(query=query)
+    if model.lower() == "qwen/qvq-72b-preview":
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt}
+                ] 
+            }
+        ]
+        structured = False
 
-    messages = [
-        {
-            "role": "system",
-            "content": [
-                {"type": "text", "text": prompt}
-            ]
-        }
-    ]
+    else:
+
+        messages = [
+            {
+                "role": "system",
+                "content": [
+                    {"type": "text", "text": prompt}
+                ]
+            }
+        ]
 
     for p in pages:
         messages[0]["content"].append({
@@ -61,29 +77,99 @@ async def image_based(query, pages, model):
                 "image_url": {"url": f"data:image/jpeg;base64,{p}"}
         })
 
-    response_content = await query_model_async(messages, model)
-    response_dict = extract_and_load_json(response_content)
-    return response_dict
+    response = await query_model_async(messages, model, structured=structured)
+
+    try:
+        response = {"reasoning": response.reasoning, "answer": response.answer}
+    except:
+        response = response.content
+        json_pattern = r'```json\n({.*?})\n```'
+        matches = re.findall(json_pattern, ''.join(response), re.DOTALL)
+        try:
+            reasoning_and_answer_json = matches[-1] 
+            parsed_response = json.loads(reasoning_and_answer_json)
+            reasoning = parsed_response["reasoning"]
+            answer = parsed_response["answer"]
+
+            if type(answer) != str:
+                raise Exception("Answer must be a string")
+            
+            response = {"reasoning": reasoning, "answer": answer}
+        except:
+            return await jsonify(response_string=response)
+    return response
 
 async def text_based(query, chunks, model):
-    prompt = OPEN_ROUTER_TEXT_PROMPT.format(query=query, context=chunks)
-    messages = [{"role": "system", "content": prompt}]
-    response_content = await query_model_async(messages, model)
-    response_dict = extract_and_load_json(response_content)
-    return response_dict
+    global structured
+
+    prompt = TEXT_PROMPT.format(query=query, context=chunks, schema=schema)
+
+    if model.lower() == "qwen/qvq-72b-preview":
+        messages = [
+            {
+                "role": "user",
+                "content": prompt
+                
+            }
+        ]
+        structured = False
+
+    else:
+
+        messages = [
+            {
+                "role": "system",
+                "content": [
+                    {"type": "text", "text": prompt}
+                ]
+            }
+        ]
+
+    response = await query_model_async(messages, model, structured=structured)
+
+    try:
+        response = {"reasoning": response.reasoning, "answer": response.answer}
+    except:
+        json_pattern = r'```json\n({.*?})\n```'
+        matches = re.findall(json_pattern, ''.join(response), re.DOTALL)
+        try:
+            reasoning_and_answer_json = matches[-1] 
+            parsed_response = json.loads(reasoning_and_answer_json)
+            reasoning = parsed_response["reasoning"]
+            answer = parsed_response["answer"]
+
+            if type(answer) != str:
+                raise Exception("Answer must be a string")
+            
+            response = {"reasoning": reasoning, "answer": answer}
+        except:
+            return await jsonify(response_string=response)
+        
+    return response
 
 async def hybrid(query, pages, chunks, model):
 
-    prompt = OPEN_ROUTER_HYBRID_PROMPT.format(query=query, context=chunks)
-
-    messages = [
-        {
-            "role": "system",
-            "content": [
-                {"type": "text", "text": prompt}
-            ]
-        }
-    ]
+    prompt = HYBRID_PROMPT.format(query=query, context=chunks, schema=schema)
+    
+    if model == "qwen/qvq-72b-preview":
+        messages = [
+            {
+                "role": "user",
+                "content": prompt
+                
+            }
+        ]
+        structured = False
+    
+    else:  
+        messages = [
+            {
+                "role": "system",
+                "content": [
+                    {"type": "text", "text": prompt}
+                ]
+            }
+        ]
 
     for p in pages:
         messages[0]["content"].append({
@@ -91,6 +177,6 @@ async def hybrid(query, pages, chunks, model):
                 "image_url": {"url": f"data:image/jpeg;base64,{p}"}
         })
 
-    response_content = await query_model_async(messages, model)
-    response_dict = extract_and_load_json(response_content)
-    return response_dict
+    response = await query_model_async(messages, model, structured=structured)
+    response = {"reasoning": response.reasoning, "answer": response.answer} if structured else response
+    return response

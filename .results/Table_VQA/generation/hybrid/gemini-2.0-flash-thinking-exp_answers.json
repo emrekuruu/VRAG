@@ -1,0 +1,1400 @@
+{
+    "0": {
+        "reasoning": "1 - The textual context mentions that the Engineered Systems segment is comprised of two platforms: Printing & Identification and Industrials, and serves the printing and identification, vehicle service, environmental solutions and industrial end markets.\n2 - The table in the image lists the end markets for each segment. For the Engineered Systems segment, the end markets listed are Printing & Identification and Industrials.\n3 - Both sources confirm the end markets for the Engineered Systems segment. The image provides a more direct answer.",
+        "answer": "Printing & Identification, Industrials"
+    },
+    "1": {
+        "reasoning": "1. **Scan the textual context:** I will look for keywords like \"risk-free interest rate\", \"stock option plans\", and \"2004\".\n2. **Scan the image context:** I will focus on tables or sections that discuss stock options and related financial assumptions. I will pay close attention to any intersections with the textual context.\n3. **Extract the relevant value:** Once found, I will extract the numerical value for 2004.",
+        "answer": "The average risk-free interest rate for Stock Option Plans in 2004."
+    },
+    "2": {
+        "reasoning": [
+            "1 - The question asks for the volatility of stock options in 2006.",
+            "2 - The textual context contains a table outlining the weighted-average assumptions used to estimate the fair value of stock options, including volatility for different years.",
+            "3 - According to the textual context, the volatility for stock options in 2006 was 39%.",
+            "4 - I then examined the provided image, specifically focusing on the table mentioned in the textual context.",
+            "5 - The image confirms that the volatility for stock options in 2006 was 39%."
+        ],
+        "answer": "39%"
+    },
+    "3": {
+        "reasoning": "1 - Reviewed the textual context for information about future dividend yield for the year ended December 31, 2015, but found no relevant data.\n2 - Examined the image context, focusing on tables and financial statements.\n3 - Located a table titled 'Year ended December 31,' which contains a row for 'Share dividend yield'.\n4 - Identified the value for 'Share dividend yield' for the year 2015 in the table.\n5 - Concluded that the future dividend yield for the year ended December 31, 2015, is the 'Share dividend yield' listed for that year.",
+        "answer": "1.84%"
+    },
+    "4": {
+        "reasoning": "1 - The user is asking for the total contractual cash obligations for less than 1 year.\n2 - I reviewed the textual context and found information about guarantees and letters of credit, but not a direct figure for total contractual cash obligations for less than one year.\n3 - I examined the image context and identified a table titled \"CONTRACTUAL OBLIGATIONS AND COMMERCIAL COMMITMENTS\".\n4 - Within this table, the section \"CONTRACTUAL CASH OBLIGATIONS DUE BY YEAR\" contains a row for \"Total contractual cash obligations\".\n5 - The column \"Less than 1 year\" in this row shows the value of $664.8 million.\n6 - This directly answers the user's question.",
+        "answer": "$664.8 million"
+    },
+    "5": {
+        "reasoning": "1 - The textual context states that on September 26, 2012, the company issued $400.0 aggregate principal amount of 2.875% Senior Notes due 2022.\n2 - The 'Short-term borrowings and long-term debt' table in the image context (page 77) lists '2.875% Senior notes due October 1, 2022'.\n3 - The table shows an amount of $400.0 for the 2.875% Senior notes due October 1, 2022 in 2016.\n4 - There is a 'Less: Discount' of $(0.2) associated with these notes in 2016.\n5 - The 'Net long-term debt' calculation subtracts this discount from the initial amount.\n6 - Therefore, the total amount due for the 2.875% Senior Notes due 2022 as of December 31, 2016, is $400.0 less the discount of $0.2.",
+        "answer": "$399.8"
+    },
+    "6": {
+        "reasoning": "1 - The question asks for the total number of shares purchased between 10/01/18 and 10/31/18.\n2 - I reviewed the textual context but it does not provide a monthly breakdown of share repurchases.\n3 - I examined the image context and found a table on page 66 titled 'Issuer Purchases of Equity Securities'.\n4 - This table lists the 'Total Number of Shares Purchased' for various periods.\n5 - I located the row corresponding to the period '10/01/18-10/31/18'.\n6 - The 'Total Number of Shares Purchased' for this period is 36,701.",
+        "answer": "36,701"
+    },
+    "7": {
+        "reasoning": {
+            "1": "Reviewed the textual context for mentions of EPA Renewable Fuel Standards and Cellulosic Ethanol. The text mentions the EPA finalized standards for 2014 and 2015 but does not provide specific volumes.",
+            "2": "Examined the image context, specifically looking for tables or sections related to EPA Renewable Fuel Standards.",
+            "3": "Located a table titled \"EPA Renewable Fuel Standards (billions of gallons)\" on page 29 of the PDF.",
+            "4": "Identified the row for \"Cellulosic Ethanol\" and the column for \"2015\" in the table.",
+            "5": "Extracted the value at the intersection of the \"Cellulosic Ethanol\" row and the \"2015\" column, which is 0.123."
+        },
+        "answer": "0.123 billions of gallons"
+    },
+    "8": {
+        "reasoning": [
+            "1 - Reviewed the textual context for mentions of \"Stock Purchase Plans\" and \"volatility\". No specific volatility figures were found in the text.",
+            "2 - Examined the image context, specifically looking for tables or sections related to stock purchase plans.",
+            "3 - Located a table on page 71 titled \"Stock Option Plans\" and \"Stock Purchase Plans\" which included volatility as a metric.",
+            "4 - Identified the row corresponding to \"Stock Purchase Plans\" and the column for the year \"2003\".",
+            "5 - Extracted the volatility value for Stock Purchase Plans in 2003 from the table."
+        ],
+        "answer": "60%"
+    },
+    "9": {
+        "reasoning": "1 - The question asks for the number of securities to be issued upon exercise of outstanding options, warrants, and rights for plans approved by security holders.\n2 - The image contains a table titled \"Equity Compensation Plan Information (as of Dec. 31, 2004)\" which directly addresses this.\n3 - Within the table, the row \"Equity compensation plans approved by security holders\" has a column titled \"Number of securities to be issued upon exercise of outstanding options, warrants and rights\".\n4 - The value in that cell is 34,325,304.",
+        "answer": "34,325,304"
+    },
+    "10": {
+        "reasoning": "1 - The textual context contains a table caption that refers to \"Figure 36. Credit Ratings\".\n2 - I examined the image context and found Figure 36 which displays credit ratings for various entities and rating agencies.\n3 - I located the section for \"KEYBANK\" within Figure 36.\n4 - I identified the \"Fitch\" rating agency row.\n5 - I found the column for \"Senior Long-Term Debt\".\n6 - The intersection of the \"KEYBANK\" section, \"Fitch\" row, and \"Senior Long-Term Debt\" column shows a rating of 'A'.",
+        "answer": "A"
+    },
+    "11": {
+        "reasoning": "1 - The question asks for the number of freight train miles traveled in 2004.\n2 - I examined the textual context and found a table titled \"Rail Operating Statistics\" which includes the data for freight train miles traveled.\n3 - According to the textual context, the freight train miles traveled in 2004 was 71.7 million.\n4 - I then examined the image context and found the same table titled \"Rail Operating Statistics\".\n5 - According to the image context, the freight train miles traveled in 2004 was 77.7 million.\n6 - As instructed, I prioritized the information from the image context.",
+        "answer": "77.7"
+    },
+    "12": {
+        "reasoning": "1. **Textual Context Review:** The textual context contains tables about segment financial data and new orders/backlog. It doesn't seem to have information about average active communities.\n2. **Image Context Review:** I will scan the images for tables containing \"Average active communities\".\n3. **Locate the Table:** I found the \"Average active communities\" table on page 23 of the PDF.\n4. **Extract the Value:** I need to find the intersection of the \"North East\" row and the \"2011\" column in this table.",
+        "answer": "The number of average active communities in the North East region in 2011 is not provided in the response."
+    },
+    "13": {
+        "reasoning": "1. The user asked for the return on assets in plans for pension cost in 2011.\n2. I identified that the relevant information might be in both textual and image contexts.\n3. The textual context includes details about discount rates, future salary increases, and return on assets.\n4. The image context, specifically Page 1 (K62), contains a table with \"Pension cost\" and \"Return on assets in plans\" for 2011.\n5. I decided to focus on the image context, particularly Page 1 (K62), to find the exact value for 2011.",
+        "answer": "The return on assets in plans for pension cost in 2011 is found on Page 1 (K62)."
+    },
+    "14": {
+        "reasoning": "1. The user asked for the number of free trials at the end of 2016.\n2. I reviewed the textual context which included details about the Domestic DVD and International Streaming segments, but it did not provide specific data for 2016.\n3. I identified the need to check images for tables containing relevant data.\n4. Upon inspecting page 21, I noticed tables for both International Streaming and Domestic DVD segments with data for the year ended December 31, 2017, and comparative data for 2016.\n5. On page 62, additional tables for the years ended December 31, 2016, and 2017 were available.\n6. Page 18 contained 'Other Data' with 'Global streaming free trials at end of period'.\n7. I focused on pages 21 and 62 as they appeared to have the necessary information.",
+        "answer": "The number of free trials at the end of 2016 is found in the tables on page 21 and 62."
+    },
+    "15": {
+        "reasoning": "1 - The user is asking for the working capital as of December 31, 2012.\n2 - I reviewed the textual context, which mentioned the change in working capital but not the specific value for December 31, 2012.\n3 - I examined the image context and identified the \"Consolidated Balance Sheet Data\" table on page 31.\n4 - Within this table, I located the row labeled \"Working capital\".\n5 - I found the value in the \"2012\" column for the \"Working capital\" row, which is $2,178.7.",
+        "answer": "$2,178.7"
+    },
+    "16": {
+        "reasoning": "1 - The user is asking for the 'Gross Amount of Recognized for Derivatives under Financial Assets' on 'December 31, 2012'.\n2 - I reviewed the textual context and found a table with the caption '** Total                                                                             $212.1                       c=            $212.1          $(175.1)               $    $37.0    nan**' which contains information about financial instruments.\n3 - I located a table in the image context (page 2) that includes a section for 'Financial Assets' and 'Derivatives' for 'December 31, 2012'.\n4 - In the image table, under 'Financial Assets', the 'Gross Amount of Recognized Financial Instruments' for 'Derivatives' is listed as '$ 81.6'.",
+        "answer": "$81.6"
+    },
+    "17": {
+        "reasoning": "1. Identify the relevant table from the image that corresponds with the textual context.\n2. Locate the row labeled 'Total long-term debt and other' for the year 2003.\n3. Extract the numerical value from this row to provide the answer.",
+        "answer": "$1,945,439"
+    },
+    "18": {
+        "reasoning": "1. The user is asking for a total value for the year ended December 31, 2013. I need to scan the text and the images for tables or financial statements that have a 'Total' column or row and the year '2013'.\n2. Textual Context: - Table Caption: ** 2013** - This caption indicates a table related to 2013. However, the table itself doesn't have a clear 'Total' value. - Table Caption: ** \u2018Year Ended December 31, \u201c201420132012** - This caption indicates tables with data for multiple years, including 2013.\n3. Image Context: - The first image contains a balance sheet. I need to look for a 'Total' row and the '2013' column. - The second image contains an income statement. I need to look for a 'Total' row and the '2013' column. - The other images seem to contain supporting details and breakdowns.\n4. Plan: 1. Examine the balance sheet image for a 'Total' row and the '2013' column. 2. Examine the income statement image for a 'Total' row and the '2013' column.",
+        "answer": "Scan the 2013 financial tables for 'Total'."
+    },
+    "19": {
+        "reasoning": "1 - The question asks for the Net Income for the year ended December 31, 2012.\n2 - I examined the textual context and found two tables containing Net Income information. The first table, 'Consolidated Statements of Comprehensive Income', shows a Net Income of S$ 894.4 for 2012. The second table, 'Year Ended December 31', also shows a Net Income of $ 894.4 for 2012.\n3 - I then examined the image context, focusing on the 'Consolidated Statements of Comprehensive Income' and 'Consolidated Statements of Income' tables.\n4 - In the 'Consolidated Statements of Comprehensive Income' image, the Net Income for 2012 is shown as $ 894.4.\n5 - In the 'Consolidated Statements of Income' image, the Net Income for 2012 is shown as $ 894.4.\n6 - Since the information is consistent across both textual and image contexts, and the instruction prioritizes image context, I will use the value from the images.",
+        "answer": "$894.4"
+    },
+    "20": {
+        "reasoning": "1. The user is looking for a specific financial value for the year 2006.\n2. The term 'income from continuing operations before income taxes and cumulative effect of accounting change' is key.\n3. Initial textual contexts do not explicitly mention this term, only 'income from continuing operations before accounting change'.\n4. The image context on page 77 contains the exact term and provides the needed value for 2006.",
+        "answer": "The value is found on page 77."
+    },
+    "21": {
+        "reasoning": "1 - Reviewed the textual context, noting tables about scheduled principal payments and interest expenses related to long-term debt, but neither provided the total long-term debt amount.\n2 - Examined the image context, specifically focusing on page 200, which contains a section titled '18. Long-Term Debt'.\n3 - Identified a table on page 200 detailing the components of long-term debt at December 31, 2013.\n4 - Located the 'Total long-term debt' line in the table on page 200 under the '2013' column.\n5 - Extracted the value for total long-term debt, which is $7,650 million.",
+        "answer": "$7,650 million"
+    },
+    "22": {
+        "reasoning": "1. Locate the table in the image that shows the breakdown of owned and leased property.\n2. Find the row corresponding to \"Optoelectronics\".\n3. Extract the value under the \"Leased\" column for \"Optoelectronics\".",
+        "answer": "Leased square footage for Optoelectronics."
+    },
+    "23": {
+        "reasoning": "1 - The question asks for the total revenue in 2004.\n2 - I reviewed the textual context and found a table with revenue information for 2004.\n3 - I then examined the image context, specifically focusing on the table labeled '2. Segment information (continued)' on page 43, which intersects with the textual content.\n4 - From this table, I identified the 'Total revenues' for 2004.\n5 - The value for 'Total revenues' in 2004 is $11,711,216.",
+        "answer": "$11,711,216"
+    },
+    "25": {
+        "reasoning": "1 - The question asks for the cash flow provided by operating activities in 2008.\n2 - The textual context provides a summary of consolidated operating cash flow information, including a line for \"Net cash flow provided by operating\". It lists the value as $455.7 for an unspecified year and $381.5 for another.\n3 - The image context contains a table titled \"Operating Cash Flows\".\n4 - Within the \"Operating Cash Flows\" table in the image, the \"Net cash flow provided by operating activities\" for 2008 is listed as $455.7.",
+        "answer": "$455.7"
+    },
+    "26": {
+        "reasoning": "1 - The textual context includes a table summarizing operating results, which contains the 'Net income' for the year ended December 31, 2016.\n2 - The value for Net income in 2016 from the text is $ 431,852.\n3 - The image context contains the 'Consolidated Statements of Comprehensive Income', which also lists 'Net income' for the year ended December 31, 2016.\n4 - The value for Net income in 2016 from the image is $431,852.\n5 - Both the textual and image contexts provide the same value for net income in 2016.",
+        "answer": "$431,852"
+    },
+    "27": {
+        "reasoning": "1 - The user is asking for the Maximum Daily Withdrawal Quantity (MDWQ) for the Colorado-Kansas Division.\n2 - I reviewed the textual context and found the definition of MDWQ but no specific value for the Colorado-Kansas division.\n3 - I examined the image context and found a table on page 22 listing storage assets, including the Colorado-Kansas Division, with a column for Maximum Daily Withdrawal Quantity (MDWQ).\n4 - I identified the MDWQ for the Colorado-Kansas Division from the table on page 22.\n5 - The value listed for Colorado-Kansas Division under the 'Maximum Daily Withdrawal Quantity (MDWQ)' column is 147,965.",
+        "answer": "147,965"
+    },
+    "28": {
+        "reasoning": "1. **Textual Context Review:** The textual context contains a table listing various facilities, their locations, square footage, and status. I will scan this table for the entry corresponding to Rayong, Thailand.\n2. **Image Context Review:** I will examine the image containing the same table to confirm the information. I will pay close attention to the row for \"Manufacturing\" in Rayong, Thailand.",
+        "answer": "[The user is asking for the square footage of the Manufacturing facility in Rayong, Thailand. I need to find this information from the provided textual and image context.]"
+    },
+    "29": {
+        "reasoning": [
+            "1 - The question asks for the S&P rating for WPD (South West) under Senior Unsecured.",
+            "2 - I examined the provided textual context and found a table caption mentioning issuer ratings, but the specific ratings were represented as 'nan'.",
+            "3 - I then reviewed the image context and located a table containing issuer ratings with columns for 'Senior Unsecured' and 'S&P'.",
+            "4 - I found the row corresponding to 'WPD (South West)' in the table.",
+            "5 - I identified the intersection of the 'WPD (South West)' row and the 'Senior Unsecured S&P' column.",
+            "6 - The value at this intersection is 'A-'."
+        ],
+        "answer": "A-"
+    },
+    "30": {
+        "reasoning": "1. Reviewed the textual context and identified information about rent expense for operating leases but no direct mention of total minimum payments.\n2. Examined the image context, specifically page F-16, looking for information related to lease commitments.\n3. Located the 'Lease Commitments' section on page F-16 which contains a table detailing minimum future lease payments.\n4. Identified the row labeled 'Total minimum payments' under the 'Operating Leases' column.\n5. Extracted the value '$5,843' for the total minimum payments for operating leases as of December 31, 2003.",
+        "answer": "$5,843"
+    },
+    "31": {
+        "reasoning": "1 - The textual context mentions the organization of operations into North America and International segments.\n2 - The image context on page 23 contains a table titled 'Net Sales' which breaks down sales by North America and International segments for the years 2013, 2012, and 2011.\n3 -  Locating the 'North America' row and the '2013' column in the 'Net Sales' table reveals the net sales for North America in 2013.",
+        "answer": "$44,517"
+    },
+    "32": {
+        "reasoning": [
+            "1 - The textual context contains a table caption describing the high and low sales prices of common stock for 2016 and 2015.",
+            "2 - The first image contains the same table with the actual values.",
+            "3 - Locate the row for '2015' and the column for 'Fourth'.",
+            "4 - Identify the 'High' value in that intersection."
+        ],
+        "answer": "$102.07"
+    },
+    "33": {
+        "reasoning": "1. **Locate the relevant table:** The text mentions \"The effect of our derivative instruments on our consolidated statements of income for the years ended December 31, 2015, 2014 and 2013 was as follows:\". This indicates I need to find a table with this title.\n2. **Identify the correct row:** I need to find the row corresponding to \"Derivatives not designated as hedging instruments: Foreign currency forward contracts\".\n3. **Find the value for 2013:** Within that row, locate the column \"Amount of income recognized on hedged item\" for the year ended December 31, 2013.",
+        "answer": "The parsed object is not provided in the response."
+    },
+    "34": {
+        "reasoning": "1 - Located the table with capital adequacy information in the provided image context.\n2 - Identified the row for 'TIER 1 CAPITAL TO AVERAGE QUARTERLY TANGIBLE A!'\n3 - Focused on the 'December 31, 2012' section within that row.\n4 - Found the 'KeyBank (consolidated)' entry in that section.\n5 - Located the column 'To Qualify as Well Capitalized Under Federal Deposit Insurance Act'.\n6 - The value at the intersection of the identified row and column is $4,124.",
+        "answer": "$4,124"
+    },
+    "35": {
+        "reasoning": "1 - The user is asking for the 'Number Outstanding' of stock options within a specific price range as of December 31, 2006.\n2 - I located the 'OPTIONS OUTSTANDING' table in the provided image context.\n3 - I found the row corresponding to the 'Range of Exercise Prices' of '$35.91-$38.72'.\n4 - I identified the 'Number Outstanding at 12/31/2006' for that row.\n5 - The value is 2,124,698.",
+        "answer": "2,124,698"
+    },
+    "36": {
+        "reasoning": [
+            "1 - The question asks for the number of shares outstanding at the beginning of 2017.",
+            "2 - The textual context mentions that Restricted Stock Awards (RSAs) and Performance Stock Awards (PSAs) are included as part of the Company\u2019s Class A Common Stock outstanding.",
+            "3 - Examining the image context, specifically page 67, there are tables summarizing the outstanding SARs, RSAs, and PSAs.",
+            "4 - The table for SARs shows 'Outstanding at beginning of year' for 2017 as 1,740,786 shares.",
+            "5 - The table for Restricted Stock Awards shows 'Outstanding at beginning of year' for 2017 as 628,814 shares.",
+            "6 - The table for Performance Share Awards shows 'Outstanding at beginning of year' for 2017 as 379,226 shares.",
+            "7 - To find the total outstanding shares at the beginning of 2017, sum the outstanding shares of SARs, RSAs, and PSAs: 1,740,786 + 628,814 + 379,226 = 2,748,826."
+        ],
+        "answer": "2,748,826"
+    },
+    "37": {
+        "reasoning": "1 - The question asks for the number of units outstanding at December 31, 2007.\n2 - The textual context includes a table summarizing RSU activity for the years ended December 31, 2009, 2008, and 2007.\n3 - The image context on page 86 contains the same RSU activity table.\n4 - Locating the row 'Outstanding at December 31, 2007' in the table on page 86, the corresponding 'Units' value is 4,595.",
+        "answer": "4,595"
+    },
+    "38": {
+        "reasoning": "1 - The question asks for the Total Contracted Storage Capacity in MMBtu.\n2 - I reviewed the textual context and found no mention of contracted storage capacity in MMBtu.\n3 - I then examined the image context, specifically looking for tables or sections related to storage capacity.\n4 - On page 22 of the PDF, there is a table titled \"Storage Assets\" and another table below it.\n5 - The second table on page 22 explicitly lists \"Total Contracted Storage Capacity\" and its value in MMBtu.\n6 - The value listed for Total Contracted Storage Capacity is 32,633,242 MMBtu.",
+        "answer": "32,633,242"
+    },
+    "39": {
+        "reasoning": [
+            "1 - Identified the keyword 'net revenue' and the target year '2018' in the question.",
+            "2 - Searched the textual context for tables containing 'net revenues' and the year '2018'.",
+            "3 - Found two tables in the textual context listing net revenues. The first table, 'Consolidated Statements of Operations Data', shows Net revenues for 2018 as $4647.5 (in millions). The second table also shows 'Total net revenues' for 2018 as $4,6475.",
+            "4 - Examined the image context, focusing on pages containing tables related to revenues.",
+            "5 - On page 103, identified tables presenting net revenues by product, customer vertical, and geographic region. All these tables show a 'Total' net revenue of $4,647.5 for the year 2018.",
+            "6 - On page 48, found a table titled 'Revenues' which explicitly states 'Total net revenues' for 2018 as $4,647.5.",
+            "7 - Cross-verified the information from the textual and image contexts, confirming the consistent value for total net revenue in 2018.",
+            "8 - Since the image context should be prioritized, the value from the tables in the images is used for the final answer."
+        ],
+        "answer": "$4,647.5"
+    },
+    "40": {
+        "reasoning": [
+            "1 - The question asks for the number of units in the Mid Atlantic in 2012.",
+            "2 - I reviewed the textual context and found tables for 'Segment Operating Activity' and 'New orders, net of cancellations'.",
+            "3 - I examined the image context, specifically the 'Segment Operating Activity' table.",
+            "4 - In the 'Segment Operating Activity' table, I located the 'Mid Atlantic' row.",
+            "5 - I then found the 'Units' column for the year 2012 in the 'Mid Atlantic' row.",
+            "6 - The value in that cell is 5047."
+        ],
+        "answer": "5047"
+    },
+    "41": {
+        "reasoning": [
+            "1 - The textual context includes a table detailing the valuation techniques for Level 3 assets, including impaired loans.",
+            "2 - The table in the textual context explicitly states that the valuation technique for impaired loans is 'Fair value of underlying collateral'.",
+            "3 - Examining the provided image, specifically the table titled 'Quantitative Information about Level 3 Fair Value Measurements', confirms this information.",
+            "4 - The row corresponding to 'Impaired loans' in the image table lists 'Fair value of underlying collateral' as the 'Valuation Technique'."
+        ],
+        "answer": "Fair value of underlying collateral"
+    },
+    "42": {
+        "reasoning": "1 - Reviewed the textual context for information about the duration of fiscal quarters in the U.S. and Canada but found no specific details.\n2 - Examined the image context, focusing on tables or sections that might define fiscal quarters.\n3 - Located a table titled \"Calendar basis\" on page 56 of the PDF, which explicitly lists the months for each quarter in the U.S. and Canada.\n4 - Identified that the Fourth Quarter for the U.S. and Canada includes the months of October, November, and December, totaling 13 weeks.",
+        "answer": "13 weeks"
+    },
+    "43": {
+        "reasoning": "1. The user asked about the cost of diapers in 2004.\n2. The provided text and images were examined for this information.\n3. Textual context mentioned sales of personal care products and cost savings in diaper manufacturing but did not state the total cost of diapers.\n4. The image with financial statements was referred to, specifically the 'Sales of Principal Products' section, to find the value for diapers in 2004.",
+        "answer": "The total cost of diapers in 2004 is not explicitly stated in the provided information."
+    },
+    "44": {
+        "reasoning": "1 - Identified the table \"Net Revenues by Market and Customer\" in the image context.\n2 - Located the 'Service Provider' row in the table.\n3 - Extracted the Net Revenues for Service Provider in 2011, which is $2,833.0 million.\n4 - Extracted the Net Revenues for Service Provider in 2010, which is $2,631.5 million.\n5 - Calculated the dollar change by subtracting the 2010 value from the 2011 value: $2,833.0 - $2,631.5 = $201.5 million.",
+        "answer": "$201.5 million"
+    },
+    "45": {
+        "reasoning": "1 - Identified the 'Operating Data' table in the textual context which contains information about 'average active communities'.\n2 - Located the row for 'average active communities' and the column for '2012' in the textual data, finding a total of 404.\n3 - Located the 'Operating Data' table within the provided PDF image.\n4 - Focused on the 'Average active communities' section within the table in the image.\n5 - Identified the 'Total' value for the year '2012' as 404 from the image, confirming the information from the textual context.",
+        "answer": "404"
+    },
+    "46": {
+        "reasoning": "1. The user asked for the location of the Corporate Office. 2. I identified that this information could be found in the provided textual and image context. 3. The textual context explicitly lists the Corporate Office and its location. 4. The image context shows a table under the 'Motorcycles and Related Products Segment', which also includes the Corporate Office's location. 5. I cross-referenced both sources to ensure accuracy. 6. After verifying, I confirmed the location from the textual context.",
+        "answer": "The Corporate Office is located at [exact location]."
+    },
+    "47": {
+        "reasoning": "1 - The question asks for the denominator for basic earnings per share\u2014weighted-average common shares in 2014.\n2 - I located the table in the image context that presents the computation of basic and diluted earnings per share.\n3 - I identified the row labeled 'Denominator for basic earnings per share\u2014weighted-average common shares'.\n4 - I identified the column for the year 2014.\n5 - The value at the intersection of this row and column is 97,489.0.",
+        "answer": "97489.0"
+    },
+    "48": {
+        "reasoning": [
+            "1 - The question asks for the total deferred tax assets on December 31, 2010.",
+            "2 - I reviewed the textual context and found a table outlining the principal components of deferred tax items, including total deferred tax assets for 2010.",
+            "3 - I then examined the image context and located the same table on page 101, which also shows the total deferred tax assets for 2010.",
+            "4 - According to the table in the image, the 'Total deferred tax assets' for 2010 is $124.4 million.",
+            "5 - The textual context confirms this figure.",
+            "6 - Therefore, the total deferred tax assets on December 31, 2010 was $124.4 million."
+        ],
+        "answer": "$124.4 million"
+    },
+    "49": {
+        "reasoning": "1. **Locate the relevant table:** The textual context mentions a table with quarterly high and low values. The image context contains a table titled \"CLOSING PRICE OF COMPANY'S COMMON STOCK\" which seems to match the description.\n2. **Identify the correct row and column:** I need to find the \"First Quarter\" row and the \"High\" column under the \"Fiscal 2006\" section.\n3. **Extract the value:** Read the value at the intersection of the identified row and column.",
+        "answer": "$XX.XX"
+    },
+    "50": {
+        "reasoning": "1. The user is asking for the gross profit margin percentage for the year ended December 31, 2012.\n2. I need to find this information from the provided text and images.\n3. Textual context provides a table with gross profit margin percentages for different segments and a table with consolidated homebuilding operations data including the consolidated gross profit margin percentage.\n4. Image context also contains similar tables.\n5. I should prioritize the information from the images.\n6. Looking at the images, page 21 contains a table titled \"Selected Segment Financial Data\" which includes \"Gross profit margin percentage\" for the year 2012.\n7. Page 19 has a table summarizing consolidated homebuilding operations, which also includes the \"gross profit margin percentage\" for 2012.",
+        "answer": "Consolidated gross profit margin percentage for 2012 is not provided in the text."
+    },
+    "51": {
+        "reasoning": "1 - The question asks for the interest in homebuilding inventory at the beginning of the year 2007.\n2 - The textual context includes a table with the caption \"Information related to interest capitalized into homebuilding inventory is as follows ($000\u2019s omitted):\".\n3 - This table in the text shows a row labeled \"Interest in inventory at beginning of period...\" and columns for the years 2007, 2006, and 2005.\n4 - The value in the 2007 column for \"Interest in inventory at beginning of period\" is $235,596.\n5 - I then reviewed the image context and found the same table on pages 32 and 56, confirming the value of $235,596 for the interest in homebuilding inventory at the beginning of 2007.",
+        "answer": "$235,596"
+    },
+    "52": {
+        "reasoning": "1 - Reviewed the textual context for information on health care trend rates for postretirement benefits.\n2 - Noted that the textual context provides information for 2013 and a future target rate but not for 2010.\n3 - Examined the image context, specifically looking for tables or sections related to postretirement benefit assumptions.\n4 - Located a table on page K62 titled \"Pension and Other Postretirement Benefits Assumptions\" which includes data for 2010, 2011, and 2012.\n5 - Identified the row \"Health care trend rate\" under the section \"Other postretirement benefits cost\".\n6 - Extracted the value for 2010 from this row.",
+        "answer": "8.50%"
+    },
+    "53": {
+        "reasoning": "1 - Reviewed the textual context but found no direct information about the total number of shares issued in 2014.\n2 - Examined the image context, specifically focusing on page 41, which contains a table detailing the number of shares issued for fiscal years 2016, 2015, and 2014.\n3 - Located the row labeled 'Total shares issued' in the table on page 41.\n4 - Identified the corresponding value for the year 2014 as 9,938,015.",
+        "answer": "9,938,015"
+    },
+    "54": {
+        "reasoning": "1. **Search in Textual Context:** I scanned the textual context but did not find any direct mention of \"6.39% maturing 2097 to 2111\".\n\n2. **Search in Image Context:** I will now examine the image context, specifically looking for tables or sections related to debt or liabilities. The image containing \"Current Liabilities\" and \"Debt\" seems relevant.\n\n3. **Locate the specific debt:** Within the \"Debt\" section of the image, I found the line item \"6.39% maturing 2097 to 2111\".\n\n4. **Extract the 2014 value:** The value corresponding to this debt for the year 2014 is $1,328.",
+        "answer": "$1,328"
+    },
+    "55": {
+        "reasoning": [
+            "1 - The question asks for the Weighted Average Grant-Date Fair Value Per Share for options granted in 2014.",
+            "2 - The textual context contains a table summarizing the status of the company's nonvested options.",
+            "3 - The image context also contains this table.",
+            "4 - Focusing on the row for 'Granted' in '2014' within the table in the image.",
+            "5 - The corresponding 'Weighted Average Grant-Date Fair Value Per Share' is $13.58."
+        ],
+        "answer": "$13.58"
+    },
+    "56": {
+        "reasoning": "1. The user is asking for the average price paid per share between November 1, 2012, and November 30, 2012. I need to find this information from the provided text and image. 2. The text mentions two ASR programs in 2012. 3. The first ASR program concluded on July 25, 2012. 4. The second ASR program started on November 5, 2012. 5. The average price paid per share for the second ASR program was $60.43. 6. Page 40 of the PDF contains a table titled \"Issuer Purchases of Equity Securities\". 7. This table includes a \"Period\" column and an \"Average Price Paid per Share\" column. 8. The period \"11/01/12 - 11/30/12\" has an associated average price paid per share. 9. The textual context confirms the existence of a second ASR program that started in November 2012. 10. The image directly provides the average price paid per share for the period 11/01/12 - 11/30/12. 11. The average price paid per share for the period 11/01/12 - 11/30/12 is directly available from the image.",
+        "answer": "$60.43"
+    },
+    "57": {
+        "reasoning": "1. The user is asking for the value of the Warranty reserve on December 31, 2010. \n2. I need to find this information in the provided text and images.\n3. Textual context mentions: \"The warranty reserve recorded on the balance sheet is $6.3 million higher at December 31, 2010, compared to December 31, 2009.\"\n4. Image context contains balance sheets with information about liabilities, including \"Accrued warranty\".\n5. Page 27 shows \"Accrued warranty\" as a current liability and \"Accrued warranty\" as a long-term liability.\n6. Page 71 shows a table with \"Warranty reserve\" under \"Deferred income tax assets\".\n7. I will prioritize the information from the balance sheet on page 27 as it directly reflects the liability.",
+        "answer": "$6.3 million higher than December 31, 2009"
+    },
+    "58": {
+        "reasoning": "1. The user is querying for the comprehensive income for the year ended December 31, 2003.\n2. The task is to extract this information from the provided context.\n3. The context mentions table captions that can help locate the relevant data in the image context.\n4. The strategy involves examining the image context for the \"CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME.\"\n5. The next step is to find the \"Comprehensive income\" value for the specified year.",
+        "answer": "Extract the comprehensive income value from the relevant table for 2003."
+    },
+    "59": {
+        "reasoning": "1 - The user is asking for the total accrued expenses as of December 31, 2003.\n2 - I reviewed the textual context and found two instances of 'Accrued expenses'. One in the cash flow statement showing a value of 4,558 for 2003, and another showing a breakdown of accrued expenses with a total of $11,625 for 2003.\n3 - I examined the image context and found 'Accrued expenses' listed in the balance sheet with a value of $11,625 for 2003.\n4 - The notes to the financial statements also provide a breakdown of 'Accrued expenses' as of December 31, 2003, totaling $11,625.\n5 - The cash flow statement figure represents the change in accrued expenses, while the balance sheet and the notes provide the total accrued expenses.\n6 - Prioritizing the information from the images, the total accrued expenses as of December 31, 2003, is $11,625.",
+        "answer": "$11,625"
+    },
+    "60": {
+        "reasoning": [
+            "1 - The question asks for the fair value at the grant date in 2017.",
+            "2 - The textual context states: \"The fair value of restricted stock awards, restricted stock units and performance share units is the average market price of the Company's common stock at the date of grant.\"",
+            "3 - The first image contains a table with the heading \"Fair value at grant date\" and columns for the years 2018, 2017, and 2016.",
+            "4 - Locating the intersection of \"Fair value at grant date\" and the \"2017\" column in the table provides the value."
+        ],
+        "answer": "$15.98"
+    },
+    "61": {
+        "reasoning": "1 - The question asks for corporate and other expenses in millions of dollars for Canada in 2006.\n2 - The textual context mentions corporate and other expenses but does not break it down by geography.\n3 - Examining the image context, specifically page 18, a table titled \"Corporate & Other\" provides a breakdown by geographic area, including Canada.\n4 - Locating the intersection of the \"Corporate & Other\" row and the \"Canada\" column for the year 2006 in the table.",
+        "answer": "-16.7"
+    },
+    "62": {
+        "reasoning": "1. The user is looking for the amount of interest capitalized into homebuilding inventory in 2005. 2. The provided text and image context are reviewed to find this specific information. 3. The text includes a table with interest capitalized figures for 2007 and 2006, which does not directly include 2005. 4. The table caption indicates that the information is related to interest capitalized into homebuilding inventory. 5. To find the 2005 figure, it's necessary to locate the relevant table in the images. 6. Finally, the value for 'Interest capitalized' under the '2005' column is identified.",
+        "answer": "[Interest capitalized value for 2005]"
+    },
+    "63": {
+        "reasoning": [
+            "1 - The question asks for the percentage of net sales for 'Inventory stepped up to fair value' in 2014.",
+            "2 - I reviewed the textual context and found a table caption 'Net Earnings Adjustments' which seems relevant.",
+            "3 - I examined the image context and located the 'Selling, General and Administrative Adjustments' table on page 11, which appears to be the table referenced in the text.",
+            "4 - I found the row corresponding to 'Inventory stepped up to fair value' in the table.",
+            "5 - I located the column for 2014 and extracted the percentage of net sales for 'Inventory stepped up to fair value', which is '0.3%'."
+        ],
+        "answer": "0.3%"
+    },
+    "64": {
+        "reasoning": "1 - The textual context contains a table showing quarterly financial data for the year ended December 31, 2007.\n2 - The table includes a row for \"Total net revenues\" and columns for each quarter.\n3 - The first image contains the same table mentioned in the textual context.\n4 - Locating the \"Total net revenues\" row and the \"Second Quarter\" column in the image, the corresponding value is $664.9.\n5 - The units are in millions as stated in the context of similar tables.",
+        "answer": "$664.9"
+    },
+    "65": {
+        "reasoning": "1 - The question asks for the historical share price volatility for the year ended December 31, 2014.\n2 - The first textual context refers to a table showing assumptions for options issued during 2015, 2014, and 2013, including historical share price volatility.\n3 - The text mentions 'Historical share price volatility         nan     382        A9T  nan       A495'. This suggests the volatility for 2014 is '382'.\n4 - I checked the first image and found a table with the caption '** The Black-Scholes model requires several assumptions...The assumptions pertaining to options issued during 2015, 2014, and 2013 are shown in the following table.**'.\n5 - Within this table, the 'Historical share price volatility' for 2014 is listed as '382'.",
+        "answer": "382"
+    },
+    "66": {
+        "reasoning": "1 - The user is asking for the total GWh for LKE.\n2 - I searched the textual context for mentions of LKE's energy generation in GWh but found only MW.\n3 - I then examined the image context and found a table on page 1 that lists the GWh generated by LKE for different fuel sources in 2017.\n4 - The table shows the total GWh for LKE as 33,499.\n5 - Therefore, the total GWh for LKE is 33,499.",
+        "answer": "33,499"
+    },
+    "67": {
+        "reasoning": "1 - Reviewed the textual context and identified the table summarizing interest rate swap agreements.\n2 - Located the 'End Date' column in the textual table.\n3 - Searched for entries with the 'End Date' of 6/30/2022 in the textual table and found 'Tranche E'.\n4 - Examined the image context and located the table summarizing the company's interest rate swap agreements.\n5 - Identified the rows in the image table with the 'End Date' of 6/30/2022.\n6 - Extracted the corresponding 'Related Term Loans' from the image table for the 'End Date' of 6/30/2022, which is 'Tranche E'.",
+        "answer": "Tranche E"
+    },
+    "68": {
+        "reasoning": "1. The user inquired about the value of Restricted Share/Unit Awards in 2006. To find this information, I need to analyze the provided context.\n2. The first piece of textual context discusses \"Stock Option Awards\" and \"Total Stock-based Compensation Expense\" for 2008, 2007, and 2006, but it doesn't explicitly mention \"Restricted Share/Unit Awards.\"\n3. The second textual context talks about restricted shares/units, including grants and vesting. However, the structure makes it challenging to directly ascertain the granted amount for a specific year.\n4. The image context requires examining tables or sections related to stock-based compensation or restricted shares.\n5. Page F-30 contains a table that specifies the components of pre-tax stock-based compensation expense, with a specific row for \"Restricted Share/Unit Awards.\"\n6. Page F-34 offers a summary of restricted shares/units, aligning with the second textual context.\n7. Therefore, the focus should be on the table on page F-30, as it directly lists the value for \"Restricted Share/Unit Awards\" in 2006.",
+        "answer": "Refer to page F-30 for the value of Restricted Share/Unit Awards in 2006."
+    },
+    "69": {
+        "reasoning": [
+            "1 - Identified a table in the textual context presenting net revenues, including total net revenue for different years.",
+            "2 - Located tables in the image context on pages 40, 41, and 42 that display net revenue information.",
+            "3 - Focused on the 'Total net revenues' row and the '2014' column in the tables within the image context.",
+            "4 - Extracted the value for 'Total net revenues' in 2014 from the tables on pages 40, 41, and 42, which consistently shows $4,627.1.",
+            "5 - Confirmed consistency of the total net revenue figure across multiple tables in the image context."
+        ],
+        "answer": "$4,627.1"
+    },
+    "70": {
+        "reasoning": "1 - The text mentions a table providing information about cash equivalent and marketable fixed income securities, including weighted average interest rates.\n2 - Examining the image, locate the table with the caption mentioning 'cash equivalent and marketable fixed income securities' and 'weighted average interest rates at December 31, 2004'.\n3 - Identify the row corresponding to 'Corporate notes and bonds'.\n4 - Locate the column for the year '2006' under the 'Weighted average interest rate' for 'Corporate notes and bonds'.\n5 - The value in that cell is 3.45%.",
+        "answer": "3.45%"
+    },
+    "71": {
+        "reasoning": "1 - Identified the 'Balance Sheet Data' section in the provided image.\n2 - Located the 'Unsecured term loan' line item within the balance sheet data.\n3 - Identified the column corresponding to the year 2012.\n4 - Extracted the value at the intersection of the 'Unsecured term loan' row and the '2012' column.",
+        "answer": "$757,839"
+    },
+    "72": {
+        "reasoning": [
+            "1 - The user is asking for the subscriber acquisition cost in 2006.",
+            "2 - I scanned the textual context and found a table caption mentioning 'subscriber acquisition costs'.",
+            "3 - I examined the image context and located the 'Performance Highlights' table on page 25 which includes a row for 'Subscriber acquisition cost'.",
+            "4 - I identified the value in the 'Subscriber acquisition cost' row under the '2006' column in the image.",
+            "5 - The value for subscriber acquisition cost in 2006 is $42.94."
+        ],
+        "answer": "$42.94"
+    },
+    "73": {
+        "reasoning": "1 - The user is asking for the number of common stock equivalents in 2007.\n2 - I reviewed the textual context but did not find the information about common stock equivalents.\n3 - I examined the image context and found a table titled \"The following table provides the calculation of diluted weighted-average shares outstanding (in millions)\" on page 81.\n4 - Within this table, there is a row for \"Common stock equivalents\".\n5 - The value for \"Common stock equivalents\" in the year 2007 is 12.7.",
+        "answer": "12.7"
+    },
+    "74": {
+        "reasoning": "1. The user wants to know the net increase (decrease) in cash and cash equivalents for the year 2006.\\n2. The information is supposed to be extracted from a provided text or images.\\n3. The textual context mentions a table with rows for 'Net increase (decrease) in cash and equivalents' and columns for different years.\\n4. The image context specifically points out that Page 43 and Page 59 show this table with data for 2007, 2006, and 2005.\\n5. The response prioritizes the information from the images as instructed.",
+        "answer": "Information is prioritized from images on Page 43 and Page 59."
+    },
+    "76": {
+        "reasoning": "1 - The textual context contains a table outlining the company's actual and target weighted average asset allocation for the U.S. Corporate Pension Plan.\n2 - The table includes a row for 'Fixed income' and columns for 'Current' and 'Target' allocations.\n3 - The image context on page 96 also presents the same table.\n4 - According to the table in the image, the 'Target' allocation for 'Fixed income' is 55% in the '2018' column.",
+        "answer": "55%"
+    },
+    "77": {
+        "reasoning": "1 - The question asks for the value of Significant Other Observable Inputs (Level 2) for Public Utilities as of December 31, 2013.\n2 - I located a table in the provided image context titled with a date relevant to the question (December 31, 2013).\n3 - I identified the row corresponding to 'Public Utilities' within the 'Assets' section of the table.\n4 - I located the column labeled 'Significant Other Observable Inputs (Level 2)'.\n5 - The value at the intersection of the 'Public Utilities' row and the 'Significant Other Observable Inputs (Level 2)' column is 2,611.9.",
+        "answer": "2611.9"
+    },
+    "78": {
+        "reasoning": [
+            "1 - The question asks for the capacity of the St. James, LA to Garyville, LA crude system.",
+            "2 - I reviewed the textual context and found no information about this specific pipeline system.",
+            "3 - I examined the image context and located a table on page 46 titled 'Midstream-MPLX'.",
+            "4 - Within this table, I found a section labeled 'Crude oil pipeline systems'.",
+            "5 - I identified the row corresponding to the pipeline with 'Origin' as 'St James, LA' and 'Destination' as 'Garyville, LA'.",
+            "6 - The 'Capacity (mbpd)' column for this row shows a value of '620'."
+        ],
+        "answer": "620"
+    },
+    "79": {
+        "reasoning": "1 - The user is asking for the amount of Oil & NGLs (MBbls) for Tunisia in the year 2005.\n2 - I reviewed the textual context and found a table with information on Proved Developed Reserves, including Oil & NGLs (MBbls) for Tunisia in 2005.\n3 - I examined the image context and located the same table on page 117, under the heading \"UNAUDITED SUPPLEMENTARY INFORMATION December 31, 2007, 2006 AND 2005\".\n4 - I found the row corresponding to \"Tunisia\" in the table.\n5 - I identified the column for \"2005\" under the \"Oil & NGLs (MBbls)\" section.\n6 - The value at the intersection of the \"Tunisia\" row and the \"2005\" \"Oil & NGLs (MBbls)\" column is 4852.\n7 - Therefore, the amount of Oil & NGLs (MBbls) for Tunisia in the year 2005 was 4852.",
+        "answer": "4852"
+    },
+    "80": {
+        "reasoning": "1 - Identified the relevant table in the image context (Page 51) titled 'Total expenses from continuing operations'.\n2 - Located the 'Depreciation and amortization' row within the table.\n3 - Extracted the depreciation and amortization value for 2008, which is $115,158 (in thousands).\n4 - Extracted the depreciation and amortization value for 2007, which is $89,786 (in thousands).\n5 - Calculated the percentage change using the formula: [(2008 Value - 2007 Value) / 2007 Value] * 100.\n6 - Percentage change = [($115,158 - $89,786) / $89,786] * 100 = (25372 / 89786) * 100 = 28.269...\n7 - Rounded the percentage change to one decimal place.",
+        "answer": "28.3%"
+    },
+    "81": {
+        "reasoning": "1. The user asked for the depreciation of rental equipment for the year ended December 31, 2016. 2. I reviewed the textual context, which included financial tables from 2018, 2017, and 2016, but the specific value for 2016 was not directly mentioned. 3. The image context was then reviewed, especially pages containing income statements and depreciation information. 4. Page 54 from the image context contained the \"CONSOLIDATED STATEMENTS OF INCOME\" that directly listed the depreciation for rental equipment for 2016. 5. Based on the instructions to prioritize image information, I chose the value from page 54 as it was directly from the income statement.",
+        "answer": "The depreciation of rental equipment for 2016 is found on page 54 of the income statement."
+    },
+    "82": {
+        "reasoning": [
+            "1 - The question asks for the total segment assets as of December 31, 2015.",
+            "2 - I reviewed the textual context but found no information about assets.",
+            "3 - I examined the image context and located a table titled \"Assets\" with data for December 31, 2015.",
+            "4 - Within this table, I identified the row labeled \"Total segment assets\" for the year 2015.",
+            "5 - The value corresponding to \"Total segment assets\" for 2015 is $1,895,779."
+        ],
+        "answer": "$1,895,779"
+    },
+    "83": {
+        "reasoning": [
+            "1 - The question asks for the net sales to external customers for the Airframe segment for the fiscal year ended September 30, 2014.",
+            "2 - I searched the textual context for information about Airframe segment sales but found no specific figures for 2014.",
+            "3 - I then examined the image context, looking for tables presenting net sales by segment.",
+            "4 - On page F-24, I found a table titled 'The following table presents net sales by reportable segment (in thousands):'.",
+            "5 - This table lists 'Airframe' as a segment and provides net sales figures for the fiscal years ended September 30, 2015, 2014, and 2013.",
+            "6 - I located the net sales figure for Airframe for the fiscal year ended September 30, 2014, which is $1,115,594."
+        ],
+        "answer": "$1,115,594"
+    },
+    "84": {
+        "reasoning": "1 - The user is asking for the total current assets for the Guarantor Subsidiaries on December 31, 2017.\n2 - I reviewed the textual context but it does not contain the specific value for current assets.\n3 - I examined the provided images and located the 'CONDENSED CONSOLIDATING BALANCE SHEET INFORMATION' for 'December 31, 2017'.\n4 - I identified the row labeled 'Current assets'.\n5 - I identified the column labeled 'Guarantor Subsidiaries'.\n6 - The value at the intersection of 'Current assets' row and 'Guarantor Subsidiaries' column for 'December 31, 2017' is $1,015,802.",
+        "answer": "1015802"
+    },
+    "85": {
+        "reasoning": "1 - The question asks for the costs incurred for oil and gas assets in Canada for the year ended December 31, 2003.\n2 - I reviewed the textual context and found a table caption mentioning \"Costs Incurred for Oil and Gas Producing Activities\".\n3 - I examined the image context and located the table \"Costs Incurred for Oil and Gas Producing Activities\" for the year ended December 31, 2003.\n4 - I identified the row corresponding to \"Canada\" in the table.\n5 - The value in the \"Total Costs Incurred\" column for Canada in 2003 is $54,800.",
+        "answer": "$54,800"
+    },
+    "86": {
+        "reasoning": "1 - The question asks for the diluted earnings per share in the 3rd quarter of 2018.\n2 - I examined the provided images and found a table on page 110 that contains quarterly data, including earnings per share.\n3 - I located the row labeled \"Diluted\" under the \"Earnings per share:\" section.\n4 - I found the column corresponding to \"3rd Quarter 2018\".\n5 - The value at the intersection of the \"Diluted\" row and the \"3rd Quarter 2018\" column is $0.40.",
+        "answer": "$0.40"
+    },
+    "87": {
+        "reasoning": "1. The user is asking for the total derivative assets in 2009.\n2. I need to locate this information from the provided text and image.\n3. The first table in the textual context provides a breakdown of derivative assets for 2010 and 2009.\n4. The line item \"Total derivative assets\" shows the values for both years.\n5. The first image contains a table titled \"Fair Value\" which includes a section for \"Derivative Assets\".\n6. This section lists \"Total derivative assets\" with values for 2010 and 2009.\n7. I will extract the value for \"Total derivative assets\" in 2009 from the image, as the prompt instructs to prioritize information from the images.",
+        "answer": "Data not provided"
+    },
+    "88": {
+        "reasoning": "1. The user inquired about the balance of the Valuation Allowance as of December 31, 2008. 2. I need to search for this information in the provided context, starting with any textual data that mentions 'Valuation Allowance' and the specified date. 3. I will also review any image data, such as tables or schedules, to locate this information, while ensuring it aligns with the textual findings.",
+        "answer": "The balance of the Valuation Allowance on December 31, 2008, is not provided in the JSON object."
+    },
+    "89": {
+        "reasoning": "1 - The question asks for the segment of Bigfoot Interactive, Inc.\n2 - I reviewed the textual context and found a table listing acquisitions and their segments. Bigfoot Interactive, Inc. is listed in this table.\n3 - I then examined the image context, specifically page 1, which contains the same acquisition table.\n4 - According to the table on page 1 of the PDF, Bigfoot Interactive, Inc., acquired in September 2005, belongs to the 'Marketing Services' segment.",
+        "answer": "Marketing Services"
+    },
+    "90": {
+        "reasoning": [
+            "1 - The user is asking for the Total Debt in 2014.",
+            "2 - I reviewed the textual context but found no direct information about Total Debt in 2014. The text on page 55 relates to lease obligations.",
+            "3 - I examined the image context and found a section labeled \"SELECTED FINANCIAL DATA\" on page 29, which includes a \"Financial Position\" subsection.",
+            "4 - Within the \"Financial Position\" subsection, I located the line item \"Total Debt\".",
+            "5 - I identified the value for \"Total Debt\" in the column corresponding to the year 2014.",
+            "6 - The value for Total Debt in 2014 is $1,086.7."
+        ],
+        "answer": "$1,086.7"
+    },
+    "91": {
+        "reasoning": [
+            "1 - The question asks for the Comprehensive Income (Loss) for the year ended December 31, 2017.",
+            "2 - I reviewed the textual context and identified a table caption titled \"STATEMENTS OF OPERATIONS\" which contains information about Comprehensive Income (Loss).",
+            "3 - I then examined the image context and located the \"STATEMENTS OF OPERATIONS\" table on page 199.",
+            "4 - Within this table, I found the row labeled \"Comprehensive Income (Loss)\".",
+            "5 - I located the value in the column corresponding to the year ended December 31, 2017.",
+            "6 - The value is $ 1,172.7."
+        ],
+        "answer": "$1,172.7"
+    },
+    "92": {
+        "reasoning": "1 - The question asks for the dividend declared per share of common stock on June 30, 2012.\n2 - I reviewed the textual context and found a table caption mentioning quarterly stock price and dividend information, including data for 2012.\n3 - I then examined the image context and located a table on page 9 titled \"MARKET FOR THE REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES,\" which contains quarterly dividend information.\n4 - I specifically looked at the row \"Dividends declared per share of common stock\" and the column corresponding to \"June 30\" under the \"2012 Quarter Ended\" section.\n5 - The value found in that cell is $0.2125.\n6 - I also checked the table on page 41, \"NOTE 13 - SUMMARY OF QUARTERLY DATA (UNAUDITED),\" which also lists the dividend declared per share for June 30, 2012 as $0.2125.\n7 - Prioritizing the information from the images, I confirmed the value.",
+        "answer": "$0.2125"
+    },
+    "93": {
+        "reasoning": "1. The user asks for the net income attributable to Quest Diagnostics in 2010.\n2. I need to find this value from the provided context.\n3. I will review the textual context and then examine the images, focusing on the intersection points.\n4. The first text snippet includes 'Net income' and 'Comprehensive income attributable to Quest Diagnostics' for the years 2012, 2011, and 2010.\n5. The second text snippet includes 'Net income attributable to Quest Diagnostics\u2019 common stockholders' for the years 2012, 2011, and 2010.\n6. Page 1 of the images contains the consolidated statement of comprehensive income.\n7. Page 2 of the images contains a consolidated statement of income, including 'Net income attributable to Quest Diagnostics'.\n8. Page 3 of the images contains earnings per share information.\n9. Page 4 of the images contains a summary of operations data, including 'Net income attributable to Quest Diagnostics'.\n10. I will prioritize the images for the final answer as they directly show the value in multiple places.",
+        "answer": "Net income attributable to Quest Diagnostics in 2010 is directly visible in the images."
+    },
+    "94": {
+        "reasoning": "1. The user asked for segment operating profit for 2009.\n2. Identified multiple contexts in textual and image data with relevant tables.\n3. Determined that page 33 has the table for total Segment Operating Profit without specifying a segment.\n4. Decided this table on page 33 most likely represents the total segment operating profit for 2009.",
+        "answer": "Segment operating profit for 2009 is in the table on page 33."
+    },
+    "95": {
+        "reasoning": [
+            "1 - The question asks for the 'increases related to current year income tax positions in 2015'.",
+            "2 - I reviewed the textual context but found no specific numerical value for 'increases related to current year income tax positions' for 2015.",
+            "3 - I examined the image context and found a table titled 'Uncertain Income Tax Positions'.",
+            "4 - Within this table, there is a row labeled 'Increases related to current year income tax positions'.",
+            "5 - The value corresponding to this row in the '2015' column is '$21'."
+        ],
+        "answer": "$21"
+    },
+    "96": {
+        "reasoning": "1 - The question asks for the expected life of Stock Options Assumed in 2016.\n2 - I reviewed the textual context but found no information about stock option assumptions.\n3 - I examined the image context and located the 'Valuation Assumptions' table on page 99.\n4 - Within the 'Valuation Assumptions' table, I found the section 'Stock Options Assumed'.\n5 - I identified the 'Expected life (years)' for the year 2016 in that section.",
+        "answer": "1.3"
+    },
+    "97": {
+        "reasoning": "1. The user needs the total gain recognized in income for the year ended December 31, 2011.\n2. I have access to both text and image contexts that contain relevant information.\n3. The textual context contains a table with the \"Total gain (loss) recognized in income\" for the years 2012, 2011, and 2010.\n4. The image context also contains the same table mentioned in the textual context, which I will prioritize.\n5. Upon reviewing the image, the total gain recognized in income for the year 2011 can be identified.",
+        "answer": "Total gain recognized in 2011"
+    },
+    "98": {
+        "reasoning": [
+            "1 - The textual context provides a breakdown of short-term borrowings and long-term debt for 2016 and 2015 but does not detail future payment obligations.",
+            "2 - Examining the image context, specifically page 1, reveals a table titled 'Commitments as of December 31, 2016'.",
+            "3 - This table outlines the contractual obligations and their payment schedule across different periods.",
+            "4 - Within the 'Short & Long-Term Debt' section of this table, there is a specific row for 'Commercial paper issuances'.",
+            "5 - The column labeled '2017' for the 'Commercial paper issuances' row indicates the amount due in that year.",
+            "6 - The value listed in this cell is $420.0."
+        ],
+        "answer": "$420.0"
+    },
+    "99": {
+        "reasoning": "1. The question asks for the net cash used for financing activities in 2011.\n2. To answer, information should be retrieved from relevant financial documents.\n3. The textual context, which includes tables summarizing cash flow activities, is examined first.\n4. The search focuses on finding the 'Net cash used for financing activities' corresponding to the year 2011.\n5. Additionally, the 'Consolidated Statement of Cash Flows' is reviewed as it contains the necessary financial data.\n6. The image context is prioritized for the final answer as it may provide more accurate or visual data representation.",
+        "answer": "The net cash used for financing activities in 2011 is not explicitly provided in the response."
+    },
+    "100": {
+        "reasoning": "1 - The textual context contains a table caption indicating a summary of stock option activity.\n2 - The textual context includes a row stating 'exercisable at December 31.0 2008 7994'.\n3 - The image context contains a table titled 'The following table summarizes stock option activity during the years ended December 31, 2008, 2007 and 2006:'.\n4 - Within this table, the row 'Exercisable at December 31, 2008' shows a value of '7,994' in the 'Shares (in thousands)' column.\n5 - Therefore, the number of shares exercisable at December 31, 2008 is 7,994 thousand.",
+        "answer": "7,994"
+    },
+    "101": {
+        "reasoning": "1 - Identified the relevant table in the image context titled 'Year Ended Compared to Year Ended 2007' which contains revenue information for Site development construction.\n2 - Located the 'Site development construction' row and identified the revenue for 2006 as $62,034 and for 2007 as $60,659.\n3 - Calculated the dollar change: $60,659 - $62,034 = -$1,375.\n4 - Located the 'Percentage Change' column for 'Site development construction' which shows '(2.2)%'.",
+        "answer": "(2.2)%"
+    },
+    "102": {
+        "reasoning": "1 - The question asks for the basic earnings per share for the year ended December 31, 2003.\n2 - I reviewed the textual context and found two tables presenting earnings per share data for multiple years, including 2003.\n3 - I then examined the image context, focusing on sections related to earnings per share.\n4 - On page 1 of the PDF, Note 6 \"Earnings Per Share\" provides a table that explicitly lists the basic earnings per share for 2003.\n5 - According to this table, the basic earnings per share for 2003 is $1.30.\n6 - I cross-verified this information with the \"CONSOLIDATED STATEMENT OF EARNINGS\" on page 3 of the PDF, which also shows a basic earnings per share of $1.30 for 2003.",
+        "answer": "$1.30"
+    },
+    "103": {
+        "reasoning": "1 - The question asks for a 'total' in 2010. I examined the provided textual context but it did not contain a specific value labeled as 'total' for 2010.\n2 - I then reviewed the image context, focusing on tables that might contain a 'Total' row and a '2010' column.\n3 - In the 'Supplementary Statistics' table, under 'Capital Expenditures and Investments', there is a 'Total' row and a '2010' column with a value of $1,173.\n4 - This appears to be the most relevant 'total' figure for 2010 within the provided image context.",
+        "answer": "$1,173"
+    },
+    "104": {
+        "reasoning": "1. **Textual Context Review:** The first textual context provides a table of \"components of other intangible assets\" which includes \"Acquired contracts\" and \"Net of Accumulated Amortization\" for both 2009 and 2008. The second textual context provides information about balance sheet amounts but does not contain the specific information needed for this question.\n\n2. **Intersection Check:** The first textual context directly corresponds to the table present in the image context.\n\n3. **Image Context Review:**  I will locate the table in the image that matches the description in the first textual context. Specifically, I'll focus on the row for \"Acquired contracts\" and the column \"Net of Accumulated Amortization\" under the \"December 31, 2008\" section.\n\n4. **Identify the Value:** From the image, the value for \"Acquired contracts\" under \"Net of Accumulated Amortization\" for \"December 31, 2008\" is $49.4.\n\n5. **Final Check:** The textual context and the image context are consistent. The value is in millions as stated in the table caption.",
+        "answer": "$49.4 million"
+    },
+    "105": {
+        "reasoning": "1. The user requests information about the cost of product revenues in Q4 2007. \n2. I need to locate this information from the provided text and image. \n3. The text contains a table with quarterly data for 2007, and the image also contains the same table. \n4. I will first look at the textual context for the cost of revenues for the product in Q4 2007. \n5. Then I will cross-check this value in the image.",
+        "answer": "The cost of product revenues in Q4 2007 is $X."
+    },
+    "106": {
+        "reasoning": [
+            "1 - Reviewed the textual context for mentions of remediation costs, but it did not explicitly state the cost for 2011.",
+            "2 - Examined the image context, focusing on tables related to environmental expenditures.",
+            "3 - Located a table titled 'Our environmental expenditures, based on the American Petroleum Institute\u2019s definition of environmental expenditures, for each of the last three years' in the first image.",
+            "4 - Identified the 'Remediation' row in the table.",
+            "5 - Extracted the value for 'Remediation' in the '2011' column, which is $24 million."
+        ],
+        "answer": "$24"
+    },
+    "107": {
+        "reasoning": "1. The user is inquiring about the total assets as of November 30, 2013.\n2. I need to find this information using the provided text and image.\n3. The textual context provides details about benefit obligations and pension plan assets, but not the total assets.\n4. The image context, specifically the Consolidated Balance Sheet, displays the total assets.\n5. I will focus on the 'Assets' section of the balance sheet for the year 2013 to find the required information.",
+        "answer": "Total assets as of November 30, 2013, are found in the Consolidated Balance Sheet's 'Assets' section for 2013."
+    },
+    "108": {
+        "reasoning": [
+            "1 - The textual context includes a table showing the performance of VeriSign, Inc. but it lacks the specific date of 12/31/2004.",
+            "2 - The textual context also contains notes on consolidated financial statements, discussing fair value determination, but does not provide a specific value for VeriSign, Inc. on 12/31/2004.",
+            "3 - Examining the image context, specifically page 52, reveals a table titled 'Performance Graph' which includes the value of VeriSign, Inc. on various dates.",
+            "4 - Within this table, the value for 'VeriSign, Inc.' on the column corresponding to '12/31/2004' is '$88'."
+        ],
+        "answer": "$88"
+    },
+    "109": {
+        "reasoning": "1 - The textual context contains a table with issuer ratings from Moody's and S&P. \n2 - I examined the image context and found the same table on page 47. \n3 - I located the row corresponding to 'KU' in the table.\n4 - I identified the column labeled 'Senior Secured' under the 'Moody's' section for 'KU'.\n5 - The value in that cell is 'A1'.",
+        "answer": "A1"
+    },
+    "110": {
+        "reasoning": "1 - The question asks for the service and product warranty provision in 2015.\n2 - The textual context provides a table detailing the changes in the carrying amount of service and product warranties for 2016 and 2015.\n3 - The first textual context explicitly states 'Service and product warranty provision     nan    59.7   nan    56.6', where '59.7' corresponds to the year 2015.\n4 - The first image also contains the same table, confirming the value of '59.7' for the service and product warranty provision in 2015.\n5 - The units for this value are specified as 'millions $' in the table header.",
+        "answer": "59.7"
+    },
+    "111": {
+        "reasoning": "1 - The textual context mentions a '$3.4 million accrual in accordance with EITF No. 95-3'.\n2 - The textual context also refers to a table summarizing restructuring activity.\n3 - Examining the provided image, specifically page 2, reveals a table titled 'The following table summarizes the restructuring activity for the year ended December 31, 2003 (in thousands)'.\n4 - Within this table, under the 'EITF No. 95-3' section and 'Lease Commitments' column, the value for 'Cash payments, net of subleasing proceeds' is identified as '(303)'.",
+        "answer": "(303)"
+    },
+    "112": {
+        "reasoning": "1 - Reviewed the textual context, noting the table caption describing high and low sales prices for the common stock.\n2 - Located the table in the image context titled \"MARKET FOR REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS, AND ISSUER PURCHASES OF EQUITY SECURITIES\".\n3 - Identified the section for \"Year Ended December 31, 2017\" in the table.\n4 - Located the row for \"Fourth Quarter\" within the 2017 section.\n5 - Extracted the \"Low\" value corresponding to the \"Fourth Quarter\" of 2017 from the table.",
+        "answer": "147.28"
+    },
+    "113": {
+        "reasoning": [
+            "1 - The user is asking for the market position of Soda ash within the Industrial Chemicals category.",
+            "2 - I reviewed the textual context and found a table listing market positions, which includes 'Soda ash' with a market position of '#1 in North America'.",
+            "3 - I also reviewed the textual context and found a table listing principal products by business segment, where 'Soda Ash' is listed under the 'Industrial Chemicals' segment.",
+            "4 - I then examined the image context, specifically the page containing the market position table. I located 'Soda ash' and confirmed its market position is '#1 in North America'.",
+            "5 - I cross-referenced the information from the textual and image contexts to confirm that Soda ash belongs to the Industrial Chemicals category and its market position is #1 in North America."
+        ],
+        "answer": "#1 in North America"
+    },
+    "114": {
+        "reasoning": [
+            "1 - The user is asking for the topic of Item 1 in Part I.",
+            "2 - I reviewed the textual context and found a table of contents listing \"Item 1. Business\".",
+            "3 - I reviewed the image context and found a table of contents in the first image.",
+            "4 - In the image context, under \"PART I\", \"Item 1\" is listed as \"Business\"."
+        ],
+        "answer": "Business"
+    },
+    "115": {
+        "reasoning": [
+            "1 - Identified the relevant table containing quarterly financial data from the textual context.",
+            "2 - Located the 'Financial Services' section within the table in the provided image.",
+            "3 - Identified the column corresponding to 'Dec 31, 2014' which represents the 4th Quarter of 2014.",
+            "4 - Extracted the 'Operating income' value for 'Financial Services' in the 'Dec 31, 2014' column from the image."
+        ],
+        "answer": "$62.4"
+    },
+    "116": {
+        "reasoning": [
+            "1 - Reviewed the textual context, which contains financial tables but no information about the annual capacity of specific chemicals.",
+            "2 - Examined the image context, focusing on potential sections related to chemical production or capacity.",
+            "3 - Identified a table on page 4 under the \"CHEMICAL OPERATIONS\" section listing \"Principal Products\" and their \"Annual Capacity\".",
+            "4 - Located \"Caustic soda\" in the table with a corresponding \"Annual Capacity\" of \"4.2 million tons\"."
+        ],
+        "answer": "4.2 million tons"
+    },
+    "117": {
+        "reasoning": "1. The user asked for the lease expiration date for the location in Lehi, Utah.\n2. The AI needs to find this information from the provided documents.\n3. The AI notes that the textual context mentions office locations but does not specify lease expiration dates.\n4. The AI decides to examine the image context for a table or section listing locations and lease expiration dates.\n5. The first image contains a promising section titled 'Properties' listing locations with their lease expiration dates.",
+        "answer": "Lease expiration date not found."
+    },
+    "118": {
+        "reasoning": [
+            "1 - The user is asking for the total revenue for the year ended December 31, 2018.",
+            "2 - I first checked the textual context. The first text snippet provides quarterly financial information and lists the 'Total revenues' for the year ended December 31, 2018 as $8,047.",
+            "3 - The second text snippet provides a breakdown of revenues and also lists the 'Total revenues' for 2018 as $8,047.",
+            "4 - I then examined the image context, focusing on tables containing financial information and looking for intersections with the textual context.",
+            "5 - On page 103, the table '16. Quarterly Financial Information (Unaudited)' shows 'Total revenues' for the year ended December 31, 2018 as $8,047.",
+            "6 - On page 34, the table 'Revenues. Revenues for each of the three years in the period ended December 31, 2018 were as follows:' shows 'Total revenues' for 2018 as $8,047.",
+            "7 - On page 27, the 'Consolidated Statements of Income' shows 'Total revenues' for the year ended December 31, 2018 as $8,047 (in millions).",
+            "8 - On page 82, a table shows the 'Total revenue' for 2018 as $8,047.",
+            "9 - All sources, both textual and image-based, consistently report the total revenue for the year ended December 31, 2018 as $8,047.",
+            "10 - Prioritizing the information from the images, the total revenue is $8,047 million."
+        ],
+        "answer": "$8,047"
+    },
+    "119": {
+        "reasoning": "1 - Identified the row corresponding to 'Lima, OH to Canton, OH crude system' in the provided textual context.\n2 - Located the 'Diameter (inches)' column in the table.\n3 - Extracted the diameter value '12\u201d-16\u201d' for the specified pipeline from the textual context.\n4 - Located the same row in the image containing the table.\n5 - Confirmed that the 'Diameter (inches)' value in the image for 'Lima, OH to Canton, OH crude system' is '12\u201d-16\u201d'.",
+        "answer": "12\u201d-16\u201d"
+    },
+    "120": {
+        "reasoning": "1. The user asked for the weighted-average fair value per share for Market-based RSUs in 2016. \n2. I will look into the provided textual context to find any references to RSUs or fair value.\n3. If the information is not found in the text, I will examine the image context, focusing on tables or sections that might contain the desired data.",
+        "answer": "The weighted-average fair value per share for Market-based RSUs in 2016 is $50."
+    },
+    "121": {
+        "reasoning": "1 - The user is asking for the total revenue in 2012.\n2 - I checked the textual context and found the statement \"Sales in 2012 were $12.51 billion\".\n3 - I reviewed the image context, specifically page 28, and found a table titled \"Consolidated Results\".\n4 - In the \"Revenues\" section of the table, the total revenue for 2012 is listed as $12,509.9 million.\n5 - Prioritizing the information from the images, I will use the value from the table.",
+        "answer": "$12,509.9 million"
+    },
+    "122": {
+        "reasoning": "1. The user asked for the total worldwide retail sales in 2017.\n2. I examined the provided text and images to find this information.\n3. The textual context mentioned retail sales trends and market share but did not provide a specific figure for 2017.\n4. I analyzed the image context, focusing on tables with relevant titles and headers.\n5. On page 27, I found a table titled 'The following table includes retail unit sales of Harley-Davidson motorcycles:', containing columns for 2017, 2016, and change.\n6. The row 'Total Worldwide Retail Sales' contained the value for 2017.",
+        "answer": "Found in table on page 27."
+    },
+    "123": {
+        "reasoning": "1. The user asked for the net deferred tax liability on December 31, 2010.\n2. There is information available in both text and image formats that provide this data.\n3. The text context mentions a table outlining deferred tax items for 2010 and 2009, which includes the net deferred tax liability.\n4. The image context also contains the same table as mentioned in the text.\n5. Therefore, the answer can be found by examining the table in either the text or the image, with a preference for the image.",
+        "answer": "Refer to the table in the image or text for the net deferred tax liability on December 31, 2010."
+    },
+    "124": {
+        "reasoning": [
+            "1 - The textual context contains a table caption indicating data for the year ended December 31, 2014, specifically mentioning 'Proceeds from issuance of medium-term notes' and 'Financial Services Operations'.",
+            "2 - I examined the provided image context, focusing on the table showing 'Cash flows from financing activities' for the 'Year Ended December 31, 2014'.",
+            "3 - Within this table, I located the row labeled 'Proceeds from issuance of medium-term notes'.",
+            "4 - I identified the column corresponding to 'Financial Services Operations'.",
+            "5 - The value at the intersection of the 'Proceeds from issuance of medium-term notes' row and the 'Financial Services Operations' column is 991,835.",
+            "6 - This value represents the amount of proceeds from the issuance of medium-term notes in the Financial Services Operations for the year ended December 31, 2014."
+        ],
+        "answer": "991835"
+    },
+    "125": {
+        "reasoning": "1 - The question asks for the low price in the fourth quarter of the year ended December 31, 2009.\n2 - I reviewed the textual context and found a table containing high and low sales prices per share for the common stock.\n3 - I located the row corresponding to 'Year ended December 31, 2009:' and then the sub-row for 'Fourth Quarter'.\n4 - The 'Low' price listed for the Fourth Quarter of 2009 is $21.28.\n5 - I cross-checked this information with the image context, specifically the 'Price Range of Common Stock' table on page 34, and confirmed the low price for the Fourth Quarter of 2009 is $21.28.",
+        "answer": "$21.28"
+    },
+    "126": {
+        "reasoning": "1 - Reviewed the textual context for any information regarding TFM Parent's Net Sales in 2009, but found no specific figures.\n2 - Examined the image context, specifically looking for the Consolidated Statement of Income for the year ended October 3, 2009.\n3 - Located the relevant statement on page 57 of the PDF.\n4 - Identified the \"Net Sales\" line for the \"TFM Parent\" column.\n5 - Extracted the value of $ 14,538 from the table.",
+        "answer": "14538"
+    },
+    "127": {
+        "reasoning": [
+            "1 - The question asks for the total consolidated net sales in 2011.",
+            "2 - I reviewed the textual context and found that it states \"Net sales for the year ended December 31, 2011 were $2,749.3 million\".",
+            "3 - I then examined the image context, specifically page 41, which contains a table with the heading \"Total Consolidated Net Sales\".",
+            "4 - In the table on page 41, the value for \"Total Consolidated Net Sales\" for the year 2011 is listed as $2,749.3.",
+            "5 - Both the textual context and the image context provide the same value for total consolidated net sales in 2011.",
+            "6 - According to the instructions, I should prioritize information from the images."
+        ],
+        "answer": "$2,749.3"
+    },
+    "128": {
+        "reasoning": "1 - The question asks for the 'income from continuing operations before accounting change' in 2005.\n2 - The textual context mentions that the 'Income from continuing operations before accounting change increased 18 percent to $529.3 million, compared to 2005'. This gives the 2006 value and the percentage increase from 2005.\n3 - Examining the tables in the provided PDF pages, specifically the 'CONSOLIDATED STATEMENT OF OPERATIONS' table, shows the 'Income from continuing operations before cumulative effect of accounting change' for 2005 as $447.7.\n4 - This aligns with the textual context, as $447.7 million increased by 18% would be approximately $528.3 million, close to the reported $529.3 million for 2006. The discrepancy is likely due to rounding in the percentage increase mentioned in the text.\n5 - Prioritizing the image data as per the instructions, the value from the table is the direct answer.",
+        "answer": "$447.7"
+    },
+    "129": {
+        "reasoning": "1 - The question asks for the high price in the second quarter of Fiscal 2009.\n2 - I examined the textual context but found no information about high stock prices.\n3 - I then reviewed the image context and located the table titled \"Market For Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities\".\n4 - This table provides the high and low stock prices for each fiscal quarter.\n5 - I found the row for \"Fiscal 2009: Second Quarter\".\n6 - The corresponding \"High\" price listed for the second quarter of Fiscal 2009 is $23.58.",
+        "answer": "$23.58"
+    },
+    "130": {
+        "reasoning": "1. The user asked for the total number of subscribers at the end of 2007.\n2. I reviewed the textual context provided, which indicated the total subscribers at the end of 2007 as 7,479.\n3. I also reviewed the image context, which consistently showed the total subscribers at the end of 2007 as 7,479 across multiple pages.\n4. The consistency of the data between textual and image sources confirms its reliability.\n5. Thus, I prioritized and selected the value from the image context as it corroborates the textual data.",
+        "answer": "7,479"
+    },
+    "131": {
+        "reasoning": "1. The user is asking for the Comprehensive Income for the year ended December 31, 2014. I need to find this information from the provided text and image.\n2. The first textual context contains a table titled \"Consolidated Statements of Comprehensive Income\". It includes data for 2016 and 2015, but the data for 2014 is missing.\n3. The second textual context contains a table about cash flows and also includes data for 2014, but it does not contain information about Comprehensive Income.\n4. The first image is titled \"Consolidated Statements of Comprehensive Income\" and includes data for 2016, 2015, and 2014. I should be able to find the answer here.\n5. Plan: Find the \"Comprehensive Income\" row in the first image.\n6. Read the value for the year ended December 31, 2014.",
+        "answer": "The answer can be found in the image under \"Comprehensive Income\" for the year 2014."
+    },
+    "132": {
+        "reasoning": [
+            "1 - The user is asking for the total pretax charges for the year ended December 31, 2007.",
+            "2 - I reviewed the textual context and found a table titled \"The following pretax charges were incurred in connection with the strategic cost reductions.\"",
+            "3 - I examined the image context and located the same table on page 49.",
+            "4 - The table on page 49 explicitly lists \"Total pretax charges\" for the year ended December 31, 2007.",
+            "5 - I extracted the value for \"Total pretax charges\" for 2007 from the image."
+        ],
+        "answer": "$107.2"
+    },
+    "133": {
+        "reasoning": "1. The user wants to know the number of customer meters in the Kentucky/Mid-States division located in Virginia.\n2. Review of the textual context shows that the division serves Kentucky, Tennessee, and Virginia with a total of 182,510 meters, but doesn't specify the breakdown per state.\n3. The image context on Page 5 lists the total meters and service areas for the division, including individual meter counts for each state.",
+        "answer": "Individual meter counts for Virginia are listed in the image context."
+    },
+    "134": {
+        "reasoning": [
+            "1 - The question asks for the interest expensed in 2008.",
+            "2 - I reviewed the textual context and found a table caption mentioning 'interest capitalized into inventory'.",
+            "3 - I examined the image context and located a table on page 67 with the title '**Information related to interest capitalized into inventory**', which aligns with the textual context.",
+            "4 - This table includes a row for 'Interest expensed' and columns for the years 2010, 2009, and 2008.",
+            "5 - I identified the value for 'Interest expensed' under the '2008' column in the table.",
+            "6 - The value is $210,709."
+        ],
+        "answer": "$210,709"
+    },
+    "135": {
+        "reasoning": "1 - The user is asking for the total stockholders' equity for MGM Resorts International on December 31, 2017.\n2 - I reviewed the textual context but did not find the specific figure for total stockholders' equity for MGM Resorts International.\n3 - I examined the image context and found a 'CONDENSED CONSOLIDATING BALANCE SHEET INFORMATION' table for the year ended December 31, 2017.\n4 - Within this table, I located the line item 'MGM Resorts International stockholders' equity' under the 'Consolidated' column.\n5 - The corresponding value for December 31, 2017, is $7,577,061.",
+        "answer": "$7,577,061"
+    },
+    "136": {
+        "reasoning": "1 - The question asks for the average price paid per share in November 2018.\n2 - I reviewed the textual context and found a table detailing share repurchases for October, November, and December 2018.\n3 - I then examined the image context and located the same table on page 29.\n4 - From the table on page 29, the row corresponding to 'November 1, 2018 through November 30, 2018' shows an 'Average Price Paid per Share' of '$121.93'.",
+        "answer": "$121.93"
+    },
+    "137": {
+        "reasoning": [
+            "1 - The question asks for the comprehensive income attributable to TE Connectivity Ltd. in 2011.",
+            "2 - I scanned the textual context but did not find the specific figure for comprehensive income.",
+            "3 - I examined the image context and found a 'CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME'.",
+            "4 - Within this statement, I located the line item 'Comprehensive income attributable to TE Connectivity Ltd.'",
+            "5 - I found the corresponding value for the year 2011, which is $1,427 (in millions)."
+        ],
+        "answer": "$1,427"
+    },
+    "138": {
+        "reasoning": "1 - The textual context mentions that the fair values of cash and cash equivalents are disclosed in the notes to the consolidated financial statements.\n2 - The textual context refers to a table providing information on assets and liabilities as of December 31, 2014 and 2013.\n3 - Examining the image context, specifically page 75, reveals a table titled \"The following table summarizes fair value measurements by level for cash equivalents and registered investment companies that were measured at fair value on a recurring basis:\".\n4 - The table includes a section for \"December 31, 2013\".\n5 - Within the \"December 31, 2013\" section, the row \"Cash equivalents - money-market funds\" lists amounts under different fair value levels.\n6 - The question asks for the amount with \"Significant Other Observable Inputs (Level 2)\".\n7 - According to the table, the amount for \"Cash equivalents - money-market funds\" under the \"Significant Other Observable Inputs (Level 2)\" column for December 31, 2013 is $889.",
+        "answer": "$889"
+    },
+    "139": {
+        "reasoning": [
+            "1 - The user is asking for the amount spent on remediation in 2017.",
+            "2 - I reviewed the textual context and found information about environmental expenditures but not the specific amount for remediation in 2017.",
+            "3 - I examined the image context and found a table titled \"Our environmental expenditures, including non-regulatory expenditures, for each of the last three years\".",
+            "4 - This table contains a row labeled \"Remediation\" and a column for the year \"2017\".",
+            "5 - The value at the intersection of the \"Remediation\" row and the \"2017\" column is $36 million."
+        ],
+        "answer": "$36"
+    },
+    "140": {
+        "reasoning": "1 - The question asks for the cost of sales as a percentage of sales in 2009.\n2 - The textual context provides a table with this information.\n3 - The image context (page 20) also contains a table with the cost of sales as a percentage of sales for different years.\n4 - According to the table on page 20 of the PDF, the cost of sales as a percentage of sales in 2009 was 95.5%.",
+        "answer": "95.5%"
+    },
+    "141": {
+        "reasoning": [
+            "1 - The question asks for 'additions based on tax positions related to the prior year' in 2015.",
+            "2 - I reviewed the textual context but did not find the specific information.",
+            "3 - I examined the image context and found a relevant table on page F-24 titled 'A reconciliation of the beginning and ending amount of unrecognized tax benefits'.",
+            "4 - This table contains a row labeled 'Additions based on tax positions related to the prior year'.",
+            "5 - I located the value corresponding to this row for the year 2015 in the table.",
+            "6 - The value for 'Additions based on tax positions related to the prior year' in 2015 is $1,304."
+        ],
+        "answer": "1,304"
+    },
+    "142": {
+        "reasoning": "1 - Reviewed the textual context and found a table showing the 'Balance at End of Period' for Asset Retirement Obligations (ARO) in 2008 as $127.\n2 - Examined the image context and located a section titled 'Asset Retirement Obligations' on page 187.\n3 - Found a table within this section that explicitly states the 'ARO at end of period' for 2008.\n4 - The value for ARO at the end of the period in 2008 is shown as $389 in the image.",
+        "answer": "$389"
+    },
+    "143": {
+        "reasoning": "1 - The question asks for the change in segment operating margin for 'Architecture & Software' from 2007 to 2008.\n2 - The textual context provides a table with this information, stating: 'Segment operating margin              24.2%  (2.3)pts'.\n3 - Reviewing the image context, specifically the 'Architecture & Software' section, confirms the segment operating margin for 2008 is 24.2% and for 2007 is 26.5%. The change is calculated as 24.2% - 26.5% = -2.3 percentage points.\n4 - Both the textual and image contexts agree on the change in segment operating margin.",
+        "answer": "-2.3% or (2.3)pts"
+    },
+    "144": {
+        "reasoning": [
+            "1 - The textual context provides annual financial data but does not contain quarterly information.",
+            "2 - While both textual and image contexts contain financial data for the year ended December 31, 2007, the textual context lacks the quarterly breakdown needed to answer the question.",
+            "3 - The image context on page 114 contains a table titled 'Selected Quarterly Financial Data (Unaudited)' for the year ended December 31, 2007.",
+            "4 - Within this table, the 'Diluted income per share' for the 'Third Quarter' is identified.",
+            "5 - The value for diluted income per share in the third quarter of 2007 is $0.15."
+        ],
+        "answer": "$0.15"
+    },
+    "145": {
+        "reasoning": [
+            "1 - The question asks for the total amount of interest on debt due in 2013.",
+            "2 - I reviewed the textual context but it did not contain the specific information about interest on debt due in 2013.",
+            "3 - I examined the image context, specifically looking for tables related to debt and payment schedules.",
+            "4 - I found a table on page 25 titled 'The following table summarizes our significant contractual obligations and other long-term liabilities as of December 31, 2008:'.",
+            "5 - This table has a row labeled 'Interest on debt (a)' and a column for the year '2013'.",
+            "6 - The value at the intersection of the 'Interest on debt (a)' row and the '2013' column is $127."
+        ],
+        "answer": "127"
+    },
+    "146": {
+        "reasoning": [
+            "1 - Located the table titled \"UNAUDITED SUPPLEMENTARY INFORMATION December 31, 2007, 2006 and 2005\" in the image.",
+            "2 - Identified the row corresponding to \"Argentina\" within the \"Proved Developed Reserves\" section of the table.",
+            "3 - Located the column corresponding to the year \"2006\".",
+            "4 - Found the value at the intersection of the \"Argentina\" row and the \"Gas (MMcf)(a)\" column for 2006.",
+            "5 - Extracted the numerical value from the table."
+        ],
+        "answer": "282815"
+    },
+    "147": {
+        "reasoning": "1 - The question asks for the total amount of Purchase Obligations due after 2021.\n2 - The textual context mentions purchase obligations but does not specify the amounts due after 2021.\n3 - The image contains a table titled 'Commitments as of December 31, 2016'.\n4 - Within this table, there is a row for 'Purchase Obligations' and a column for 'After 2021'.\n5 - The value at the intersection of the 'Purchase Obligations' row and the 'After 2021' column is $6.5.",
+        "answer": "$6.5"
+    },
+    "148": {
+        "reasoning": [
+            "1 - Located the 'SUPPLEMENTAL DISCLOSURE OF CASH FLOW INFORMATION' section in the image, which aligns with the textual context describing cash flow information.",
+            "2 - Identified the line item 'Cash paid during the period for: Interest' within this section.",
+            "3 - Read the value corresponding to 'Interest' for the year '2006' from the image."
+        ],
+        "answer": "$82,215"
+    },
+    "149": {
+        "reasoning": "1 - The textual context contains tables with information on foreign currency translation for multiple years.\n2 - The first textual context table shows \"Total foreign currency translation\" for 2014 as (150,943).\n3 - The second textual context table shows \"Foreign currency translation adjustments\" for 2014 as 2494.\n4 - Examining the image context, page 54 shows a table titled \"CONSOLIDATED STATEMENTS OF COMPREHENSIVE EARNINGS\".\n5 - In this table, under the section \"Other comprehensive (loss) earnings, net of tax\", the line item \"Total foreign currency translation\" for the year ended December 31, 2014, is reported as (150,943).\n6 - Page 68 shows a table related to goodwill, and it mentions \"Foreign currency translation\" for 2014 as (3,872) under the \"Total\" column. This appears to be a component of the overall foreign currency translation adjustment.\n7 - Page 91 shows a table with \"Foreign currency translation adjustments\" for the year ended December 31, 2014, with a net of tax value of 2494.\n8 - Prioritizing the information from the images, specifically the Consolidated Statements of Comprehensive Earnings, the total foreign currency translation for 2014 is found to be -150,943.",
+        "answer": "-150943"
+    },
+    "150": {
+        "reasoning": "1 - Reviewed the textual context for information on diaper sales, but it did not contain specific financial figures for 2002.\n2 - Examined the image context, focusing on tables that might contain sales data.\n3 - Located the 'Sales of Principal Products' table on page 27 of the image.\n4 - Identified the 'Diapers' category within the table.\n5 - Extracted the sales figure for the Diapers category in 2002 from the table.",
+        "answer": "$3.0"
+    },
+    "151": {
+        "reasoning": "1 - The question asks for settlement payments in 2011.\n2 - The textual context mentions settlement of tax issues but does not provide a specific amount for 2011.\n3 - Reviewed the image context, specifically focusing on pages related to income taxes and reserves, as mentioned in the text.\n4 - On page 64, under the 'Reserves' section, a table titled 'A rollforward of our reserves for all federal, state and foreign tax jurisdictions, is as follows:' is present.\n5 - Within this table, the line item 'Settlement payments' shows a value for 2011.",
+        "answer": "$(156)"
+    },
+    "152": {
+        "reasoning": "1 - The question asks for the 'Offsets Variable Rate Debt Attributable to Fluctuations Above' for the start date 12/30/2016.\n2 - I located the table in the image context titled 'The following table summarizes the Company\u2019s interest rate cap agreements'.\n3 - I found the row with the 'Start Date' of 12/30/2016.\n4 - The corresponding value in the 'Offsets Variable Rate Debt Attributable to Fluctuations Above' column for that row is 'Three month LIBO rate of 2.0%'.",
+        "answer": "Three month LIBO rate of 2.0%"
+    },
+    "153": {
+        "reasoning": "1 - The question asks for the total number of securities remaining available for future issuance under equity compensation plans.\n2 - The textual context mentions \"Equity Compensation Plan Information (as of Dec. 31, 2004)\".\n3 - The image contains a table titled \"Equity Compensation Plan Information (as of Dec. 31, 2004)\".\n4 - Within this table, the last column is titled \"Number of securities remaining available for future issuance under equity compensation plans (excluding securities reflected in column (a))\".\n5 - The \"Total\" row in this column shows the value 16,845,353.",
+        "answer": "16,845,353"
+    },
+    "154": {
+        "reasoning": "1 - Identified the 'Consolidated Balance Sheet Data' table in the textual context.\n2 - Located the same table within the PDF images on page 1.\n3 - Identified the row labeled 'Cash, cash equivalents, and investments'.\n4 - Located the column corresponding to the year '2009'.\n5 - Extracted the numerical value at the intersection of the identified row and column from the image. The value is in millions.",
+        "answer": "The specific numerical value for 'Cash, cash equivalents, and investments' in 2009."
+    },
+    "155": {
+        "reasoning": "1 - The user is asking for the percentage of Net Sales for International in 2002.\n2 - I examined the textual context and found a table caption mentioning 'Year Ended December' with data for 2004, 2003, and 2002, including 'Percent of Net Sales' for 'International'.\n3 - I then reviewed the image context and located a table with the same caption: 'Year Ended December 31,\n2004\n2003\n2002\n(in thousands)'.\n4 - Within this table, I found the 'Percent of Net Sales' section.\n5 - I identified the value corresponding to 'International' for the year '2002'.\n6 - The value is '21.4'.",
+        "answer": "21.4%"
+    },
+    "156": {
+        "reasoning": [
+            "1 - The textual context includes 'Item 15. Exhibits and Financial Statement Schedules 44' and 'Item 6. Selected Financial Data.'. Neither of these explicitly mentions 'Legal Proceedings'.",
+            "2 - Examining the image context, specifically the 'INDEX' page, I searched for the term 'Legal Proceedings'.",
+            "3 - The 'INDEX' lists 'Item 3. Legal Proceedings' with a corresponding page number."
+        ],
+        "answer": "14"
+    },
+    "157": {
+        "reasoning": "1 - The question asks for the short-term debt as of January 1, 2017.\n2 - The textual context provides balance sheet data, including short-term debt, but the formatting is inconsistent.\n3 - Page 32 of the image contains a table titled \"Balance Sheet Data\" which includes a row for \"Short-term debt\".\n4 - The table on page 32 clearly lists the value for \"Short-term debt\" as of \"January 1, 2017\".\n5 - The value listed in the image for short-term debt as of January 1, 2017 is 217,306.",
+        "answer": "217,306"
+    },
+    "158": {
+        "reasoning": "1 - The question asks for the total number of shares purchased between 12/1/2013 and 12/31/2013.\n2 - I reviewed the textual context for information regarding share repurchases during this period but it only provided aggregate numbers.\n3 - I examined the image context and identified a table titled 'The activity pursuant to the 2011 Repurchase Program for the three months ended December 31, 2013 is summarized as follows:'.\n4 - I located the row corresponding to the period '12/1/2013-12/31/2013' in the table.\n5 - I identified the column 'Total Number of Shares Purchased' in the table.\n6 - The value at the intersection of the identified row and column is '0.91'.",
+        "answer": "0.91"
+    },
+    "159": {
+        "reasoning": "1 - The question asks for the amount of Foreign Currency in United States dollars on October 2, 2010.\n2 - I reviewed the textual context and found a table with the caption \"We had the following aggregated notionals of outstanding forward and option contracts accounted for as cash flow hedges:\" which contains the requested information.\n3 - I checked the image context and located the same table on page 56, confirming the information found in the textual context.\n4 - The table explicitly states the value for 'Foreign Currency United States dollar' as '$0' for the date 'October 2, 2010'.",
+        "answer": "$0"
+    },
+    "160": {
+        "reasoning": "1. The user requested information on General and Administrative Expenses for the year ended December 31, 2005. 2. The provided textual context only contains quarterly financial data, not annual figures. 3. The image context includes a table on Page 1 summarizing the requested annual data. 4. Therefore, the information must be extracted from the image context as it contains the relevant annual data.",
+        "answer": "The General and Administrative Expenses for the year ended December 31, 2005, can be found in the image context."
+    },
+    "161": {
+        "reasoning": "1. Identify the user's query about U.K. gilts and Level 2 Fair Value Measurement as of December 31, 2017.\n2. Locate the relevant table showing the fair value measurements of the U.K. pension plan assets.\n3. Find the specific row labeled \"U.K. gilts\" and ensure it corresponds to the column for \"Level 2\" under the date specified, \"December 31, 2017.\"",
+        "answer": "Find the value from the table under U.K. gilts, Level 2, December 31, 2017."
+    },
+    "162": {
+        "reasoning": [
+            "1 - The user is asking for the risk-free interest rate in 2009.",
+            "2 - I searched the textual context for any mention of 'risk-free interest rate' but found no relevant information.",
+            "3 - I then examined the image context and identified a table titled 'Black Scholes valuation assumptions for stock option grants:' on page 66.",
+            "4 - This table includes a row for 'Risk-free interest rate' and columns for the years 2011, 2010, and 2009.",
+            "5 - I located the value for the 'Risk-free interest rate' in the 2009 column.",
+            "6 - The value found in the table is 2.82%."
+        ],
+        "answer": "2.82%"
+    },
+    "163": {
+        "reasoning": [
+            "1 - Identified the relevant table from the textual context: \"The high and low sales prices of our common stock as reported by NASDAQ for each quarter of 2016 and 2015 were as follows\".",
+            "2 - Located the table in the provided image context on page 43.",
+            "3 - Identified the row corresponding to the year '2015' and the sub-row for 'Low'.",
+            "4 - Identified the column corresponding to 'Third'.",
+            "5 - Extracted the value at the intersection of the '2015' 'Low' row and the 'Third' column."
+        ],
+        "answer": "$89.82"
+    },
+    "164": {
+        "reasoning": "1. The user is asking for the total mileage operated as of Dec. 31, 2004. \n2. To find this information, I need to refer to both the provided text and image.\n3. The textual context states that \"As of Dec. 31, 2004, NS\u2019 railroads operated approximately 21,300 miles of road.\"\n4. The image context contains a table titled \"Mileage Operated as of Dec. 31, 2004\" which lists \"Total\" mileage as 38,235.\n5. The instruction is to prioritize information from the images, therefore I conclude the total mileage operated is 38,235 miles.",
+        "answer": "38,235"
+    },
+    "165": {
+        "reasoning": "1 - The question asks for the total (MBOE) of Oil & NGLs and Gas for the United States in 2007.\n2 - I examined the textual context and found a table with data for 2007, 2006, and 2005, including columns for 'Oil & NGLs (MBbls)', 'Gas (MMcf)(a)', and 'Total (MBOE)'.\n3 - I located the row corresponding to 'United States' in the textual table.\n4 - I then examined the image context and located the same table.\n5 - I specifically looked for the 'United States' row and the 'Total (MBOE)' column under the '2007' section.\n6 - The value in the image for 'United States' under 'Total (MBOE)' for '2007' is 512,809.",
+        "answer": "512,809"
+    },
+    "166": {
+        "reasoning": "1 - The user is asking for the net increase in cash and cash equivalents on July 1, 2011.\n2 - I examined the textual context, which contains consolidated balance sheets and statements of income, but it does not directly provide the net change in cash and cash equivalents for the specified date.\n3 - I then reviewed the image context, specifically looking for a statement of cash flows or a similar table.\n4 - On page 43 of the PDF, under the section 'Liquidity and Capital Resources', there is a table summarizing the statement of cash flows.\n5 - This table includes a row labeled 'Net increase (decrease) in cash and cash equivalents'.\n6 - I identified the value in this row under the column 'July 1, 2011', which is '$756'.",
+        "answer": "$756"
+    },
+    "167": {
+        "reasoning": [
+            "1 - The question asks for the segment of the company acquired on 31st December 2008.",
+            "2 - I reviewed the textual context and found a table titled \"2008 Acquisitions\".",
+            "3 - In the textual context, the acquisition on 31-Dec is \"Hiltap Fittings Ltd\" with the segment \"Fluid Management\".",
+            "4 - I then examined the image context, specifically the \"2008 Acquisitions\" table on page 52.",
+            "5 - The image confirms that \"Hiltap Fittings Ltd\" was acquired on 31-Dec and its segment is listed as \"Fluid Management\"."
+        ],
+        "answer": "Fluid Management"
+    },
+    "168": {
+        "reasoning": "1 - The question asks for the percentage change in Investment banking and debt placement fees from 2014 to 2015.\n2 - I reviewed the textual context and found the statement: \"For 2015, investment banking and debt placement fees increased $48 million, or 12.1%, from the prior year.\"\n3 - I then examined Figure 7 in the image context and found a row for \"Investment banking and debt placement fees\" which shows a \"Change 2015 vs. 2014 Percent\" of 12.1%.\n4 - I also checked Figure 9 and Figure 14, both of which confirm the percentage change as 12.1%.\n5 - Since the instructions prioritize information from the images, I will use the value found in the images.",
+        "answer": "12.1%"
+    },
+    "169": {
+        "reasoning": "1. Check the textual context for the net value of core technology in 2006.\n2. Check the image context for the net value of core technology in 2006.\n3. Prioritize the information from the image context for the final answer.",
+        "answer": "$100,000"
+    },
+    "170": {
+        "reasoning": "1. The user wants to know the Consumer Domestic income before income taxes for 2010.\n2. I need to locate this information within the provided textual and image context.\n3. The textual context provides information about intersegment sales and expense allocation, which is not directly relevant.\n4. The image context on Page 41 of the PDF contains a table specifically titled \"Segment sales and income before taxes and minority interest for each of the three years ended December 31, 2011, 2010 and 2009\".\n5. This table includes a section for \"Income Before Income Taxes\" with a column specifically for \"Consumer Domestic\" for the year 2010.\n6. I can directly extract the required value from this table.\n7. Page 93 confirms the same information with a similar table and title.",
+        "answer": "The Consumer Domestic income before income taxes in 2010 can be directly read from the table on Page 41 of the PDF."
+    },
+    "171": {
+        "reasoning": "1 - The question asks for the basic weighted-average shares outstanding for the year ended December 31, 2014.\n2 - The textual context contains a table with the caption \"The following table provides the calculation of diluted weighted-average shares outstanding (in millions)\". This table includes a row for \"Basic weighted-average shares outstanding\".\n3 - The image context contains a page with a table that matches the description in the textual context. \n4 - I located the row labeled \"Basic weighted-average shares outstanding\" in the table on the image.\n5 - I identified the value in the column corresponding to the year ended December 31, 2014 for that row.",
+        "answer": "533.4"
+    },
+    "172": {
+        "reasoning": "1 - The question asks for the total debt for URNA and subsidiaries in 2011.\n2 - The textual context provides balance sheet data, including total debt for 2011 as $2,987 million.\n3 - I examined the image context and found a table on page 78 titled \"URNA and subsidiaries debt\".\n4 - Within this table, the \"Total URNA and subsidiaries debt\" for 2011 is listed as 2,858.",
+        "answer": "2,858"
+    },
+    "173": {
+        "reasoning": [
+            "1 - The question asks for the free cash flow as a percentage of revenue in 2016.",
+            "2 - The textual context provides this information: \"Free cash flow in 2017 was $569.3 million or 8.3% of revenue, and $595.0 million, or 9.8% of revenue in 2016.\"",
+            "3 - Reviewing the image context, page 46 contains a table titled \"Free Cash Flow (dollars in thousands)\".",
+            "4 - This table explicitly lists the \"Free cash flow as a percentage of revenue\" for 2018, 2017, and 2016.",
+            "5 - According to the table on page 46, the free cash flow as a percentage of revenue in 2016 is 9.8%."
+        ],
+        "answer": "9.8%"
+    },
+    "174": {
+        "reasoning": "1 - The question asks for the low value of the company's stock in the fourth quarter of 2009.\n2 - The textual context includes a table with the high and low sales price of the shares for 2010 and 2009.\n3 - I located the row for 'Fourth Quarter' under the '2009' section in the textual table.\n4 - I identified the 'Low' column for that row.\n5 - The textual context indicates the low value was '$36.00'.\n6 - I then reviewed the image context, specifically page 21, which contains the same table.\n7 - I confirmed that the low value for the fourth quarter of 2009 is indeed $36.00.",
+        "answer": "$36.00"
+    },
+    "175": {
+        "reasoning": [
+            "1 - The question asks for the total foreign currency translation for the year ended December 31, 2012.",
+            "2 - I examined the textual context and found a table detailing changes in goodwill by segment, which includes foreign currency translation, but broken down by segment.",
+            "3 - I also found a table in the textual context that shows \"Total foreign currency translation\" for 2013 and 2011 but not directly for 2012.",
+            "4 - I then reviewed the image context, specifically focusing on tables related to comprehensive earnings.",
+            "5 - On page 55 (and page 91), I found the \"CONSOLIDATED STATEMENTS OF COMPREHENSIVE EARNINGS\" table.",
+            "6 - This table explicitly lists \"Total foreign currency translation\" for the years ended December 31, 2013, 2012, and 2011.",
+            "7 - According to the table on page 55, the \"Total foreign currency translation\" for 2012 is $38,880."
+        ],
+        "answer": "$38,880"
+    },
+    "176": {
+        "reasoning": "1 - The question asks for the total Contractual Cash Obligations for 2023.\n2 - I reviewed the textual context, which mentions a summary of contractual cash obligations but does not provide the specific figures for 2023.\n3 - I then examined the image context and located the table titled 'Contractual Obligations' on page 49.\n4 - I found the row labeled 'Total Contractual Cash Obligations' and the column for '2023'.\n5 - The value at the intersection of this row and column is $4,075.1.",
+        "answer": "$4,075.1"
+    },
+    "177": {
+        "reasoning": "1. The user asked for the closing value in the fourth quarter of 2013.\n2. I need to find the table containing quarterly stock prices.\n3. Locate the closing value for the fourth quarter of 2013.\n4. Textual context provides the table caption, which helps in identifying the relevant table.\n5. The image context contains the table with the required information.\n6. I need to find the 'Close' row and the 'Fourth' column under the '2013' section.",
+        "answer": "The closing value for Q4 2013."
+    },
+    "178": {
+        "reasoning": [
+            "1 - Reviewed the textual context, noting the table captions related to financial statements and year-end data.",
+            "2 - Examined the image context, specifically looking for tables with the mentioned captions.",
+            "3 - Located a table on page F-24 with the caption \"Year ending December 31,\".",
+            "4 - Identified the row corresponding to the year 2006 in this table.",
+            "5 - Extracted the numerical value associated with the year 2006."
+        ],
+        "answer": "$16,829"
+    },
+    "179": {
+        "reasoning": "1. Identify the user's request for long-term debt as of December 31, 2011.\n2. Locate the relevant information from the textual context which includes tables with 'Long-term debt' for various years.\n3. Locate the relevant information from the image context which includes 'Consolidated Balance Sheet' sections for December 31, 2011.\n4. Extract the long-term debt value for 2011 from both contexts.\n5. Prioritize the data extracted from the image context as the final answer.",
+        "answer": "Extracted long-term debt value for 2011 from image context."
+    },
+    "180": {
+        "reasoning": "1 - The question asks for the Weighted-Average Grant-Date Fair Value of shares forfeited in 2005.\n2 - I located the table titled \"The following table summarizes stock option activity:\" in the image context.\n3 - I identified the row labeled \"Forfeited\".\n4 - I found the column corresponding to the year 2005.\n5 - The value at the intersection of the 'Forfeited' row and the 'Weighted- Average Grant-Date Fair Value' column for 2005 is $35.84.",
+        "answer": "$35.84"
+    },
+    "181": {
+        "reasoning": "1. **Textual Context Review:** The textual context contains tables showing the cost of revenues as a percentage of total revenues and another table showing the actual cost of revenues in thousands of dollars.\n2. **Image Context Review:** The images contain the same tables as the textual context. I need to focus on the table that shows the cost of revenues in thousands of dollars for the year 2002.\n3. **Intersection:** Both the textual and image context contain the relevant tables.\n4. **Extraction:** I will extract the 'Total cost of revenues' for 2002 from the table in the image context as instructed.",
+        "answer": "$3,500,000"
+    },
+    "182": {
+        "reasoning": "1. **Scan the text:** Search for mentions of \"free cash flow,\" \"lease principal repayments,\" and the year \"2013.\" 2. **Examine the images:** Look for tables or financial statements that might contain this information, paying close attention to sections related to cash flow. 3. **Identify the relevant table:** The first image contains a table titled \"Free cash flow less lease principal repayments.\" 4. **Locate the value for 2013:** Find the column for 2013 and the row for \"Free cash flow less lease principal repayments.\"",
+        "answer": "$2,500,000"
+    },
+    "184": {
+        "reasoning": "1 - The question asks for the percentage of pumps rented by the trench, power and pump segment in 2015.\n2 - I reviewed the textual context but it did not contain the specific percentage requested.\n3 - I examined the images and found a table on page 64 titled \"The following table presents the percentage of equipment rental revenue by equipment type for the years ended December 31, 2016, 2015 and 2014:\".\n4 - Within this table, under the section \"Primarily rented by our trench, power and pump segment\", there is a row for \"Pumps\".\n5 - The table shows that in 2015, 4% of the equipment rental revenue for pumps was attributed to the trench, power and pump segment.",
+        "answer": "4%"
+    },
+    "185": {
+        "reasoning": "1 - The question asks for the high value in the second quarter of the year ended December 31, 2004.\n2 - The textual context includes a table of high and low closing prices for common stock, including the year ended December 31, 2004.\n3 - The first image contains a table titled \"PRICE RANGE OF COMMON STOCK\" which also contains the high and low closing prices.\n4 - I located the row for \"Year Ended December 31, 2004\" in the image.\n5 - I then found the \"High\" column and the \"Second Quarter\" row.\n6 - The intersecting value is $19.00.",
+        "answer": "$19.00"
+    },
+    "186": {
+        "reasoning": "1 - The textual context provides a table caption indicating a summary of common stock repurchases for the three-month period ending December 31, 2008.\n2 - The first image contains a table that matches the description in the textual context.\n3 - The table in the image lists the number of shares purchased in December under the 'Purchased (a)' column.\n4 - According to the table, 66,986 shares were purchased in December 2008.",
+        "answer": "66986"
+    },
+    "187": {
+        "reasoning": [
+            "1 - The textual context contains a table caption indicating the presence of cash flow data.",
+            "2 - The textual context includes a row for 'Cash and cash equivalents end year' and columns for the years 2008, 2007, and 2006.",
+            "3 - The image context contains a table titled 'Summary cash flow data follows (in millions):' which aligns with the textual description.",
+            "4 - Within the table in the image, the row 'Cash and cash equivalents end of year' and the column '2006' intersect at the value '$79.0'."
+        ],
+        "answer": "$79.0"
+    },
+    "188": {
+        "reasoning": "1 - The question asks for the 'total MPC Consolidated Pipeline Throughput' in 2012.\n2 - I scanned the textual context for mentions of 'MPC Consolidated Pipeline Throughput' but found no relevant numerical data for 2012.\n3 - I then examined the image context and located a table titled 'MPC Consolidated Pipeline Throughput (mbpd)' on page 16.\n4 - Within this table, I identified the column for the year 2012.\n5 - I found the values for 'Crude oil pipelines' and 'Refined products pipelines' for 2012.\n6 - The 'Total' consolidated pipeline throughput for 2012 is listed as 2,170.",
+        "answer": "2,170"
+    },
+    "189": {
+        "reasoning": "1 - The textual context contains two tables summarizing restricted stock unit activity and stock option activity. Both tables include the number of shares outstanding as of December 31, 2015.\n2 - The image context also contains the same two tables.\n3 - From the image of the 'Restricted stock units' table, the number of shares outstanding as of December 31, 2015 is 0.8 million.\n4 - From the image of the 'Stock options' table, the number of shares outstanding as of December 31, 2015 is 5.6 million.\n5 - Since the question is ambiguous and doesn't specify which type of shares, and the instruction prioritizes the image, both values are extracted from the image.",
+        "answer": "Restricted stock units: 0.8 million; Stock options: 5.6 million"
+    },
+    "190": {
+        "reasoning": [
+            "1 - The question asks for the net income attributable to Key in 2014.",
+            "2 - I examined the textual context and found two different values for net income attributable to Key in 2014: $497 million and $234 million.",
+            "3 - I then examined the image context, paying close attention to tables and financial statements.",
+            "4 - In the first image, under the \"Consolidated Statements of Comprehensive Income\", the \"Net income (loss) attributable to Key\" for 2014 is $905.",
+            "5 - In the second image, \"Figure 12. Major Business Segments\", the \"Income (Loss) from Continuing Operations Attributable to Key\" for Key Corporate Bank in 2014 is $234.",
+            "6 - In the fourth image, \"Figure 14. Key Corporate Bank\", the \"Net income (loss) attributable to Key\" for 2014 is $497.",
+            "7 - Prioritizing the information from the images, the \"Consolidated Statements of Comprehensive Income\" usually provides the overall net income figure.",
+            "8 - Therefore, the net income attributable to Key in 2014 is $905 million."
+        ],
+        "answer": "$905"
+    },
+    "191": {
+        "reasoning": "1 - The question asks for the net sales for the consolidated segment in 2013.\n2 - I examined the textual context and found two tables containing net sales information. The first table, 'Financial information by reportable segment', includes a 'Consolidated' row with net sales for 2013. The second table, 'The consolidated results of operations', also includes net sales for 2013.\n3 - I then examined the image context. Page 100 shows the table 'Financial information by reportable segment'. The 'Consolidated' row shows '$ 6999.7' for 'Net sales' in the '2013' column.\n4 - Page 33 shows the table 'CONSOLIDATED RESULTS OF OPERATIONS'. The 'Net sales' row shows '$6,999.7' for the year '2013'.\n5 - Both the textual context and image context provide the same value for consolidated net sales in 2013.\n6 - Prioritizing the information from the images, I found the net sales for the consolidated segment in 2013.",
+        "answer": "$6999.7"
+    },
+    "192": {
+        "reasoning": [
+            "1 - The question asks for the new order cancellation rate for the year ended December 31, 2011.",
+            "2 - I reviewed the textual context but it does not contain the new order cancellation rate for 2011.",
+            "3 - I then examined the image context, specifically looking for tables related to operating data or new orders.",
+            "4 - On page 23 of the PDF, I found a table titled \"Operating Data: New order cancellation rate:\"",
+            "5 - Within this table, I located the column for the year 2011 and the row for the \"Total\" new order cancellation rate.",
+            "6 - The value in that cell is 13.6%."
+        ],
+        "answer": "13.6%"
+    },
+    "193": {
+        "reasoning": "1 - The question asks for the interest payable in 2008-2009.\n2 - I examined the textual context but found no direct information about interest payable.\n3 - I then reviewed the image context, specifically looking for tables related to financial commitments or debt.\n4 - On page 50, I found a table under the section 'Contractual Commitments' which includes a line item for 'Interest payable (2)'.\n5 - The table provides the 'Interest payable' amount for the period '2008-2009' as $102,906 (in thousands).",
+        "answer": "$102,906 thousand"
+    },
+    "194": {
+        "reasoning": "1 - Identified the user's question about the change in interest expense from 2007 to 2006.\n2 - Reviewed the textual context, noting the mention of 'same store interest expense' and interest expense related to discontinued operations.\n3 - Examined the image context, focusing on tables containing interest expense data on page 52.\n4 - Located the 'Same Store Year Ended December 31' table and extracted the interest expense for 2007 ($48,470) and 2006 ($35,327).\n5 - Located the 'New Properties Year Ended December 31' table and extracted the interest expense for 2007 ($15,934) and 2006 ($14,268).\n6 - Calculated the total interest expense for 2007 by summing the values from 'Same Store' and 'New Properties': $48,470 + $15,934 = $64,404.\n7 - Calculated the total interest expense for 2006 by summing the values from 'Same Store' and 'New Properties': $35,327 + $14,268 = $49,595.\n8 - Calculated the change in interest expense by subtracting the 2006 value from the 2007 value: $64,404 - $49,595 = $14,809.\n9 - Cross-verified the values with the 'Total expenses from continuing operations' table on page 51, which shows interest expense of $64,404 for 2007 and $49,595 for 2006.",
+        "answer": "$14,809"
+    },
+    "195": {
+        "reasoning": "1 - The question asks for the page number of 'Executive Compensation'.\n2 - I examined the provided textual context but did not find the answer.\n3 - I reviewed the image context and located the 'TABLE OF CONTENTS'.\n4 - I found the entry 'Executive Compensation' under 'PART III'.\n5 - The page number listed next to 'Executive Compensation' is '91'.",
+        "answer": "91"
+    },
+    "196": {
+        "reasoning": "1 - Located the section on Capital Adequacy in the provided PDF image.\n2 - Identified the row corresponding to 'TIER 1 CAPITAL TO NET RISK-WEIGHTED ASS'.\n3 - Focused on the 'KeyBank (consolidated)' entry for December 31, 2013.\n4 - Read the value under the 'To Meet Minimum Capital Adequacy Requirements' section, which corresponds to the 'Ratio'.",
+        "answer": "4.00%"
+    },
+    "197": {
+        "reasoning": "1 - The textual context in Item 2 describes the principal operating properties and mentions \"Assembly of select models for the Brazilian market\".\n2 - Examining the image context, specifically the table under \"Motorcycles & Related Products Segment\", I looked for the location \"Manaus, Brazil\".\n3 - The table shows that the facility in Manaus, Brazil is listed as \"Manufacturing\".\n4 - The status of the Manaus facility is indicated as \"Owned\".",
+        "answer": "Owned"
+    },
+    "198": {
+        "reasoning": "1 - The question asks for the purchase obligations for less than 1 year.\n2 - I examined the textual context and identified a table summarizing contractual cash obligations.\n3 - I then examined the image context and found the same table under the section 'Contractual Obligations and Commitments'.\n4 - I located the 'Purchase obligations' row in the table.\n5 - I found the value under the '1 Year' column for 'Purchase obligations'.",
+        "answer": "$5,290"
+    },
+    "199": {
+        "reasoning": "1 - Reviewed the textual context which contained a table caption about real estate and accumulated depreciation but the specific value for 2003 was not present.\n2 - Checked the image context for information on accumulated depreciation, focusing on tables and financial summaries.\n3 - Identified a table on page 137 titled 'Real Estate and Accumulated Depreciation' which shows the 'Balance at the end of the year' for Accumulated Depreciation for 2003.\n4 - Extracted the value for Accumulated Depreciation at the end of 2003 from this table.\n5 - Cross-checked with the table on page 106 which also lists 'Less: Accumulated depreciation' for 2003. However, the table on page 137 is specifically focused on the activity of accumulated depreciation, making it the more reliable source for the total balance.",
+        "answer": "$958,531"
+    },
+    "200": {
+        "reasoning": "1 - The question asks for the amount of 'Net deferred tax assets' in 2006.\n2 - I scanned the textual context for mentions of deferred tax assets but it primarily discusses carry forwards and valuation allowances.\n3 - I then reviewed the image context, specifically looking for balance sheet information.\n4 - On page 2 of the images, in the 'Deferred tax assets' section, I found a line item for 'Net deferred tax assets'.\n5 - The corresponding value for 2006 is listed as $31,677.",
+        "answer": "$31,677"
+    },
+    "201": {
+        "reasoning": [
+            "1 - The question asks for the number of shares granted in 2006.",
+            "2 - I reviewed the textual context, which discusses stock purchase plans and stock-based compensation but does not explicitly state the number of shares granted.",
+            "3 - I then examined the image context, focusing on tables related to stock activity.",
+            "4 - On page 153, I found a table titled 'Restricted Stock Units' which summarizes unvested restricted stock award activity, including a row for 'Granted'.",
+            "5 - The 'Granted' row has columns for 'Shares' and 'Weighted-Average Grant-Date Fair Value' for the years 2007, 2006, and 2005.",
+            "6 - I identified the 'Shares' value under the 'Granted' row for the year 2006 as 1,058,053."
+        ],
+        "answer": "1,058,053"
+    },
+    "202": {
+        "reasoning": [
+            "1 - Reviewed the textual context for mentions of Stryker Corporation's value in 2008 but found no relevant information.",
+            "2 - Examined the image context, focusing on financial tables and statements.",
+            "3 - Located the 'SELECTED FINANCIAL DATA' table on page 10 of the PDF.",
+            "4 - Identified the 'Shareholders' equity' for Stryker Corporation in 2008 from the table.",
+            "5 - The value of Shareholders' equity in 2008 is listed as 5,407.",
+            "6 - Since the table indicates 'Dollars amounts in millions except per share amounts or as otherwise specified', the value is $5,407 million."
+        ],
+        "answer": "$5,407 million"
+    },
+    "203": {
+        "reasoning": "1. The user asked for the number of basic weighted average ordinary shares outstanding in 2015. \n2. I searched through the provided text and images to find this information.\n3. The textual context included two tables, both showing the basic weighted average ordinary shares outstanding for 2015 as 180.3.\n4. I checked the image context, which confirmed the same information in two tables, with the value for 2015 as 180.3 under the \"Basic\" category.",
+        "answer": "180.3"
+    },
+    "204": {
+        "reasoning": "1 - Located the table titled 'The following table summarizes transactions relating to Common Stock for the three years\u2019 ending December 31, 2010' in the textual context.\n2 - Identified the 'Treasury Stock' column in the table.\n3 - Located the row corresponding to 'Balance at December 31, 2010'.\n4 - Extracted the value from the intersection of the 'Treasury Stock' column and the 'Balance at December 31, 2010' row.\n5 - Confirmed the value in the corresponding table in the image context.",
+        "answer": "60,245,718"
+    },
+    "205": {
+        "reasoning": [
+            "1 - The question asks for the percentage change in Consolidated Revenues from 2010 to 2011.",
+            "2 - Reviewed the textual context but it does not contain the Consolidated Revenues for 2010 and 2011.",
+            "3 - Examined the image context and found a table on page 41 that explicitly lists \"Consolidated Revenues\" for 2011 and 2010.",
+            "4 - Identified the Consolidated Revenues for 2011 as $11,558.8 million and for 2010 as $10,393.1 million.",
+            "5 - Calculated the percentage change using the formula: ((Revenue in 2011 - Revenue in 2010) / Revenue in 2010) * 100.",
+            "6 - Calculation: (($11,558.8 - $10,393.1) / $10,393.1) * 100 = ($1,165.7 / $10,393.1) * 100 = 11.2169%.",
+            "7 - Rounded the percentage change to one decimal place."
+        ],
+        "answer": "11.2%"
+    },
+    "206": {
+        "reasoning": "1. The user requested the total operating income for 2011.\n2. The response mentions a table with operating income for different segments and the total operating income for 2011.\n3. The image context specifies that page 44 contains the relevant table including the 'Total operating income' for 2011.\n4. Therefore, the image was prioritized to extract the total operating income value for 2011.",
+        "answer": "The total operating income for 2011 is found in the table on page 44 of the image context."
+    },
+    "207": {
+        "reasoning": [
+            "1 - I scanned the textual context for mentions of manufacturing facilities or locations but found no specific information about Manaus, Brazil.",
+            "2 - I then examined the image containing the 'Motorcycles and Related Products Segment' table.",
+            "3 - I located the entry for 'Manufacturing(6)' with the location 'Manaus, Brazil'.",
+            "4 - The 'Status' column for this entry indicates 'Lease expiring 2022'."
+        ],
+        "answer": "Lease expiring 2022"
+    },
+    "208": {
+        "reasoning": "1 - The question asks for the number of common stock shares issued and outstanding as of December 31, 2015.\n2 - I reviewed the textual context and found two tables, 'Commitments and contingencies' and 'Capital: Partners\u2019', both containing information about common units issued and outstanding as of December 31, 2015.\n3 - I then examined the image context, focusing on the balance sheet information.\n4 - On page 106 of the PDF, under 'Commitments and contingencies', there's a section for 'Common Stock' which lists the number of shares issued and outstanding as of December 31, 2015.\n5 - The value listed for Common Stock as of December 31, 2015 is 146,384,247.",
+        "answer": "146,384,247"
+    },
+    "209": {
+        "reasoning": "1 - The user is asking for the cost of revenues in 2009.\n2 - I examined the textual context and found a description of the cost of revenues but no specific value for 2009.\n3 - I then examined the image context, looking for tables that present financial data for 2009.\n4 - I found a table on page 88 titled \"Quarterly Results of operations (unaudited)\" which provides quarterly data for 2009 and 2010. The table shows the \"Cost of revenues\" for each quarter of 2009.\n5 - I also found a table on page 52 titled \"CONSOLIDATED STATEMENTS OF OPERATIONS\" which provides annual data for 2008, 2009, and 2010. This table explicitly states the \"Cost of revenue\" for 2009.\n6 - Prioritizing information from the images, I identified the annual cost of revenues for 2009 from the table on page 52.",
+        "answer": "$249,938"
+    },
+    "210": {
+        "reasoning": "1. The user is asking for the high market price of common stock on a specific date, which is Dec. 31, 2011. \n2. I need to find this information in the provided text and image. \n3. The textual context includes a table titled 'SUMMARY OF QUARTERLY DATA' which contains market price information. However, the dates in this table do not explicitly mention Dec. 31, 2011. \n4. The text also references stock purchase programs and shareholder information, but does not provide the specific price for Dec. 31, 2011. \n5. The image context contains a table titled 'MARKET FOR THE REGISTRANT'S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES'. \n6. This table includes a section 'Market price of common stock' with data for quarters ended on Dec. 31, 2012, and Dec. 31, 2011. \n7. From this table, I can find the high price for Dec. 31, 2011.",
+        "answer": "High market price for common stock on Dec. 31, 2011."
+    },
+    "211": {
+        "reasoning": "1 - Locate the performance graph in the images.\n2 - Find the data table associated with the graph.\n3 - Locate the row corresponding to the S&P 500 Index.\n4 - Find the column corresponding to the date 10/2/10.\n5 - Extract the value at the intersection of the S&P 500 Index row and the 10/2/10 column.",
+        "answer": "The S&P 500 Index value at the end of the year 10/2/10 is not provided in the given data."
+    },
+    "212": {
+        "reasoning": "1. **Textual Context Review:** The first textual context contains a table about \"Allowance for Doubtful Accounts\". It has columns for \"Beginning of Year\" and different years. The row for \"Year Ended December 31, 2008\" has a value in the \"Beginning of Year\" column.\n\n2. **Image Context Review:** The first image contains the same table as the first textual context. I will verify the value.\n\n3. **Comparison:** The value in the image for \"Allowance for Doubtful Accounts\" at the \"Beginning of Year\" for \"Year Ended December 31, 2008\" is $49.5 million, which matches the textual context.",
+        "answer": "$49.5 million"
+    },
+    "213": {
+        "reasoning": "1 - The user is asking for the total long-term debt in 2012.\n2 - I reviewed the textual context and found mentions of total debt and short-term debt for 2012 but not the specific figure for long-term debt.\n3 - I then examined the image context, specifically looking for tables or sections detailing debt information for December 31, 2012.\n4 - On page 78 of the PDF, I found a table titled \"Debt consists of the following:\" which includes a line item for \"Total long-term debt\" with a corresponding value for 2012.\n5 - On page 52 of the PDF, under \"LIABILITIES AND STOCKHOLDERS' EQUITY\", there is a line item for \"Long-term debt\" for 2012.\n6 - Both instances show the same value for total long-term debt in 2012.",
+        "answer": "$6,679"
+    },
+    "215": {
+        "reasoning": [
+            "1 - The user is asking for the number of common stock equivalents for the year ended December 31, 2013.",
+            "2 - I searched the textual context for information about common stock equivalents for 2013 and found a table providing this information.",
+            "3 - I then examined the image context and found the same table on page 99.",
+            "4 - According to the table on page 99, the common stock equivalents for the year ended December 31, 2013, is 3.1 (in millions)."
+        ],
+        "answer": "3.1"
+    },
+    "216": {
+        "reasoning": "1 - The question asks for the repayment of senior unsecured notes for 'Motorcycles & Related Products Operations' in 2014.\n2 - I reviewed the textual context, which includes a table showing cash flows from financing activities for the year ended December 31, 2014, segmented by business operations.\n3 - I then examined the image context, specifically the page containing the cash flow statement for the year ended December 31, 2014.\n4 - I located the row labeled 'Repayment of senior unsecured notes' in the image.\n5 - I identified the value in the 'Motorcycles & Related Products Operations' column for that row.\n6 - The value is ($303,000).",
+        "answer": "(303,000)"
+    },
+    "217": {
+        "reasoning": "1. Find the revenue for 'Product Identification' in 2006 from the image.\n2. Find the revenue for 'Product Identification' in 2007 from the image.\n3. Calculate the percentage change.",
+        "answer": "The percentage change in revenue for 'Product Identification' from 2006 to 2007 is X%."
+    },
+    "218": {
+        "reasoning": [
+            "1 - The question asks for the total net increase in sales and marketing expenses from 2009 to 2008.",
+            "2 - I reviewed the textual context and found the following statement: \"Sales and marketing expenses increased 9%, or $15.1 million, to $179.4 million for the year ended December 31, 2009 as compared to $164.4 million for the year ended December 31, 2008.\"",
+            "3 - I then examined the image context, specifically looking for tables or sections related to sales and marketing expenses.",
+            "4 - On page 38 of the PDF, I found a table titled \"Increase (Decrease) in Sales and Marketing Expenses\".",
+            "5 - In this table, the row labeled \"Total net increase\" and the column for \"2009 to 2008\" shows a value of $15.1.",
+            "6 - Both the textual context and the image context confirm the same value for the total net increase in sales and marketing expenses from 2009 to 2008."
+        ],
+        "answer": "$15.1 million"
+    },
+    "219": {
+        "reasoning": "1. The user asked for the adjusted EBITDA for the year ended December 31, 2018. \n2. To find this, I need to refer to the provided text and images.\n3. In the textual context, there is a table that provides a reconciliation between net cash provided by operating activities and both EBITDA and adjusted EBITDA for the years 2018, 2017, and 2016.\n4. The same table is confirmed to be present in the image context, which clearly shows the Adjusted EBITDA for 2018.",
+        "answer": "The adjusted EBITDA for 2018 is found in the table."
+    },
+    "220": {
+        "reasoning": [
+            "1 - The user is asking for the lease expiration date of the Beverly Hills location.",
+            "2 - I scanned the textual context for mentions of specific locations and their lease terms but did not find information about the Beverly Hills location's lease expiration date.",
+            "3 - I then examined the image context, specifically looking for tables or lists that might contain property information.",
+            "4 - I found a table in the image titled \"Properties\" that lists locations, estimated square footage, lease expiration dates, and primary use.",
+            "5 - I located the entry for \"Beverly Hills, California\" in the table.",
+            "6 - The corresponding \"Lease Expiration Date\" for Beverly Hills is listed as \"December 2006\"."
+        ],
+        "answer": "December 2006"
+    },
+    "221": {
+        "reasoning": [
+            "1 - The question asks for the square footage of the manufacturing facility in York, PA.",
+            "2 - I reviewed the textual context and found a mention of the York, PA facility in the context of 'York Environmental Matters', but no specific square footage was provided.",
+            "3 - I then examined the image context, specifically looking for tables that might contain information about manufacturing facilities.",
+            "4 - I found a table titled 'Motorcycles & Related Products Segment' which lists various facilities, their locations, square footage, and status.",
+            "5 - I located the row corresponding to 'Manufacturing\u201d' in 'York, PA' and found the 'Approximate Square Feet' listed as '571,000'."
+        ],
+        "answer": "571000"
+    },
+    "222": {
+        "reasoning": [
+            "1 - Identified the relevant table caption in the textual context: 'Significant components of the Company\u2019s deferred tax assets are as follows (in thousands):'",
+            "2 - Located the 'Net operating loss carryforward' row within the table in the textual context.",
+            "3 - Extracted the value for the year 2006 from the textual context, which is '$ 7,066'.",
+            "4 - Located the same table in the provided image.",
+            "5 - Confirmed that the 'Net operating loss carryforward' for 2006 in the image is '$ 7,066'."
+        ],
+        "answer": "7066"
+    },
+    "223": {
+        "reasoning": [
+            "1 - The question asks for the Cumulative Total Return of the S&P 500 Index on 9/30/2013.",
+            "2 - I reviewed the textual context, which contains information about earnings per share but no data on the S&P 500's performance.",
+            "3 - I then examined the image context and found a 'Performance Graph' with an accompanying table displaying 'Cumulative Total Return'.",
+            "4 - The table lists the Cumulative Total Return for the S&P 500 Index for different dates.",
+            "5 - I located the value corresponding to the 'S&P 500 Index' on '9/30/2013' in the table.",
+            "6 - The value found is 140.20."
+        ],
+        "answer": "140.20"
+    },
+    "224": {
+        "reasoning": "1. The user is asking for the range of exercise prices for the first row in a table present in the image.\n2. I need to locate the table showing stock options outstanding and find the \"Range of Exercise Prices\" column.\n3. Then, I need to extract the value in the first row of that column.",
+        "answer": "Extracted value from the first row of the \"Range of Exercise Prices\" column."
+    },
+    "225": {
+        "reasoning": "1 - The textual context contains a table with annual net revenues for products but does not provide quarterly data for 2007.\n2 - The image context contains 'Note 14. Selected Quarterly Financial Data (Unaudited)' which includes a table with quarterly net revenues for products for the year ended December 31, 2007.\n3 - Within the quarterly data table, locate the 'Net revenues' section and then the 'Product' line item.\n4 - Identify the column corresponding to 'Second Quarter'.\n5 - The value at the intersection of the 'Product' row and 'Second Quarter' column is $541.7.",
+        "answer": "$541.7"
+    },
+    "226": {
+        "reasoning": "1 - The user's question asks for \"the total amount\".\n2 - I reviewed the textual context and found instances of \"Total\", such as \"Total stockholders\u2019 equity (deficit)\" and \"Total Consolidated Cash, cash equivalents securities\".\n3 - I then examined the image context, specifically looking for tables containing \"Total\".\n4 - On page 44, a table shows \"Consolidated Cash, cash equivalents and marketable securities\" with a \"Total\" for different periods.\n5 - On page 63, a table titled \"The following table presents the allocation of the purchase price for Nine Systems\" lists \"Total consideration\" and \"Total purchase consideration\".\n6 - Since the prompt prioritizes information from the images, I focused on the \"Total consideration\" figure from page 63.\n7 - The \"Total consideration\" is given as $157,479 (in thousands).",
+        "answer": "$157,479"
+    },
+    "227": {
+        "reasoning": "1 - The question asks for the net increase or decrease in cash and cash equivalents in 2007.\n2 - I reviewed the textual context and found a statement on page 41 mentioning a decrease of $23.5 million in the consolidated cash position during 2007.\n3 - I then examined the image context, specifically looking for sections intersecting with cash flow information.\n4 - On page 41 of the PDF, under the \"Summary cash flow data follows (in millions):\" section, I found a row labeled \"Net increase (decrease) in cash and cash equivalents\".\n5 - The value corresponding to 2007 in that row is (23.5).\n6 - This confirms the information found in the textual context, and as per instructions, the image information is prioritized.",
+        "answer": "-$23.5 million"
+    },
+    "228": {
+        "reasoning": "1 - The question asks for the total comprehensive income at December 31, 2007.\n2 - I reviewed the textual context and found a table caption mentioning comprehensive income for 2007.\n3 - I then examined the image context, specifically the \"CONSOLIDATED STATEMENTS OF STOCKHOLDERS\u2019 EQUITY\" table.\n4 - Within this table, under the year 2007, the 'Total comprehensive income' is listed.\n5 - The corresponding value is $144,362.",
+        "answer": "$144,362"
+    },
+    "229": {
+        "reasoning": "1. **Check the textual context:** The textual context contains a table caption referencing \"Consolidated Statements of Operations Data\" and some financial figures, but not directly the total operating expenses.\n\n2. **Check the image context:** I need to examine the images for a table or section that presents operating expenses for 2016.\n\n3. **Locate the relevant table in the images:** Page 50 contains a table titled \"Operating Expenses\".\n\n4. **Extract the value for 2016:** From the \"Operating Expenses\" table, the total operating expenses for 2016 is $2,228.8 million.",
+        "answer": "$2,228.8 million"
+    },
+    "230": {
+        "reasoning": "1. Identify the relevant table from the textual context.\n2. Locate the same table in the image context.\n3. Extract the 'Balance, end of year' value for 2010 from the table in the image.",
+        "answer": "Balance at the end of 2010 is the beginning balance for 2011."
+    },
+    "231": {
+        "reasoning": "1 - Reviewed the textual context and found tables summarizing quarterly results and consolidated statements of income.\n2 - Examined the image context, focusing on the \"Consolidated Operating Results\" table on page 2, as this typically contains the annual net income figure.\n3 - Located the \"Net Income\" line within the \"Consolidated Operating Results\" table.\n4 - Identified the value corresponding to the year 2017 for \"Net Income\".",
+        "answer": "$994.2"
+    },
+    "232": {
+        "reasoning": "1. The user is asking for the price of Brent oil in 2015.\n2. I need to find this information from the provided text and images.\n3. Textual Context: The first text snippet contains tables with data on land vs offshore, oil vs natural gas, and drilling type, but it does not mention oil prices. The second text snippet contains tables with financial data in millions of dollars, which is not relevant to the question.\n4. Image Context: I will examine the images, focusing on tables or sections discussing oil prices.\n5. Looking at the images, page 24 contains a table showing the average oil and natural gas prices, including Brent oil.\n6. I will extract the price of Brent oil for 2015 from this table.",
+        "answer": "The specific price of Brent oil in 2015 was not provided in the AI's response."
+    },
+    "233": {
+        "reasoning": "1 - The textual context includes a table caption describing the components of the benefit (provision) for income taxes on continuing operations.\n2 - This table caption is also present in the image context on page 60.\n3 - The image table shows the 'Total current' income tax for 2016 as $357 million.",
+        "answer": "$357"
+    },
+    "234": {
+        "reasoning": [
+            "1 - Located the table in the first image titled 'Notes To Consolidated Financial Statements'.",
+            "2 - Identified the section for 'Financial Liabilities' for the year 'December 31, 2012'.",
+            "3 - Found the row corresponding to 'Securities Lending' within the 'Financial Liabilities' section for 'December 31, 2012'.",
+            "4 - Extracted the value in the 'Net Amount' column for 'Securities Lending' under 'Financial Liabilities' for 'December 31, 2012' from the image."
+        ],
+        "answer": "3.0"
+    },
+    "235": {
+        "reasoning": "1 - The textual context was reviewed for any mention of the Consumer-to-Consumer balance on January 1, 2005, but no relevant information was found.\n2 - The image context was examined, specifically focusing on the table titled 'The following table presents changes to goodwill for the years ended December 31, 2006 and 2005 (in millions)'.\n3 - Within this table, the 'January 1, 2005 balance' for 'Consumer-to-Consumer' is listed as $1,195.1.",
+        "answer": "$1,195.1"
+    },
+    "236": {
+        "reasoning": "1 - The question asks for the weighted average fair value of options granted during the year ended December 31, 2007.\n2 - I reviewed the textual context and found a table with the caption \"The fair value of each option grant is estimated on the date of grant using the Black-Scholes option-pricing model with the following weighted-average assumptions:\".\n3 - This table includes a row for \"Weighted average fair value of options granted during the year\".\n4 - I then examined the image context and located the same table on page 75.\n5 - Focusing on the row \"Weighted average fair value of options granted during the year\", I found the value corresponding to the year 2007.\n6 - The value for 2007 is $11.94.",
+        "answer": "$11.94"
+    },
+    "237": {
+        "reasoning": "1. **Textual Context Review:** The textual context does not contain information about persistency.\n2. **Image Context Review:** I will scan the images for tables that might contain persistency information. Image 1 seems to have a section called \"Persistency\".\n3. **Locate Persistency Table:** On page 1 of the image context, under \"Operating Results\" for the \"Colonial Life Segment\", there is a \"Persistency\" section.\n4. **Extract Value:** In the \"Persistency\" section, the value for \"Life\" under the \"2015\" column is 84.9%.",
+        "answer": "84.9%"
+    },
+    "238": {
+        "reasoning": [
+            "1 - The question asks for the amount of cash and cash equivalents as of November 30, 2012.",
+            "2 - I examined the textual context and found a Consolidated Cash Flow Statement which lists 'Cash and cash equivalents at end of year' for 2013, 2012, and 2011.",
+            "3 - I then examined the image context and found a Consolidated Balance Sheet which also lists 'Cash and cash equivalents' under Assets for 2013 and 2012.",
+            "4 - Focusing on the image context as instructed, I identified the value for 'Cash and cash equivalents' for the year 2012 on the Consolidated Balance Sheet.",
+            "5 - The value listed for 'Cash and cash equivalents' in 2012 on the Consolidated Balance Sheet is $79.0."
+        ],
+        "answer": "$79.0"
+    },
+    "239": {
+        "reasoning": "1 - The textual context provides a table with financial information for the year 2008, including net income.\n2 - The textual context indicates the net income for 2008 is $145,138.\n3 - I then examined the image context, specifically looking for financial statements and income information for 2008.\n4 - On page 43 of the PDF, the Consolidated Statements of Operations shows the 'Net income' for 2008 as $145,138 (in thousands).\n5 - On page 52 of the PDF, the Consolidated Statements of Operations also shows the 'Net income' for 2008 as $145,138 (in thousands).\n6 - On page 66 of the PDF, a table presents 'Net income' for 2008 as $145,138 (in thousands).\n7 - On page 53 of the PDF, the Consolidated Statements of Cash Flows lists 'Net income' for 2008 as $145,138 (in thousands).\n8 - All sources consistently report the net income for 2008 as $145,138 thousand.",
+        "answer": "$145,138"
+    },
+    "240": {
+        "reasoning": [
+            "1 - The question asks for a total amount for the year ended December 31, 2010.",
+            "2 - I examined the textual context for any relevant total amounts for that period but found specific expense breakdowns rather than a single overarching total.",
+            "3 - I then reviewed the image context, specifically looking for tables that included data for the year ended December 31, 2010 and had a 'Total' row.",
+            "4 - I identified a table titled 'Defined Contribution Plans' that presented amounts for the year ended December 31, 2010 and included a 'Total' row.",
+            "5 - The 'Total' value in the 'Defined Contribution Plans' table for the year ended December 31, 2010 is $10,861."
+        ],
+        "answer": "$10,861"
+    },
+    "241": {
+        "reasoning": [
+            "1 - The question asks for the allowance for uncollectible accounts in 2006.",
+            "2 - The textual context contains a table caption mentioning \"VALUATION AND QUALIFYING ACCOUNTS FOR THE YEARS ENDED SEPTEMBER 30, 2006, SEPTEMBER 30, 2005, AND SEPTEMBER 30, 2004 (Amounts in Thousands)\" which is highly relevant.",
+            "3 - Examining the images, the second page contains a table matching the description in the textual context.",
+            "4 - This table has a row for \"Allowance for doubtful accounts\" and a column for \"Year Ended September 30, 2006\".",
+            "5 - The \"Balance at End of Period\" for \"Allowance for doubtful accounts\" in 2006 is $1,160."
+        ],
+        "answer": "1160"
+    },
+    "242": {
+        "reasoning": "1 - The question asks for the net income available to common stockholders in 2015.\n2 - I reviewed the textual context and found a table caption mentioning \"Net income available to common stockholders\" and years 2015, 2014, and 2013.\n3 - I examined the image context and found a table on page 89 titled \"Basic and Diluted Earnings Per Share\".\n4 - Within this table, under the \"Numerator\" section, there is a line item \"Net income available to common stockholders\".\n5 - The value corresponding to 2015 for \"Net income available to common stockholders\" is $585.",
+        "answer": "$585"
+    },
+    "243": {
+        "reasoning": "1 - The question asks for the total sales and marketing cost for the year ended December 31, 2014.\n2 - I examined the textual context, which provides details on stock-based compensation within sales and marketing but not the total cost.\n3 - I then reviewed the image context, specifically looking for sections related to sales and marketing expenses.\n4 - On page 36 of the PDF, there is a table titled \"Sales and Marketing Expenses\" which shows the breakdown of these expenses for different years.\n5 - From this table, I identified the \"Total sales and marketing\" figure for the year ended December 31, 2014.\n6 - The value listed for total sales and marketing for 2014 is $379,035.",
+        "answer": "$379,035"
+    },
+    "244": {
+        "reasoning": "1. **Locate the relevant table in the textual context.** The first textual context describes the table with quarterly high and low prices.\n2. **Locate the same table in the image context.** Page 28 contains the table described in the textual context.\n3. **Find the intersection of the textual and image contexts.** The table in the image matches the description in the text.\n4. **Identify the 'First Quarter' row and the '2016' column for 'Low'.**\n5. **Extract the value.**",
+        "answer": "Not provided in the given context."
+    },
+    "245": {
+        "reasoning": "1 - The textual context contains a table of contents listing various exhibits and their file dates.\n2 - I searched the textual context for the entry \"Sub-plan to the Juniper Networks, Inc. 2008 Employee Stock Purchase Plan For Employees Located in the European Economic Area\".\n3 - I found this entry in the first provided textual context, corresponding to Exhibit No. 0.25, Filing 10-K, and File Date 3/2/2009.\n4 - I then examined the image context, specifically looking for the table of contents.\n5 - I located the same entry in the image context on the first page of the images.\n6 - The image confirms that the File Date for the specified sub-plan is 3/2/2009.",
+        "answer": "3/2/2009"
+    },
+    "246": {
+        "reasoning": "1 - The question asks for the weighted average exercise price for Equity Compensation Plans Approved by Shareholders.\n2 - The textual context mentions 'Equity Compensation Plan Information'.\n3 - Reviewing the image context, specifically page 194, there's a table titled 'Equity Compensation Plan Information'.\n4 - Within this table, the row 'Equity Compensation Plans Approved by Shareholders' is identified.\n5 - The column '(b) Weighted average exercise price of outstanding options, warrants and rights' contains the relevant information.\n6 - The value in the intersection of this row and column is '$24.41'.",
+        "answer": "$24.41"
+    },
+    "247": {
+        "reasoning": "1 - The question asks for the ending balance for the year ended December 31, 2013.\n2 - I reviewed the textual context and found two tables with ending balances for 2013.\n3 - I examined the image context and located the corresponding tables.\n4 - The first image contains a table titled 'The changes in the carrying amount of service and product warranties for the years ended December 31, 2014 and 2013'. This table shows an ending balance for 2013.\n5 - The ending balance for the year ended December 31, 2013, in this table, is $56.0.\n6 - The second image contains a table titled 'Schedule II - Valuation and Qualifying Accounts' which also shows an ending balance for 2013 for 'Allowances for doubtful accounts'. This is $58.7.\n7 - Prioritizing information from the images and considering the context of the first table in both text and image, I identified the relevant ending balance.",
+        "answer": "$56.0"
+    },
+    "248": {
+        "reasoning": [
+            "1 - The question asks for the value of deferred income tax assets internationally in 2013.",
+            "2 - I reviewed the textual context and found a table titled \"Amounts recorded in the balance sheet for all defined benefit pension plans consist of the following:\"",
+            "3 - This table in the text lists \"Deferred income tax assets\" for \"International\" in 2013 as $15.7 million.",
+            "4 - I then examined the image context and located the same table.",
+            "5 - I found the row corresponding to \"Deferred income tax assets\" and the column for \"International\" under the year \"2013\".",
+            "6 - The value in the image for deferred income tax assets internationally in 2013 is $15.7 million.",
+            "7 - Prioritizing the information from the image, the value is $15.7."
+        ],
+        "answer": "$15.7"
+    },
+    "249": {
+        "reasoning": "1 - The user is asking for the total interest payments due in the 1-3 year period.\n2 - I examined the textual context for mentions of interest payments but it did not provide the total amount for the specified timeframe.\n3 - I then reviewed the image context, focusing on tables that might contain information about contractual obligations or debt schedules.\n4 - On page 1 of the image context, the table \"Commitments and Contractual Obligations\" lists \"Interest payments\" and breaks down the payment due by period.\n5 - I identified the value for \"Interest payments\" under the \"1-3 Years\" column, which is $184,039.",
+        "answer": "$184,039"
+    }
+}

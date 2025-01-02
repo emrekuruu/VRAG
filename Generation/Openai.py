@@ -3,6 +3,7 @@ from langchain_openai import ChatOpenAI
 import asyncio
 from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT, QAOutput
 import os 
+from langchain_community.callbacks import get_openai_callback
 
 with open(f".keys/openai_api_key.txt", "r") as file:
     os.environ["OPENAI_API_KEY"] = file.read().strip()
@@ -36,7 +37,14 @@ async def image_based(query, pages, model_type):
         })
 
     message = HumanMessage(content=content)
-    response: QAOutput = await exponential_backoff(llm.ainvoke, [message])
+
+    with get_openai_callback() as cb:
+        response: QAOutput = await exponential_backoff(llm.ainvoke, [message])
+        print(f"Total Tokens: {cb.total_tokens}")
+        print(f"Prompt Tokens: {cb.prompt_tokens}")
+        print(f"Completion Tokens: {cb.completion_tokens}")
+        print(f"Total Cost (USD): ${cb.total_cost}")
+
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response
     
