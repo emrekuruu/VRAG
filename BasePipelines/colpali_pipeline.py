@@ -15,7 +15,7 @@ model_type = "openrouter-Qwen/QVQ-72B-Preview"
 log_model_type = "qvq-72b-preview"
 
 class ColpaliPipeline(ABC):
-    def __init__(self, config, task, index, device="mps"):
+    def __init__(self, config, task, index, device="cuda"):
         self.config = config
         self.task = task
         self.index = index
@@ -48,7 +48,6 @@ class ColpaliPipeline(ABC):
             try:
                 query, retrieved = await self.retrieve(idx, data, top_k)
                 sorted_retrieved = dict(sorted(retrieved.items(), key=lambda item: item[1]["score"], reverse=True))
-
                 qrels = {k: v["score"] for k, v in sorted_retrieved.items()}
                 context = {k: v["base64"] for k, v in sorted_retrieved.items()}
                 answer = await image_based(query, context.values(), model_type=model_type)
