@@ -3,6 +3,9 @@ from langchain.prompts import PromptTemplate
 import os 
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
+import asyncio 
+import re 
+import json
 
 with open(f".keys/openai_api_key.txt", "r") as file:
     os.environ["OPENAI_API_KEY"] = file.read().strip()
@@ -19,30 +22,35 @@ async def exponential_backoff(func, *args, retries=20, initial_wait=10, **kwargs
         except Exception as e:
             if attempt == retries - 1:
                 raise e
+            print(e)
             await asyncio.sleep(wait_time)
             wait_time += 10
 
 JSONIFY_PROMPT = PromptTemplate(
     input_variables=["response_string", "schema"],
     template="""
-        You will receive a response from an AI model that includes a JSON object.
-        Your task is to parse this JSON object into the specified schema provided below.
-        Ensure that all content in the JSON object remains **exactly the same** without any modifications.
+    As an AI JSON Parser, analyze the provided response string and extract the JSON object according to the following specifications:
 
-        Schema:
-        {schema}
+    1. Input Format:
+    - Look for JSON content enclosed within triple backticks (```)
+    - Ignore any preliminary text before the JSON object
+    - Maintain exact content without alterations
 
-        You can identify the JSON object in the response string by the triple backticks ('```') surrounding it. And for each field in the schema here is what you should look for:
+    2. Required Schema Fields:
+    - reasoning: Extract the numbered list detailing the step-by-step thought process
+    - answer: Extract the concise final answer
 
-        - The 'reasoning' field should contain the detailed chain-of-thought as a numbered list, showing how the derived their answer
-        - The 'answer' field should be an extremely concise answer.
+    Schema to match:
+    {schema}
 
-        There will be additional content in the response string that you should ignore. Specifically, the response will begin with thoughtful text which you should ignore. The JSON object will be the later in the response string.
+    3. Output Requirements:
+    - Return a valid JSON object matching the provided schema
+    - Preserve all original content exactly as presented
+    - Ensure proper JSON formatting and structure
 
-        Response string:
-        {response_string}
+    Parse the following response string and return the extracted JSON object:
 
-        Return the parsed object as a valid instance of the given schema.
+    {response_string}
     """
 )
 
@@ -55,6 +63,33 @@ async def jsonify(response_string):
     response: QAOutput = await exponential_backoff(llm.ainvoke, prompt)
     response = {"reasoning": response.reasoning, "answer": response.answer}
     return response
+
+
+async def get_structured_output(response):
+  
+    try:
+      response = {"reasoning": response.reasoning, "answer": response.answer}
+      return response
+    
+    except:
+        json_pattern = r'```json\n({.*?})\n```'
+        matches = re.findall(json_pattern, ''.join(response), re.DOTALL)
+
+        try:
+            reasoning_and_answer_json = matches[-1] 
+            parsed_response = json.loads(reasoning_and_answer_json)
+            reasoning = parsed_response["reasoning"]
+            answer = parsed_response["answer"]
+
+            if type(answer) != str:
+                raise Exception("Answer must be a string")
+            
+            response = {"reasoning": reasoning, "answer": answer}
+            return response
+        
+        except:
+            return await jsonify(response_string=response)
+
 
 IMAGE_PROMPT = PromptTemplate(
     input_variables=["query", "schema"],

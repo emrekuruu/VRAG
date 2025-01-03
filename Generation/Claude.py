@@ -1,22 +1,9 @@
 from langchain_core.messages import HumanMessage
-import asyncio
-from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT, QAOutput
+from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT, QAOutput, exponential_backoff
 from langchain_anthropic import ChatAnthropic
 
 with open(f"/Users/emrekuru/Developer/VRAG/.keys/claude_api_key.txt",  "r") as file:
     claude = file.read().strip()
-
-async def exponential_backoff(func, *args, retries=100, initial_wait=60, **kwargs):
-    wait_time = initial_wait
-    for attempt in range(retries):
-        try:
-            return await func(*args, **kwargs)
-        except Exception as e:
-            print(e)
-            if attempt == retries - 1:
-                raise e
-            await asyncio.sleep(wait_time)
-            wait_time += 10
 
 async def image_based(query, pages):
     llm = ChatAnthropic(api_key=claude, model="claude-3-5-sonnet-20241022") 

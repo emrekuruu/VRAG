@@ -1,5 +1,5 @@
 
-from . import OpenRouter, Openai, Claude, Google, QwenLocal
+from . import OpenRouter, Openai, Claude, Google
 
 async def image_based(query, pages, model_type):
     provider = model_type.split("-")[0]

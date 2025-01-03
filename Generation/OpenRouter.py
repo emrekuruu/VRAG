@@ -1,8 +1,6 @@
 from openai import OpenAI
-from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT,  QAOutput, jsonify
+from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT, QAOutput, exponential_backoff, get_structured_output
 import asyncio
-import re 
-import json 
 
 with open(".keys/deep_api_key.txt", "r") as file:
     api_key = file.read().strip()
@@ -77,26 +75,8 @@ async def image_based(query, pages, model):
                 "image_url": {"url": f"data:image/jpeg;base64,{p}"}
         })
 
-    response = await query_model_async(messages, model, structured=structured)
-
-    try:
-        response = {"reasoning": response.reasoning, "answer": response.answer}
-    except:
-        response = response.content
-        json_pattern = r'```json\n({.*?})\n```'
-        matches = re.findall(json_pattern, ''.join(response), re.DOTALL)
-        try:
-            reasoning_and_answer_json = matches[-1] 
-            parsed_response = json.loads(reasoning_and_answer_json)
-            reasoning = parsed_response["reasoning"]
-            answer = parsed_response["answer"]
-
-            if type(answer) != str:
-                raise Exception("Answer must be a string")
-            
-            response = {"reasoning": reasoning, "answer": answer}
-        except:
-            return await jsonify(response_string=response)
+    response = await exponential_backoff(query_model_async, messages, model)
+    response = await get_structured_output(response)
     return response
 
 async def text_based(query, chunks, model):
@@ -125,26 +105,8 @@ async def text_based(query, chunks, model):
             }
         ]
 
-    response = await query_model_async(messages, model, structured=structured)
-
-    try:
-        response = {"reasoning": response.reasoning, "answer": response.answer}
-    except:
-        json_pattern = r'```json\n({.*?})\n```'
-        matches = re.findall(json_pattern, ''.join(response), re.DOTALL)
-        try:
-            reasoning_and_answer_json = matches[-1] 
-            parsed_response = json.loads(reasoning_and_answer_json)
-            reasoning = parsed_response["reasoning"]
-            answer = parsed_response["answer"]
-
-            if type(answer) != str:
-                raise Exception("Answer must be a string")
-            
-            response = {"reasoning": reasoning, "answer": answer}
-        except:
-            return await jsonify(response_string=response)
-        
+    response = await exponential_backoff(query_model_async, messages, model)
+    response = await get_structured_output(response)
     return response
 
 async def hybrid(query, pages, chunks, model):
@@ -177,6 +139,6 @@ async def hybrid(query, pages, chunks, model):
                 "image_url": {"url": f"data:image/jpeg;base64,{p}"}
         })
 
-    response = await query_model_async(messages, model, structured=structured)
-    response = {"reasoning": response.reasoning, "answer": response.answer} if structured else response
+    response = await exponential_backoff(query_model_async, messages, model)
+    response = await get_structured_output(response)
     return response

@@ -10,8 +10,8 @@ import os
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.dirname(current_dir)
 
-model_type = "openrouter-Qwen/QVQ-72B-Preview"
-log_model_type = "qvq-72b-preview"
+model_type = "google-gemini-2.0-flash-thinking-exp"
+log_model_type = "gemini-2.0-flash-thinking-exp"
 
 class Embedder:
     def __init__(self, vo, batch_size=64):

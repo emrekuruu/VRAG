@@ -1,24 +1,12 @@
 from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
-import asyncio
-from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT, QAOutput
+from .prompts import IMAGE_PROMPT, TEXT_PROMPT, HYBRID_PROMPT, QAOutput, exponential_backoff
 import os 
 from langchain_community.callbacks import get_openai_callback
 
 with open(f".keys/openai_api_key.txt", "r") as file:
     os.environ["OPENAI_API_KEY"] = file.read().strip()
     api_key = file.read().strip()
-
-async def exponential_backoff(func, *args, retries=20, initial_wait=10, **kwargs):
-    wait_time = initial_wait
-    for attempt in range(retries):
-        try:
-            return await func(*args, **kwargs)
-        except Exception as e:
-            if attempt == retries - 1:
-                raise e
-            await asyncio.sleep(wait_time)
-            wait_time += 10
 
 async def image_based(query, pages, model_type):
     llm = ChatOpenAI(model=model_type, api_key=api_key) 
